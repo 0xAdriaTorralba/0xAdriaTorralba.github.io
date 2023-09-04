@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://0xAdriaTorralba.github.io/talk/example-talk/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+    <loc>https://0xAdriaTorralba.github.io/talk/reality-and-adoption-of-blockchain-technology/</loc>
+    <lastmod>2023-09-04T17:29:21+02:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://0xAdriaTorralba.github.io/event/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+    <lastmod>2023-09-04T17:29:21+02:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://0xAdriaTorralba.github.io/</loc>
@@ -16,6 +16,78 @@
   </url><url>
     <loc>https://0xAdriaTorralba.github.io/talk/hands-on-zero-knowledge-basics-kzg-commitments/</loc>
     <lastmod>2023-07-07T12:30:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://0xAdriaTorralba.github.io/talk/a-comparison-of-layer-2-techniques-for-scaling-blockchains/</loc>
+    <lastmod>2022-10-19T17:20:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://0xAdriaTorralba.github.io/publication-type/1/</loc>
+    <lastmod>2022-10-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://0xAdriaTorralba.github.io/publication/conference-papers/2022_recsi/</loc>
+    <lastmod>2022-10-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://0xAdriaTorralba.github.io/tag/blockchain/</loc>
+    <lastmod>2022-10-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://0xAdriaTorralba.github.io/tag/optimistic-rollups/</loc>
+    <lastmod>2022-10-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://0xAdriaTorralba.github.io/tag/payment-channels/</loc>
+    <lastmod>2022-10-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://0xAdriaTorralba.github.io/publication_types/</loc>
+    <lastmod>2022-10-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://0xAdriaTorralba.github.io/publication/</loc>
+    <lastmod>2022-10-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://0xAdriaTorralba.github.io/tag/scaling-blockchain/</loc>
+    <lastmod>2022-10-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://0xAdriaTorralba.github.io/tags/</loc>
+    <lastmod>2022-10-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://0xAdriaTorralba.github.io/tag/zero-knowledge-techniques/</loc>
+    <lastmod>2022-10-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://0xAdriaTorralba.github.io/tag/zkrollups/</loc>
+    <lastmod>2022-10-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://0xAdriaTorralba.github.io/publication-type/2/</loc>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://0xAdriaTorralba.github.io/tag/hate-speech-analysis/</loc>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://0xAdriaTorralba.github.io/tag/hierarchical-visualisations/</loc>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://0xAdriaTorralba.github.io/tag/multivariate-data/</loc>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://0xAdriaTorralba.github.io/publication/journal-articles/2022_data-visualisation-in-linguistics/</loc>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://0xAdriaTorralba.github.io/talk/a-comparison-of-layer-2-techniques-for-scaling-blockchains-preliminar-work/</loc>
+    <lastmod>2022-07-05T09:05:00+02:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://0xAdriaTorralba.github.io/tag/academic/</loc>
@@ -34,10 +106,6 @@
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://0xAdriaTorralba.github.io/tags/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
     <loc>https://0xAdriaTorralba.github.io/post/getting-started/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -52,26 +120,6 @@
   </url><url>
     <loc>https://0xAdriaTorralba.github.io/post/writing-technical-content/</loc>
     <lastmod>2019-07-12T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://0xAdriaTorralba.github.io/publication-type/3/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://0xAdriaTorralba.github.io/publication/preprint/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://0xAdriaTorralba.github.io/publication_types/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://0xAdriaTorralba.github.io/publication/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://0xAdriaTorralba.github.io/tag/source-themes/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://0xAdriaTorralba.github.io/post/jupyter/</loc>
@@ -104,22 +152,6 @@
   </url><url>
     <loc>https://0xAdriaTorralba.github.io/project/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://0xAdriaTorralba.github.io/publication-type/2/</loc>
-    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://0xAdriaTorralba.github.io/publication/journal-article/</loc>
-    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://0xAdriaTorralba.github.io/publication-type/1/</loc>
-    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://0xAdriaTorralba.github.io/publication/conference-paper/</loc>
-    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://0xAdriaTorralba.github.io/admin/</loc>
