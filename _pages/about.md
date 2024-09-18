@@ -11,18 +11,18 @@ profile:
   image_circular: true # crops the image to make it circular
   more_info: >
     <p style="text-align: center;">
-        <a href="mailto:atorralbaag@uoc.edu">
-            <i class="fa-solid fa-envelope"></i> atorralbaag@uoc.edu
+        <a href="mailto:atorralbaag@uoc.edu" style="display: inline-flex; align-items: center;">
+            <i class="fa-solid fa-envelope" style="margin-right: 5px;"></i> atorralbaag@uoc.edu
         </a>
     </p>
     <p style="text-align: center;">
-        <a href="https://github.com/0xAdriaTorralba">
-            <i class="fa-brands fa-github"></i> 0xAdriaTorralba
+        <a href="https://github.com/0xAdriaTorralba" style="display: inline-flex; align-items: center;">
+            <i class="fa-brands fa-github" style="margin-right: 5px;"></i> 0xAdriaTorralba
         </a>
     </p>
     <p style="text-align: center;">
-        <a href="https://x.com/0xAdriaTorralba">
-            <i class="fa-brands fa-twitter"></i> 0xAdriaTorralba
+        <a href="https://x.com/0xAdriaTorralba" style="display: inline-flex; align-items: center;">
+            <i class="fa-brands fa-twitter" style="margin-right: 5px;"></i> 0xAdriaTorralba
         </a>
     </p>
 
