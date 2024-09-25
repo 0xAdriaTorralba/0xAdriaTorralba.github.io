@@ -3,7 +3,7 @@ layout: about
 title: about
 permalink: /
 subtitle: >
-    <a href='https://www.uoc.edu/portal/es/in3/recerca/grups/kriptography_and_information'>Universitat Oberta de Catalunya</a>, Barcelona (Spain). <br> PhD Candidate - Applied Cryptography on Blockchain and Layer 2.
+  <a href='https://www.uoc.edu/portal/es/in3/recerca/grups/kriptography_and_information'>Universitat Oberta de Catalunya</a>, Barcelona (Spain). <br> PhD Candidate - Applied Cryptography on Blockchain and Layer 2.
 
 profile:
   align: left
