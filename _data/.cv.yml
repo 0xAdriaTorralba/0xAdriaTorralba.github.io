@@ -1,19 +1,18 @@
-- title: General Information
-  type: map
-  contents:
-    - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
-    - name: Languages
-      value: English, German
-
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: PhD on Applied Cryptography on Blockchain
+      institution: Universitat Oberta de Catalunya, Barcelona, Spain
+      year: 2021 - Present
+    - title: MSc in Fundamental Principles of Data Science 
+      institution: Universitat de Barcelona, Barcelona, Spain
+      year: 2020 - 2021
+      description:
+        - Description 1.
+        - Description 2.
+    - title: Double BSc in Mathematics and Computer Science
+      institution: Universitat de Barcelona, Barcelona, Spain
+      year: 2013 - 2020
       description:
         - Description 1.
         - Description 2.
@@ -21,12 +20,6 @@
           contents:
             - Sub-description 1.
             - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
-      description:
-        - Description 1.
-        - Description 2.
 
 - title: Experience
   type: time_table
@@ -61,14 +54,7 @@
       institution: University of Zurich, Zurich, Switzerland
       year: 1909 - 1911
 
-- title: Open Source Projects
-  type: time_table
-  contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
-
-- title: Honors and Awards
+- title: Grants and Awards
   type: time_table
   contents:
     - year: 1921
@@ -79,19 +65,16 @@
       items:
         - Max Planck Medal
 
-- title: Academic Interests
-  type: nested_list
+- title: Scientific Committee Participation
+  type: time_table
   contents:
-    - title: Topic 1.
-      items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
+    - item: External reviewer
+      - title: [Poster Jury for IEEE S&P 2025](https://www.ieee-security.org/TC/SP2025/cfposters.html)
+        year: 2025
+      - title: Reviewer for SECRYPT 2025.
+        year: 2025
 
-- title: Other Interests
+- title: Supervision
   type: list
   contents:
     - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.

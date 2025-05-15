@@ -1,115 +1,146 @@
 ---
 ---
 
-@string{aps = {American Physical Society,}}
+@string{recsi="Reunión Española de Criptología y Seguridad de la Información"}  
+@string{ub="Universitat de Barcelona"}
 
-@book{einstein1920relativity,
-  title={Relativity: the Special and General Theory},
-  author={Einstein, Albert},
-  year={1920},
-  publisher={Methuen & Co Ltd},
-  html={relativity.html}
+
+@inproceedings{chaliasos2024analyzing,
+  abbr={AFT'24},
+  title={Analyzing and Benchmarking ZK-Rollups},
+  author={Chaliasos, Stefanos and Reif, Itamar and Torralba-Agell, Adri{\`a} and Ernstberger, Jens and Kattis, Assimakis and Livshits, Benjamin},
+  booktitle={Advances in Financial Technologies},
+  year={2024},
+  doi={https://doi.org/10.4230/LIPIcs.AFT.2024.6},
+  pdf={Analyzing and benchmarking ZK-Rollups - Chaliasos, Reif, Adrià Torralba-Agell et al. - 2024.pdf},
+  abstract={As blockchain technology continues to transform the realm of digital transactions, scalability has
+            emerged as a critical issue. This challenge has spurred the creation of innovative solutions, particularly
+            Layer 2 scalability techniques like rollups. Among these, ZK-Rollups are notable for employing ZeroKnowledge Proofs to facilitate prompt on-chain transaction verification, thereby improving scalability
+            and efficiency without sacrificing security. Nevertheless, the intrinsic complexity of ZK-Rollups has
+            hindered an exhaustive evaluation of their efficiency, economic impact, and performance.
+            This paper offers a theoretical and empirical examination aimed at comprehending and evaluating
+            ZK-Rollups, with particular attention to ZK-EVMs. We conduct a qualitative analysis to break
+            down the costs linked to ZK-Rollups and scrutinize the design choices of well-known implementations.
+            Confronting the inherent difficulties in benchmarking such intricate systems, we introduce a systematic
+            methodology for their assessment, applying our method to two prominent ZK-Rollups: Polygon
+            zkEVM and zkSync Era. Our research provides initial findings that illuminate trade-offs and areas
+            for enhancement in ZK-Rollup implementations, delivering valuable insights for future research,
+            development, and deployment of these systems.},
+  code={https://github.com/StefanosChaliasos/zkrollup-benchmarking},
+  selected={true}
 }
 
-@book{einstein1956investigations,
-  bibtex_show={true},
-  title={Investigations on the Theory of the Brownian Movement},
-  author={Einstein, Albert},
-  year={1956},
-  publisher={Courier Corporation},
-  preview={brownian-motion.gif}
+
+@article{torralba-perez2023taxonomy,
+  abbr={SecurityAnalysis'23},
+  title={(Under Journal Review) A Taxonomy of Security Analysis of Blockchain Layer 2 Scalability Solutions and Future Directions},
+  author={Torralba-Agell, Adrià, and Pérez-Solà, Cristina},
+  year={2024},
+  selected={true}
 }
 
-@article{einstein1950meaning,
-  abbr={AJP},
-  bibtex_show={true},
-  title={The meaning of relativity},
-  author={Einstein, Albert and Taub, AH},
-  journal={American Journal of Physics},
-  volume={18},
-  number={6},
-  pages={403--404},
-  year={1950},
-  publisher={American Association of Physics Teachers}
+@inproceedings{RECSI2024,
+  abbr={RECSI'24},
+  title={Unmasking the Illusion: The Shortcomings of ``Zero-Knowledge" Rollups in Achieving Privacy},
+  author={Torralba-Agell, Adrià and Keshavarzkalhori, Ghazaleh and Pérez-Solà, Cristina and Megías, David and Herrera-Joancomartí, Jordi},
+  booktitle={RECSI},
+  abstract={The rise of Layer 2 (L2) solutions, including Payment Channel Networks, sidechains, and rollups, has aimed to tackle the scalability challenges of Layer 1 (L1) blockchains like Bitcoin and Ethereum. Among these, Zero-Knowledge Rollups (ZK-Rollups) have emerged as a compelling solution by utilizing zkSNARKs to bundle multiple transactions, thereby enhancing throughput and reducing costs. However, despite their technical sophistication, ZK-Rollups do not inherently provide transaction privacy, a common misconception given the ``Zero-Knowledge" nomenclature. This paper explores the privacy limitations of ZK-Rollups, emphasizing the need for privacy-preserving features that align with the expectations set by their name. We also review the strategies being developed by various projects to address these limitations.
+Furthermore, we propose the community begin adapting other names for the technology, such as ``Verifiable Rollup" (verRollup), ``Incrementally Verifiable Computation Rollup" (ivcRollup), or ``Succinct Rollup" (sucRollup) that better represent the current capabilities of rollups. This work contributes to the ongoing discussion on achieving a balance between efficiency, scalability, and privacy in blockchain technologies.},
+  doi={https://dialnet.unirioja.es/servlet/articulo?codigo=10094389},
+  year={2024},
+  pdf={Unmasking the Illusion the Shortcomings of Zero-Knowledge Rollups in Achieving Privacy - Adrià Torralba-Agell et al. - 2024.pdf},
+  selected={true}
 }
 
-@article{PhysRev.47.777,
-  abbr={PhysRev},
-  title={Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?},
-  author={Einstein*†, A. and Podolsky*, B. and Rosen*, N.},
-  abstract={In a complete theory there is an element corresponding to each element of reality. A sufficient condition for the reality of a physical quantity is the possibility of predicting it with certainty, without disturbing the system. In quantum mechanics in the case of two physical quantities described by non-commuting operators, the knowledge of one precludes the knowledge of the other. Then either (1) the description of reality given by the wave function in quantum mechanics is not complete or (2) these two quantities cannot have simultaneous reality. Consideration of the problem of making predictions concerning a system on the basis of measurements made on another system that had previously interacted with it leads to the result that if (1) is false then (2) is also false. One is thus led to conclude that the description of reality as given by a wave function is not complete.},
-  journal={Phys. Rev.},
-  location={New Jersey},
-  volume={47},
-  issue={10},
-  pages={777--780},
-  numpages={0},
-  year={1935},
-  month={May},
-  publisher=aps,
-  doi={10.1103/PhysRev.47.777},
-  url={http://link.aps.org/doi/10.1103/PhysRev.47.777},
-  html={https://journals.aps.org/pr/abstract/10.1103/PhysRev.47.777},
-  pdf={example_pdf.pdf},
-  altmetric={248277},
-  dimensions={true},
-  google_scholar_id={qyhmnyLat1gC},
-  video={https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ},
-  additional_info={. *More Information* can be [found here](https://github.com/alshedivat/al-folio/)},
-  annotation={* Example use of superscripts<br>† Albert Einstein},
-  selected={true},
-  inspirehep_id = {3255}
+
+@inproceedings{RECSI2022,
+  abbr={RECSI'22},
+  title={A Comparison of Layer 2 Techniques for Scaling Blockchains},
+  author={Torralba-Agell, Adrià and Pérez-Solà, Cristina},
+  booktitle={RECSI},
+  abstract={Since the creation of Bitcoin, back in 2009, many
+            other cryptocurrencies have appear, and its usage has been
+            growing year after year. With this huge popularity, doubts about
+            the ability of blockchains to become worldwide payment systems
+            (or even universal mediums for general decentralised systems)
+            begin to arise and, with them, solutions started to be explored.
+            In this paper we first explain the blockchain scalability problem
+            and then present a brief review and a comparison among some of
+            the state-of-the-art techniques that are used to scale blockchains
+            on Layer 2 (or off-chain), analysing properties related to their
+            Usability, Security and Cost.},
+  pdf={A Comparison of Layer 2 Techniques for Scaling Blockchains - Torralba-Agell, Adrià and Pérez-Solà, Cristina - 2022.pdf},
+  year={2022},
 }
 
-@article{einstein1905molekularkinetischen,
-  title={{\"U}ber die von der molekularkinetischen Theorie der W{\"a}rme geforderte Bewegung von in ruhenden Fl{\"u}ssigkeiten suspendierten Teilchen},
-  author={Einstein, A.},
-  journal={Annalen der physik},
-  volume={322},
-  number={8},
-  pages={549--560},
-  year={1905},
-  publisher={Wiley Online Library}
+
+
+@article{kavaz2023visualisation,
+  abbr={InfVis'23},
+  title={Visualisation of hierarchical multivariate data: Categorisation and case study on hate speech},
+  author={Kavaz, Ecem and Puig, Anna and Rodr{\'\i}guez, Inmaculada and Chac{\'o}n, Reyes and De-La-Paz, David and Torralba-Agell, Adri{\`a} and Nofre, Montserrat and Taule, Mariona},
+  journal={Journal of Information Visualization},
+  volume={22},
+  number={1},
+  pages={31--51},
+  year={2023},
+  abstract={Multivariate hierarchical data has an important role in many applications. 
+            To find the best visualisation that best fits a concrete data is crucial to explore and understand 
+            the relationships between the data. This paper proposes a categorisation – Elongated and Compact – of hierarchical 
+            data based on the inner shapes of the hierarchies, that is the connectivity degree of the internal nodes, the number 
+            of nodes, etc, that can be applied to any hierarchical data. Based on this taxonomy, we explore implicit and explicit 
+            layouts – Tree, Circle Packing, Force and Radial – to provide users with a complete view of the data. We hypothesise that 
+            Tree and Circle Packing fit with Elongated structures, and Force and Radial fit with Compact ones. In addition, we cluster 
+            multivariate features to embed them in the hierarchical layouts. Especially, we propose two different glyphs –one-by-one and 
+            all-in-one, and we bet for the one-by-one glyphs as the most suitable for showing the distribution of several features along with 
+            the hierarchical structures. To validate our hypotheses, we conducted a user study with 35 participants using a hate speech 
+            annotated corpus. This corpus comes from 4359 comments posted in online Spanish newspapers. The results indicated that users 
+            preferred the Tree layout over the other three layouts (Circle, Force, Radial) with both types of structures (EC and CC). 
+            However, when we focused the analysis only on Radial and Force layouts, both of them scored significantly higher with Compact 
+            than with Elongated data. Moreover, participants scored the one-by-one glyph higher than the all-in-one glyph, but the difference 
+            was not significant.},
+  doi={https://doi.org/10.1177/14738716221120509},
+  pdf={Visualisation of hierarchical multivariate data Categorisation and case study on hate speech - Kavaz, Puig, Rodriguez, Chacón, Paz, Torralba-Agell et al. - 2023.pdf},
+  code={https://github.com/0xAdriaTorralba/DataVisualizationInLinguistics},
+  publisher={SAGE Publications Sage UK: London, England}
 }
 
-@article{einstein1905movement,
-  abbr={Ann. Phys.},
-  title={Un the movement of small particles suspended in statiunary liquids required by the molecular-kinetic theory 0f heat},
-  author={Einstein, A.},
-  journal={Ann. Phys.},
-  volume={17},
-  pages={549--560},
-  year={1905}
+
+
+
+@article{torralba-agell2021twitter,
+  abbr={TFM'21},
+  title={Twitter engagement model for RecSys Challenge 2021},
+  author={Torralba-Agell, Adrià and Moreno Blanco, Marcos and Seguí, Santi and Gilabert Roca, Pere},
+  abstract={Recommendation systems is an interesting and wide field of research and it is present in a huge amount 
+            of different areas in our daily life. The RecSys ACM conference is the most important conference in the recommendation 
+            area and every year they organise a competition: the RecSys Challenge. The work presented here aims to solve the RecSys 2021 
+            Challenge which consists of giving a probability to two Twitter users that interact. In this project we have worked in the 
+            development of a model which uses the power of Gradient Boosting Trees to combine multiple hand-crafted features in an aim to 
+            represent the interaction between the users. Our team reached the 14th place in the overall challenge leaderboard and is placed 
+            between the 7th and the 9th place in terms of Like overall performance.},
+  code={https://github.com/0xAdriaTorralba/RecSys2021},
+  doi={http://hdl.handle.net/2445/185952},
+  pdf={https://diposit.ub.edu/dspace/bitstream/2445/185952/2/tfm_moreno_blanco_torralba_agell.pdf},
+  journal=ub,
+  year={2021}
 }
 
-@article{einstein1905electrodynamics,
-  title={On the electrodynamics of moving bodies},
-  author={Einstein, A.},
-  year={1905}
-}
 
-@Article{einstein1905photoelectriceffect,
-  bibtex_show={true},
-  abbr={Ann. Phys.},
-  title="{{\"U}ber einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt}",
-  author={Albert Einstein},
-  abstract={This is the abstract text.},
-  journal={Ann. Phys.},
-  volume={322},
-  number={6},
-  pages={132--148},
-  year={1905},
-  doi={10.1002/andp.19053220607},
-  award={Albert Einstein receveid the **Nobel Prize in Physics** 1921 *for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect*},
-  award_name={Nobel Prize}
-}
-
-@book{przibram1967letters,
-  bibtex_show={true},
-  title={Letters on wave mechanics},
-  author={Einstein, Albert and Schrödinger, Erwin and Planck, Max and Lorentz, Hendrik Antoon and Przibram, Karl},
-  year={1967},
-  publisher={Vision},
-  preview={wave-mechanics.gif},
-  abbr={Vision}
+@article{torralba2020iteration,
+  abbr={TFG'20},
+  title={Iteration of holomorphic functions and visualisation of fractals},
+  author={Torralba-Agell, Adrià, and Puig Puig, Anna and Fagella Rabionet, Núria},
+  journal=ub,
+  abstract={When a holomorphic function is iterated, it generates a dynamical system on the complex plane. 
+            In this project we describe both the local and global theory of the different orbits of holomorphic functions, 
+            focusing on the polynomial families. We present the necessary results leading to two algorithms to draw both Julia 
+            sets and Mandelbrot (and Multibrot) set: the Escape Algorithm and Henriksen Algortihm. In addition, we present the 
+            development of an interactive application, made with Unity, that allows us to visualise fractals on the complex plane 
+            -rendered using the aforementioned algorithms- and a generalisation of them over a 3-dimensional space, directly on a website.},
+  doi={http://hdl.handle.net/2445/178855},
+  pdf={https://diposit.ub.edu/dspace/bitstream/2445/178855/3/tfg_torralba_agell_adria.pdf},
+  code={https://github.com/0xAdriaTorralba/YAFE},
+  demo={https://0xadriatorralba.github.io/YetAnotherFractalExplorer/},
+  year={2020}
 }
