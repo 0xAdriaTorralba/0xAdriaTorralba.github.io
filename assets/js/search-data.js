@@ -46,6 +46,12 @@ ninja.data = [{
           section: "News",},{id: "news-i-will-be-doing-a-research-stay-at-chalmers-university-of-technology-göteborg-sweden-at-securalab-research-group-under-the-supervision-of-dr-muoi-tran",
           title: 'I will be doing a Research Stay at Chalmers University of Technology (Göteborg,...',
           description: "",
+          section: "News",},{id: "news-our-article-a-taxonomy-of-security-analysis-of-blockchain-layer-2-scalability-solutions-and-future-directions-just-got-pre-accepted-tada",
+          title: 'Our article “A Taxonomy of Security Analysis of Blockchain Layer 2 Scalability Solutions...',
+          description: "",
+          section: "News",},{id: "news-i-will-be-giving-a-talk-based-on-the-work-from-a-taxonomy-of-security-analysis-of-blockchain-layer-2-scalability-solutions-and-future-directions-at-chalmers-university-of-technology-on-june-17th-2025-speaking-head",
+          title: 'I will be giving a talk based on the work from “A Taxonomy...',
+          description: "",
           section: "News",},{
         id: 'social-email',
         title: 'email',
