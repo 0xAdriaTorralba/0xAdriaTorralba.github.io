@@ -16,7 +16,7 @@ layout: default
 
   <article>
     {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}" id="profile-container">
         {% if page.profile.image %}
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
           {% if page.profile.image_circular %}
@@ -78,3 +78,5 @@ layout: default
     {% endif %}
   </article>
 </div>
+
+<script src="{{ '/assets/js/profile-easter-egg.js' | relative_url | bust_file_cache }}" defer></script>
