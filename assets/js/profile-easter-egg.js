@@ -22,6 +22,12 @@
     // Make the image focusable for keyboard navigation
     profileImage.setAttribute('tabindex', '0');
     profileImage.style.cursor = 'pointer';
+    profileImage.style.userSelect = 'none';
+    profileImage.style.webkitUserSelect = 'none';
+    profileImage.style.webkitTouchCallout = 'none';
+    
+    // Also make container interactive for better touch support on Android
+    profileContainer.style.cursor = 'pointer';
     
     // Counter for clicks/tabs
     let clickCount = 0;
@@ -32,11 +38,26 @@
     let resetTimeout;
     const RESET_DELAY = 3000; // 3 seconds
     
+    // Detect if device supports touch
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    
+    // Track touch events to prevent double-firing with click events
+    let touchHandled = false;
+    let lastInteractionTime = 0;
+    
     function resetCounter() {
       clickCount = 0;
     }
     
     function handleInteraction() {
+      const now = Date.now();
+      
+      // Prevent rapid-fire interactions (debounce)
+      if (now - lastInteractionTime < 100) {
+        return;
+      }
+      lastInteractionTime = now;
+      
       // Clear any existing reset timeout
       if (resetTimeout) {
         clearTimeout(resetTimeout);
@@ -46,6 +67,7 @@
       
       // If we've reached the required number of clicks, redirect
       if (clickCount >= REQUIRED_CLICKS) {
+        // Use window.location for better compatibility across devices
         window.location.href = TELEGRAM_URL;
         return;
       }
@@ -54,10 +76,43 @@
       resetTimeout = setTimeout(resetCounter, RESET_DELAY);
     }
     
-    // Handle click events
-    profileImage.addEventListener('click', function(e) {
-      e.preventDefault();
-      handleInteraction();
+    // Handle touch events for mobile devices (especially Android)
+    // Listen on both image and container for better Android support
+    const touchElements = [profileImage, profileContainer];
+    
+    if (isTouchDevice) {
+      touchElements.forEach(function(element) {
+        element.addEventListener('touchstart', function(e) {
+          touchHandled = false;
+        }, { passive: true });
+        
+        element.addEventListener('touchend', function(e) {
+          if (!touchHandled) {
+            e.preventDefault();
+            e.stopPropagation();
+            touchHandled = true;
+            handleInteraction();
+          }
+        });
+      });
+    }
+    
+    // Handle click events (for desktop and as fallback)
+    // Listen on both image and container
+    touchElements.forEach(function(element) {
+      element.addEventListener('click', function(e) {
+        // On touch devices, ignore click events that immediately follow touch events
+        // This prevents double-firing on mobile devices
+        if (isTouchDevice && touchHandled) {
+          touchHandled = false;
+          return;
+        }
+        
+        if (!isTouchDevice) {
+          e.preventDefault();
+        }
+        handleInteraction();
+      });
     });
     
     // Handle keyboard events (Enter and Space when focused)
