@@ -11,8 +11,8 @@ profile:
   image_circular: true # crops the image to make it circular
   more_info: >
     <p style="text-align: center;">
-        <a href="mailto:atorralbaag@uoc.edu" style="display: inline-flex; align-items: center;">
-            <i class="fa-solid fa-envelope" style="margin-right: 5px;"></i> atorralbaag@uoc.edu
+        <a href="mailto:crypto@0xAdriaTorralba.me" style="display: inline-flex; align-items: center;">
+            <i class="fa-solid fa-envelope" style="margin-right: 5px;"></i> crypto@0xAdriaTorralba.me
         </a>
     </p>
     <p style="text-align: center;">

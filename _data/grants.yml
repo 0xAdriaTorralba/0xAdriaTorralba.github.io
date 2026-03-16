@@ -1,0 +1,11 @@
+# Example entry (remove the comment and fill in your data):
+# - title: "Grant title"
+#   role: "PI / Co-PI / Contributor"
+#   funding_agency: "Funding body"
+#   amount: "" # optional
+#   period: "2025–2027"
+#   status: "active" # active | completed | pending
+#   collaborators: ["Name A", "Name B"] # optional
+#   link: "" # optional
+#   summary: "One-line summary of the grant."
+[]
