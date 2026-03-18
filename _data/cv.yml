@@ -1,0 +1,173 @@
+---
+- title: General Information
+  type: map
+  contents:
+    - name: Name
+      value: Adrià Torralba-Agell
+    - name: Position
+      value: PhD Candidate — Applied Cryptography on Blockchain
+    - name: Website
+      value: 0xAdriaTorralba.github.io
+    - name: Email
+      value: crypto@0xAdriaTorralba.me
+    - name: ORCID
+      value: 0000-0002-1889-3404
+    - name: GitHub
+      value: 0xAdriaTorralba
+    - name: X (Twitter)
+      value: "@0xAdriaTorralba"
+    - name: Location
+      value: Barcelona, Spain
+
+- title: Interests
+  type: list
+  contents:
+    - Abstract Algebra
+    - Zero-Knowledge Cryptography
+    - Blockchain Scalability
+    - Interactive Proof Systems
+    - Blockchain Security
+    - Data Visualisation
+
+- title: Education
+  type: time_table
+  contents:
+    - title: MSc in Fundamental Principles of Data Science
+      institution: Universitat de Barcelona
+      year: 2020 – 2021
+      location: Barcelona, Spain
+    - title: Double BSc in Mathematics and Computer Science
+      institution: Universitat de Barcelona
+      year: 2013 – 2020
+      location: Barcelona, Spain
+
+- title: Publications
+  type: time_table
+  contents:
+    - title: "Unmasking the Illusion: The Shortcomings of “Zero-Knowledge” Rollups in Achieving Scalability"
+      institution: Reunión Española sobre Criptología y Seguridad de la Información
+      year: 2024
+      maindescription: Adrià Torralba-Agell, Ghazaleh Keshavarzkalhori, Cristina Pérez-Solà, David Megías, and Jordi Herrera-Joancomartí.
+    - title: Analyzing and Benchmarking ZK-Rollups
+      institution: Advances in Financial Technologies
+      year: 2024
+      maindescription: Stefanos Chaliasos, Itamar Reif, Adrià Torralba-Agell, Jens Ernstberger, Assimakis Kattis, and Benjamin Livshits.
+    - title: A Taxonomy of Security Analysis of Blockchain Layer 2 Scalability Solutions and Future Directions (submitted, under review)
+      institution: "Blockchain: Research and Applications"
+      year: 2024
+      maindescription: Adrià Torralba-Agell and Cristina Pérez-Solà.
+    - title: "A Comparison of Layer 2 Techniques for Scaling Blockchains"
+      institution: Reunión Española sobre Criptología y Seguridad de la Información
+      year: 2022
+      maindescription: Adrià Torralba-Agell and Cristina Pérez-Solà. p. 265.
+    - title: "Visualisation of hierarchical multivariate data: Categorisation and case study on hate speech"
+      institution: Information Visualization 22.1
+      year: 2023
+      maindescription: Ecem Kavaz, Anna Puig, Inmaculada Rodríguez, Adrià Torralba-Agell, Reyes Chacón, David De-La-Paz, Montserrat Nofre, and Mariona Taule. pp. 31–51.
+    - title: Twitter engagement model for RecSys Challenge 2021
+      institution: Universitat de Barcelona
+      year: 2021
+      maindescription: Adrià Torralba-Agell, Marcos Moreno Blanco, Pere Gilabert-Roca, and Santi Seguí.
+    - title: Iteration of holomorphic functions and visualisation of fractals
+      institution: Universitat de Barcelona
+      year: 2020
+      maindescription: Adrià Torralba-Agell, Anna Puig, and Núria Fagella.
+
+- title: Tech Stack
+  type: list
+  contents:
+    - Solidity
+    - Java
+    - C++
+    - C#
+    - Python
+    - JavaScript
+    - HTML5
+    - WebGL
+    - Bash
+    - R
+    - OpenGL
+    - LaTeX
+    - PostgreSQL
+    - Rust
+    - MATLAB
+    - C
+    - Assembler
+    - Cairo
+    - React.js
+    - Ruby on Rails
+    - Docker
+
+- title: Languages
+  type: list
+  contents:
+    - "Catalan — Native / C1"
+    - "Spanish — Native / C1"
+    - "English — Intermediate / B2 (FCE)"
+
+- title: Projects
+  type: time_table
+  contents:
+    - title: Délégative
+      institution: EthGlobal Paris 2023
+      year: Jul. 2023
+      location: Paris, France
+      maindescription: Hackathon project implementing an off-chain DAO liquid democracy voting application with identity proofs and vote delegations. Won 1st place from ApeCoinDAO, Top 5 from Sismo, and Pool Prize for The Graph.
+    - title: The Sand Walker
+      institution: EthPrague 2023
+      year: Jun. 2023
+      location: Prague, Czech Republic
+      maindescription: Hackathon project inspired by Ethernauts to learn Solidity, adapted to learn Cairo 1.
+    - title: Data Visualisation in Linguistics
+      institution: Universitat de Barcelona
+      year: Jan. 2021 – Sep. 2021
+      maindescription: Visualisation of toxicity in social networks made with Django, Highcharts, and D3.js.
+    - title: Twitter 2021 RecSys Challenge
+      institution: Universitat de Barcelona
+      year: Jun. 2021
+      maindescription: Implementation of a recommender system that predicts interactions for Twitter users. Reached 14th place overall and 8th position in the Like leaderboard.
+    - title: Yet Another Fractal Explorer
+      institution: Universitat de Barcelona
+      year: 2020
+      maindescription: Final double BSc project about visualisation of fractals made with Unity3D.
+
+- title: Experience
+  type: time_table
+  contents:
+    - title: PhD Candidate
+      institution: Universitat Oberta de Catalunya
+      year: Dec. 2021 – Present
+      location: Barcelona, Spain
+      maindescription: PhD on cryptography and blockchain.
+    - title: Researcher
+      institution: Universitat de Barcelona
+      year: Sep. 2021
+      location: Barcelona, Spain
+      maindescription: Data Visualisation in Linguistics Project.
+    - title: Researcher Assistant
+      institution: Universitat de Barcelona
+      year: Jan. 2021 – Jun. 2021
+      location: Barcelona, Spain
+      maindescription: Created a website to easily visualise toxicity on social media.
+    - title: Teaching Assistant (Programming I & II)
+      institution: Universitat de Barcelona
+      year: Oct. 2019 – Jun. 2020
+      location: Barcelona, Spain
+      maindescription: Teaching object-oriented programming (OOP) in Java.
+    - title: Big Data and Artificial Intelligence Intern
+      institution: everis
+      year: Oct. 2018 – Aug. 2019
+      location: Barcelona, Spain
+      maindescription: Documentation of big data technologies, participation on a data churn project, and creation of visualisation dashboards using Matplotlib and Plotly.
+
+- title: Other Activities
+  type: list
+  contents:
+    - "1st position BikeTrial Catalan’s Championship and Maresme’s Championship (2011) — Spain"
+    - "2nd position BikeTrial Catalan’s Championship and Osona’s Championship (2009) — Spain"
+
+- title: References
+  type: list
+  contents:
+    - "Dra. Cristina Pérez-Solà — cristina.perez@uab.cat"
+    - "Dr. David Megías — dmegias@uoc.edu"
