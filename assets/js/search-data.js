@@ -16,12 +16,19 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-news",
-          title: "news",
-          description: "",
+        },{id: "nav-talks",
+          title: "talks",
+          description: "Invited talks and presentations.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/news/";
+            window.location.href = "/talks/";
+          },
+        },{id: "nav-side-projects",
+          title: "(side)projects",
+          description: "Research and engineering projects.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
           },
         },{id: "nav-cv",
           title: "cv",
@@ -30,12 +37,12 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "nav-repositories",
-          title: "repositories",
+        },{id: "nav-news",
+          title: "news",
           description: "",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/repositories/";
+            window.location.href = "/news/";
           },
         },{id: "news-our-paper-analysing-and-benchmarking-zk-rollups-will-be-presented-at-zksummit-12-on-october-8th-at-lisbon-speaking-head",
           title: 'Our paper “Analysing and Benchmarking ZK-Rollups” will be presented at zkSummit 12 on...',
