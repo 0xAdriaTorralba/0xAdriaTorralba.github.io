@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /projects/
-title: projects
+title: (side)projects
 description: Research and engineering projects.
 nav: true
 nav_order: 4
