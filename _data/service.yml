@@ -1,0 +1,7 @@
+# Example entry (remove the comment and fill in your data):
+# - type: "journal" # journal | conference | workshop | other
+#   venue: "Journal or Conference Name"
+#   role: "Reviewer / PC Member / Meta-Reviewer"
+#   years: "2023–2026"
+#   notes: "" # optional
+[]
