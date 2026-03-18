@@ -12,6 +12,7 @@ services:
     #     GROUPNAME: # id -gn
     #     USERID: # id -u
     #     USERNAME: # echo $USER
+    restart: unless-stopped
     ports:
       - 8080:8080
       - 35729:35729

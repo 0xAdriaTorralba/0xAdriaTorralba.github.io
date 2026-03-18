@@ -1,17 +1,6 @@
----
----
-
 @string{recsi="Reunión Española de Criptología y Seguridad de la Información"}  
 @string{ub="Universitat de Barcelona"}
 
-@inproceedings{RECSI2026,
-    abbr      = {RECSI2026},
-    title     = {A Taxonomy and Security Analysis of Rollup Architectures in Ethereum Blockchain},
-    author    = {Torralba-Agell, Adri{\`a} and Tran, Muoi and P{\'e}rez-Sol{\`a}, Cristina},
-    booktitle = {XIX Reuni{\'o}n Espa{\~n}ola sobre Criptolog{\'\i}a y Seguridad de la Informaci{\'o}n},
-    year      = {2026},
-    selected  = {true}
-}
 
 @inproceedings{chaliasos2024analyzing,
   abbr={AFT2024},
@@ -39,12 +28,34 @@
 }
 
 
+
+
+
+
 @article{torralba-perez2023taxonomy,
-  abbr={SecurityAnalysis2024},
-  title={(Under Journal Review) A Taxonomy of Security Analysis of Blockchain Layer 2 Scalability Solutions and Future Directions},
+  abbr={SecurityAnalysis2026},
+  title={A Taxonomy of Security Analysis of Blockchain Layer 2 Scalability Solutions and Future Directions},
   author={Torralba-Agell, Adrià, and Pérez-Solà, Cristina},
-  year={2024},
+  journal={Blockchain: Research and Applications},
+  abstract={Blockchains face significant scalability limitations that currently prevent their mass adoption, despite their contribution to the transformation across various sectors. Layer 2 (L2) solutions emerge as a promising avenue to alleviate these limitations, offering scalability enhancements while trying to retain the core security guarantees of underlying blockchains. However, despite their increasing prominence, the security assumptions underpinning Layer 2 solutions have not been sufficiently scrutinized. Addressing this gap, this paper contributes a rigorous examination of the security assumptions inherent in the most used blockchain Layer 2 scalability solutions (Payment Channel Networks, Optimistic Rollups, Zero-Knowledge Rollups, Validium, and Volition), by compiling and specifying all security assumptions that permissionless blockchains rely on, as well as, the additional security assumptions that Layer 2 solutions currently need on top of the inherited ones. Our analysis reveals that Layer 2 solutions need additional security assumptions beyond those already established by their underlying blockchains (Layer 1, or L1). By delineating these assumptions and their implications, our research facilitates a deeper understanding of the security challenges in blockchain scalability solutions.},
+  doi={https://doi.org/10.1016/j.bcra.2025.100388},
+  pdf={AdriaTorralba-Agell_SecurityAssumptionsL1L2.pdf},
+  year={2026},
   selected={true}
+}
+
+
+@inproceedings{RECSI2026,
+    abbr      = {RECSI2026},
+    title     = {A Taxonomy and Security Analysis of Rollup Architectures in Ethereum Blockchain},
+    author    = {Torralba-Agell, Adri{\`a} and Tran, Muoi and P{\'e}rez-Sol{\`a}, Cristina},
+    booktitle = {XIX Reuni{\'o}n Espa{\~n}ola sobre Criptolog{\'\i}a y Seguridad de la Informaci{\'o}n},
+    year      = {2026},
+    abstract  = {Layer 2 rollups improve Ethereum’s scalability by executing transactions off-chain while relying on on-chain verification for finality. 
+Despite their growing importance with increasingly high stakes, rollups have received limited systematic security analysis. 
+In this paper, we present a taxonomy of rollup architectures and examine their associated security threats. We identify three main architectural patterns, primarily determined by the design of the sequencer, a critical component that bridges off-chain transaction execution with on-chain finality. 
+Our analysis also reveals inherent trade-offs between throughput, decentralization, and resilience, demonstrating that no single architecture simultaneously optimizes all these properties.},
+    selected  = {true}
 }
 
 @inproceedings{RECSI2024,
