@@ -256,7 +256,6 @@ exclude:
   - vendor
   - _posts
   - _books
-  - _projects
   - _talks
 keep_files:
   - CNAME

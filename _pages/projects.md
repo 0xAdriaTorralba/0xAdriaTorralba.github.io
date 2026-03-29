@@ -7,4 +7,9 @@ nav: true
 nav_order: 4
 ---
 
-<p style="text-align: center; font-style: italic; margin-top: 2rem;">Work in progress, soon you will see the information here.</p>
+<div class="row row-cols-1 row-cols-md-2">
+  {%- assign sorted_projects = site.projects | where: "category", "project" | sort: "importance" -%}
+  {%- for project in sorted_projects -%}
+    {% include projects_horizontal.liquid %}
+  {%- endfor -%}
+</div>
