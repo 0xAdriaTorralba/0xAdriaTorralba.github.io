@@ -59,7 +59,87 @@ ninja.data = [{
           section: "News",},{id: "news-i-will-be-giving-a-talk-based-on-the-work-from-a-taxonomy-of-security-analysis-of-blockchain-layer-2-scalability-solutions-and-future-directions-at-chalmers-university-of-technology-on-june-17th-2025-speaking-head",
           title: 'I will be giving a talk based on the work from “A Taxonomy...',
           description: "",
-          section: "News",},{
+          section: "News",},{id: "projects-project-1",
+          title: 'project 1',
+          description: "with background image",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_project/";
+            },},{id: "projects-project-2",
+          title: 'project 2',
+          description: "a project with a background image and giscus comments",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_project/";
+            },},{id: "projects-project-3-with-very-long-name",
+          title: 'project 3 with very long name',
+          description: "a project that redirects to another website",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_project/";
+            },},{id: "projects-project-4",
+          title: 'project 4',
+          description: "another without an image",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/4_project/";
+            },},{id: "projects-project-5",
+          title: 'project 5',
+          description: "a project with a background image",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/5_project/";
+            },},{id: "projects-project-6",
+          title: 'project 6',
+          description: "a project with no image",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/6_project/";
+            },},{id: "projects-project-7",
+          title: 'project 7',
+          description: "with background image",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/7_project/";
+            },},{id: "projects-project-8",
+          title: 'project 8',
+          description: "an other project with a background image and giscus comments",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/8_project/";
+            },},{id: "projects-project-9",
+          title: 'project 9',
+          description: "another project with an image 🎉",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/9_project/";
+            },},{id: "projects-pedal-for-ios",
+          title: 'Pedal for iOS',
+          description: "Native iOS app for checking real-time bike and e-bike availability at bike-sharing stations worldwide, with Apple Watch app, widgets, and map integration. Coming soon to the App Store.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/bicing_ios/";
+            },},{id: "projects-data-visualisation-in-linguistics",
+          title: 'Data Visualisation in Linguistics',
+          description: "Visualisation of toxicity in Social Networks made with Django, Highcharts and D3.js.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/data_vis_linguistics/";
+            },},{id: "projects-délégative",
+          title: 'Délégative',
+          description: "Hackathon project at EthGlobal Paris 2023. Implemented an off-chain DAO liquid democracy voting application with identity proofs and vote delegations. Won 1st place from ApeCoinDAO, Top 5 from Sismo and Pool Prize for The Graph.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/delegative/";
+            },},{id: "projects-yet-another-fractal-explorer",
+          title: 'Yet Another Fractal Explorer',
+          description: "Final double BSc project about visualisation of fractals made with Unity3D.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/fractal_explorer/";
+            },},{id: "projects-pedal-for-raycast",
+          title: 'Pedal for Raycast',
+          description: "Raycast extension to check real-time availability of bikes and e-bikes at bike-sharing stations across hundreds of cities worldwide. Coming soon to the Raycast Store.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/raycast_bicing/";
+            },},{id: "projects-the-sand-walker",
+          title: 'The Sand Walker',
+          description: "Hackathon project at EthPrague 2023. Took inspiration from the Etherenauts project to learn Solidity, then adapted it to learn Cairo 1.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/sand_walker/";
+            },},{id: "projects-twitter-2021-recsys-challenge",
+          title: 'Twitter 2021 RecSys Challenge',
+          description: "Implementation of a Recommender System that predicts interactions for Twitter users. Reached 14th place overall and 8th position in the Like leaderboard.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/twitter_recsys/";
+            },},{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
