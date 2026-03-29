@@ -5,8 +5,11 @@ description: "The real state of blockchain technology adoption — hype vs. real
 talk_date: "Aug. 2023 — Online"
 sort_date: 2023-08-01
 youtube_url: "https://www.youtube.com/watch?v=pDA0dpvEIDY"
+img: assets/img/talks/reality_adoption_blockchain.jpg
 category: talk
 ---
+
+{% include figure.liquid loading="eager" path="assets/img/talks/reality_adoption_blockchain.jpg" class="img-fluid rounded z-depth-1" %}
 
 Online talk given in August 2023.
 

@@ -5,8 +5,11 @@ description: "Security considerations when building on or extending Ethereum's L
 talk_date: "Feb. 2024 — Ethereum Dev Barcelona Meetup, Barcelona (Spain)"
 sort_date: 2024-02-01
 slides_url: "https://github.com/0xAdriaTorralba/slides/tree/61bf9401a23b1c45a5a7d1a2ebb345d6a8728e52/2024_EthereumDevMeetup_Barcelona"
+img: assets/img/talks/ethereum_dev_bcn.png
 category: talk
 ---
+
+{% include figure.liquid loading="eager" path="assets/img/talks/ethereum_dev_bcn.png" class="img-fluid rounded z-depth-1" %}
 
 Talk given at the **Ethereum Dev Barcelona Meetup** in Barcelona, February 2024.
 

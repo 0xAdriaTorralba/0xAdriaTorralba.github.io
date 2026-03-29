@@ -6,8 +6,11 @@ talk_date: "Apr. 2024 — Web3 Family Conference 3, Barcelona (Spain)"
 sort_date: 2024-04-10
 youtube_url: "https://www.youtube.com/watch?v=Vi1PTMUyfl0&list=PLJ1gh4YV7Nv6AQDQGTHIthgVar2jqnEcn&index=32"
 slides_url: "https://github.com/0xAdriaTorralba/slides/tree/8ccf01ebd4423e6940ebee5270ad6ca524df8575/2024_Web3FC3_TaxonomySecurityAssumptionsBlockchain"
+img: assets/img/talks/taxonomy_security_l2.jpg
 category: talk
 ---
+
+{% include figure.liquid loading="eager" path="assets/img/talks/taxonomy_security_l2.jpg" class="img-fluid rounded z-depth-1" %}
 
 Talk given at **Web3 Family Conference 3** in Barcelona, April 2024.
 

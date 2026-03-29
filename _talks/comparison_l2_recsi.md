@@ -5,8 +5,11 @@ description: "Reviews and compares Layer 2 off-chain scaling techniques, analysi
 talk_date: "Oct. 2022 — RECSI 2022, Santander (Spain)"
 sort_date: 2022-10-01
 slides_url: "https://github.com/0xAdriaTorralba/slides/tree/0bc4528d200c4abf58a7055e9c12e53959830981/2022_RECSI_UniCan_Santander"
+img: assets/img/talks/recsi2022_logo.jpg
 category: talk
 ---
+
+{% include figure.liquid loading="eager" path="assets/img/talks/recsi2022_logo.jpg" class="img-fluid rounded z-depth-1" %}
 
 Talk given at **RECSI 2022** (Reunión Española sobre Criptología y Seguridad de la Información) in Santander, October 2022.
 

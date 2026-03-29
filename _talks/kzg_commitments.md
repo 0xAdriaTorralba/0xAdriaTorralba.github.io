@@ -6,8 +6,11 @@ talk_date: "Jul. 2023 — ETHBarcelona 2023, Barcelona (Spain)"
 sort_date: 2023-07-01
 youtube_url: "https://www.youtube.com/watch?v=qNoX5RJjyb4"
 slides_url: "https://github.com/0xAdriaTorralba/slides/tree/0bc4528d200c4abf58a7055e9c12e53959830981/2023_ETHBarcelona_Barcelona"
+img: assets/img/talks/kzg_commitments.jpg
 category: talk
 ---
+
+{% include figure.liquid loading="eager" path="assets/img/talks/kzg_commitments.jpg" class="img-fluid rounded z-depth-1" %}
 
 Workshop given at **ETHBarcelona 2023** in Barcelona, July 2023.
 
