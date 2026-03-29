@@ -5,8 +5,11 @@ description: "Early presentation of ongoing research comparing Layer 2 blockchai
 talk_date: "Jul. 2022 — Advances in Blockchain Technologies (UPF)"
 sort_date: 2022-07-01
 slides_url: "https://github.com/0xAdriaTorralba/slides/tree/0bc4528d200c4abf58a7055e9c12e53959830981/2022_AdvancesInBlockchainTecnology_UPF_Barcelona"
+img: assets/img/talks/upf_logo.jpg
 category: talk
 ---
+
+{% include figure.liquid loading="eager" path="assets/img/talks/upf_logo.jpg" class="img-fluid rounded z-depth-1" %}
 
 Talk given at **Advances in Blockchain Technologies** at Universitat Pompeu Fabra (UPF), July 2022.
 

@@ -6,8 +6,11 @@ talk_date: "Apr. 2024 — Privacy Reunion II, Barcelona (Spain)"
 sort_date: 2024-04-15
 youtube_url: "https://www.youtube.com/watch?v=SPJI6Pq38d8"
 slides_url: "https://github.com/0xAdriaTorralba/slides/tree/8ccf01ebd4423e6940ebee5270ad6ca524df8575/2024_PrivacyReunion2_ZKforPrivacy_SuccinctforScalability"
+img: assets/img/talks/zk_privacy_scalability.jpg
 category: talk
 ---
+
+{% include figure.liquid loading="eager" path="assets/img/talks/zk_privacy_scalability.jpg" class="img-fluid rounded z-depth-1" %}
 
 Talk given at **Privacy Reunion II** in Barcelona, April 2024.
 
