@@ -5,8 +5,11 @@ description: "A hands-on workshop on KZG polynomial commitments with a focus on 
 talk_date: "Mar. 2024 — yAcademy Workshop, Online"
 sort_date: 2024-03-13
 slides_url: "https://github.com/0xAdriaTorralba/slides/tree/8ccf01ebd4423e6940ebee5270ad6ca524df8575/2024_yAcademyWorkshop_KZG"
+img: assets/img/talks/yacademy_kzg.png
 category: talk
 ---
+
+{% include figure.liquid loading="eager" path="assets/img/talks/yacademy_kzg.png" class="img-fluid rounded z-depth-1" %}
 
 Workshop given at **yAcademy** on March 13, 2024 — the same day that **EIP-4844 (Proto-Danksharding)** went live with the Ethereum Dencun upgrade.
 
