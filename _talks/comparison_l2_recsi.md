@@ -4,7 +4,7 @@ title: "A Comparison of Layer 2 Techniques for Scaling Blockchains"
 description: "Reviews and compares Layer 2 off-chain scaling techniques, analysing usability, security, and cost properties."
 talk_date: "Oct. 2022 — RECSI 2022, Santander (Spain)"
 sort_date: 2022-10-01
-slides_url: "https://github.com/0xAdriaTorralba/slides/tree/0bc4528d200c4abf58a7055e9c12e53959830981/2022_RECSI_UniCan_Santander"
+slides_url: "https://github.com/0xAdriaTorralba/slides/tree/2d0951643f290feff13eacc03de5e5f8c47e81eb/2022_RECSI22_UniCan_Santander"
 img: assets/img/talks/recsi2022_logo.jpg
 category: talk
 ---
@@ -23,4 +23,4 @@ Based on the published paper: Adrià Torralba-Agell and Cristina Pérez-Solà, *
 
 ## Links
 
-- [View the slides](https://github.com/0xAdriaTorralba/slides/tree/0bc4528d200c4abf58a7055e9c12e53959830981/2022_RECSI_UniCan_Santander)
+- [View the slides](https://github.com/0xAdriaTorralba/slides/tree/2d0951643f290feff13eacc03de5e5f8c47e81eb/2022_RECSI22_UniCan_Santander)

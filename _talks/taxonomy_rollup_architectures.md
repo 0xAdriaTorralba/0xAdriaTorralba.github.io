@@ -5,6 +5,7 @@ description: "Presenting a systematic taxonomy of Ethereum rollup architectures 
 talk_date: "Mar. 2026 — RECSI 2026, Universidad de La Laguna, Tenerife (Spain)"
 sort_date: 2026-03-19
 img: assets/img/talks/recsi2026_tenerife.jpg
+slides_url: "https://github.com/0xAdriaTorralba/slides/tree/2d0951643f290feff13eacc03de5e5f8c47e81eb/2026_RECSI26_TaxonomySecurityRollups_Tenerife"
 category: talk
 ---
 
@@ -23,6 +24,10 @@ This paper presents a **taxonomy of rollup architectures**, focusing on the desi
 - **Distributed sequencer** — e.g., Lighter, INTMAX, Facet Bluebird
 
 The analysis reveals inherent trade-offs between **throughput**, **decentralisation**, and **resilience**, demonstrating that no single architecture simultaneously optimises all these properties.
+
+## Links
+
+- [View the slides](https://github.com/0xAdriaTorralba/slides/tree/2d0951643f290feff13eacc03de5e5f8c47e81eb/2026_RECSI26_TaxonomySecurityRollups_Tenerife)
 
 ## Authors
 
