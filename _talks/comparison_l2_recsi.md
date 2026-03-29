@@ -1,0 +1,23 @@
+---
+layout: page
+title: "A Comparison of Layer 2 Techniques for Scaling Blockchains"
+description: "Reviews and compares Layer 2 off-chain scaling techniques, analysing usability, security, and cost properties."
+talk_date: "Oct. 2022 — RECSI 2022, Santander (Spain)"
+sort_date: 2022-10-01
+slides_url: "https://github.com/0xAdriaTorralba/slides/tree/0bc4528d200c4abf58a7055e9c12e53959830981/2022_RECSI_UniCan_Santander"
+category: talk
+---
+
+Talk given at **RECSI 2022** (Reunión Española sobre Criptología y Seguridad de la Información) in Santander, October 2022.
+
+## Abstract
+
+Since the creation of Bitcoin in 2009, many other cryptocurrencies have appeared, and their usage has been growing year after year. With this growing popularity, doubts about the ability of blockchains to become worldwide payment systems (or even universal mediums for general decentralised systems) begin to arise and, with them, solutions started to be explored.
+
+This talk first explains the blockchain scalability problem and then presents a brief review and a comparison among some of the state-of-the-art techniques that are used to scale blockchains on Layer 2 (or off-chain), analysing properties related to their **Usability**, **Security**, and **Cost**.
+
+Based on the published paper: Adrià Torralba-Agell and Cristina Pérez-Solà, *"A Comparison of Layer 2 Techniques for Scaling Blockchains"*, RECSI 265 (2022).
+
+## Links
+
+- [View the slides](https://github.com/0xAdriaTorralba/slides/tree/0bc4528d200c4abf58a7055e9c12e53959830981/2022_RECSI_UniCan_Santander)
