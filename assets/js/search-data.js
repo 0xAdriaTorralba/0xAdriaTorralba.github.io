@@ -139,6 +139,11 @@ ninja.data = [{
           description: "Implementation of a Recommender System that predicts interactions for Twitter users. Reached 14th place overall and 8th position in the Like leaderboard.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/twitter_recsys/";
+            },},{id: "talks-scaling-at-a-security-cost-unveiling-the-security-assumptions-behind-today-39-s-blockchain-layer-2-scaling-solutions",
+          title: 'Scaling at a (Security) Cost: Unveiling the Security Assumptions Behind Today&amp;#39;s Blockchain Layer...',
+          description: "Reviewing baseline L1 security assumptions and analysing the trade-offs introduced by Layer 2 solutions.",
+          section: "Talks",handler: () => {
+              window.location.href = "/talks/chalmers_l2_security/";
             },},{id: "talks-a-comparison-of-layer-2-techniques-for-scaling-blockchains-preliminary-work",
           title: 'A Comparison of Layer 2 Techniques for Scaling Blockchains (Preliminary Work)',
           description: "Early presentation of ongoing research comparing Layer 2 blockchain scaling techniques.",
@@ -164,11 +169,26 @@ ninja.data = [{
           description: "Security considerations when building on or extending Ethereum&#39;s Layer 1 and its Layer 2 ecosystem.",
           section: "Talks",handler: () => {
               window.location.href = "/talks/security_l1_l2/";
+            },},{id: "talks-a-taxonomy-and-security-analysis-of-rollup-architectures-in-ethereum-blockchain",
+          title: 'A Taxonomy and Security Analysis of Rollup Architectures in Ethereum Blockchain',
+          description: "Presenting a systematic taxonomy of Ethereum rollup architectures and their associated security threats.",
+          section: "Talks",handler: () => {
+              window.location.href = "/talks/taxonomy_rollup_architectures/";
             },},{id: "talks-a-taxonomy-of-security-analysis-of-blockchain-layer-2-scalability-solutions-and-future-directions",
           title: 'A Taxonomy of Security Analysis of Blockchain Layer 2 Scalability Solutions and Future...',
           description: "A survey presenting a systematic taxonomy for analysing the security of Layer 2 scalability solutions.",
           section: "Talks",handler: () => {
               window.location.href = "/talks/taxonomy_security_l2/";
+            },},{id: "talks-unmasking-the-illusion-the-shortcomings-of-39-zero-knowledge-39-rollups-in-achieving-privacy",
+          title: 'Unmasking the Illusion: The Shortcomings of &amp;#39;Zero-Knowledge&amp;#39; Rollups in Achieving Privacy',
+          description: "Exploring the privacy limitations of ZK-Rollups and why their name is misleading.",
+          section: "Talks",handler: () => {
+              window.location.href = "/talks/unmasking_zk_privacy/";
+            },},{id: "talks-hands-on-kzg-commitments-and-eip-4844",
+          title: 'Hands-on KZG Commitments and EIP-4844',
+          description: "A hands-on workshop on KZG polynomial commitments with a focus on their role in EIP-4844 (Proto-Danksharding), given on the same day the Dencun upgrade went live.",
+          section: "Talks",handler: () => {
+              window.location.href = "/talks/yacademy_kzg_workshop/";
             },},{id: "talks-zero-knowledge-for-privacy-succinct-for-scalability",
           title: 'Zero-Knowledge for Privacy, Succinct for Scalability',
           description: "Exploring the dual role of zero-knowledge proofs in blockchain: ZK for privacy and succinct proofs for scalability.",
