@@ -5,6 +5,7 @@ description: "Visualisation of toxicity in Social Networks made with Django, Hig
 project_date: "Jan. 2021 – Sep. 2021 — Universitat de Barcelona"
 github: "https://github.com/0xAdriaTorralba/DataVisualizationInLinguistics"
 importance: 3
+sort_date: 2021-01
 category: project
 ---
 

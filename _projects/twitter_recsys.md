@@ -5,6 +5,7 @@ description: "Implementation of a Recommender System that predicts interactions 
 project_date: "Jun. 2021 — Universitat de Barcelona"
 github: "https://github.com/0xAdriaTorralba/RecSys2021"
 importance: 4
+sort_date: 2021-06
 category: project
 ---
 

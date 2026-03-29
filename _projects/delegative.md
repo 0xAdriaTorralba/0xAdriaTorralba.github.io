@@ -6,6 +6,7 @@ project_date: "Jul. 2023 — Paris, France"
 github: "https://github.com/delegative"
 twitter_url: "https://x.com/0xAdriaTorralba/status/1683502045687422976"
 importance: 1
+sort_date: 2023-07
 category: project
 ---
 

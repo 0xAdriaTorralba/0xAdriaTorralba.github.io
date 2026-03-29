@@ -6,6 +6,7 @@ project_date: "2020 — Universitat de Barcelona"
 github: "https://github.com/0xAdriaTorralba/YetAnotherFractalExplorer"
 demo_url: "https://www.0xadriatorralba.me/YetAnotherFractalExplorer/"
 importance: 5
+sort_date: 2020-06
 category: project
 ---
 

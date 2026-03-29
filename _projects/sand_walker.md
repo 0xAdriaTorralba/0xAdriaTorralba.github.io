@@ -6,6 +6,7 @@ project_date: "Jun. 2023 — Prague, Czech Republic"
 github: "https://github.com/OpenTechne/TheSandWalker"
 twitter_url: "https://x.com/0xAdriaTorralba/status/1668256261442355200"
 importance: 2
+sort_date: 2023-06
 category: project
 ---
 
