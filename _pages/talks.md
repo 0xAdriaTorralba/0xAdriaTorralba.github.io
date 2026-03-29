@@ -7,4 +7,9 @@ nav: true
 nav_order: 3
 ---
 
-<p style="text-align: center; font-style: italic; margin-top: 2rem;">Work in progress, soon you will see the information here.</p>
+<div class="row row-cols-1 row-cols-md-2">
+  {%- assign sorted_talks = site.talks | where: "category", "talk" | sort: "sort_date" | reverse -%}
+  {%- for talk in sorted_talks -%}
+    {% include talks_horizontal.liquid %}
+  {%- endfor -%}
+</div>
