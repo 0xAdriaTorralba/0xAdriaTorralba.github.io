@@ -139,6 +139,41 @@ ninja.data = [{
           description: "Implementation of a Recommender System that predicts interactions for Twitter users. Reached 14th place overall and 8th position in the Like leaderboard.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/twitter_recsys/";
+            },},{id: "talks-a-comparison-of-layer-2-techniques-for-scaling-blockchains-preliminary-work",
+          title: 'A Comparison of Layer 2 Techniques for Scaling Blockchains (Preliminary Work)',
+          description: "Early presentation of ongoing research comparing Layer 2 blockchain scaling techniques.",
+          section: "Talks",handler: () => {
+              window.location.href = "/talks/comparison_l2_preliminary/";
+            },},{id: "talks-a-comparison-of-layer-2-techniques-for-scaling-blockchains",
+          title: 'A Comparison of Layer 2 Techniques for Scaling Blockchains',
+          description: "Reviews and compares Layer 2 off-chain scaling techniques, analysing usability, security, and cost properties.",
+          section: "Talks",handler: () => {
+              window.location.href = "/talks/comparison_l2_recsi/";
+            },},{id: "talks-hands-on-zero-knowledge-basics-kzg-commitments",
+          title: 'Hands-on Zero-Knowledge Basics - KZG Commitments',
+          description: "A hands-on workshop on the fundamentals of zero-knowledge proofs, focused on KZG polynomial commitments.",
+          section: "Talks",handler: () => {
+              window.location.href = "/talks/kzg_commitments/";
+            },},{id: "talks-reality-and-adoption-of-blockchain-technology",
+          title: 'Reality and Adoption of Blockchain Technology',
+          description: "The real state of blockchain technology adoption — hype vs. reality, practical use cases, and maturity.",
+          section: "Talks",handler: () => {
+              window.location.href = "/talks/reality_adoption_blockchain/";
+            },},{id: "talks-security-analysis-of-layer-1-and-layer-2-extensions",
+          title: 'Security Analysis of Layer 1 and Layer 2 Extensions',
+          description: "Security considerations when building on or extending Ethereum&#39;s Layer 1 and its Layer 2 ecosystem.",
+          section: "Talks",handler: () => {
+              window.location.href = "/talks/security_l1_l2/";
+            },},{id: "talks-a-taxonomy-of-security-analysis-of-blockchain-layer-2-scalability-solutions-and-future-directions",
+          title: 'A Taxonomy of Security Analysis of Blockchain Layer 2 Scalability Solutions and Future...',
+          description: "A survey presenting a systematic taxonomy for analysing the security of Layer 2 scalability solutions.",
+          section: "Talks",handler: () => {
+              window.location.href = "/talks/taxonomy_security_l2/";
+            },},{id: "talks-zero-knowledge-for-privacy-succinct-for-scalability",
+          title: 'Zero-Knowledge for Privacy, Succinct for Scalability',
+          description: "Exploring the dual role of zero-knowledge proofs in blockchain: ZK for privacy and succinct proofs for scalability.",
+          section: "Talks",handler: () => {
+              window.location.href = "/talks/zk_privacy_scalability/";
             },},{
         id: 'social-email',
         title: 'email',
