@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /activity/
+permalink: /github/
 title: github
 description: "GitHub activity and a full, filterable, record of open-source contributions (PRs)."
 nav: true
