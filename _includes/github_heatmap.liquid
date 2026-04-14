@@ -8,23 +8,19 @@
     {% include github_heatmap.liquid %}
 
   Reads site.github_username. Click-through goes to the profile.
+
+  NOTE: the <a>/<img> tags below are kept on a single line on purpose.
+  When Prettier split them across lines, kramdown (Jekyll's Markdown
+  parser) stopped recognising them as a block-level HTML element and
+  the raw source started rendering as plain text on /github/. The
+  `<!-- prettier-ignore -->` directive keeps the next `prettier --write`
+  sweep from reintroducing that break.
 {%- endcomment -%}
 {%- if site.github_username -%}
   <p class="text-muted" style="font-size: 0.85rem; margin-bottom: 0.6rem;">
-    Daily commit heatmap from my
-    <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer">GitHub profile</a>, past year.
+    Daily commit heatmap from my <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer">GitHub profile</a>,
+    past year.
   </p>
-  <a
-    href="https://github.com/{{ site.github_username }}"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="GitHub contribution graph for {{ site.github_username }}"
-  >
-    <img
-      src="https://ghchart.rshah.org/7047eb/{{ site.github_username }}"
-      alt="GitHub contribution heatmap — 52 weeks of daily activity"
-      loading="lazy"
-      style="width: 100%; max-width: 100%; height: auto; display: block;"
-    >
-  </a>
+  <!-- prettier-ignore -->
+  <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub contribution graph for {{ site.github_username }}"><img src="https://ghchart.rshah.org/7047eb/{{ site.github_username }}" alt="GitHub contribution heatmap — 52 weeks of daily activity" loading="lazy" style="width: 100%; max-width: 100%; height: auto; display: block;"></a>
 {%- endif -%}
