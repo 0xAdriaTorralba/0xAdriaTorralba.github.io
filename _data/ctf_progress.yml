@@ -1,0 +1,342 @@
+# CTF / wargame progress tracker.
+#
+# Consumed by _includes/ctf_progress.liquid on /security/.
+# Update after each solve: flip `status` to "solved" and fill `solved_on`.
+# Optional `writeup` field links to an internal blog post.
+#
+# status values: solved | in-progress | not-started
+#
+# Ethernaut progress is derived from on-chain LevelCompletedLog events for
+# the player address on Sepolia (0xa3e7317E591D5A0F1c605be1b3aC4D2ae56104d6).
+# Re-query on demand; keep in sync as new levels are solved.
+
+# Team CTF events — competitive capture-the-flag events attended with a team.
+# Distinct from the solo wargames below (Ethernaut, DVD) because the signal
+# here is team ranking + event prestige.
+team_events:
+  - name: "Wonderland CTF 2026"
+    location: "Cannes, France"
+    date: 2026
+    team_name: "Stack Too Deep"
+    final_rank: 9
+    total_teams: 34
+    peak_rank: 3
+    team:
+      - Adrià Torralba-Agell
+      - Pol Ureña Heras
+      - Gianfranco Bazzani
+      - Ezequiel Pérez
+      - Rubén Cruz Acevedo
+    notes: "Held 3rd place for a good chunk of the competition before a few teams overtook us in the final stretch."
+    url: null
+    leaderboard_url: "https://ctf.wonderland.xyz/leaderboard"
+    linkedin_url: "https://www.linkedin.com/posts/adriatorralba-agell_last-week-i-was-at-ethcc-9-in-cannes-heres-activity-7447652372786626562-22uB"
+    x_url: "https://x.com/0xAdriaTorralba/status/2041897272053485794"
+
+ethernaut:
+  name: "The Ethernaut"
+  platform_url: "https://ethernaut.openzeppelin.com/"
+  description: "OpenZeppelin's Solidity-based smart contract wargame."
+  levels:
+    - num: 0
+      name: "Hello Ethernaut"
+      status: solved
+      solved_on: 2025-12-30
+      writeup: null
+    - num: 1
+      name: "Fallback"
+      status: solved
+      solved_on: 2025-12-30
+      writeup: null
+    - num: 2
+      name: "Fallout"
+      status: solved
+      solved_on: 2025-12-30
+      writeup: null
+    - num: 3
+      name: "Coin Flip"
+      status: solved
+      solved_on: 2025-12-30
+      writeup: null
+    - num: 4
+      name: "Telephone"
+      status: solved
+      solved_on: 2025-12-30
+      writeup: null
+    - num: 5
+      name: "Token"
+      status: solved
+      solved_on: 2025-12-30
+      writeup: null
+    - num: 6
+      name: "Delegation"
+      status: solved
+      solved_on: 2025-12-31
+      writeup: null
+    - num: 7
+      name: "Force"
+      status: solved
+      solved_on: 2025-12-31
+      writeup: null
+    - num: 8
+      name: "Vault"
+      status: solved
+      solved_on: 2025-12-31
+      writeup: null
+    - num: 9
+      name: "King"
+      status: solved
+      solved_on: 2026-01-02
+      writeup: null
+    - num: 10
+      name: "Re-entrancy"
+      status: solved
+      solved_on: 2026-01-03
+      writeup: null
+    - num: 11
+      name: "Elevator"
+      status: solved
+      solved_on: 2026-01-03
+      writeup: null
+    - num: 12
+      name: "Privacy"
+      status: solved
+      solved_on: 2026-01-03
+      writeup: null
+    - num: 13
+      name: "Gatekeeper One"
+      status: solved
+      solved_on: 2026-01-03
+      writeup: null
+    - num: 14
+      name: "Gatekeeper Two"
+      status: solved
+      solved_on: 2026-01-08
+      writeup: null
+    - num: 15
+      name: "Naught Coin"
+      status: solved
+      solved_on: 2026-01-08
+      writeup: null
+    - num: 16
+      name: "Preservation"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 17
+      name: "Recovery"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 18
+      name: "MagicNumber"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 19
+      name: "Alien Codex"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 20
+      name: "Denial"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 21
+      name: "Shop"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 22
+      name: "Dex"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 23
+      name: "Dex Two"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 24
+      name: "Puzzle Wallet"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 25
+      name: "Motorbike"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 26
+      name: "DoubleEntryPoint"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 27
+      name: "Good Samaritan"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 28
+      name: "Gatekeeper Three"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 29
+      name: "Switch"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 30
+      name: "HigherOrder"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 31
+      name: "Stake"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 32
+      name: "Impersonator"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 33
+      name: "Magic Animal Carousel"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 34
+      name: "Bet House"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 35
+      name: "Elliptic Token"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 36
+      name: "Cashback"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 37
+      name: "Impersonator Two"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 38
+      name: "UniqueNFT"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 39
+      name: "Forger"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 40
+      name: "NotOptimisticPortal"
+      status: not-started
+      solved_on: null
+      writeup: null
+
+damn_vulnerable_defi:
+  name: "Damn Vulnerable DeFi"
+  platform_url: "https://www.damnvulnerabledefi.xyz/"
+  version: "v4"
+  description: "Foundry-based DeFi security wargame by @tinchoabbate."
+  challenges:
+    - num: 1
+      name: "Unstoppable"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 2
+      name: "Naive Receiver"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 3
+      name: "Truster"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 4
+      name: "Side Entrance"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 5
+      name: "The Rewarder"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 6
+      name: "Selfie"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 7
+      name: "Compromised"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 8
+      name: "Puppet"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 9
+      name: "Puppet v2"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 10
+      name: "Free Rider"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 11
+      name: "Backdoor"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 12
+      name: "Climber"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 13
+      name: "Wallet Mining"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 14
+      name: "Puppet v3"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 15
+      name: "ABI Smuggling"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 16
+      name: "Shards"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 17
+      name: "Curvy Puppet"
+      status: not-started
+      solved_on: null
+      writeup: null
+    - num: 18
+      name: "Withdrawal"
+      status: not-started
+      solved_on: null
+      writeup: null

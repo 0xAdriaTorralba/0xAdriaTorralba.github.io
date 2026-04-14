@@ -2,21 +2,62 @@
 layout: default
 permalink: /blog/
 title: blog
-# nav: true
-# nav_order: 2
-pagination:
-  enabled: true
-  collection: posts
-  permalink: /page/:num/
-  per_page: 5
-  sort_field: date
-  sort_reverse: true
-  trail:
-    before: 1 # The number of links before the current page
-    after: 3 # The number of links after the current page
+nav: true
+nav_order: 6
+# pagination block removed while the blog is stubbed; see the banner in the
+# page body for how to restore it when real posts land.
 ---
 
+<!--
+  ==============================================================
+  BLOG IS STUBBED WITH A "Soon™" PLACEHOLDER.
+  ==============================================================
+  The full blog body (tag/category nav, featured posts carousel,
+  pagination and post listing) is preserved below inside a
+  {% raw %}{% comment %}{% endraw %} block so it isn't rendered, but is fully
+  documented for future use.
+
+  When you're ready to go live with real writeups:
+
+    1. Move a post from _drafts/ to _posts/ with a proper date
+       and `tags: [security-research, ...]`.
+    2. Re-add the pagination block to this file's front matter
+       (see the block commented out at the top of this file).
+    3. Replace the <div class="post"> Soon™ block below with the
+       original blog body preserved in the {% raw %}{% comment %}{% endraw %} region.
+    4. Remove this banner comment.
+
+  The pagination front-matter removed for the stub was:
+
+      pagination:
+        enabled: true
+        collection: posts
+        permalink: /page/:num/
+        per_page: 5
+        sort_field: date
+        sort_reverse: true
+        trail:
+          before: 1
+          after: 3
+-->
+
 <div class="post">
+  <div style="text-align: center; padding: 5rem 1rem; color: var(--global-text-color-light);">
+    <h1 style="font-size: 3rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.5rem;">Soon&trade;</h1>
+    <p style="font-size: 1rem; max-width: 32rem; margin: 0 auto;">
+      Security writeups, ZK-circuit audit notes, and CTF breakdowns are in the works.
+      In the meantime, the <a href="{{ '/security/' | relative_url }}">security</a>
+      page has the track record.
+    </p>
+  </div>
+</div>
+
+{% comment %}
+  ==============================================================
+  ORIGINAL BLOG BODY — PRESERVED FOR REUSE.
+  Wrapped in a {% raw %}{% comment %}{% endraw %} block so Jekyll skips it.
+  Paste this back inside <div class="post"> when restoring the blog.
+  ==============================================================
 
 {% assign blog_name_size = site.blog_name | size %}
 {% assign blog_description_size = site.blog_description | size %}
@@ -194,3 +235,4 @@ pagination:
 {% endif %}
 
 </div>
+{% endcomment %}

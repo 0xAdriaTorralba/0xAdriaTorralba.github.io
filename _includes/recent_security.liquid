@@ -1,0 +1,37 @@
+{%- comment -%}
+  Recent security work feed for the about page.
+  Aggregates published audits + security-research-tagged posts, sorted by date.
+  Usage: {% include recent_security.liquid limit=3 %}
+{%- endcomment -%}
+
+{%- assign limit = include.limit | default: 3 -%}
+{%- assign pub_audits = site.audits | where: "published", true -%}
+{%- assign sec_posts = site.posts | where_exp: "p", "p.tags contains 'security-research'" -%}
+
+{%- comment -%} Merge into a single sortable list keyed by date. {%- endcomment -%}
+{%- assign merged = pub_audits | concat: sec_posts | sort: "date" | reverse -%}
+{%- assign shown = merged | slice: 0, limit -%}
+
+{%- if shown.size > 0 -%}
+  <ul class="post-list" style="list-style: none; padding-left: 0;">
+    {%- for item in shown -%}
+      <li style="margin-bottom: 0.6rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--global-divider-color);">
+        {%- if item.firm -%}
+          {%- comment -%} audit entry {%- endcomment -%}
+          <span class="badge" style="background-color: var(--global-theme-color); color: var(--global-hover-text-color); font-size: 0.7rem; margin-right: 0.4rem;">AUDIT</span>
+          <a href="{{ item.url | relative_url }}"><strong>{{ item.title }}</strong></a>
+          <span class="text-muted" style="font-size: 0.85rem;"> · {{ item.firm }}{% if item.client %} · {{ item.client }}{% endif %} · {{ item.date | date: "%b %Y" }}</span>
+          {%- if item.scope %}<div class="text-muted" style="font-size: 0.85rem;"><em>{{ item.scope }}</em></div>{%- endif -%}
+        {%- else -%}
+          {%- comment -%} blog post {%- endcomment -%}
+          <span class="badge" style="background-color: var(--global-text-color-light); color: var(--global-bg-color); font-size: 0.7rem; margin-right: 0.4rem;">WRITEUP</span>
+          <a href="{{ item.url | relative_url }}"><strong>{{ item.title }}</strong></a>
+          <span class="text-muted" style="font-size: 0.85rem;"> · {{ item.date | date: "%b %e, %Y" }}</span>
+          {%- if item.description %}<div class="text-muted" style="font-size: 0.85rem;">{{ item.description }}</div>{%- endif -%}
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+{%- else -%}
+  <p class="text-muted"><em>Recent audits, writeups, and disclosures will surface here. See the <a href="{{ '/security/' | relative_url }}">security</a> page for the full record.</em></p>
+{%- endif -%}

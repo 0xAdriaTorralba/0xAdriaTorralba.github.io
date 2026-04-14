@@ -1,0 +1,17 @@
+# Open-source security-relevant contributions (merged PRs, upstream patches).
+# Rendered on /security/#tools below the security-tagged projects grid.
+#
+# Add one entry per merged PR you want surfaced. Keep descriptions to one
+# sentence; the repo + PR link does the rest.
+#
+# Fields: repo, pr (number), title, url, merged (YYYY-MM-DD), description,
+#         scope (zk | defi | tooling | ...)
+
+contributions:
+  - repo: "0xPolygon/zkevm-prover"
+    pr: 830
+    title: "Update parameters to fork 9"
+    url: "https://github.com/0xPolygon/zkevm-prover/pull/830"
+    merged: 2024-04-03
+    description: "Parameter update for fork 9 in the canonical Polygon zkEVM prover repository."
+    scope: zk

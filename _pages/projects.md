@@ -4,7 +4,7 @@ permalink: /projects/
 title: (side)projects
 description: Research and engineering projects.
 nav: true
-nav_order: 4
+nav_order: 5
 ---
 
 <div class="row row-cols-1 row-cols-md-2">

@@ -8,6 +8,7 @@ twitter_url: "https://x.com/0xAdriaTorralba/status/1668256261442355200"
 importance: 2
 sort_date: 2023-06
 category: project
+tags: [security, ctf, starknet, cairo]
 ---
 
 **The Sand Walker** is a community-driven StarkNet cybersecurity wargame built at [EthPrague 2023](https://ethprague.com), inspired by OpenZeppelin's [The Ethernaut](https://ethernaut.openzeppelin.com/). The project adapts the Capture The Flag (CTF) format for **Cairo 1** smart contracts deployed on StarkNet.
