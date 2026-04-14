@@ -72,6 +72,14 @@ layout: default
       {% include selected_papers.liquid %}
     {% endif %}
 
+    <!-- GitHub activity heatmap -->
+    {% if page.github_activity and page.github_activity.enabled %}
+      <h2>
+        <a href="{{ '/activity/' | relative_url }}" style="color: inherit">activity</a>
+      </h2>
+      {% include github_heatmap.liquid %}
+    {% endif %}
+
     <!-- Social -->
     {% if page.social %}
       <div class="social">

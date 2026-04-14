@@ -1,0 +1,25 @@
+{%- comment -%}
+  GitHub daily-contribution heatmap (past year).
+  Hotlinks a live SVG from ghchart.rshah.org, themed in the site's
+  purple. Image refreshes on every page load against current GitHub
+  data — no build-time snapshot.
+
+  Usage:
+    {% include github_heatmap.liquid %}
+
+  Reads site.github_username. Click-through goes to the profile.
+{%- endcomment -%}
+{%- if site.github_username -%}
+<p class="text-muted" style="font-size: 0.85rem; margin-bottom: 0.6rem;">
+  Daily commit heatmap from my
+  <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer">GitHub profile</a>,
+  past year.
+</p>
+<a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub contribution graph for {{ site.github_username }}">
+  <img
+    src="https://ghchart.rshah.org/7047eb/{{ site.github_username }}"
+    alt="GitHub contribution heatmap — 52 weeks of daily activity"
+    loading="lazy"
+    style="width: 100%; max-width: 100%; height: auto; display: block;">
+</a>
+{%- endif -%}

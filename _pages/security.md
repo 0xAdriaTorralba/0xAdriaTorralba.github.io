@@ -83,6 +83,14 @@ nav_order: 2              # directly after about
 
 {% include certifications.liquid %}
 
+{%- comment -%}
+  The security-tagged projects grid (Sand Walker, etc.) used to live
+  here under a "Tools & contributions" H2. Hidden behind an if-false
+  wrapper below. To restore, flip the wrapping condition to "if true"
+  (or delete the wrapping if/endif tags entirely). Data untouched —
+  tag a project with `security` and it surfaces instantly.
+{%- endcomment -%}
+{%- if false -%}
 <h2 id="tools">Tools &amp; contributions</h2>
 
 {% if security_projects.size > 0 %}
@@ -94,28 +102,5 @@ nav_order: 2              # directly after about
 {% else %}
   <p class="text-muted"><em>Security-related projects and tooling will surface here (tag a project with <code>security</code> to include it).</em></p>
 {% endif %}
+{%- endif -%}
 
-{% assign contributions = site.data.contributions.contributions | sort: "merged" | reverse %}
-{% if contributions and contributions.size > 0 %}
-  <h3 style="margin-top: 1.5rem;">Relevant Open-Source Contributions</h3>
-  <ul style="list-style: none; padding-left: 0;">
-    {% for c in contributions %}
-      <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--global-divider-color);">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem;">
-          <div style="flex: 1 1 auto; min-width: 0;">
-            <a href="{{ c.url }}" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-github"></i>
-              <strong>{{ c.repo }}</strong>#{{ c.pr }}
-            </a>
-            <span> — {{ c.title }}</span>
-          </div>
-          <span class="text-muted" style="font-size: 0.85rem;">
-            {% if c.scope %}<span class="badge" style="background-color: var(--global-text-color-light); color: var(--global-bg-color); font-weight: 500;">{{ c.scope }}</span>{% endif %}
-            {% if c.merged %} · merged {{ c.merged | date: "%b %Y" }}{% endif %}
-          </span>
-        </div>
-        {% if c.description %}<div class="text-muted" style="font-size: 0.85rem; margin-top: 0.2rem;">{{ c.description }}</div>{% endif %}
-      </li>
-    {% endfor %}
-  </ul>
-{% endif %}

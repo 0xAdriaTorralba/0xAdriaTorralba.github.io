@@ -22,10 +22,21 @@ recent_security:
   enabled: true # surfaces the most recent audit / writeup / security-tagged activity
   limit: 3
 
+github_activity:
+  enabled: true # renders the GitHub contribution heatmap at the bottom
+
+# "latest news" block is TEMPORARILY HIDDEN on /about.
+# The block is rendered by _layouts/about.liquid only when
+# `page.announcements.enabled` is true, so flipping this flag to
+# false is enough — the layout stays untouched, _news/*.md entries
+# are not deleted, and the /news/ page still lists them.
+#
+# To restore: set `enabled: true` below. The other knobs
+# (scrollable, limit) keep their current values.
 announcements:
-  enabled: true # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
+  enabled: false            # ← flip to true to bring "latest news" back on /about
+  scrollable: true          # vertical scroll bar when there are more than 3 items
+  limit: 5                  # leave blank to include every _news/*.md
 
 # latest_posts:
 #   enabled: true
