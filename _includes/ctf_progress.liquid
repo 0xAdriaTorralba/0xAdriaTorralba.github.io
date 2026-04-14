@@ -1,0 +1,229 @@
+{%- comment -%}
+  CTF / wargame progress tracker.
+  Reads _data/ctf_progress.yml (two top-level keys: ethernaut, damn_vulnerable_defi).
+  Renders a summary line and a grid of numbered tiles per platform.
+  Tile states: solved (filled), in-progress (striped), not-started (outline).
+{%- endcomment -%}
+
+<style>
+  .ctf-tracker { margin-top: 1rem; margin-bottom: 2.25rem; }
+  .ctf-tracker + .ctf-tracker { margin-top: 1.75rem; padding-top: 0.75rem; border-top: 2px solid var(--global-theme-color); }
+  .ctf-tracker__header { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem; }
+  .ctf-tracker__title { margin: 0; font-size: 1.4rem; font-weight: 700; letter-spacing: 0.01em; }
+  .ctf-tracker__title a { color: var(--global-text-color); }
+  .ctf-tracker__title a:hover { color: var(--global-theme-color); text-decoration: none; }
+  .ctf-tracker__summary { color: var(--global-text-color-light); font-size: 0.9rem; font-weight: 500; }
+  .ctf-tracker__desc { color: var(--global-text-color-light); font-size: 0.9rem; margin-bottom: 0.8rem; }
+  .ctf-tracker__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(38px, 1fr)); gap: 6px; }
+  .ctf-tile {
+    aspect-ratio: 1 / 1;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem; font-weight: 600;
+    border-radius: 4px;
+    border: 1px solid var(--global-divider-color);
+    background-color: var(--global-card-bg-color);
+    color: var(--global-text-color-light);
+    text-decoration: none;
+    transition: transform 0.1s ease-in-out;
+    user-select: none;
+  }
+  .ctf-tile:hover { transform: translateY(-1px); text-decoration: none; }
+  .ctf-tile--solved {
+    background-color: var(--global-theme-color);
+    color: var(--global-hover-text-color);
+    border-color: var(--global-theme-color);
+  }
+  .ctf-tile--solved:hover { color: var(--global-hover-text-color); }
+  .ctf-tile--in-progress {
+    background: repeating-linear-gradient(
+      45deg,
+      var(--global-card-bg-color),
+      var(--global-card-bg-color) 4px,
+      var(--global-theme-color) 4px,
+      var(--global-theme-color) 6px
+    );
+    color: var(--global-theme-color);
+    border-color: var(--global-theme-color);
+  }
+  .ctf-tile--in-progress:hover { color: var(--global-theme-color); }
+  .ctf-tracker__legend { margin-top: 0.6rem; font-size: 0.75rem; color: var(--global-text-color-light); display: flex; gap: 1rem; flex-wrap: wrap; }
+  .ctf-tracker__legend span { display: inline-flex; align-items: center; gap: 0.3rem; }
+  .ctf-tracker__legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; border: 1px solid var(--global-divider-color); }
+  .ctf-tracker__legend i.solved { background-color: var(--global-theme-color); border-color: var(--global-theme-color); }
+  .ctf-tracker__legend i.in-progress { background: repeating-linear-gradient(45deg, var(--global-card-bg-color), var(--global-card-bg-color) 2px, var(--global-theme-color) 2px, var(--global-theme-color) 3px); border-color: var(--global-theme-color); }
+</style>
+
+{%- comment -%} Team CTF events (before the solo tracker). {%- endcomment -%}
+{%- assign team_events = site.data.ctf_progress.team_events | sort: "date" | reverse -%}
+{%- if team_events and team_events.size > 0 -%}
+  <div class="ctf-tracker">
+    <div class="ctf-tracker__header">
+      <h3 class="ctf-tracker__title">Team CTF events</h3>
+      <span class="ctf-tracker__summary">{{ team_events.size }} event{% if team_events.size != 1 %}s{% endif %}</span>
+    </div>
+    <ul style="list-style: none; padding-left: 0; margin-bottom: 0;">
+      {%- for ev in team_events -%}
+        <li style="padding: 0.6rem 0; border-bottom: 1px solid var(--global-divider-color);">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem;">
+            <div>
+              {% if ev.url %}<a href="{{ ev.url }}" target="_blank" rel="noopener noreferrer"><strong>{{ ev.name }}</strong></a>{% else %}<strong>{{ ev.name }}</strong>{% endif %}
+              {% if ev.location %}<span class="text-muted" style="font-size: 0.85rem;"> · {{ ev.location }}</span>{% endif %}
+              {% if ev.date %}<span class="text-muted" style="font-size: 0.85rem;"> · {{ ev.date }}</span>{% endif %}
+            </div>
+            <div>
+              <span class="badge" style="background-color: var(--global-theme-color); color: var(--global-hover-text-color); font-weight: 500;">{{ ev.final_rank }} / {{ ev.total_teams }}</span>
+              {% if ev.peak_rank and ev.peak_rank < ev.final_rank %}
+                <span class="badge" style="background-color: var(--global-text-color-light); color: var(--global-bg-color); font-weight: 500;">peak {{ ev.peak_rank }}</span>
+              {% endif %}
+            </div>
+          </div>
+          {% if ev.team_name or (ev.team and ev.team.size > 0) %}
+            <div class="text-muted" style="font-size: 0.85rem; margin-top: 0.2rem;">
+              {% if ev.team_name %}<em>Team</em> <strong>{{ ev.team_name }}</strong>{% if ev.team and ev.team.size > 0 %} · {{ ev.team | join: ", " }}{% endif %}
+              {% else %}<em>Team:</em> {{ ev.team | join: ", " }}{% endif %}
+            </div>
+          {% endif %}
+          {% if ev.notes %}<div style="font-size: 0.9rem; margin-top: 0.3rem;">{{ ev.notes }}</div>{% endif %}
+          {% if ev.leaderboard_url or ev.linkedin_url or ev.x_url %}
+            <div style="font-size: 0.85rem; margin-top: 0.35rem; display: flex; gap: 0.9rem; align-items: center; flex-wrap: wrap;">
+              {% if ev.leaderboard_url %}
+                <a href="{{ ev.leaderboard_url }}" target="_blank" rel="noopener noreferrer" data-toggle="tooltip" title="Official event leaderboard">
+                  <i class="fa-solid fa-trophy"></i> Leaderboard
+                </a>
+              {% endif %}
+              {% if ev.linkedin_url %}
+                <a href="{{ ev.linkedin_url }}" target="_blank" rel="noopener noreferrer" data-toggle="tooltip" title="LinkedIn post">
+                  <i class="fa-brands fa-linkedin"></i> LinkedIn recap
+                </a>
+              {% endif %}
+              {% if ev.x_url %}
+                <a href="{{ ev.x_url }}" target="_blank" rel="noopener noreferrer" data-toggle="tooltip" title="X/Twitter thread">
+                  <i class="fa-brands fa-x-twitter"></i> Thread
+                </a>
+              {% endif %}
+            </div>
+          {% endif %}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+{%- endif -%}
+
+{%- comment -%} Build Ethernaut section {%- endcomment -%}
+{%- assign eth = site.data.ctf_progress.ethernaut -%}
+{%- assign eth_items = eth.levels -%}
+{%- assign eth_total = eth_items | size -%}
+{%- assign eth_solved_items = eth_items | where: "status", "solved" -%}
+{%- assign eth_solved = eth_solved_items | size -%}
+{%- assign eth_explicit_ip = eth_items | where: "status", "in-progress" | size -%}
+{%- assign eth_recent_solved = eth_solved_items | sort: "solved_on" | reverse -%}
+{%- assign eth_last = eth_recent_solved | first -%}
+{%- comment -%} next-after-last: implicit in-progress for the level after the highest solved num. {%- endcomment -%}
+{%- assign eth_solved_nums = eth_solved_items | map: "num" | sort -%}
+{%- assign eth_max_solved = eth_solved_nums | last -%}
+{%- assign eth_auto_next = -1 -%}
+{%- if eth_max_solved != nil -%}{%- assign eth_auto_next = eth_max_solved | plus: 1 -%}{%- endif -%}
+{%- assign eth_in_progress_display = eth_explicit_ip -%}
+{%- comment -%} count auto-next as in-progress for summary only if such a level exists and isn't already solved/explicit {%- endcomment -%}
+{%- for l in eth_items -%}
+  {%- if l.num == eth_auto_next and l.status != "solved" and l.status != "in-progress" -%}
+    {%- assign eth_in_progress_display = eth_in_progress_display | plus: 1 -%}
+  {%- endif -%}
+{%- endfor -%}
+
+<div class="ctf-tracker">
+  <div class="ctf-tracker__header">
+    <h3 class="ctf-tracker__title">
+      <a href="{{ eth.platform_url }}" target="_blank" rel="noopener noreferrer">{{ eth.name }}</a>
+    </h3>
+    <span class="ctf-tracker__summary">
+      {{ eth_solved }} / {{ eth_total }} solved
+      {%- if eth_in_progress_display > 0 %} · {{ eth_in_progress_display }} in progress{%- endif -%}
+      {%- if eth_last %} · last solved {{ eth_last.solved_on | date: "%b %e, %Y" }}{%- endif -%}
+    </span>
+  </div>
+  {%- if eth.description %}<p class="ctf-tracker__desc">{{ eth.description }}</p>{%- endif %}
+  <div class="ctf-tracker__grid">
+    {%- for level in eth_items -%}
+      {%- assign cls = "ctf-tile" -%}
+      {%- assign eff_status = level.status -%}
+      {%- if level.num == eth_auto_next and level.status != "solved" -%}{%- assign eff_status = "in-progress" -%}{%- endif -%}
+      {%- if eff_status == "solved" -%}{%- assign cls = "ctf-tile ctf-tile--solved" -%}{%- endif -%}
+      {%- if eff_status == "in-progress" -%}{%- assign cls = "ctf-tile ctf-tile--in-progress" -%}{%- endif -%}
+      {%- assign tip = level.name -%}
+      {%- if eff_status == "solved" and level.solved_on %}{%- assign tip = level.name | append: " — solved " | append: level.solved_on -%}{%- endif -%}
+      {%- if eff_status == "in-progress" and level.status != "in-progress" %}{%- assign tip = level.name | append: " — up next" -%}{%- endif -%}
+      {%- if level.writeup -%}
+        <a class="{{ cls }}" href="{{ level.writeup | relative_url }}" data-toggle="tooltip" title="{{ tip }}">{{ level.num }}</a>
+      {%- else -%}
+        <span class="{{ cls }}" data-toggle="tooltip" title="{{ tip }}">{{ level.num }}</span>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+  <div class="ctf-tracker__legend">
+    <span><i class="solved"></i> solved</span>
+    <span><i class="in-progress"></i> in progress</span>
+    <span><i></i> not started</span>
+  </div>
+</div>
+
+{%- comment -%} Build Damn Vulnerable DeFi section {%- endcomment -%}
+{%- assign dvd = site.data.ctf_progress.damn_vulnerable_defi -%}
+{%- assign dvd_items = dvd.challenges -%}
+{%- assign dvd_total = dvd_items | size -%}
+{%- assign dvd_solved_items = dvd_items | where: "status", "solved" -%}
+{%- assign dvd_solved = dvd_solved_items | size -%}
+{%- assign dvd_explicit_ip = dvd_items | where: "status", "in-progress" | size -%}
+{%- assign dvd_recent_solved = dvd_solved_items | sort: "solved_on" | reverse -%}
+{%- assign dvd_last = dvd_recent_solved | first -%}
+{%- assign dvd_solved_nums = dvd_solved_items | map: "num" | sort -%}
+{%- assign dvd_max_solved = dvd_solved_nums | last -%}
+{%- assign dvd_auto_next = -1 -%}
+{%- if dvd_max_solved != nil -%}{%- assign dvd_auto_next = dvd_max_solved | plus: 1 -%}{%- else -%}{%- assign dvd_auto_next = dvd_items | first | map: "num" | first -%}{%- endif -%}
+{%- comment -%} when nothing is solved yet, surface challenge #1 (first in list) as up-next {%- endcomment -%}
+{%- if dvd_max_solved == nil -%}
+  {%- assign first_item = dvd_items | first -%}
+  {%- assign dvd_auto_next = first_item.num -%}
+{%- endif -%}
+{%- assign dvd_in_progress_display = dvd_explicit_ip -%}
+{%- for c in dvd_items -%}
+  {%- if c.num == dvd_auto_next and c.status != "solved" and c.status != "in-progress" -%}
+    {%- assign dvd_in_progress_display = dvd_in_progress_display | plus: 1 -%}
+  {%- endif -%}
+{%- endfor -%}
+
+<div class="ctf-tracker">
+  <div class="ctf-tracker__header">
+    <h3 class="ctf-tracker__title">
+      <a href="{{ dvd.platform_url }}" target="_blank" rel="noopener noreferrer">{{ dvd.name }}{% if dvd.version %} <small class="text-muted">({{ dvd.version }})</small>{% endif %}</a>
+    </h3>
+    <span class="ctf-tracker__summary">
+      {{ dvd_solved }} / {{ dvd_total }} solved
+      {%- if dvd_in_progress_display > 0 %} · {{ dvd_in_progress_display }} in progress{%- endif -%}
+      {%- if dvd_last %} · last solved {{ dvd_last.solved_on | date: "%b %e, %Y" }}{%- endif -%}
+    </span>
+  </div>
+  {%- if dvd.description %}<p class="ctf-tracker__desc">{{ dvd.description }}</p>{%- endif %}
+  <div class="ctf-tracker__grid">
+    {%- for chall in dvd_items -%}
+      {%- assign cls = "ctf-tile" -%}
+      {%- assign eff_status = chall.status -%}
+      {%- if chall.num == dvd_auto_next and chall.status != "solved" -%}{%- assign eff_status = "in-progress" -%}{%- endif -%}
+      {%- if eff_status == "solved" -%}{%- assign cls = "ctf-tile ctf-tile--solved" -%}{%- endif -%}
+      {%- if eff_status == "in-progress" -%}{%- assign cls = "ctf-tile ctf-tile--in-progress" -%}{%- endif -%}
+      {%- assign tip = chall.name -%}
+      {%- if eff_status == "solved" and chall.solved_on %}{%- assign tip = chall.name | append: " — solved " | append: chall.solved_on -%}{%- endif -%}
+      {%- if eff_status == "in-progress" and chall.status != "in-progress" %}{%- assign tip = chall.name | append: " — up next" -%}{%- endif -%}
+      {%- if chall.writeup -%}
+        <a class="{{ cls }}" href="{{ chall.writeup | relative_url }}" data-toggle="tooltip" title="{{ tip }}">{{ chall.num }}</a>
+      {%- else -%}
+        <span class="{{ cls }}" data-toggle="tooltip" title="{{ tip }}">{{ chall.num }}</span>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+  <div class="ctf-tracker__legend">
+    <span><i class="solved"></i> solved</span>
+    <span><i class="in-progress"></i> in progress</span>
+    <span><i></i> not started</span>
+  </div>
+</div>

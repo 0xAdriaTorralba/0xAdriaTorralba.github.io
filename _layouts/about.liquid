@@ -40,6 +40,14 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
+    <!-- Recent security work -->
+    {% if page.recent_security and page.recent_security.enabled %}
+      <h2>
+        <a href="{{ '/security/' | relative_url }}" style="color: inherit">recent security work</a>
+      </h2>
+      {% include recent_security.liquid limit=page.recent_security.limit %}
+    {% endif %}
+
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
       <h2>
