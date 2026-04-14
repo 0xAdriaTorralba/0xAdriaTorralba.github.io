@@ -16,6 +16,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/security/";
           },
+        },{id: "nav-github",
+          title: "github",
+          description: "GitHub activity and a full, filterable, record of open-source contributions (PRs).",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/github/";
+          },
         },{id: "nav-publications",
           title: "publications",
           description: "Publications in reversed chronological order.",
@@ -37,26 +44,19 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "nav-blog",
-          title: "blog",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/blog/";
-          },
-        },{id: "nav-github",
-          title: "github",
-          description: "GitHub activity and a full, filterable, record of open-source contributions (PRs).",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/github/";
-          },
         },{id: "nav-cv",
           title: "cv",
           description: "You can download my CV on this page.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
+          },
+        },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
           },
         },{id: "nav-news",
           title: "news",
@@ -67,7 +67,7 @@ ninja.data = [{
           },
         },{id: "audits-zisk-zkvm-binary-amp-amp-main-circuits-review",
           title: 'ZisK zkVM — Binary &amp;amp;amp; Main circuits review',
-          description: "Security review of the core PIL2 circuits of the ZisK general-purpose zkVM. Focused on the correctness of the constraint system for binary opcodes (MIN, MAX, LT, GT, EQ, ADD, SUB, LE, AND, OR, XOR, SLL, SRL, SRA, SE, …) and on the main execution-trace constraints that stitch segments together and enforce control flow.",
+          description: "ZisK is a general-purpose zkVM — a virtual machine that produces a zero-knowledge proof of any RISC-V program&#39;s execution. This engagement reviewed the core PIL2 arithmetic circuits (binary opcode evaluation and the main execution-trace constraints that stitch execution segments together). Thirteen issues surfaced, including one critical — see the public report below.",
           section: "Audits",handler: () => {
               window.location.href = "/audits/openzeppelin-zisk-binary-and-main/";
             },},{id: "news-our-paper-analysing-and-benchmarking-zk-rollups-will-be-presented-at-zksummit-12-on-october-8th-at-lisbon-speaking-head",
