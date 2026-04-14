@@ -1,8 +1,8 @@
 ---
 layout: page
-permalink: /activity/
-title: activity
-description: "GitHub commit activity and a full, filterable record of open-source pull requests."
+permalink: /github/
+title: github
+description: "GitHub activity and a full, filterable, record of open-source contributions (PRs)."
 nav: true
 nav_order: 6.5
 ---
