@@ -34,7 +34,7 @@ team_events:
       - Gianfranco Bazzani
       - Ezequiel Pérez
       - Rubén Cruz Acevedo
-    notes: null
+    notes: "Wonderland's on-site CTF during EthCC 9 in Cannes. Smart-contract security challenges (Solidity + EVM). The 9/34 badge is the final rank; peak 3 was our best standing during the event."
     url: null
     leaderboard_url: "https://ctf.wonderland.xyz/leaderboard"
     linkedin_url: "https://www.linkedin.com/posts/adriatorralba-agell_last-week-i-was-at-ethcc-9-in-cannes-heres-activity-7447652372786626562-22uB"
@@ -43,7 +43,7 @@ team_events:
 ethernaut:
   name: "The Ethernaut"
   platform_url: "https://ethernaut.openzeppelin.com/"
-  description: "OpenZeppelin's Solidity-based smart contract wargame."
+  description: "OpenZeppelin's Solidity-based wargame. 40+ on-chain levels deployed to Sepolia; each level is a smart contract with a planted vulnerability. Solving a level means crafting the transaction sequence that exploits it."
   levels:
     - num: 0
       name: "Hello Ethernaut"
@@ -296,7 +296,7 @@ damn_vulnerable_defi:
   name: "Damn Vulnerable DeFi"
   platform_url: "https://www.damnvulnerabledefi.xyz/"
   version: "v4"
-  description: "Foundry-based DeFi security wargame by @tinchoabbate."
+  description: "Foundry-based DeFi security wargame by @tinchoabbate. 18 challenges modelled on real DeFi bugs — flash loans, oracle manipulation, upgrade bypasses. Solve each one by writing a Foundry test that reaches the target state."
   challenges:
     - num: 1
       name: "Unstoppable"

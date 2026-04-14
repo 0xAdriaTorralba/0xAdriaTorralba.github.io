@@ -10,6 +10,6 @@ description: You can download my CV on this page.
 #   sidebar: left
 ---
 
-<h2>Certifications &amp; coursework</h2>
+<h2 style="margin-top: 2.5rem;">certifications &amp; coursework</h2>
 
 {% include certifications.liquid %}

@@ -90,7 +90,17 @@
 {%- if team_events and team_events.size > 0 -%}
   <div class="ctf-tracker">
     <div class="ctf-tracker__header">
-      <h3 class="ctf-tracker__title">Team CTF events</h3>
+      <h3 class="ctf-tracker__title">
+        team CTF events
+        <span class="tip" tabindex="0" role="button" aria-label="In-person, team-based competitions — typically run during conferences. Each row shows the team, the final rank out of the total number of teams, and (where relevant) the peak rank we reached during the competition.">
+          <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+          <span class="tip__panel" role="tooltip">
+            In-person, team-based competitions — typically run during conferences. Each row shows the
+            team, the final rank out of the total number of teams, and (where relevant) the peak rank we
+            reached during the competition.
+          </span>
+        </span>
+      </h3>
       <span class="ctf-tracker__summary">{{ team_events.size }} event{% if team_events.size != 1 %}s{% endif %}</span>
     </div>
     <ul style="list-style: none; padding-left: 0; margin-bottom: 0;">
@@ -167,6 +177,12 @@
   <div class="ctf-tracker__header">
     <h3 class="ctf-tracker__title">
       <a href="{{ eth.platform_url }}" target="_blank" rel="noopener noreferrer">{{ eth.name }}</a>
+      {%- if eth.description -%}
+        <span class="tip" tabindex="0" role="button" aria-label="{{ eth.description | strip_html | strip }}">
+          <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+          <span class="tip__panel" role="tooltip">{{ eth.description }}</span>
+        </span>
+      {%- endif -%}
     </h3>
     <span class="ctf-tracker__summary">
       {{ eth_solved }} / {{ eth_total }} solved
@@ -174,7 +190,6 @@
       {%- if eth_last %} · last solved {{ eth_last.solved_on | date: "%b %e, %Y" }}{%- endif -%}
     </span>
   </div>
-  {%- if eth.description %}<p class="ctf-tracker__desc">{{ eth.description }}</p>{%- endif %}
   <div class="ctf-tracker__grid">
     {%- for level in eth_items -%}
       {%- assign cls = "ctf-tile" -%}

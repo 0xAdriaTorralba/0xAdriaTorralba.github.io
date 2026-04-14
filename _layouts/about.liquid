@@ -14,31 +14,47 @@ layout: default
     <p class="desc">{{ page.subtitle }}</p>
   </header>
 
+  <style>
+    /* Two-column about header: profile on the left, bio on the right. */
+    .about-top { display: grid; grid-template-columns: 1fr; gap: 1.75rem; margin-bottom: 2.5rem; }
+    @media (min-width: 768px) { .about-top { grid-template-columns: minmax(180px, 30%) 1fr; gap: 2.5rem; align-items: start; } }
+    .about-top__profile { text-align: left; }
+    .about-top__profile .more-info { margin-top: 1rem; font-size: 0.95rem; line-height: 1.5; }
+    .about-top__bio > p:first-child { margin-top: 0; }
+
+    /* Uniform spacing for every section heading after the header. */
+    .post article > h2 { margin-top: 2.25rem; margin-bottom: 0.5rem; }
+
+    /* Clear visual break between the github heatmap and the contact icons. */
+    .post .social { margin-top: 3rem; padding-top: 1.75rem; border-top: 1px solid var(--global-divider-color); }
+  </style>
+
   <article>
     {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}" id="profile-container">
-        {% if page.profile.image %}
-          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          {% if page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-          {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
-      rounded' %}
+      <div class="about-top">
+        <div class="about-top__profile">
+          {% if page.profile.image %}
+            {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+            {% if page.profile.image_circular %}
+              {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+            {% else %}
+              {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+            {% endif %}
+            {% capture sizes %}(min-width: 768px) 260px, 80vw{% endcapture %}
+            {%
+              include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+              cache_bust=true
+            %}
           {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
-      30vw, 95vw"{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-            cache_bust=true
-          %}
-        {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
-        {% endif %}
+          {% if page.profile.more_info %}
+            <div class="more-info">{{ page.profile.more_info }}</div>
+          {% endif %}
+        </div>
+        <div class="about-top__bio">{{ content }}</div>
       </div>
+    {% else %}
+      <div>{{ content }}</div>
     {% endif %}
-
-    <div class="clearfix">{{ content }}</div>
 
     <!-- Recent security work -->
     {% if page.recent_security and page.recent_security.enabled %}
