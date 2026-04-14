@@ -2,21 +2,10 @@
 layout: page
 permalink: /security/
 title: security
-description: Audits, vulnerability research, CTF writeups, and hands-on security work.
+description: "I audit blockchain systems, primarily Zero-Knowledge proving infrastructure (zkVMs, circuits, recursion layers) and DeFi protocols."
 nav: true
 nav_order: 2              # directly after about
 ---
-
-<p>
-  I audit blockchain systems — primarily Zero-Knowledge proving infrastructure
-  (zkVMs, circuits, recursion layers) and DeFi protocols. My academic research
-  on Layer 2 security informs how I read these systems: the bug classes that
-  repeatedly bite L2 deployments are the ones I look for first.
-</p>
-<p>
-  Below: public audit engagements, competitive audit findings, vulnerability
-  writeups, and my current progress through open wargames.
-</p>
 
 {% assign published_audits = site.audits | where: "published", true | sort: "date" | reverse %}
 {% assign contest_audits = published_audits | where: "contest", true %}
