@@ -9,7 +9,14 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-publications",
+  },{id: "nav-security",
+          title: "security",
+          description: "I audit blockchain systems, primarily Zero-Knowledge proving infrastructure (zkVMs, circuits, recursion layers) and DeFi protocols.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/security/";
+          },
+        },{id: "nav-publications",
           title: "publications",
           description: "Publications in reversed chronological order.",
           section: "Navigation",
@@ -30,6 +37,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
+        },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
         },{id: "nav-cv",
           title: "cv",
           description: "You can download my CV on this page.",
@@ -44,7 +58,12 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/news/";
           },
-        },{id: "news-our-paper-analysing-and-benchmarking-zk-rollups-will-be-presented-at-zksummit-12-on-october-8th-at-lisbon-speaking-head",
+        },{id: "audits-zisk-zkvm-binary-amp-amp-main-circuits-review",
+          title: 'ZisK zkVM — Binary &amp;amp;amp; Main circuits review',
+          description: "Security review of the core PIL2 circuits of the ZisK general-purpose zkVM. Focused on the correctness of the constraint system for binary opcodes (MIN, MAX, LT, GT, EQ, ADD, SUB, LE, AND, OR, XOR, SLL, SRL, SRA, SE, …) and on the main execution-trace constraints that stitch segments together and enforce control flow.",
+          section: "Audits",handler: () => {
+              window.location.href = "/audits/openzeppelin-zisk-binary-and-main/";
+            },},{id: "news-our-paper-analysing-and-benchmarking-zk-rollups-will-be-presented-at-zksummit-12-on-october-8th-at-lisbon-speaking-head",
           title: 'Our paper “Analysing and Benchmarking ZK-Rollups” will be presented at zkSummit 12 on...',
           description: "",
           section: "News",},{id: "news-i-will-be-presenting-unmasking-the-illusion-the-shortcomings-of-zero-knowledge-rollups-in-achieving-privacy-at-recsi-2024-on-october-24th-at-león-speaking-head",
