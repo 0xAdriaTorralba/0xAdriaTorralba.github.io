@@ -4,7 +4,7 @@ permalink: /github/
 title: github
 description: "GitHub activity and a full, filterable, record of open-source contributions (PRs)."
 nav: true
-nav_order: 6.5
+nav_order: 3
 ---
 
 <h2 id="github-activity" style="margin-top: 0.5rem; margin-bottom: 0.3rem;">github activity</h2>
