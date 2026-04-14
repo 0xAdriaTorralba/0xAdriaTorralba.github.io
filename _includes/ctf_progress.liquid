@@ -14,20 +14,50 @@
   .ctf-tracker__title a:hover { color: var(--global-theme-color); text-decoration: none; }
   .ctf-tracker__summary { color: var(--global-text-color-light); font-size: 0.9rem; font-weight: 500; }
   .ctf-tracker__desc { color: var(--global-text-color-light); font-size: 0.9rem; margin-bottom: 0.8rem; }
-  .ctf-tracker__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(38px, 1fr)); gap: 6px; }
+  .ctf-tracker__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 6px; }
   .ctf-tile {
-    aspect-ratio: 1 / 1;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.8rem; font-weight: 600;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.4rem 0.6rem;
+    min-height: 40px;
+    font-size: 0.82rem;
+    line-height: 1.2;
     border-radius: 4px;
     border: 1px solid var(--global-divider-color);
     background-color: var(--global-card-bg-color);
-    color: var(--global-text-color-light);
+    color: var(--global-text-color);
     text-decoration: none;
     transition: transform 0.1s ease-in-out;
     user-select: none;
   }
-  .ctf-tile:hover { transform: translateY(-1px); text-decoration: none; }
+  .ctf-tile:hover { transform: translateY(-1px); text-decoration: none; color: var(--global-text-color); }
+  .ctf-tile__num {
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    min-width: 1.6em;
+    text-align: right;
+    color: inherit;
+    opacity: 0.7;
+  }
+  .ctf-tile--solved .ctf-tile__num { opacity: 0.85; }
+  .ctf-tile__name { flex: 1 1 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600; color: inherit; }
+  .ctf-tile__diff {
+    font-size: 0.68rem;
+    font-weight: 500;
+    padding: 2px 6px;
+    border-radius: 999px;
+    flex-shrink: 0;
+    line-height: 1.15;
+    letter-spacing: 0.15em;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    background-color: #eceff3;
+    color: #7a8591;
+  }
+  .ctf-tile__diff--beginner { background-color: #d1f3e0; color: #145a33; }
+  .ctf-tile__diff--easy     { background-color: #c7ebf0; color: #0f4f5c; }
+  .ctf-tile__diff--medium   { background-color: #fde7b4; color: #5f4100; }
+  .ctf-tile__diff--hard     { background-color: #ffd2a8; color: #5f2b00; }
+  .ctf-tile__diff--expert   { background-color: #ffc1c1; color: #5f0000; }
   .ctf-tile--solved {
     background-color: var(--global-theme-color);
     color: var(--global-hover-text-color);
@@ -51,6 +81,8 @@
   .ctf-tracker__legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; border: 1px solid var(--global-divider-color); }
   .ctf-tracker__legend i.solved { background-color: var(--global-theme-color); border-color: var(--global-theme-color); }
   .ctf-tracker__legend i.in-progress { background: repeating-linear-gradient(45deg, var(--global-card-bg-color), var(--global-card-bg-color) 2px, var(--global-theme-color) 2px, var(--global-theme-color) 3px); border-color: var(--global-theme-color); }
+  .ctf-tracker__legend-label { color: var(--global-text-color-light); font-weight: 500; }
+  .ctf-tracker__legend .ctf-tile__diff { font-size: 0.62rem; padding: 1px 5px; letter-spacing: 0.12em; }
 </style>
 
 {%- comment -%} Team CTF events (before the solo tracker). {%- endcomment -%}
@@ -150,14 +182,36 @@
       {%- if level.num == eth_auto_next and level.status != "solved" -%}{%- assign eff_status = "in-progress" -%}{%- endif -%}
       {%- if eff_status == "solved" -%}{%- assign cls = "ctf-tile ctf-tile--solved" -%}{%- endif -%}
       {%- if eff_status == "in-progress" -%}{%- assign cls = "ctf-tile ctf-tile--in-progress" -%}{%- endif -%}
-      {%- assign tip = level.name -%}
-      {%- if eff_status == "solved" and level.solved_on %}{%- assign tip = level.name | append: " — solved " | append: level.solved_on -%}{%- endif -%}
-      {%- if eff_status == "in-progress" and level.status != "in-progress" %}{%- assign tip = level.name | append: " — up next" -%}{%- endif -%}
-      {%- if level.writeup -%}
-        <a class="{{ cls }}" href="{{ level.writeup | relative_url }}" data-toggle="tooltip" title="{{ tip }}">{{ level.num }}</a>
-      {%- else -%}
-        <span class="{{ cls }}" data-toggle="tooltip" title="{{ tip }}">{{ level.num }}</span>
+      {%- comment -%} Match Ethernaut's own drawDifficultyCircle: ceil(value/2) = (value+1)|div:2 {%- endcomment -%}
+      {%- assign d = level.difficulty -%}
+      {%- assign dots_full = 0 -%}
+      {%- if d != nil -%}{%- assign dots_full = d | plus: 1 | divided_by: 2 -%}{%- endif -%}
+      {%- assign band = "" -%}
+      {%- if dots_full == 1 -%}{%- assign band = "beginner" -%}
+      {%- elsif dots_full == 2 -%}{%- assign band = "easy" -%}
+      {%- elsif dots_full == 3 -%}{%- assign band = "medium" -%}
+      {%- elsif dots_full == 4 -%}{%- assign band = "hard" -%}
+      {%- elsif dots_full == 5 -%}{%- assign band = "expert" -%}
       {%- endif -%}
+      {%- capture dot_str -%}
+        {%- for i in (1..5) -%}
+          {%- if i <= dots_full -%}●{%- else -%}○{%- endif -%}
+        {%- endfor -%}
+      {%- endcapture -%}
+      {%- assign tip = level.name -%}
+      {%- if d != nil %}{%- assign tip = tip | append: " · difficulty " | append: dots_full | append: "/5" -%}{%- endif -%}
+      {%- if eff_status == "solved" and level.solved_on %}{%- assign tip = tip | append: " · solved " | append: level.solved_on -%}{%- endif -%}
+      {%- if eff_status == "in-progress" and level.status != "in-progress" %}{%- assign tip = tip | append: " · up next" -%}{%- endif -%}
+      {%- capture tile_inner -%}
+        <span class="ctf-tile__num">{{ level.num }}</span>
+        <span class="ctf-tile__name">{{ level.name }}</span>
+        {%- if d != nil -%}
+          <span class="ctf-tile__diff ctf-tile__diff--{{ band }}">{{ dot_str | strip }}</span>
+        {%- endif -%}
+      {%- endcapture -%}
+      {%- assign href = level.writeup -%}
+      {%- if href == nil or href == "" -%}{%- assign href = "https://ethernaut.openzeppelin.com/level/" | append: level.num -%}{%- endif -%}
+      <a class="{{ cls }}" href="{{ href }}"{% unless level.writeup %} target="_blank" rel="noopener noreferrer"{% endunless %} data-toggle="tooltip" title="{{ tip }}">{{ tile_inner }}</a>
     {%- endfor -%}
   </div>
   <div class="ctf-tracker__legend">
@@ -165,10 +219,48 @@
     <span><i class="in-progress"></i> in progress</span>
     <span><i></i> not started</span>
   </div>
+  <div class="ctf-tracker__legend" style="margin-top: 0.3rem;">
+    <span class="ctf-tracker__legend-label">difficulty (●●●○○ = 3/5):</span>
+    <span><span class="ctf-tile__diff ctf-tile__diff--beginner">●○○○○</span> beginner</span>
+    <span><span class="ctf-tile__diff ctf-tile__diff--easy">●●○○○</span> easy</span>
+    <span><span class="ctf-tile__diff ctf-tile__diff--medium">●●●○○</span> medium</span>
+    <span><span class="ctf-tile__diff ctf-tile__diff--hard">●●●●○</span> hard</span>
+    <span><span class="ctf-tile__diff ctf-tile__diff--expert">●●●●●</span> expert</span>
+  </div>
 </div>
 
-{%- comment -%} Build Damn Vulnerable DeFi section {%- endcomment -%}
+{%- comment -%}
+  =====================================================================
+  Damn Vulnerable DeFi section — TEMPORARILY STUBBED WITH "Coming soon..."
+  =====================================================================
+  The full DVD renderer (summary line, tile grid, legend, auto "up-next"
+  logic, GitHub source links) is preserved in the if-false block below.
+  To restore:
+
+    1. Flip the wrapping condition from "if false" to "if true" — or
+       delete the wrapping if/endif tags entirely.
+    2. Remove the "Coming soon..." stub block that sits above the wrapper.
+    3. Start populating status / solved_on / writeup on
+       _data/ctf_progress.yml under damn_vulnerable_defi.challenges.
+
+  Data file stays untouched so the restored build renders immediately.
+{%- endcomment -%}
+
 {%- assign dvd = site.data.ctf_progress.damn_vulnerable_defi -%}
+<div class="ctf-tracker">
+  <div class="ctf-tracker__header">
+    <h3 class="ctf-tracker__title">
+      <a href="{{ dvd.platform_url }}" target="_blank" rel="noopener noreferrer">{{ dvd.name }}{% if dvd.version %} <small class="text-muted">({{ dvd.version }})</small>{% endif %}</a>
+    </h3>
+    <span class="ctf-tracker__summary">Coming soon&hellip;</span>
+  </div>
+  {%- if dvd.description %}<p class="ctf-tracker__desc">{{ dvd.description }}</p>{%- endif %}
+  <div style="padding: 1.75rem 0.5rem; text-align: center; color: var(--global-text-color-light); border: 1px dashed var(--global-divider-color); border-radius: 4px;">
+    <strong style="font-size: 1rem; letter-spacing: 0.02em;">Coming soon&hellip;</strong>
+  </div>
+</div>
+
+{%- if false -%}
 {%- assign dvd_items = dvd.challenges -%}
 {%- assign dvd_total = dvd_items | size -%}
 {%- assign dvd_solved_items = dvd_items | where: "status", "solved" -%}
@@ -211,14 +303,37 @@
       {%- if chall.num == dvd_auto_next and chall.status != "solved" -%}{%- assign eff_status = "in-progress" -%}{%- endif -%}
       {%- if eff_status == "solved" -%}{%- assign cls = "ctf-tile ctf-tile--solved" -%}{%- endif -%}
       {%- if eff_status == "in-progress" -%}{%- assign cls = "ctf-tile ctf-tile--in-progress" -%}{%- endif -%}
-      {%- assign tip = chall.name -%}
-      {%- if eff_status == "solved" and chall.solved_on %}{%- assign tip = chall.name | append: " — solved " | append: chall.solved_on -%}{%- endif -%}
-      {%- if eff_status == "in-progress" and chall.status != "in-progress" %}{%- assign tip = chall.name | append: " — up next" -%}{%- endif -%}
-      {%- if chall.writeup -%}
-        <a class="{{ cls }}" href="{{ chall.writeup | relative_url }}" data-toggle="tooltip" title="{{ tip }}">{{ chall.num }}</a>
-      {%- else -%}
-        <span class="{{ cls }}" data-toggle="tooltip" title="{{ tip }}">{{ chall.num }}</span>
+      {%- assign d = chall.difficulty -%}
+      {%- assign dots_full = 0 -%}
+      {%- if d != nil -%}{%- assign dots_full = d | plus: 1 | divided_by: 2 -%}{%- endif -%}
+      {%- assign band = "" -%}
+      {%- if dots_full == 1 -%}{%- assign band = "beginner" -%}
+      {%- elsif dots_full == 2 -%}{%- assign band = "easy" -%}
+      {%- elsif dots_full == 3 -%}{%- assign band = "medium" -%}
+      {%- elsif dots_full == 4 -%}{%- assign band = "hard" -%}
+      {%- elsif dots_full == 5 -%}{%- assign band = "expert" -%}
       {%- endif -%}
+      {%- capture dot_str -%}
+        {%- for i in (1..5) -%}
+          {%- if i <= dots_full -%}●{%- else -%}○{%- endif -%}
+        {%- endfor -%}
+      {%- endcapture -%}
+      {%- assign tip = chall.name -%}
+      {%- if d != nil %}{%- assign tip = tip | append: " · difficulty " | append: dots_full | append: "/5" -%}{%- endif -%}
+      {%- if eff_status == "solved" and chall.solved_on %}{%- assign tip = tip | append: " · solved " | append: chall.solved_on -%}{%- endif -%}
+      {%- if eff_status == "in-progress" and chall.status != "in-progress" %}{%- assign tip = tip | append: " · up next" -%}{%- endif -%}
+      {%- capture tile_inner -%}
+        <span class="ctf-tile__num">{{ chall.num }}</span>
+        <span class="ctf-tile__name">{{ chall.name }}</span>
+        {%- if d != nil -%}
+          <span class="ctf-tile__diff ctf-tile__diff--{{ band }}">{{ dot_str | strip }}</span>
+        {%- endif -%}
+      {%- endcapture -%}
+      {%- comment -%} DVD slug for source link: lowercase name with spaces→dash, drop punctuation {%- endcomment -%}
+      {%- assign dvd_slug = chall.name | downcase | replace: " ", "-" | replace: ".", "" -%}
+      {%- assign href = chall.writeup -%}
+      {%- if href == nil or href == "" -%}{%- assign href = "https://github.com/theredguild/damn-vulnerable-defi/tree/master/src/" | append: dvd_slug -%}{%- endif -%}
+      <a class="{{ cls }}" href="{{ href }}"{% unless chall.writeup %} target="_blank" rel="noopener noreferrer"{% endunless %} data-toggle="tooltip" title="{{ tip }}">{{ tile_inner }}</a>
     {%- endfor -%}
   </div>
   <div class="ctf-tracker__legend">
@@ -227,3 +342,4 @@
     <span><i></i> not started</span>
   </div>
 </div>
+{%- endif -%}

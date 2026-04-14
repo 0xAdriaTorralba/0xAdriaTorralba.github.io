@@ -1,0 +1,30 @@
+# Certifications & coursework.
+#
+# Rendered by _includes/certifications.liquid on /security/#certifications
+# and on /cv/. Single source of truth — both pages share this file.
+#
+# Schema (one entry per completed course or earned certification):
+#
+#   - provider: "Cyfrin Updraft"          # issuing platform
+#     title: "Smart Contract Security"    # course / certification name
+#     date: 2026-02-15                    # completion date (YYYY-MM-DD); drives sort order
+#     track: "completion"                 # "completion" | "professional"
+#                                         #   completion  → free, course-finished
+#                                         #   professional → paid / proctored / exam-based
+#     category: security                  # security | zk | solidity | defi |
+#                                         #   formal-verification | rust | other
+#     url: "https://updraft.cyfrin.io/courses/security"   # course or cert page
+#     verification_url: null              # public verification URL if the provider
+#                                         #   exposes one per-learner (e.g. profiles.cyfrin.io/<user>)
+#     notes: null                         # optional 1-line context (e.g. cohort, instructor)
+#
+# Notes:
+# - Keep entries honest. Don't list courses you haven't completed.
+# - `track: professional` entries are reserved for paid/proctored certs
+#   (e.g. Cyfrin SSCD+). They aren't visually distinguished yet, but the
+#   field is here so the renderer can add a "Professional" badge later
+#   without a data migration.
+# - `category` keeps the list scannable when it grows. Use the nearest
+#   match; add new category slugs freely.
+
+certifications: []

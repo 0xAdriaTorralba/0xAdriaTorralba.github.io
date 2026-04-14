@@ -9,6 +9,13 @@
 # Ethernaut progress is derived from on-chain LevelCompletedLog events for
 # the player address on Sepolia (0xa3e7317E591D5A0F1c605be1b3aC4D2ae56104d6).
 # Re-query on demand; keep in sync as new levels are solved.
+#
+# Ethernaut level names and difficulty (0–8) are pulled from the official
+# OpenZeppelin gamedata. To refresh when OZ adds levels, run:
+#   curl -s https://raw.githubusercontent.com/OpenZeppelin/ethernaut/master/client/src/gamedata/gamedata.json \
+#     | python3 -c "import sys,json; d=json.load(sys.stdin); [print(f\"{l['deployId']:>2} {l['difficulty']:>2} {l['name']}\") for l in d['levels']]"
+#
+# DVD does not publish an official difficulty; `difficulty` stays null.
 
 # Team CTF events — competitive capture-the-flag events attended with a team.
 # Distinct from the solo wargames below (Ethernaut, DVD) because the signal
@@ -27,7 +34,7 @@ team_events:
       - Gianfranco Bazzani
       - Ezequiel Pérez
       - Rubén Cruz Acevedo
-    notes: "Held 3rd place for a good chunk of the competition before a few teams overtook us in the final stretch."
+    notes: null
     url: null
     leaderboard_url: "https://ctf.wonderland.xyz/leaderboard"
     linkedin_url: "https://www.linkedin.com/posts/adriatorralba-agell_last-week-i-was-at-ethcc-9-in-cannes-heres-activity-7447652372786626562-22uB"
@@ -40,206 +47,247 @@ ethernaut:
   levels:
     - num: 0
       name: "Hello Ethernaut"
+      difficulty: 0
       status: solved
       solved_on: 2025-12-30
       writeup: null
     - num: 1
       name: "Fallback"
+      difficulty: 1
       status: solved
       solved_on: 2025-12-30
       writeup: null
     - num: 2
       name: "Fallout"
+      difficulty: 2
       status: solved
       solved_on: 2025-12-30
       writeup: null
     - num: 3
       name: "Coin Flip"
+      difficulty: 3
       status: solved
       solved_on: 2025-12-30
       writeup: null
     - num: 4
       name: "Telephone"
+      difficulty: 1
       status: solved
       solved_on: 2025-12-30
       writeup: null
     - num: 5
       name: "Token"
+      difficulty: 3
       status: solved
       solved_on: 2025-12-30
       writeup: null
     - num: 6
       name: "Delegation"
+      difficulty: 4
       status: solved
       solved_on: 2025-12-31
       writeup: null
     - num: 7
       name: "Force"
+      difficulty: 5
       status: solved
       solved_on: 2025-12-31
       writeup: null
     - num: 8
       name: "Vault"
+      difficulty: 3
       status: solved
       solved_on: 2025-12-31
       writeup: null
     - num: 9
       name: "King"
+      difficulty: 6
       status: solved
       solved_on: 2026-01-02
       writeup: null
     - num: 10
       name: "Re-entrancy"
+      difficulty: 6
       status: solved
       solved_on: 2026-01-03
       writeup: null
     - num: 11
       name: "Elevator"
+      difficulty: 4
       status: solved
       solved_on: 2026-01-03
       writeup: null
     - num: 12
       name: "Privacy"
+      difficulty: 6
       status: solved
       solved_on: 2026-01-03
       writeup: null
     - num: 13
       name: "Gatekeeper One"
+      difficulty: 8
       status: solved
       solved_on: 2026-01-03
       writeup: null
     - num: 14
       name: "Gatekeeper Two"
+      difficulty: 6
       status: solved
       solved_on: 2026-01-08
       writeup: null
     - num: 15
       name: "Naught Coin"
+      difficulty: 5
       status: solved
       solved_on: 2026-01-08
       writeup: null
     - num: 16
       name: "Preservation"
+      difficulty: 8
       status: not-started
       solved_on: null
       writeup: null
     - num: 17
       name: "Recovery"
+      difficulty: 6
       status: not-started
       solved_on: null
       writeup: null
     - num: 18
       name: "MagicNumber"
+      difficulty: 6
       status: not-started
       solved_on: null
       writeup: null
     - num: 19
       name: "Alien Codex"
+      difficulty: 7
       status: not-started
       solved_on: null
       writeup: null
     - num: 20
       name: "Denial"
+      difficulty: 5
       status: not-started
       solved_on: null
       writeup: null
     - num: 21
       name: "Shop"
+      difficulty: 4
       status: not-started
       solved_on: null
       writeup: null
     - num: 22
       name: "Dex"
+      difficulty: 3
       status: not-started
       solved_on: null
       writeup: null
     - num: 23
       name: "Dex Two"
+      difficulty: 4
       status: not-started
       solved_on: null
       writeup: null
     - num: 24
       name: "Puzzle Wallet"
+      difficulty: 7
       status: not-started
       solved_on: null
       writeup: null
     - num: 25
       name: "Motorbike"
+      difficulty: 6
       status: not-started
       solved_on: null
       writeup: null
     - num: 26
       name: "DoubleEntryPoint"
+      difficulty: 4
       status: not-started
       solved_on: null
       writeup: null
     - num: 27
       name: "Good Samaritan"
+      difficulty: 5
       status: not-started
       solved_on: null
       writeup: null
     - num: 28
       name: "Gatekeeper Three"
+      difficulty: 6
       status: not-started
       solved_on: null
       writeup: null
     - num: 29
       name: "Switch"
+      difficulty: 8
       status: not-started
       solved_on: null
       writeup: null
     - num: 30
       name: "HigherOrder"
+      difficulty: 8
       status: not-started
       solved_on: null
       writeup: null
     - num: 31
       name: "Stake"
+      difficulty: 6
       status: not-started
       solved_on: null
       writeup: null
     - num: 32
       name: "Impersonator"
+      difficulty: 8
       status: not-started
       solved_on: null
       writeup: null
     - num: 33
       name: "Magic Animal Carousel"
+      difficulty: 6
       status: not-started
       solved_on: null
       writeup: null
     - num: 34
       name: "Bet House"
+      difficulty: 4
       status: not-started
       solved_on: null
       writeup: null
     - num: 35
       name: "Elliptic Token"
+      difficulty: 8
       status: not-started
       solved_on: null
       writeup: null
     - num: 36
       name: "Cashback"
+      difficulty: 8
       status: not-started
       solved_on: null
       writeup: null
     - num: 37
       name: "Impersonator Two"
+      difficulty: 8
       status: not-started
       solved_on: null
       writeup: null
     - num: 38
       name: "UniqueNFT"
+      difficulty: 5
       status: not-started
       solved_on: null
       writeup: null
     - num: 39
       name: "Forger"
+      difficulty: 5
       status: not-started
       solved_on: null
       writeup: null
     - num: 40
       name: "NotOptimisticPortal"
+      difficulty: 8
       status: not-started
       solved_on: null
       writeup: null
@@ -252,91 +300,109 @@ damn_vulnerable_defi:
   challenges:
     - num: 1
       name: "Unstoppable"
+      difficulty: null
       status: not-started
       solved_on: null
       writeup: null
     - num: 2
       name: "Naive Receiver"
+      difficulty: null
       status: not-started
       solved_on: null
       writeup: null
     - num: 3
       name: "Truster"
+      difficulty: null
       status: not-started
       solved_on: null
       writeup: null
     - num: 4
       name: "Side Entrance"
+      difficulty: null
       status: not-started
       solved_on: null
       writeup: null
     - num: 5
       name: "The Rewarder"
+      difficulty: null
       status: not-started
       solved_on: null
       writeup: null
     - num: 6
       name: "Selfie"
+      difficulty: null
       status: not-started
       solved_on: null
       writeup: null
     - num: 7
       name: "Compromised"
+      difficulty: null
       status: not-started
       solved_on: null
       writeup: null
     - num: 8
       name: "Puppet"
+      difficulty: null
       status: not-started
       solved_on: null
       writeup: null
     - num: 9
       name: "Puppet v2"
+      difficulty: null
       status: not-started
       solved_on: null
       writeup: null
     - num: 10
       name: "Free Rider"
+      difficulty: null
       status: not-started
       solved_on: null
       writeup: null
     - num: 11
       name: "Backdoor"
+      difficulty: null
       status: not-started
       solved_on: null
       writeup: null
     - num: 12
       name: "Climber"
+      difficulty: null
       status: not-started
       solved_on: null
       writeup: null
     - num: 13
       name: "Wallet Mining"
+      difficulty: null
       status: not-started
       solved_on: null
       writeup: null
     - num: 14
       name: "Puppet v3"
+      difficulty: null
       status: not-started
       solved_on: null
       writeup: null
     - num: 15
       name: "ABI Smuggling"
+      difficulty: null
       status: not-started
       solved_on: null
       writeup: null
     - num: 16
       name: "Shards"
+      difficulty: null
       status: not-started
       solved_on: null
       writeup: null
     - num: 17
       name: "Curvy Puppet"
+      difficulty: null
       status: not-started
       solved_on: null
       writeup: null
     - num: 18
       name: "Withdrawal"
+      difficulty: null
       status: not-started
       solved_on: null
       writeup: null
