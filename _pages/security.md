@@ -79,6 +79,10 @@ nav_order: 2              # directly after about
 
 {% include ctf_progress.liquid %}
 
+<h2 id="certifications">Certifications &amp; coursework</h2>
+
+{% include certifications.liquid %}
+
 <h2 id="tools">Tools &amp; contributions</h2>
 
 {% if security_projects.size > 0 %}

@@ -9,3 +9,7 @@ description: You can download my CV on this page.
 # toc:
 #   sidebar: left
 ---
+
+<h2>Certifications &amp; coursework</h2>
+
+{% include certifications.liquid %}
