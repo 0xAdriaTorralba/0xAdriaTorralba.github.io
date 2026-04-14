@@ -53,11 +53,9 @@ nav_order: 8
 </div>
 
 {% comment %}
-  ==============================================================
-  ORIGINAL BLOG BODY — PRESERVED FOR REUSE.
-  Wrapped in a {% raw %}{% comment %}{% endraw %} block so Jekyll skips it.
-  Paste this back inside <div class="post"> when restoring the blog.
-  ==============================================================
+ORIGINAL BLOG BODY — PRESERVED FOR REUSE.
+Wrapped in a {% raw %}{% comment %}{% endraw %} block so Jekyll skips it.
+Paste this back inside <div class="post"> when restoring the blog.
 
 {% assign blog_name_size = site.blog_name | size %}
 {% assign blog_description_size = site.blog_description | size %}

@@ -30,11 +30,11 @@ The system is split into two components:
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
+| Layer           | Technology              |
+| --------------- | ----------------------- |
 | Smart contracts | Mina zkApp (TypeScript) |
-| ZK proofs | Mina Protocol |
-| Frontend | Next.js, React |
-| Styling | Tailwind CSS |
-| Identity | Sismo |
-| Indexing | The Graph |
+| ZK proofs       | Mina Protocol           |
+| Frontend        | Next.js, React          |
+| Styling         | Tailwind CSS            |
+| Identity        | Sismo                   |
+| Indexing        | The Graph               |

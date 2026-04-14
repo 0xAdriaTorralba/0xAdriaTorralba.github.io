@@ -32,6 +32,7 @@ Step 3: the second pass — where you start writing notes and questions.
 ## Bug classes I look for first
 
 Enumerate the bug classes that are common in ZK circuits. Examples:
+
 - Under-constrained signals / missing range checks
 - Aliasing between field-element representations
 - Public-input handling (ordering, domain separation)

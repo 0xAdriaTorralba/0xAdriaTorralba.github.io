@@ -25,13 +25,13 @@ so the post stands alone without needing the visitor to open Ethernaut.
 ## What the level is teaching
 
 The bug class in one paragraph. Do not describe the exploit yet — describe
-the *primitive*. Example: "this level tests whether you notice that `delegatecall`
+the _primitive_. Example: "this level tests whether you notice that `delegatecall`
 runs foreign code with the caller's storage layout."
 
 ## The exploit
 
 Walk through. Code where useful. Do not over-explain — assume the reader
-knows Solidity. The useful content is the *decision* — why you looked
+knows Solidity. The useful content is the _decision_ — why you looked
 where you looked.
 
 ## Where this shows up in real code

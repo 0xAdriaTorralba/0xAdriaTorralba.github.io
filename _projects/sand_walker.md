@@ -27,13 +27,13 @@ Built with [Marina Cebotari](https://twitter.com/MarinaCebotari), [GianfrancoBaz
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Smart contracts | Cairo 1, StarkNet |
-| Frontend | Next.js 13, React 18 |
-| Styling | Tailwind CSS |
-| Wallet | starknet-react, get-starknet |
-| Build tool | Scarb (Cairo package manager) |
+| Layer           | Technology                    |
+| --------------- | ----------------------------- |
+| Smart contracts | Cairo 1, StarkNet             |
+| Frontend        | Next.js 13, React 18          |
+| Styling         | Tailwind CSS                  |
+| Wallet          | starknet-react, get-starknet  |
+| Build tool      | Scarb (Cairo package manager) |
 
 ## Links
 

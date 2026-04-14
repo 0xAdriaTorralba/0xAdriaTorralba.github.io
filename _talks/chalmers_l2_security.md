@@ -25,4 +25,4 @@ This talk reviews the baseline security assumptions of permissionless L1 blockch
 
 - [View the slides](https://github.com/0xAdriaTorralba/slides/tree/2d0951643f290feff13eacc03de5e5f8c47e81eb/2025_Chalmers_SecurityAssumptionsL2_Gothenburg)
 
-Based on the work: *"A Taxonomy of Security Analysis of Blockchain Layer 2 Scalability Solutions and Future Directions"*.
+Based on the work: _"A Taxonomy of Security Analysis of Blockchain Layer 2 Scalability Solutions and Future Directions"_.

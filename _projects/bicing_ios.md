@@ -9,7 +9,7 @@ category: project
 ---
 
 > Coming soon to the App Store.
-{: .block-warning }
+> {: .block-warning }
 
 **Pedal for iOS** is a native iOS app for checking real-time availability of bikes and e-bikes at bike-sharing stations worldwide. Built entirely in SwiftUI, it supports Apple Watch, home screen widgets, and iCloud sync. The mobile companion to [Pedal for Raycast](/projects/raycast_bicing/).
 
@@ -42,15 +42,15 @@ Tests/               # 131+ unit tests
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Language | Swift 5.9 |
-| UI | SwiftUI |
-| State | Combine, ObservableObject |
-| Maps | MapKit (custom MKMapView wrapper) |
-| Location | CoreLocation |
-| Widgets | WidgetKit |
-| Watch | WatchConnectivity |
-| Storage | UserDefaults, iCloud KVS |
-| API | [CityBikes API](https://api.citybik.es/v2) |
-| Target | iOS 17.0+ |
+| Layer    | Technology                                 |
+| -------- | ------------------------------------------ |
+| Language | Swift 5.9                                  |
+| UI       | SwiftUI                                    |
+| State    | Combine, ObservableObject                  |
+| Maps     | MapKit (custom MKMapView wrapper)          |
+| Location | CoreLocation                               |
+| Widgets  | WidgetKit                                  |
+| Watch    | WatchConnectivity                          |
+| Storage  | UserDefaults, iCloud KVS                   |
+| API      | [CityBikes API](https://api.citybik.es/v2) |
+| Target   | iOS 17.0+                                  |

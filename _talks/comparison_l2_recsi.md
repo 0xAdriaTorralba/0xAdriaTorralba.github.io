@@ -19,7 +19,7 @@ Since the creation of Bitcoin in 2009, many other cryptocurrencies have appeared
 
 This talk first explains the blockchain scalability problem and then presents a brief review and a comparison among some of the state-of-the-art techniques that are used to scale blockchains on Layer 2 (or off-chain), analysing properties related to their **Usability**, **Security**, and **Cost**.
 
-Based on the published paper: Adrià Torralba-Agell and Cristina Pérez-Solà, *"A Comparison of Layer 2 Techniques for Scaling Blockchains"*, RECSI 265 (2022).
+Based on the published paper: Adrià Torralba-Agell and Cristina Pérez-Solà, _"A Comparison of Layer 2 Techniques for Scaling Blockchains"_, RECSI 265 (2022).
 
 ## Links
 

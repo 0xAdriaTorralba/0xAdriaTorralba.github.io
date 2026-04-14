@@ -51,6 +51,7 @@ Euler, etc.). Link for details; do not rewrite well-documented post-mortems.
 One or two sentences translating this into a review checklist item.
 
 ## Links
+
 - [DVD challenge source](https://www.damnvulnerabledefi.xyz/)
 - Your fork / solution repo.
 - Real-world incident references.

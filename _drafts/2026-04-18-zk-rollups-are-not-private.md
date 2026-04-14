@@ -33,6 +33,7 @@ graph, MEV-bot-visible metadata, sequencer ordering leaks.
 ## Two minimal attack narratives
 
 Attack 1: deanonymisation via transaction graph analysis on <specific ZK-Rollup>.
+
 - What the adversary starts with.
 - What they produce.
 

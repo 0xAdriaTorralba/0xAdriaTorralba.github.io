@@ -11,7 +11,9 @@
           <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}">
             <h3 class="card-title">{{ project.title }}</h3>
           </a>
-          {% if project.project_date %}<p class="card-text text-muted" style="font-size: 0.85rem; margin-bottom: 0.4rem;">{{ project.project_date }}</p>{% endif %}
+          {% if project.project_date %}
+            <p class="card-text text-muted" style="font-size: 0.85rem; margin-bottom: 0.4rem;">{{ project.project_date }}</p>
+          {% endif %}
           <p class="card-text">{{ project.description }}</p>
           <div class="row ml-1 mr-1 p-0">
             {% if project.github %}

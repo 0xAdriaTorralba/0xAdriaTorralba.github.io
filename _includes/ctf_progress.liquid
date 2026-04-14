@@ -6,17 +6,55 @@
 {%- endcomment -%}
 
 <style>
-  .ctf-tracker { margin-top: 1rem; margin-bottom: 2.25rem; }
-  .ctf-tracker + .ctf-tracker { margin-top: 1.75rem; padding-top: 0.75rem; border-top: 2px solid var(--global-theme-color); }
-  .ctf-tracker__header { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem; }
-  .ctf-tracker__title { margin: 0; font-size: 1.4rem; font-weight: 700; letter-spacing: 0.01em; }
-  .ctf-tracker__title a { color: var(--global-text-color); }
-  .ctf-tracker__title a:hover { color: var(--global-theme-color); text-decoration: none; }
-  .ctf-tracker__summary { color: var(--global-text-color-light); font-size: 0.9rem; font-weight: 500; }
-  .ctf-tracker__desc { color: var(--global-text-color-light); font-size: 0.9rem; margin-bottom: 0.8rem; }
-  .ctf-tracker__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 6px; }
+  .ctf-tracker {
+    margin-top: 1rem;
+    margin-bottom: 2.25rem;
+  }
+  .ctf-tracker + .ctf-tracker {
+    margin-top: 1.75rem;
+    padding-top: 0.75rem;
+    border-top: 2px solid var(--global-theme-color);
+  }
+  .ctf-tracker__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .ctf-tracker__title {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+  }
+  .ctf-tracker__title a {
+    color: var(--global-text-color);
+  }
+  .ctf-tracker__title a:hover {
+    color: var(--global-theme-color);
+    text-decoration: none;
+  }
+  .ctf-tracker__summary {
+    color: var(--global-text-color-light);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  .ctf-tracker__desc {
+    color: var(--global-text-color-light);
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+  .ctf-tracker__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 6px;
+  }
   .ctf-tile {
-    display: flex; align-items: center; justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 0.5rem;
     padding: 0.4rem 0.6rem;
     min-height: 40px;
@@ -30,7 +68,11 @@
     transition: transform 0.1s ease-in-out;
     user-select: none;
   }
-  .ctf-tile:hover { transform: translateY(-1px); text-decoration: none; color: var(--global-text-color); }
+  .ctf-tile:hover {
+    transform: translateY(-1px);
+    text-decoration: none;
+    color: var(--global-text-color);
+  }
   .ctf-tile__num {
     font-weight: 700;
     font-variant-numeric: tabular-nums;
@@ -39,8 +81,17 @@
     color: inherit;
     opacity: 0.7;
   }
-  .ctf-tile--solved .ctf-tile__num { opacity: 0.85; }
-  .ctf-tile__name { flex: 1 1 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600; color: inherit; }
+  .ctf-tile--solved .ctf-tile__num {
+    opacity: 0.85;
+  }
+  .ctf-tile__name {
+    flex: 1 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 600;
+    color: inherit;
+  }
   .ctf-tile__diff {
     font-size: 0.68rem;
     font-weight: 500;
@@ -49,21 +100,38 @@
     flex-shrink: 0;
     line-height: 1.15;
     letter-spacing: 0.15em;
-    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
     background-color: #eceff3;
     color: #7a8591;
   }
-  .ctf-tile__diff--beginner { background-color: #d1f3e0; color: #145a33; }
-  .ctf-tile__diff--easy     { background-color: #c7ebf0; color: #0f4f5c; }
-  .ctf-tile__diff--medium   { background-color: #fde7b4; color: #5f4100; }
-  .ctf-tile__diff--hard     { background-color: #ffd2a8; color: #5f2b00; }
-  .ctf-tile__diff--expert   { background-color: #ffc1c1; color: #5f0000; }
+  .ctf-tile__diff--beginner {
+    background-color: #d1f3e0;
+    color: #145a33;
+  }
+  .ctf-tile__diff--easy {
+    background-color: #c7ebf0;
+    color: #0f4f5c;
+  }
+  .ctf-tile__diff--medium {
+    background-color: #fde7b4;
+    color: #5f4100;
+  }
+  .ctf-tile__diff--hard {
+    background-color: #ffd2a8;
+    color: #5f2b00;
+  }
+  .ctf-tile__diff--expert {
+    background-color: #ffc1c1;
+    color: #5f0000;
+  }
   .ctf-tile--solved {
     background-color: var(--global-theme-color);
     color: var(--global-hover-text-color);
     border-color: var(--global-theme-color);
   }
-  .ctf-tile--solved:hover { color: var(--global-hover-text-color); }
+  .ctf-tile--solved:hover {
+    color: var(--global-hover-text-color);
+  }
   .ctf-tile--in-progress {
     background: repeating-linear-gradient(
       45deg,
@@ -75,57 +143,121 @@
     color: var(--global-theme-color);
     border-color: var(--global-theme-color);
   }
-  .ctf-tile--in-progress:hover { color: var(--global-theme-color); }
-  .ctf-tracker__legend { margin-top: 0.6rem; font-size: 0.75rem; color: var(--global-text-color-light); display: flex; gap: 1rem; flex-wrap: wrap; }
-  .ctf-tracker__legend span { display: inline-flex; align-items: center; gap: 0.3rem; }
-  .ctf-tracker__legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; border: 1px solid var(--global-divider-color); }
-  .ctf-tracker__legend i.solved { background-color: var(--global-theme-color); border-color: var(--global-theme-color); }
-  .ctf-tracker__legend i.in-progress { background: repeating-linear-gradient(45deg, var(--global-card-bg-color), var(--global-card-bg-color) 2px, var(--global-theme-color) 2px, var(--global-theme-color) 3px); border-color: var(--global-theme-color); }
-  .ctf-tracker__legend-label { color: var(--global-text-color-light); font-weight: 500; }
-  .ctf-tracker__legend .ctf-tile__diff { font-size: 0.62rem; padding: 1px 5px; letter-spacing: 0.12em; }
+  .ctf-tile--in-progress:hover {
+    color: var(--global-theme-color);
+  }
+  .ctf-tracker__legend {
+    margin-top: 0.6rem;
+    font-size: 0.75rem;
+    color: var(--global-text-color-light);
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .ctf-tracker__legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .ctf-tracker__legend i {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    display: inline-block;
+    border: 1px solid var(--global-divider-color);
+  }
+  .ctf-tracker__legend i.solved {
+    background-color: var(--global-theme-color);
+    border-color: var(--global-theme-color);
+  }
+  .ctf-tracker__legend i.in-progress {
+    background: repeating-linear-gradient(
+      45deg,
+      var(--global-card-bg-color),
+      var(--global-card-bg-color) 2px,
+      var(--global-theme-color) 2px,
+      var(--global-theme-color) 3px
+    );
+    border-color: var(--global-theme-color);
+  }
+  .ctf-tracker__legend-label {
+    color: var(--global-text-color-light);
+    font-weight: 500;
+  }
+  .ctf-tracker__legend .ctf-tile__diff {
+    font-size: 0.62rem;
+    padding: 1px 5px;
+    letter-spacing: 0.12em;
+  }
 </style>
 
 {%- comment -%} Team CTF events (before the solo tracker). {%- endcomment -%}
-{%- assign team_events = site.data.ctf_progress.team_events | sort: "date" | reverse -%}
+{%- assign team_events = site.data.ctf_progress.team_events | sort: 'date' | reverse -%}
 {%- if team_events and team_events.size > 0 -%}
   <div class="ctf-tracker">
     <div class="ctf-tracker__header">
       <h3 class="ctf-tracker__title">
         team CTF events
-        <span class="tip" tabindex="0" role="button" aria-label="In-person, team-based competitions — typically run during conferences. Each row shows the team, the final rank out of the total number of teams, and (where relevant) the peak rank we reached during the competition.">
+        <span
+          class="tip"
+          tabindex="0"
+          role="button"
+          aria-label="In-person, team-based competitions — typically run during conferences. Each row shows the team, the final rank out of the total number of teams, and (where relevant) the peak rank we reached during the competition."
+        >
           <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
           <span class="tip__panel" role="tooltip">
-            In-person, team-based competitions — typically run during conferences. Each row shows the
-            team, the final rank out of the total number of teams, and (where relevant) the peak rank we
-            reached during the competition.
+            In-person, team-based competitions — typically run during conferences. Each row shows the team, the final rank out of the total number of
+            teams, and (where relevant) the peak rank we reached during the competition.
           </span>
         </span>
       </h3>
-      <span class="ctf-tracker__summary">{{ team_events.size }} event{% if team_events.size != 1 %}s{% endif %}</span>
+      <span class="ctf-tracker__summary">
+        {{- team_events.size }} event{% if team_events.size != 1 %}s{% endif -%}
+      </span>
     </div>
     <ul style="list-style: none; padding-left: 0; margin-bottom: 0;">
       {%- for ev in team_events -%}
         <li style="padding: 0.6rem 0; border-bottom: 1px solid var(--global-divider-color);">
           <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem;">
             <div>
-              {% if ev.url %}<a href="{{ ev.url }}" target="_blank" rel="noopener noreferrer"><strong>{{ ev.name }}</strong></a>{% else %}<strong>{{ ev.name }}</strong>{% endif %}
-              {% if ev.location %}<span class="text-muted" style="font-size: 0.85rem;"> · {{ ev.location }}</span>{% endif %}
-              {% if ev.date %}<span class="text-muted" style="font-size: 0.85rem;"> · {{ ev.date }}</span>{% endif %}
+              {% if ev.url -%}
+                <a href="{{ ev.url }}" target="_blank" rel="noopener noreferrer"
+                  ><strong>{{ ev.name }}</strong></a
+                >
+              {%- else -%}
+                <strong>{{ ev.name }}</strong>
+              {%- endif %}
+              {% if ev.location -%}
+                <span class="text-muted" style="font-size: 0.85rem;"> · {{ ev.location }}</span>
+              {%- endif %}
+              {% if ev.date -%}
+                <span class="text-muted" style="font-size: 0.85rem;"> · {{ ev.date }}</span>
+              {%- endif %}
             </div>
             <div>
-              <span class="badge" style="background-color: var(--global-theme-color); color: var(--global-hover-text-color); font-weight: 500;">{{ ev.final_rank }} / {{ ev.total_teams }}</span>
+              <span class="badge" style="background-color: var(--global-theme-color); color: var(--global-hover-text-color); font-weight: 500;">
+                {{- ev.final_rank }} / {{ ev.total_teams -}}
+              </span>
               {% if ev.peak_rank and ev.peak_rank < ev.final_rank %}
-                <span class="badge" style="background-color: var(--global-text-color-light); color: var(--global-bg-color); font-weight: 500;">peak {{ ev.peak_rank }}</span>
+                <span class="badge" style="background-color: var(--global-text-color-light); color: var(--global-bg-color); font-weight: 500;"
+                  >peak {{ ev.peak_rank -}}
+                </span>
               {% endif %}
             </div>
           </div>
           {% if ev.team_name or (ev.team and ev.team.size > 0) %}
             <div class="text-muted" style="font-size: 0.85rem; margin-top: 0.2rem;">
-              {% if ev.team_name %}<em>Team</em> <strong>{{ ev.team_name }}</strong>{% if ev.team and ev.team.size > 0 %} · {{ ev.team | join: ", " }}{% endif %}
-              {% else %}<em>Team:</em> {{ ev.team | join: ", " }}{% endif %}
+              {% if ev.team_name -%}
+                <em>Team</em> <strong>{{ ev.team_name }}</strong>
+                {%- if ev.team and ev.team.size > 0 %} · {{ ev.team | join: ', ' }}{% endif %}
+              {% else -%}
+                <em>Team:</em> {{ ev.team | join: ', ' -}}
+              {%- endif %}
             </div>
           {% endif %}
-          {% if ev.notes %}<div style="font-size: 0.9rem; margin-top: 0.3rem;">{{ ev.notes }}</div>{% endif %}
+          {% if ev.notes %}
+            <div style="font-size: 0.9rem; margin-top: 0.3rem;">{{ ev.notes }}</div>
+          {% endif %}
           {% if ev.leaderboard_url or ev.linkedin_url or ev.x_url %}
             <div style="font-size: 0.85rem; margin-top: 0.35rem; display: flex; gap: 0.9rem; align-items: center; flex-wrap: wrap;">
               {% if ev.leaderboard_url %}
@@ -155,20 +287,20 @@
 {%- assign eth = site.data.ctf_progress.ethernaut -%}
 {%- assign eth_items = eth.levels -%}
 {%- assign eth_total = eth_items | size -%}
-{%- assign eth_solved_items = eth_items | where: "status", "solved" -%}
+{%- assign eth_solved_items = eth_items | where: 'status', 'solved' -%}
 {%- assign eth_solved = eth_solved_items | size -%}
-{%- assign eth_explicit_ip = eth_items | where: "status", "in-progress" | size -%}
-{%- assign eth_recent_solved = eth_solved_items | sort: "solved_on" | reverse -%}
+{%- assign eth_explicit_ip = eth_items | where: 'status', 'in-progress' | size -%}
+{%- assign eth_recent_solved = eth_solved_items | sort: 'solved_on' | reverse -%}
 {%- assign eth_last = eth_recent_solved | first -%}
 {%- comment -%} next-after-last: implicit in-progress for the level after the highest solved num. {%- endcomment -%}
-{%- assign eth_solved_nums = eth_solved_items | map: "num" | sort -%}
+{%- assign eth_solved_nums = eth_solved_items | map: 'num' | sort -%}
 {%- assign eth_max_solved = eth_solved_nums | last -%}
 {%- assign eth_auto_next = -1 -%}
-{%- if eth_max_solved != nil -%}{%- assign eth_auto_next = eth_max_solved | plus: 1 -%}{%- endif -%}
+{%- if eth_max_solved != null -%}{%- assign eth_auto_next = eth_max_solved | plus: 1 -%}{%- endif -%}
 {%- assign eth_in_progress_display = eth_explicit_ip -%}
 {%- comment -%} count auto-next as in-progress for summary only if such a level exists and isn't already solved/explicit {%- endcomment -%}
 {%- for l in eth_items -%}
-  {%- if l.num == eth_auto_next and l.status != "solved" and l.status != "in-progress" -%}
+  {%- if l.num == eth_auto_next and l.status != 'solved' and l.status != 'in-progress' -%}
     {%- assign eth_in_progress_display = eth_in_progress_display | plus: 1 -%}
   {%- endif -%}
 {%- endfor -%}
@@ -187,26 +319,31 @@
     <span class="ctf-tracker__summary">
       {{ eth_solved }} / {{ eth_total }} solved
       {%- if eth_in_progress_display > 0 %} · {{ eth_in_progress_display }} in progress{%- endif -%}
-      {%- if eth_last %} · last solved {{ eth_last.solved_on | date: "%b %e, %Y" }}{%- endif -%}
+      {%- if eth_last %} · last solved {{ eth_last.solved_on | date: '%b %e, %Y' }}{%- endif -%}
     </span>
   </div>
   <div class="ctf-tracker__grid">
     {%- for level in eth_items -%}
-      {%- assign cls = "ctf-tile" -%}
+      {%- assign cls = 'ctf-tile' -%}
       {%- assign eff_status = level.status -%}
-      {%- if level.num == eth_auto_next and level.status != "solved" -%}{%- assign eff_status = "in-progress" -%}{%- endif -%}
-      {%- if eff_status == "solved" -%}{%- assign cls = "ctf-tile ctf-tile--solved" -%}{%- endif -%}
-      {%- if eff_status == "in-progress" -%}{%- assign cls = "ctf-tile ctf-tile--in-progress" -%}{%- endif -%}
+      {%- if level.num == eth_auto_next and level.status != 'solved' -%}{%- assign eff_status = 'in-progress' -%}{%- endif -%}
+      {%- if eff_status == 'solved' -%}{%- assign cls = 'ctf-tile ctf-tile--solved' -%}{%- endif -%}
+      {%- if eff_status == 'in-progress' -%}{%- assign cls = 'ctf-tile ctf-tile--in-progress' -%}{%- endif -%}
       {%- comment -%} Match Ethernaut's own drawDifficultyCircle: ceil(value/2) = (value+1)|div:2 {%- endcomment -%}
       {%- assign d = level.difficulty -%}
       {%- assign dots_full = 0 -%}
-      {%- if d != nil -%}{%- assign dots_full = d | plus: 1 | divided_by: 2 -%}{%- endif -%}
-      {%- assign band = "" -%}
-      {%- if dots_full == 1 -%}{%- assign band = "beginner" -%}
-      {%- elsif dots_full == 2 -%}{%- assign band = "easy" -%}
-      {%- elsif dots_full == 3 -%}{%- assign band = "medium" -%}
-      {%- elsif dots_full == 4 -%}{%- assign band = "hard" -%}
-      {%- elsif dots_full == 5 -%}{%- assign band = "expert" -%}
+      {%- if d != null -%}{%- assign dots_full = d | plus: 1 | divided_by: 2 -%}{%- endif -%}
+      {%- assign band = '' -%}
+      {%- if dots_full == 1 -%}
+        {%- assign band = 'beginner' -%}
+      {%- elsif dots_full == 2 -%}
+        {%- assign band = 'easy' -%}
+      {%- elsif dots_full == 3 -%}
+        {%- assign band = 'medium' -%}
+      {%- elsif dots_full == 4 -%}
+        {%- assign band = 'hard' -%}
+      {%- elsif dots_full == 5 -%}
+        {%- assign band = 'expert' -%}
       {%- endif -%}
       {%- capture dot_str -%}
         {%- for i in (1..5) -%}
@@ -214,9 +351,9 @@
         {%- endfor -%}
       {%- endcapture -%}
       {%- assign tip = level.name -%}
-      {%- if d != nil %}{%- assign tip = tip | append: " · difficulty " | append: dots_full | append: "/5" -%}{%- endif -%}
-      {%- if eff_status == "solved" and level.solved_on %}{%- assign tip = tip | append: " · solved " | append: level.solved_on -%}{%- endif -%}
-      {%- if eff_status == "in-progress" and level.status != "in-progress" %}{%- assign tip = tip | append: " · up next" -%}{%- endif -%}
+      {%- if d != null %}{%- assign tip = tip | append: ' · difficulty ' | append: dots_full | append: '/5' -%}{%- endif -%}
+      {%- if eff_status == 'solved' and level.solved_on %}{%- assign tip = tip | append: ' · solved ' | append: level.solved_on -%}{%- endif -%}
+      {%- if eff_status == 'in-progress' and level.status != 'in-progress' %}{%- assign tip = tip | append: ' · up next' -%}{%- endif -%}
       {%- capture tile_inner -%}
         <span class="ctf-tile__num">{{ level.num }}</span>
         <span class="ctf-tile__name">{{ level.name }}</span>
@@ -225,8 +362,18 @@
         {%- endif -%}
       {%- endcapture -%}
       {%- assign href = level.writeup -%}
-      {%- if href == nil or href == "" -%}{%- assign href = "https://ethernaut.openzeppelin.com/level/" | append: level.num -%}{%- endif -%}
-      <a class="{{ cls }}" href="{{ href }}"{% unless level.writeup %} target="_blank" rel="noopener noreferrer"{% endunless %} data-toggle="tooltip" title="{{ tip }}">{{ tile_inner }}</a>
+      {%- if href == null or href == '' -%}{%- assign href = 'https://ethernaut.openzeppelin.com/level/' | append: level.num -%}{%- endif -%}
+      <a
+        class="{{ cls }}"
+        href="{{ href }}"
+        {% unless level.writeup %}
+          target="_blank" rel="noopener noreferrer"
+        {% endunless %}
+        data-toggle="tooltip"
+        title="{{ tip }}"
+      >
+        {{- tile_inner -}}
+      </a>
     {%- endfor -%}
   </div>
   <div class="ctf-tracker__legend">
@@ -265,96 +412,131 @@
 <div class="ctf-tracker">
   <div class="ctf-tracker__header">
     <h3 class="ctf-tracker__title">
-      <a href="{{ dvd.platform_url }}" target="_blank" rel="noopener noreferrer">{{ dvd.name }}{% if dvd.version %} <small class="text-muted">({{ dvd.version }})</small>{% endif %}</a>
+      <a href="{{ dvd.platform_url }}" target="_blank" rel="noopener noreferrer">
+        {{- dvd.name -}}
+        {%- if dvd.version %}
+          <small class="text-muted">({{ dvd.version }})</small>
+        {%- endif -%}
+      </a>
     </h3>
     <span class="ctf-tracker__summary">Coming soon&hellip;</span>
   </div>
-  {%- if dvd.description %}<p class="ctf-tracker__desc">{{ dvd.description }}</p>{%- endif %}
+  {%- if dvd.description %}
+    <p class="ctf-tracker__desc">{{ dvd.description }}</p>
+  {%- endif %}
   <div style="padding: 1.75rem 0.5rem; text-align: center; color: var(--global-text-color-light); border: 1px dashed var(--global-divider-color); border-radius: 4px;">
     <strong style="font-size: 1rem; letter-spacing: 0.02em;">Coming soon&hellip;</strong>
   </div>
 </div>
 
 {%- if false -%}
-{%- assign dvd_items = dvd.challenges -%}
-{%- assign dvd_total = dvd_items | size -%}
-{%- assign dvd_solved_items = dvd_items | where: "status", "solved" -%}
-{%- assign dvd_solved = dvd_solved_items | size -%}
-{%- assign dvd_explicit_ip = dvd_items | where: "status", "in-progress" | size -%}
-{%- assign dvd_recent_solved = dvd_solved_items | sort: "solved_on" | reverse -%}
-{%- assign dvd_last = dvd_recent_solved | first -%}
-{%- assign dvd_solved_nums = dvd_solved_items | map: "num" | sort -%}
-{%- assign dvd_max_solved = dvd_solved_nums | last -%}
-{%- assign dvd_auto_next = -1 -%}
-{%- if dvd_max_solved != nil -%}{%- assign dvd_auto_next = dvd_max_solved | plus: 1 -%}{%- else -%}{%- assign dvd_auto_next = dvd_items | first | map: "num" | first -%}{%- endif -%}
-{%- comment -%} when nothing is solved yet, surface challenge #1 (first in list) as up-next {%- endcomment -%}
-{%- if dvd_max_solved == nil -%}
-  {%- assign first_item = dvd_items | first -%}
-  {%- assign dvd_auto_next = first_item.num -%}
-{%- endif -%}
-{%- assign dvd_in_progress_display = dvd_explicit_ip -%}
-{%- for c in dvd_items -%}
-  {%- if c.num == dvd_auto_next and c.status != "solved" and c.status != "in-progress" -%}
-    {%- assign dvd_in_progress_display = dvd_in_progress_display | plus: 1 -%}
+  {%- assign dvd_items = dvd.challenges -%}
+  {%- assign dvd_total = dvd_items | size -%}
+  {%- assign dvd_solved_items = dvd_items | where: 'status', 'solved' -%}
+  {%- assign dvd_solved = dvd_solved_items | size -%}
+  {%- assign dvd_explicit_ip = dvd_items | where: 'status', 'in-progress' | size -%}
+  {%- assign dvd_recent_solved = dvd_solved_items | sort: 'solved_on' | reverse -%}
+  {%- assign dvd_last = dvd_recent_solved | first -%}
+  {%- assign dvd_solved_nums = dvd_solved_items | map: 'num' | sort -%}
+  {%- assign dvd_max_solved = dvd_solved_nums | last -%}
+  {%- assign dvd_auto_next = -1 -%}
+  {%- if dvd_max_solved != null -%}
+    {%- assign dvd_auto_next = dvd_max_solved | plus: 1 -%}
+  {%- else -%}
+    {%- assign dvd_auto_next = dvd_items | first | map: 'num' | first -%}
   {%- endif -%}
-{%- endfor -%}
+  {%- comment -%} when nothing is solved yet, surface challenge #1 (first in list) as up-next {%- endcomment -%}
+  {%- if dvd_max_solved == null -%}
+    {%- assign first_item = dvd_items | first -%}
+    {%- assign dvd_auto_next = first_item.num -%}
+  {%- endif -%}
+  {%- assign dvd_in_progress_display = dvd_explicit_ip -%}
+  {%- for c in dvd_items -%}
+    {%- if c.num == dvd_auto_next and c.status != 'solved' and c.status != 'in-progress' -%}
+      {%- assign dvd_in_progress_display = dvd_in_progress_display | plus: 1 -%}
+    {%- endif -%}
+  {%- endfor -%}
 
-<div class="ctf-tracker">
-  <div class="ctf-tracker__header">
-    <h3 class="ctf-tracker__title">
-      <a href="{{ dvd.platform_url }}" target="_blank" rel="noopener noreferrer">{{ dvd.name }}{% if dvd.version %} <small class="text-muted">({{ dvd.version }})</small>{% endif %}</a>
-    </h3>
-    <span class="ctf-tracker__summary">
-      {{ dvd_solved }} / {{ dvd_total }} solved
-      {%- if dvd_in_progress_display > 0 %} · {{ dvd_in_progress_display }} in progress{%- endif -%}
-      {%- if dvd_last %} · last solved {{ dvd_last.solved_on | date: "%b %e, %Y" }}{%- endif -%}
-    </span>
-  </div>
-  {%- if dvd.description %}<p class="ctf-tracker__desc">{{ dvd.description }}</p>{%- endif %}
-  <div class="ctf-tracker__grid">
-    {%- for chall in dvd_items -%}
-      {%- assign cls = "ctf-tile" -%}
-      {%- assign eff_status = chall.status -%}
-      {%- if chall.num == dvd_auto_next and chall.status != "solved" -%}{%- assign eff_status = "in-progress" -%}{%- endif -%}
-      {%- if eff_status == "solved" -%}{%- assign cls = "ctf-tile ctf-tile--solved" -%}{%- endif -%}
-      {%- if eff_status == "in-progress" -%}{%- assign cls = "ctf-tile ctf-tile--in-progress" -%}{%- endif -%}
-      {%- assign d = chall.difficulty -%}
-      {%- assign dots_full = 0 -%}
-      {%- if d != nil -%}{%- assign dots_full = d | plus: 1 | divided_by: 2 -%}{%- endif -%}
-      {%- assign band = "" -%}
-      {%- if dots_full == 1 -%}{%- assign band = "beginner" -%}
-      {%- elsif dots_full == 2 -%}{%- assign band = "easy" -%}
-      {%- elsif dots_full == 3 -%}{%- assign band = "medium" -%}
-      {%- elsif dots_full == 4 -%}{%- assign band = "hard" -%}
-      {%- elsif dots_full == 5 -%}{%- assign band = "expert" -%}
-      {%- endif -%}
-      {%- capture dot_str -%}
+  <div class="ctf-tracker">
+    <div class="ctf-tracker__header">
+      <h3 class="ctf-tracker__title">
+        <a href="{{ dvd.platform_url }}" target="_blank" rel="noopener noreferrer">
+          {{- dvd.name -}}
+          {%- if dvd.version %}
+            <small class="text-muted">({{ dvd.version }})</small>
+          {%- endif -%}
+        </a>
+      </h3>
+      <span class="ctf-tracker__summary">
+        {{ dvd_solved }} / {{ dvd_total }} solved
+        {%- if dvd_in_progress_display > 0 %} · {{ dvd_in_progress_display }} in progress{%- endif -%}
+        {%- if dvd_last %} · last solved {{ dvd_last.solved_on | date: '%b %e, %Y' }}{%- endif -%}
+      </span>
+    </div>
+    {%- if dvd.description %}
+      <p class="ctf-tracker__desc">{{ dvd.description }}</p>
+    {%- endif %}
+    <div class="ctf-tracker__grid">
+      {%- for chall in dvd_items -%}
+        {%- assign cls = 'ctf-tile' -%}
+        {%- assign eff_status = chall.status -%}
+        {%- if chall.num == dvd_auto_next and chall.status != 'solved' -%}{%- assign eff_status = 'in-progress' -%}{%- endif -%}
+        {%- if eff_status == 'solved' -%}{%- assign cls = 'ctf-tile ctf-tile--solved' -%}{%- endif -%}
+        {%- if eff_status == 'in-progress' -%}{%- assign cls = 'ctf-tile ctf-tile--in-progress' -%}{%- endif -%}
+        {%- assign d = chall.difficulty -%}
+        {%- assign dots_full = 0 -%}
+        {%- if d != null -%}{%- assign dots_full = d | plus: 1 | divided_by: 2 -%}{%- endif -%}
+        {%- assign band = '' -%}
+        {%- if dots_full == 1 -%}
+          {%- assign band = 'beginner' -%}
+        {%- elsif dots_full == 2 -%}
+          {%- assign band = 'easy' -%}
+        {%- elsif dots_full == 3 -%}
+          {%- assign band = 'medium' -%}
+        {%- elsif dots_full == 4 -%}
+          {%- assign band = 'hard' -%}
+        {%- elsif dots_full == 5 -%}
+          {%- assign band = 'expert' -%}
+        {%- endif -%}
+        {%- capture dot_str -%}
         {%- for i in (1..5) -%}
           {%- if i <= dots_full -%}●{%- else -%}○{%- endif -%}
         {%- endfor -%}
       {%- endcapture -%}
-      {%- assign tip = chall.name -%}
-      {%- if d != nil %}{%- assign tip = tip | append: " · difficulty " | append: dots_full | append: "/5" -%}{%- endif -%}
-      {%- if eff_status == "solved" and chall.solved_on %}{%- assign tip = tip | append: " · solved " | append: chall.solved_on -%}{%- endif -%}
-      {%- if eff_status == "in-progress" and chall.status != "in-progress" %}{%- assign tip = tip | append: " · up next" -%}{%- endif -%}
-      {%- capture tile_inner -%}
+        {%- assign tip = chall.name -%}
+        {%- if d != null %}{%- assign tip = tip | append: ' · difficulty ' | append: dots_full | append: '/5' -%}{%- endif -%}
+        {%- if eff_status == 'solved' and chall.solved_on %}{%- assign tip = tip | append: ' · solved ' | append: chall.solved_on -%}{%- endif -%}
+        {%- if eff_status == 'in-progress' and chall.status != 'in-progress' %}{%- assign tip = tip | append: ' · up next' -%}{%- endif -%}
+        {%- capture tile_inner -%}
         <span class="ctf-tile__num">{{ chall.num }}</span>
         <span class="ctf-tile__name">{{ chall.name }}</span>
         {%- if d != nil -%}
           <span class="ctf-tile__diff ctf-tile__diff--{{ band }}">{{ dot_str | strip }}</span>
         {%- endif -%}
       {%- endcapture -%}
-      {%- comment -%} DVD slug for source link: lowercase name with spaces→dash, drop punctuation {%- endcomment -%}
-      {%- assign dvd_slug = chall.name | downcase | replace: " ", "-" | replace: ".", "" -%}
-      {%- assign href = chall.writeup -%}
-      {%- if href == nil or href == "" -%}{%- assign href = "https://github.com/theredguild/damn-vulnerable-defi/tree/master/src/" | append: dvd_slug -%}{%- endif -%}
-      <a class="{{ cls }}" href="{{ href }}"{% unless chall.writeup %} target="_blank" rel="noopener noreferrer"{% endunless %} data-toggle="tooltip" title="{{ tip }}">{{ tile_inner }}</a>
-    {%- endfor -%}
+        {%- comment -%} DVD slug for source link: lowercase name with spaces→dash, drop punctuation {%- endcomment -%}
+        {%- assign dvd_slug = chall.name | downcase | replace: ' ', '-' | replace: '.', '' -%}
+        {%- assign href = chall.writeup -%}
+        {%- if href == null or href == '' -%}
+          {%- assign href = 'https://github.com/theredguild/damn-vulnerable-defi/tree/master/src/' | append: dvd_slug -%}
+        {%- endif -%}
+        <a
+          class="{{ cls }}"
+          href="{{ href }}"
+          {% unless chall.writeup %}
+            target="_blank" rel="noopener noreferrer"
+          {% endunless %}
+          data-toggle="tooltip"
+          title="{{ tip }}"
+        >
+          {{- tile_inner -}}
+        </a>
+      {%- endfor -%}
+    </div>
+    <div class="ctf-tracker__legend">
+      <span><i class="solved"></i> solved</span>
+      <span><i class="in-progress"></i> in progress</span>
+      <span><i></i> not started</span>
+    </div>
   </div>
-  <div class="ctf-tracker__legend">
-    <span><i class="solved"></i> solved</span>
-    <span><i class="in-progress"></i> in progress</span>
-    <span><i></i> not started</span>
-  </div>
-</div>
 {%- endif -%}

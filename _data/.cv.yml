@@ -4,7 +4,7 @@
     - title: PhD on Applied Cryptography on Blockchain
       institution: Universitat Oberta de Catalunya, Barcelona, Spain
       year: 2021 - Present
-    - title: MSc in Fundamental Principles of Data Science 
+    - title: MSc in Fundamental Principles of Data Science
       institution: Universitat de Barcelona, Barcelona, Spain
       year: 2020 - 2021
       description:
@@ -68,11 +68,10 @@
 - title: Scientific Committee Participation
   type: time_table
   contents:
-    - item: External reviewer
-      - title: [Poster Jury for IEEE S&P 2025](https://www.ieee-security.org/TC/SP2025/cfposters.html)
-        year: 2025
-      - title: Reviewer for SECRYPT 2025.
-        year: 2025
+    - title: External reviewer
+      description:
+        - "[Poster Jury for IEEE S&P 2025](https://www.ieee-security.org/TC/SP2025/cfposters.html) (2025)"
+        - "Reviewer for SECRYPT 2025 (2025)"
 
 - title: Supervision
   type: list

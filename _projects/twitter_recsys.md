@@ -25,19 +25,19 @@ The solution is based on **Gradient Boosting Trees** with hand-crafted features 
 
 ## Results
 
-| Metric | Position |
-|---|---|
-| Overall leaderboard | **14th place** |
-| Like category | **7th – 9th place** |
+| Metric              | Position            |
+| ------------------- | ------------------- |
+| Overall leaderboard | **14th place**      |
+| Like category       | **7th – 9th place** |
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Language | Python |
-| Models | Gradient Boosting Trees (XGBoost / LightGBM) |
-| Notebooks | Jupyter |
-| Feature engineering | Custom text + non-text features |
+| Layer               | Technology                                   |
+| ------------------- | -------------------------------------------- |
+| Language            | Python                                       |
+| Models              | Gradient Boosting Trees (XGBoost / LightGBM) |
+| Notebooks           | Jupyter                                      |
+| Feature engineering | Custom text + non-text features              |
 
 ## Contributors
 

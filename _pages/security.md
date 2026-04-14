@@ -4,7 +4,7 @@ permalink: /security/
 title: security
 description: "I audit blockchain systems, primarily Zero-Knowledge proving infrastructure (zkVMs, circuits, recursion layers) and DeFi protocols."
 nav: true
-nav_order: 2              # directly after about
+nav_order: 2 # directly after about
 ---
 
 {% assign published_audits = site.audits | where: "published", true | sort: "date" | reverse %}
@@ -76,6 +76,7 @@ nav_order: 2              # directly after about
 </h2>
 
 {% if firm_audits.size > 0 %}
+
   <div class="row row-cols-1 row-cols-md-2">
     {% for audit in firm_audits %}
       {% include audits_horizontal.liquid %}
@@ -86,15 +87,13 @@ nav_order: 2              # directly after about
 {% endif %}
 
 {%- comment -%}
-  ============================================================
-  HIDDEN WHILE EMPTY — restore when there is real content.
-  ============================================================
+HIDDEN WHILE EMPTY — restore when there is real content.
 
-  Audit contest findings: activates as soon as any _audits/*.md entry has
-    contest: true
-    published: true
-  (e.g. Code4rena / Sherlock / Cantina / Immunefi). Until then the H2 and
-  "coming soon" placeholder add noise, so they're commented out.
+Audit contest findings: activates as soon as any \_audits/\*.md entry has
+contest: true
+published: true
+(e.g. Code4rena / Sherlock / Cantina / Immunefi). Until then the H2 and
+"coming soon" placeholder add noise, so they're commented out.
 
   <h2 id="contests">audit contest findings</h2>
   {% if contest_audits.size > 0 %}
@@ -107,10 +106,10 @@ nav_order: 2              # directly after about
     <p class="text-muted"><em>Code4rena / Sherlock / Cantina contest entries will appear here.</em></p>
   {% endif %}
 
-  Writeups & research posts: activates as soon as any _posts/*.md is tagged
-  `security-research` (and is not in _drafts/). The 5 shells under _drafts/
-  are the first candidates — move them to _posts/ after review. Until then
-  this section is hidden.
+Writeups & research posts: activates as soon as any \_posts/\*.md is tagged
+`security-research` (and is not in \_drafts/). The 5 shells under \_drafts/
+are the first candidates — move them to \_posts/ after review. Until then
+this section is hidden.
 
   <h2 id="writeups">writeups &amp; research posts</h2>
   {% if security_posts.size > 0 %}
@@ -166,16 +165,18 @@ nav_order: 2              # directly after about
 {% include ctf_progress.liquid %}
 
 {%- comment -%}
-  The security-tagged projects grid (Sand Walker, etc.) used to live
-  here under a "tools & contributions" H2. Hidden behind an if-false
-  wrapper below. To restore, flip the wrapping condition to "if true"
-  (or delete the wrapping if/endif tags entirely). Data untouched —
-  tag a project with `security` and it surfaces instantly.
+The security-tagged projects grid (Sand Walker, etc.) used to live
+here under a "tools & contributions" H2. Hidden behind an if-false
+wrapper below. To restore, flip the wrapping condition to "if true"
+(or delete the wrapping if/endif tags entirely). Data untouched —
+tag a project with `security` and it surfaces instantly.
 {%- endcomment -%}
 {%- if false -%}
+
 <h2 id="tools">tools &amp; contributions</h2>
 
 {% if security_projects.size > 0 %}
+
   <div class="row row-cols-1 row-cols-md-2">
     {% for project in security_projects %}
       {% include projects_horizontal.liquid %}

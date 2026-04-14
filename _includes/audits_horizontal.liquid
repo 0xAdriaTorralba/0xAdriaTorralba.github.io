@@ -6,36 +6,50 @@
           <h3 class="card-title" style="margin-bottom: 0.2rem;">{{ audit.title }}</h3>
         </a>
         {% if audit.firm %}
-          <span class="badge" style="background-color: var(--global-theme-color); color: var(--global-hover-text-color); font-weight: 500;">{{ audit.firm }}</span>
+          <span class="badge" style="background-color: var(--global-theme-color); color: var(--global-hover-text-color); font-weight: 500;">
+            {{- audit.firm -}}
+          </span>
         {% endif %}
       </div>
       <p class="card-text text-muted" style="font-size: 0.85rem; margin-bottom: 0.4rem;">
-        {% if audit.client %}<strong>{{ audit.client }}</strong>{% endif %}
+        {% if audit.client -%}
+          <strong>{{ audit.client }}</strong>
+        {%- endif %}
         {% if audit.role %} · {{ audit.role }}{% endif %}
-        {% if audit.date %} · {{ audit.date | date: "%b %Y" }}{% endif %}
+        {% if audit.date %} · {{ audit.date | date: '%b %Y' }}{% endif %}
       </p>
-      {% if audit.scope %}<p class="card-text" style="font-size: 0.9rem; margin-bottom: 0.5rem;"><em>Scope:</em> {{ audit.scope }}</p>{% endif %}
-      {% if audit.description %}<p class="card-text">{{ audit.description }}</p>{% endif %}
+      {% if audit.scope %}
+        <p class="card-text" style="font-size: 0.9rem; margin-bottom: 0.5rem;"><em>Scope:</em> {{ audit.scope }}</p>
+      {% endif %}
+      {% if audit.description %}
+        <p class="card-text">{{ audit.description }}</p>
+      {% endif %}
       {% if audit.severity_counts %}
         <div class="d-flex flex-wrap" style="gap: 0.35rem; margin-bottom: 0.6rem;">
           {%- assign sc = audit.severity_counts -%}
-          {%- if sc.critical and sc.critical > 0 %}<span class="badge" style="background-color: #c00; color: #fff;">{{ sc.critical }} critical</span>{%- endif -%}
-          {%- if sc.high and sc.high > 0 %}<span class="badge" style="background-color: #e67e22; color: #fff;">{{ sc.high }} high</span>{%- endif -%}
-          {%- if sc.medium and sc.medium > 0 %}<span class="badge" style="background-color: #e7c000; color: #333;">{{ sc.medium }} medium</span>{%- endif -%}
-          {%- if sc.low and sc.low > 0 %}<span class="badge" style="background-color: #3498db; color: #fff;">{{ sc.low }} low</span>{%- endif -%}
-          {%- if sc.info and sc.info > 0 %}<span class="badge" style="background-color: var(--global-text-color-light); color: var(--global-bg-color);">{{ sc.info }} info</span>{%- endif -%}
+          {%- if sc.critical and sc.critical > 0 -%}
+            <span class="badge" style="background-color: #c00; color: #fff;">{{ sc.critical }} critical</span>
+          {%- endif -%}
+          {%- if sc.high and sc.high > 0 -%}
+            <span class="badge" style="background-color: #e67e22; color: #fff;">{{ sc.high }} high</span>
+          {%- endif -%}
+          {%- if sc.medium and sc.medium > 0 -%}
+            <span class="badge" style="background-color: #e7c000; color: #333;">{{ sc.medium }} medium</span>
+          {%- endif -%}
+          {%- if sc.low and sc.low > 0 -%}
+            <span class="badge" style="background-color: #3498db; color: #fff;">{{ sc.low }} low</span>
+          {%- endif -%}
+          {%- if sc.info and sc.info > 0 -%}
+            <span class="badge" style="background-color: var(--global-text-color-light); color: var(--global-bg-color);">{{ sc.info }} info</span>
+          {%- endif -%}
         </div>
       {% endif %}
       <div class="d-flex align-items-center" style="gap: 0.8rem; font-size: 0.9rem;">
         {% if audit.report_url %}
-          <a href="{{ audit.report_url }}" target="_blank" rel="noopener noreferrer">
-            <i class="fa-solid fa-file-lines"></i> Public report
-          </a>
+          <a href="{{ audit.report_url }}" target="_blank" rel="noopener noreferrer"> <i class="fa-solid fa-file-lines"></i> Public report </a>
         {% endif %}
         {% if audit.repo_url %}
-          <a href="{{ audit.repo_url }}" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-github"></i> Code
-          </a>
+          <a href="{{ audit.repo_url }}" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-github"></i> Code </a>
         {% endif %}
         {% if audit.url %}
           <a href="{{ audit.url | relative_url }}">Notes →</a>
