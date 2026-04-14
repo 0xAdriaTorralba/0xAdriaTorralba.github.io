@@ -7,7 +7,7 @@ client: "ZisK (0xPolygonHermez/zisk)"
 firm: "OpenZeppelin"
 contest: false
 scope: "PIL2 constraints for the ZisK zkVM: binary opcode circuits (binary.pil, binary_add.pil, binary_extension.pil, binary_extension_table.pil, binary_table.pil) and the main execution trace (main.pil)"
-description: "Security review of the core PIL2 circuits of the ZisK general-purpose zkVM. Focused on the correctness of the constraint system for binary opcodes (MIN, MAX, LT, GT, EQ, ADD, SUB, LE, AND, OR, XOR, SLL, SRL, SRA, SE, …) and on the main execution-trace constraints that stitch segments together and enforce control flow."
+description: "ZisK is a general-purpose zkVM — a virtual machine that produces a zero-knowledge proof of any RISC-V program's execution. This engagement reviewed the core PIL2 arithmetic circuits (binary opcode evaluation and the main execution-trace constraints that stitch execution segments together). Thirteen issues surfaced, including one critical — see the public report below."
 severity_counts:
   critical: 1
   high: 2
