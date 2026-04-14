@@ -15,15 +15,48 @@
 {%- assign certs = site.data.certifications.certifications -%}
 
 {%- if certs and certs.size > 0 -%}
-  {%- assign sorted = certs | sort: "date" | reverse -%}
+  {%- assign sorted = certs | sort: 'date' | reverse -%}
   <style>
-    .cert-list { list-style: none; padding-left: 0; margin-bottom: 0; }
-    .cert-item { display: flex; gap: 0.9rem; align-items: center; padding: 0.7rem 0; border-bottom: 1px solid var(--global-divider-color); }
-    .cert-badge { flex-shrink: 0; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; }
-    .cert-badge img { max-width: 100%; max-height: 100%; object-fit: contain; }
-    .cert-body { flex: 1 1 auto; min-width: 0; }
-    .cert-row { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; }
-    .cert-title a, .cert-title strong { font-weight: 600; }
+    .cert-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+    .cert-item {
+      display: flex;
+      gap: 0.9rem;
+      align-items: center;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--global-divider-color);
+    }
+    .cert-badge {
+      flex-shrink: 0;
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cert-badge img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .cert-body {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    .cert-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .cert-title a,
+    .cert-title strong {
+      font-weight: 600;
+    }
   </style>
   <ul class="cert-list">
     {%- for c in sorted -%}
@@ -43,24 +76,32 @@
           <div class="cert-row">
             <div class="cert-title" style="flex: 1 1 auto; min-width: 0;">
               {%- if c.url -%}
-                <a href="{{ c.url }}" target="_blank" rel="noopener noreferrer"><strong>{{ c.title }}</strong></a>
+                <a href="{{ c.url }}" target="_blank" rel="noopener noreferrer"
+                  ><strong>{{ c.title }}</strong></a
+                >
               {%- else -%}
                 <strong>{{ c.title }}</strong>
               {%- endif -%}
-              {%- if c.provider %}<span class="text-muted" style="font-size: 0.85rem;"> · {{ c.provider }}</span>{%- endif -%}
+              {%- if c.provider -%}
+                <span class="text-muted" style="font-size: 0.85rem;"> · {{ c.provider }}</span>
+              {%- endif -%}
             </div>
             <div style="display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;">
               {%- if c.category -%}
-                <span class="badge" style="background-color: var(--global-text-color-light); color: var(--global-bg-color); font-weight: 500;">{{ c.category }}</span>
+                <span class="badge" style="background-color: var(--global-text-color-light); color: var(--global-bg-color); font-weight: 500;">
+                  {{- c.category -}}
+                </span>
               {%- endif -%}
               {%- if c.date -%}
-                <span class="text-muted" style="font-size: 0.85rem;">{{ c.date | date: "%b %Y" }}</span>
+                <span class="text-muted" style="font-size: 0.85rem;">{{ c.date | date: '%b %Y' }}</span>
               {%- endif -%}
             </div>
           </div>
           {%- if c.notes or c.verification_url -%}
             <div style="font-size: 0.85rem; margin-top: 0.25rem; display: flex; gap: 0.9rem; align-items: center; flex-wrap: wrap;">
-              {%- if c.notes %}<span class="text-muted">{{ c.notes }}</span>{%- endif -%}
+              {%- if c.notes -%}
+                <span class="text-muted">{{ c.notes }}</span>
+              {%- endif -%}
               {%- if c.verification_url -%}
                 <a href="{{ c.verification_url }}" target="_blank" rel="noopener noreferrer" data-toggle="tooltip" title="Public verification">
                   <i class="fa-solid fa-certificate"></i> Verify

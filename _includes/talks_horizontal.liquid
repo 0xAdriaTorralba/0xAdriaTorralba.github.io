@@ -3,7 +3,12 @@
     <div class="row no-gutters">
       {% if talk.img %}
         <div class="col-md-4 p-0" style="position: relative; overflow: hidden; min-height: 200px;">
-          <img src="{{ talk.img | relative_url }}" alt="talk thumbnail" loading="eager" style="object-fit: cover; width: 100%; height: 100%; position: absolute; top: 0; left: 0;">
+          <img
+            src="{{ talk.img | relative_url }}"
+            alt="talk thumbnail"
+            loading="eager"
+            style="object-fit: cover; width: 100%; height: 100%; position: absolute; top: 0; left: 0;"
+          >
         </div>
       {% endif %}
       <div class="{% if talk.img %}col-md-8{% else %}col-md-12{% endif %}">
@@ -11,7 +16,9 @@
           <a href="{{ talk.url | relative_url }}">
             <h3 class="card-title">{{ talk.title }}</h3>
           </a>
-          {% if talk.talk_date %}<p class="card-text text-muted" style="font-size: 0.85rem; margin-bottom: 0.4rem;">{{ talk.talk_date }}</p>{% endif %}
+          {% if talk.talk_date %}
+            <p class="card-text text-muted" style="font-size: 0.85rem; margin-bottom: 0.4rem;">{{ talk.talk_date }}</p>
+          {% endif %}
           <p class="card-text">{{ talk.description }}</p>
           <div class="row ml-1 mr-1 p-0">
             {% if talk.youtube_url %}

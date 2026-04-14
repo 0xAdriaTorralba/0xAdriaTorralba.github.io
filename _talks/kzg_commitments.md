@@ -23,6 +23,7 @@ The workshop takes a practical approach: starting from the mathematical foundati
 ## Materials
 
 The slides include:
+
 - **Main presentation** — `HandsOnZeroKnowledgeBasics_KZGCommitments.pdf`
 - **Worked example** — `kzg_example_by_hand.pdf`, a step-by-step KZG computation done by hand
 

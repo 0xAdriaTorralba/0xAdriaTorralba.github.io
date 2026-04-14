@@ -16,17 +16,43 @@ layout: default
 
   <style>
     /* Two-column about header: profile on the left, bio on the right. */
-    .about-top { display: grid; grid-template-columns: 1fr; gap: 1.75rem; margin-bottom: 2.5rem; }
-    @media (min-width: 768px) { .about-top { grid-template-columns: minmax(180px, 30%) 1fr; gap: 2.5rem; align-items: start; } }
-    .about-top__profile { text-align: left; }
-    .about-top__profile .more-info { margin-top: 1rem; font-size: 0.95rem; line-height: 1.5; }
-    .about-top__bio > p:first-child { margin-top: 0; }
+    .about-top {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+      margin-bottom: 2.5rem;
+    }
+    @media (min-width: 768px) {
+      .about-top {
+        grid-template-columns: minmax(180px, 30%) 1fr;
+        gap: 2.5rem;
+        align-items: start;
+      }
+    }
+    .about-top__profile {
+      text-align: left;
+    }
+    .about-top__profile .more-info {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .about-top__bio > p:first-child {
+      margin-top: 0;
+    }
 
     /* Uniform spacing for every section heading after the header. */
-    .post article > h2 { margin-top: 2.25rem; margin-bottom: 0.5rem; }
+    .post article > h2 {
+      margin-top: 2.25rem;
+      margin-bottom: 0.5rem;
+    }
 
     /* Clear visual break between the github heatmap and the contact icons. */
-    .post .social { margin-top: 3rem; padding-top: 1.75rem; border-top: 1px solid var(--global-divider-color); }
+    .post .social {
+      margin-top: 3rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--global-divider-color);
+    }
   </style>
 
   <article>

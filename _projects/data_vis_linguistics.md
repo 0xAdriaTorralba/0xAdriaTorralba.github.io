@@ -11,7 +11,7 @@ category: project
 
 A research collaboration with the Mathematics and Computer Science Department at the **Universitat de Barcelona**, focused on building tooling to visualise and analyse **toxicity in social networks** from a linguistics perspective.
 
-The project resulted in a published paper: *"Visualisation of hierarchical multivariate data: Categorisation and case study on hate speech"*, published in [Information Visualization 22.1 (2023), pp. 31–51](https://journals.sagepub.com/doi/10.1177/14738716221116020).
+The project resulted in a published paper: _"Visualisation of hierarchical multivariate data: Categorisation and case study on hate speech"_, published in [Information Visualization 22.1 (2023), pp. 31–51](https://journals.sagepub.com/doi/10.1177/14738716221116020).
 
 ## What It Does
 
@@ -19,13 +19,13 @@ The application allows researchers to upload linguistic datasets (in Excel/XLS f
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Backend | Python 3.8, Django 3.1.6 |
-| API | Django REST Framework 3.12.2 |
-| Visualisation | Highcharts, D3.js |
-| Data ingestion | openpyxl, pyexcel-xls, xlrd |
-| Database | SQLite |
+| Layer          | Technology                   |
+| -------------- | ---------------------------- |
+| Backend        | Python 3.8, Django 3.1.6     |
+| API            | Django REST Framework 3.12.2 |
+| Visualisation  | Highcharts, D3.js            |
+| Data ingestion | openpyxl, pyexcel-xls, xlrd  |
+| Database       | SQLite                       |
 
 ## Contributors
 

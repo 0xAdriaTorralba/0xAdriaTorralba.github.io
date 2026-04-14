@@ -9,7 +9,7 @@ category: project
 ---
 
 > Coming soon to the [Raycast Store](https://www.raycast.com/store).
-{: .block-warning }
+> {: .block-warning }
 
 **Pedal for Raycast** is a [Raycast](https://www.raycast.com/) extension that provides instant access to real-time bike-sharing data from hundreds of networks worldwide. Query station availability, manage favorites, and navigate to stations — all from the Raycast launcher. Supports hundreds of bike-sharing systems across the globe.
 
@@ -25,20 +25,20 @@ category: project
 
 ## Keyboard Shortcuts
 
-| Shortcut | Action |
-|---|---|
-| `⌘A` | Open in Apple Maps |
-| `⌘G` | Open in Google Maps |
-| `⌘⌫` | Delete custom name |
-| `⌘H` | Toggle count labels |
+| Shortcut | Action              |
+| -------- | ------------------- |
+| `⌘A`     | Open in Apple Maps  |
+| `⌘G`     | Open in Google Maps |
+| `⌘⌫`     | Delete custom name  |
+| `⌘H`     | Toggle count labels |
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Framework | Raycast Extension API |
-| Language | TypeScript, React |
-| HTTP | Axios |
-| API | [CityBikes API](https://api.citybik.es/v2) |
-| Testing | Jest, React Testing Library |
-| Storage | Raycast LocalStorage |
+| Layer     | Technology                                 |
+| --------- | ------------------------------------------ |
+| Framework | Raycast Extension API                      |
+| Language  | TypeScript, React                          |
+| HTTP      | Axios                                      |
+| API       | [CityBikes API](https://api.citybik.es/v2) |
+| Testing   | Jest, React Testing Library                |
+| Storage   | Raycast LocalStorage                       |

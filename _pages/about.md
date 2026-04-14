@@ -34,9 +34,9 @@ github_activity:
 # To restore: set `enabled: true` below. The other knobs
 # (scrollable, limit) keep their current values.
 announcements:
-  enabled: false            # ← flip to true to bring "latest news" back on /about
-  scrollable: true          # vertical scroll bar when there are more than 3 items
-  limit: 5                  # leave blank to include every _news/*.md
+  enabled: false # ← flip to true to bring "latest news" back on /about
+  scrollable: true # vertical scroll bar when there are more than 3 items
+  limit: 5 # leave blank to include every _news/*.md
 
 # latest_posts:
 #   enabled: true

@@ -17,6 +17,7 @@ The academic memory is published at the [UB repository](http://diposit.ub.edu/ds
 ## Fractals
 
 **2D Fractals (CPU + GPU rendered)**
+
 - Mandelbrot sets
 - Multibrot sets
 - Julia sets
@@ -25,19 +26,20 @@ The academic memory is published at the [UB repository](http://diposit.ub.edu/ds
 - Multiple colormaps
 
 **3D Fractals (GPU ray marching)**
+
 - Mandelbulb
 - Sierpinski Tetrahedron
 - Menger Sponge
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Engine | Unity3D |
-| Runtime | WebGL (browser) |
-| 2D rendering | CPU + GPU (Unity shaders) |
-| 3D rendering | GPU ray marching |
-| Desktop build | macOS binary |
+| Layer         | Technology                |
+| ------------- | ------------------------- |
+| Engine        | Unity3D                   |
+| Runtime       | WebGL (browser)           |
+| 2D rendering  | CPU + GPU (Unity shaders) |
+| 3D rendering  | GPU ray marching          |
+| Desktop build | macOS binary              |
 
 ## Topics
 
