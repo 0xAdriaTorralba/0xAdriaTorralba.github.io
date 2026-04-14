@@ -1,17 +1,471 @@
-# Open-source security-relevant contributions (merged PRs, upstream patches).
-# Rendered on /security/#tools below the security-tagged projects grid.
+# Open-source PRs authored by the site owner.
 #
-# Add one entry per merged PR you want surfaced. Keep descriptions to one
-# sentence; the repo + PR link does the rest.
+# Rendered on /security/#tools under "Open-Source Contributions",
+# grouped by `category`.
 #
-# Fields: repo, pr (number), title, url, merged (YYYY-MM-DD), description,
-#         scope (zk | defi | tooling | ...)
+# Refresh with:
+#   gh search prs --author=<handle> --limit=200 --sort=created \
+#     --json repository,title,url,number,createdAt,closedAt,state
+# Then re-run the category script in _data/contributions.regen.md
+# (inline mapping, see security.md template rendering for order).
+#
+# Fields:
+#   repo        — <owner>/<name>
+#   pr          — PR number
+#   title       — PR title (verbatim)
+#   url         — PR URL
+#   state       — merged | open | closed   (closed = closed without merging)
+#   date        — merged date if merged, closed date if closed-unmerged, created date if open
+#   category    — blockchain | tooling | personal | academic
+#   description — optional one-line context (not auto-filled)
+#   scope       — optional tag (zk, defi, tooling, ...)
 
 contributions:
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 9
+    title: "feat: refine /security/ with certifications section + compact CTF tiles"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/9"
+    state: merged
+    date: 2026-04-14
+    category: portfolio
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 8
+    title: "feat: add /security/ page with audits + CTF tracker"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/8"
+    state: merged
+    date: 2026-04-14
+    category: portfolio
+  - repo: "0xAdriaTorralba/wiki-xines"
+    pr: 38
+    title: "feat: multi-block level toggle and union active state in editor toolbar"
+    url: "https://github.com/0xAdriaTorralba/wiki-xines/pull/38"
+    state: merged
+    date: 2026-04-07
+    category: projects
+  - repo: "0xAdriaTorralba/wiki-xines"
+    pr: 44
+    title: "feat: expand Chinese converter button labels with two-line layout"
+    url: "https://github.com/0xAdriaTorralba/wiki-xines/pull/44"
+    state: merged
+    date: 2026-04-07
+    category: projects
+  - repo: "GianfrancoBazzani/croisette.cc"
+    pr: 38
+    title: "feat: markdown table rendering in chat"
+    url: "https://github.com/GianfrancoBazzani/croisette.cc/pull/38"
+    state: merged
+    date: 2026-04-05
+    category: ai
+  - repo: "GianfrancoBazzani/croisette.cc"
+    pr: 34
+    title: "feat: make logo link to landing page"
+    url: "https://github.com/GianfrancoBazzani/croisette.cc/pull/34"
+    state: merged
+    date: 2026-04-05
+    category: ai
+  - repo: "GianfrancoBazzani/croisette.cc"
+    pr: 31
+    title: "Add unique identifier to the user as the 8 bytes of the hash of the email"
+    url: "https://github.com/GianfrancoBazzani/croisette.cc/pull/31"
+    state: merged
+    date: 2026-04-04
+    category: ai
+  - repo: "GianfrancoBazzani/croisette.cc"
+    pr: 29
+    title: "style: onboarding styling consistency and chat legibility"
+    url: "https://github.com/GianfrancoBazzani/croisette.cc/pull/29"
+    state: merged
+    date: 2026-04-04
+    category: ai
+  - repo: "GianfrancoBazzani/croisette.cc"
+    pr: 28
+    title: "feat: advisor sidebar with animated reveal in onboarding chat"
+    url: "https://github.com/GianfrancoBazzani/croisette.cc/pull/28"
+    state: merged
+    date: 2026-04-04
+    category: ai
+  - repo: "GianfrancoBazzani/croisette.cc"
+    pr: 24
+    title: "feat: portfolio chat redesign with split layout and summary panel"
+    url: "https://github.com/GianfrancoBazzani/croisette.cc/pull/24"
+    state: closed
+    date: 2026-04-04
+    category: ai
+  - repo: "GianfrancoBazzani/croisette.cc"
+    pr: 17
+    title: "Rework understanding-costs skill"
+    url: "https://github.com/GianfrancoBazzani/croisette.cc/pull/17"
+    state: merged
+    date: 2026-04-04
+    category: ai
+  - repo: "GianfrancoBazzani/croisette.cc"
+    pr: 15
+    title: "Rework risk-mindset skill"
+    url: "https://github.com/GianfrancoBazzani/croisette.cc/pull/15"
+    state: merged
+    date: 2026-04-04
+    category: ai
+  - repo: "GianfrancoBazzani/croisette.cc"
+    pr: 14
+    title: "Rework portfolio-allocation skill"
+    url: "https://github.com/GianfrancoBazzani/croisette.cc/pull/14"
+    state: merged
+    date: 2026-04-04
+    category: ai
+  - repo: "GianfrancoBazzani/croisette.cc"
+    pr: 13
+    title: "Rework investment-strategy skill"
+    url: "https://github.com/GianfrancoBazzani/croisette.cc/pull/13"
+    state: merged
+    date: 2026-04-04
+    category: ai
+  - repo: "GianfrancoBazzani/croisette.cc"
+    pr: 12
+    title: "Rework investing-fundamentals skill"
+    url: "https://github.com/GianfrancoBazzani/croisette.cc/pull/12"
+    state: merged
+    date: 2026-04-04
+    category: ai
+  - repo: "GianfrancoBazzani/croisette.cc"
+    pr: 10
+    title: "Rework fire-calculator skill"
+    url: "https://github.com/GianfrancoBazzani/croisette.cc/pull/10"
+    state: merged
+    date: 2026-04-04
+    category: ai
+  - repo: "GianfrancoBazzani/croisette.cc"
+    pr: 9
+    title: "Rework cash-emergency-fund skill for clarity and consistency"
+    url: "https://github.com/GianfrancoBazzani/croisette.cc/pull/9"
+    state: merged
+    date: 2026-04-04
+    category: ai
+  - repo: "GianfrancoBazzani/croisette.cc"
+    pr: 3
+    title: "Integrate financial advisor aigent"
+    url: "https://github.com/GianfrancoBazzani/croisette.cc/pull/3"
+    state: merged
+    date: 2026-04-04
+    category: ai
+  - repo: "GianfrancoBazzani/croisette.cc"
+    pr: 18
+    title: "Update footer copyright to 2026 and rebrand to Croisette"
+    url: "https://github.com/GianfrancoBazzani/croisette.cc/pull/18"
+    state: merged
+    date: 2026-04-04
+    category: ai
+  - repo: "GianfrancoBazzani/croisette.cc"
+    pr: 5
+    title: "Fix agent options format and remove incorrect frontend defaults"
+    url: "https://github.com/GianfrancoBazzani/croisette.cc/pull/5"
+    state: closed
+    date: 2026-04-04
+    category: ai
+  - repo: "GianfrancoBazzani/croisette.cc"
+    pr: 8
+    title: "Rework cash-emergency-fund skill"
+    url: "https://github.com/GianfrancoBazzani/croisette.cc/pull/8"
+    state: closed
+    date: 2026-04-04
+    category: ai
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 7
+    title: "Implement talks page with detailed entries and thumbnails"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/7"
+    state: merged
+    date: 2026-04-02
+    category: portfolio
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 6
+    title: "Add slides URLs, year grouping, and new thumbnails for talks"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/6"
+    state: merged
+    date: 2026-03-29
+    category: portfolio
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 5
+    title: "Add 4 new talks and update thumbnails"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/5"
+    state: merged
+    date: 2026-03-29
+    category: portfolio
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 4
+    title: "Implement talks page with 7 detailed entries"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/4"
+    state: merged
+    date: 2026-03-29
+    category: portfolio
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 3
+    title: "Add projects page, new publications, and site updates"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/3"
+    state: merged
+    date: 2026-03-29
+    category: portfolio
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 2
+    title: "Add zkEVM public dataset paper to publications"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/2"
+    state: merged
+    date: 2026-03-18
+    category: portfolio
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 1
+    title: "Redesign navbar, simplify CV, update about & publications"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/1"
+    state: merged
+    date: 2026-03-18
+    category: portfolio
+  - repo: "0xAdriaTorralba/pedal-ios"
+    pr: 2
+    title: "feat: accordion-style favorites view with expand/collapse per group"
+    url: "https://github.com/0xAdriaTorralba/pedal-ios/pull/2"
+    state: merged
+    date: 2026-03-11
+    category: projects
+  - repo: "0xAdriaTorralba/pedal-ios"
+    pr: 3
+    title: "Feat/map refactor providers zlayer dropdown"
+    url: "https://github.com/0xAdriaTorralba/pedal-ios/pull/3"
+    state: merged
+    date: 2026-03-11
+    category: projects
+  - repo: "0xAdriaTorralba/pedal-ios"
+    pr: 1
+    title: "Feat/multi city network support"
+    url: "https://github.com/0xAdriaTorralba/pedal-ios/pull/1"
+    state: merged
+    date: 2026-03-10
+    category: projects
+  - repo: "0xAdriaTorralba/wiki-xines"
+    pr: 37
+    title: "fix: PDF print — strip ¶ from citation, hide overlays, restore badges…"
+    url: "https://github.com/0xAdriaTorralba/wiki-xines/pull/37"
+    state: merged
+    date: 2026-03-08
+    category: projects
+  - repo: "0xAdriaTorralba/wiki-xines"
+    pr: 35
+    title: "feat: add Playwright E2E test suite with GitHub Actions CI"
+    url: "https://github.com/0xAdriaTorralba/wiki-xines/pull/35"
+    state: merged
+    date: 2026-03-08
+    category: projects
+  - repo: "0xAdriaTorralba/wiki-xines"
+    pr: 33
+    title: "Add scripts into visual editor, fix level assigning and filtering, and first contact form"
+    url: "https://github.com/0xAdriaTorralba/wiki-xines/pull/33"
+    state: merged
+    date: 2026-03-07
+    category: projects
+  - repo: "0xAdriaTorralba/wiki-xines"
+    pr: 15
+    title: "Fix not working local deployment"
+    url: "https://github.com/0xAdriaTorralba/wiki-xines/pull/15"
+    state: merged
+    date: 2026-01-07
+    category: projects
+  - repo: "ethproofs/ethproofs"
+    pr: 554
+    title: "feat: add enhanced visualization with pie charts and filters"
+    url: "https://github.com/ethproofs/ethproofs/pull/554"
+    state: closed
+    date: 2025-11-23
+    category: blockchain
+  - repo: "thom1606/Astrix"
+    pr: 5
+    title: "Add WezTerm support"
+    url: "https://github.com/thom1606/Astrix/pull/5"
+    state: merged
+    date: 2025-05-06
+    category: tooling
+  - repo: "lambdaclass/lambdaworks"
+    pr: 913
+    title: "Add explicit drop of `toxic_waste` once SRS is generated"
+    url: "https://github.com/lambdaclass/lambdaworks/pull/913"
+    state: closed
+    date: 2025-04-24
+    category: blockchain
+  - repo: "alshedivat/al-folio"
+    pr: 2705
+    title: "Additional instructions for Apple Silicon Users"
+    url: "https://github.com/alshedivat/al-folio/pull/2705"
+    state: closed
+    date: 2024-11-28
+    category: tooling
+  - repo: "delegative/ui"
+    pr: 2
+    title: "Eas scripts"
+    url: "https://github.com/delegative/ui/pull/2"
+    state: closed
+    date: 2024-09-18
+    category: blockchain
+  - repo: "0xAdriaTorralba/DataVisualizationInLinguistics"
+    pr: 31
+    title: "Revert 'TD: restructure code in Hierarchical Layout'"
+    url: "https://github.com/0xAdriaTorralba/DataVisualizationInLinguistics/pull/31"
+    state: closed
+    date: 2024-09-18
+    category: academic
   - repo: "0xPolygon/zkevm-prover"
     pr: 830
     title: "Update parameters to fork 9"
     url: "https://github.com/0xPolygon/zkevm-prover/pull/830"
-    merged: 2024-04-03
-    description: "Parameter update for fork 9 in the canonical Polygon zkEVM prover repository."
-    scope: zk
+    state: merged
+    date: 2024-04-03
+    category: blockchain
+  - repo: "zkbarcelona/web"
+    pr: 5
+    title: ":sparkles: Add registration section, add footer, replaced Google Maps…"
+    url: "https://github.com/zkbarcelona/web/pull/5"
+    state: merged
+    date: 2024-03-07
+    category: blockchain
+  - repo: "zkbarcelona/web"
+    pr: 1
+    title: ":memo: Add content to website"
+    url: "https://github.com/zkbarcelona/web/pull/1"
+    state: merged
+    date: 2024-02-28
+    category: blockchain
+  - repo: "mailgun/mailgun-ruby"
+    pr: 220
+    title: "Add success method in Response.rb"
+    url: "https://github.com/mailgun/mailgun-ruby/pull/220"
+    state: merged
+    date: 2023-09-24
+    category: tooling
+  - repo: "delegative/ui"
+    pr: 1
+    title: "Add EAS Scripts for get attestation, make on chain and off chain atte…"
+    url: "https://github.com/delegative/ui/pull/1"
+    state: merged
+    date: 2023-07-22
+    category: blockchain
+  - repo: "hasselalcala/proofID"
+    pr: 1
+    title: "Update README.md"
+    url: "https://github.com/hasselalcala/proofID/pull/1"
+    state: merged
+    date: 2022-09-18
+    category: blockchain
+  - repo: "0xAdriaTorralba/DataVisualizationInLinguistics"
+    pr: 36
+    title: "Force edge width and curves"
+    url: "https://github.com/0xAdriaTorralba/DataVisualizationInLinguistics/pull/36"
+    state: merged
+    date: 2021-10-20
+    category: academic
+  - repo: "0xAdriaTorralba/DataVisualizationInLinguistics"
+    pr: 6
+    title: "Refactoring load data engine"
+    url: "https://github.com/0xAdriaTorralba/DataVisualizationInLinguistics/pull/6"
+    state: merged
+    date: 2021-03-02
+    category: academic
+  - repo: "ADS2020UB/ADS-4"
+    pr: 86
+    title: "US-6; Some fixes"
+    url: "https://github.com/ADS2020UB/ADS-4/pull/86"
+    state: merged
+    date: 2020-12-16
+    category: academic
+  - repo: "ADS2020UB/ADS-4"
+    pr: 83
+    title: "Features/us 6 trip planner part 2"
+    url: "https://github.com/ADS2020UB/ADS-4/pull/83"
+    state: closed
+    date: 2020-12-15
+    category: academic
+  - repo: "ADS2020UB/ADS-4"
+    pr: 77
+    title: "US-6; Trip planner page part 2 WIP, missing center the columns in htm…"
+    url: "https://github.com/ADS2020UB/ADS-4/pull/77"
+    state: merged
+    date: 2020-12-15
+    category: academic
+  - repo: "ADS2020UB/ADS-4"
+    pr: 74
+    title: "Features/us 6 trip planner part 1"
+    url: "https://github.com/ADS2020UB/ADS-4/pull/74"
+    state: merged
+    date: 2020-12-13
+    category: academic
+  - repo: "ADS2020UB/ADS-4"
+    pr: 72
+    title: "US-11; map on profile page WIP"
+    url: "https://github.com/ADS2020UB/ADS-4/pull/72"
+    state: merged
+    date: 2020-12-11
+    category: academic
+  - repo: "ADS2020UB/ADS-4"
+    pr: 43
+    title: "US-2; first version of profile page, missing editable latitude and lo…"
+    url: "https://github.com/ADS2020UB/ADS-4/pull/43"
+    state: merged
+    date: 2020-12-01
+    category: academic
+  - repo: "ADS2020UB/ADS-4"
+    pr: 41
+    title: "US-2: first version of Profile class in models"
+    url: "https://github.com/ADS2020UB/ADS-4/pull/41"
+    state: merged
+    date: 2020-11-29
+    category: academic
+  - repo: "ADS2020UB/ADS-4"
+    pr: 17
+    title: "US-3: implemented connection and basic visualization of data retrieve…"
+    url: "https://github.com/ADS2020UB/ADS-4/pull/17"
+    state: merged
+    date: 2020-11-12
+    category: academic
+  - repo: "ADS2020UB/ADS-4"
+    pr: 16
+    title: "US-1: Set up Django project and its file structure"
+    url: "https://github.com/ADS2020UB/ADS-4/pull/16"
+    state: merged
+    date: 2020-11-11
+    category: academic
+  - repo: "GianfrancoBazzani/evm-storage.codes"
+    pr: 76
+    title: "💅 style: confirm copy in share button tooltip"
+    url: "https://github.com/GianfrancoBazzani/evm-storage.codes/pull/76"
+    state: open
+    date: 2026-04-14
+    category: blockchain
+  - repo: "GianfrancoBazzani/evm-storage.codes"
+    pr: 75
+    title: "🔨 fix: link to Sourcify's new APIv2 verifier UI"
+    url: "https://github.com/GianfrancoBazzani/evm-storage.codes/pull/75"
+    state: open
+    date: 2026-04-14
+    category: blockchain
+  - repo: "GianfrancoBazzani/croisette.cc"
+    pr: 45
+    title: "feat: portfolio visualization dashboard"
+    url: "https://github.com/GianfrancoBazzani/croisette.cc/pull/45"
+    state: open
+    date: 2026-04-05
+    category: ai
+  - repo: "GianfrancoBazzani/croisette.cc"
+    pr: 42
+    title: "feat: per-user agent provisioning with portfolio bridge"
+    url: "https://github.com/GianfrancoBazzani/croisette.cc/pull/42"
+    state: open
+    date: 2026-04-05
+    category: ai
+  - repo: "GianfrancoBazzani/croisette.cc"
+    pr: 32
+    title: "feat: portfolio dashboard page with mock data"
+    url: "https://github.com/GianfrancoBazzani/croisette.cc/pull/32"
+    state: open
+    date: 2026-04-04
+    category: ai
+  - repo: "RavuAlHemio/poxymeter"
+    pr: 2
+    title: "Fix wrong checksum check, add printlns for verbose errors"
+    url: "https://github.com/RavuAlHemio/poxymeter/pull/2"
+    state: open
+    date: 2024-09-09
+    category: tooling

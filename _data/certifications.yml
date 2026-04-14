@@ -27,4 +27,43 @@
 # - `category` keeps the list scannable when it grows. Use the nearest
 #   match; add new category slugs freely.
 
-certifications: []
+certifications:
+  - provider: "Cyfrin Updraft"
+    title: "Uniswap V2"
+    date: 2026-02-23
+    track: "completion"
+    category: defi
+    url: "https://updraft.cyfrin.io/courses/uniswap-v2"
+    badge_url: "https://cms.cyfrin.io/assets/uniswap-v2-1749211117.png"
+    verification_url: "https://profiles.cyfrin.io/u/0xadriatorralba/achievements"
+    notes: null
+
+  - provider: "Cyfrin Updraft"
+    title: "Assembly and Formal Verification"
+    date: 2026-02-17
+    track: "completion"
+    category: formal-verification
+    url: "https://updraft.cyfrin.io/courses/formal-verification"
+    badge_url: "https://cms.cyfrin.io/assets/assembly.png"
+    verification_url: "https://profiles.cyfrin.io/u/0xadriatorralba/achievements"
+    notes: null
+
+  - provider: "Cyfrin Updraft"
+    title: "Foundry Fundamentals"
+    date: 2025-12-29
+    track: "completion"
+    category: solidity
+    url: "https://updraft.cyfrin.io/courses/foundry"
+    badge_url: "https://cms.cyfrin.io/assets/foundry-fundamentals.png"
+    verification_url: "https://profiles.cyfrin.io/u/0xadriatorralba/achievements"
+    notes: null
+
+  - provider: "Cyfrin Updraft"
+    title: "Solidity Smart Contract Development"
+    date: 2025-12-10
+    track: "completion"
+    category: solidity
+    url: "https://updraft.cyfrin.io/courses/solidity"
+    badge_url: "https://cms.cyfrin.io/assets/solidity-101.png"
+    verification_url: "https://profiles.cyfrin.io/u/0xadriatorralba/achievements"
+    notes: null
