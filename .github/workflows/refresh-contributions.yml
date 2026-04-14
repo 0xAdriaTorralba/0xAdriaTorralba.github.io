@@ -1,0 +1,48 @@
+name: Refresh contributions data
+
+on:
+  schedule:
+    # Daily at 06:26 UTC. GitHub Actions cron is UTC-only; for Europe/Madrid
+    # that's 07:26 CET (winter) or 08:26 CEST (summer).
+    - cron: "26 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-contributions
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Regenerate contributions.yml
+        run: |
+          python3 scripts/refresh_contributions.py \
+            --username 0xAdriaTorralba \
+            --output _data/contributions.yml
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- _data/contributions.yml; then
+            echo "contributions.yml unchanged — nothing to commit."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _data/contributions.yml
+          git commit -m "chore(data): refresh contributions.yml"
+          git push

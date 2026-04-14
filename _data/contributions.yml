@@ -1,26 +1,46 @@
 # Open-source PRs authored by the site owner.
 #
-# Rendered on /security/#tools under "Open-Source Contributions",
-# grouped by `category`.
+# AUTO-GENERATED — DO NOT EDIT BY HAND.
+# Refreshed daily by .github/workflows/refresh-contributions.yml, which
+# runs scripts/refresh_contributions.py. Edits here get overwritten on
+# the next run.
 #
-# Refresh with:
-#   gh search prs --author=<handle> --limit=200 --sort=created \
-#     --json repository,title,url,number,createdAt,closedAt,state
-# Then re-run the category script in _data/contributions.regen.md
-# (inline mapping, see security.md template rendering for order).
+# To change a PR's category, edit the CATEGORY_BY_REPO map inside
+# scripts/refresh_contributions.py and re-run the workflow
+# (Actions → "Refresh contributions data" → "Run workflow").
 #
-# Fields:
-#   repo        — <owner>/<name>
-#   pr          — PR number
-#   title       — PR title (verbatim)
-#   url         — PR URL
-#   state       — merged | open | closed   (closed = closed without merging)
-#   date        — merged date if merged, closed date if closed-unmerged, created date if open
-#   category    — blockchain | tooling | personal | academic
-#   description — optional one-line context (not auto-filled)
-#   scope       — optional tag (zk, defi, tooling, ...)
+# Fields per entry:
+#   repo, pr, title, url, state, date, category
 
 contributions:
+  - repo: "GianfrancoBazzani/evm-storage.codes"
+    pr: 76
+    title: "💅 style: confirm copy in share button tooltip"
+    url: "https://github.com/GianfrancoBazzani/evm-storage.codes/pull/76"
+    state: merged
+    date: 2026-04-14
+    category: blockchain
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 11
+    title: "rename: activity → github (label + URL)"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/11"
+    state: merged
+    date: 2026-04-14
+    category: portfolio
+  - repo: "GianfrancoBazzani/evm-storage.codes"
+    pr: 75
+    title: "🔨 fix: link to Sourcify's new APIv2 verifier UI"
+    url: "https://github.com/GianfrancoBazzani/evm-storage.codes/pull/75"
+    state: merged
+    date: 2026-04-14
+    category: blockchain
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 10
+    title: "feat: populate Cyfrin certifications + expand /security/ contributions"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/10"
+    state: merged
+    date: 2026-04-14
+    category: portfolio
   - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
     pr: 9
     title: "feat: refine /security/ with certifications section + compact CTF tiles"
@@ -427,20 +447,6 @@ contributions:
     state: merged
     date: 2020-11-11
     category: academic
-  - repo: "GianfrancoBazzani/evm-storage.codes"
-    pr: 76
-    title: "💅 style: confirm copy in share button tooltip"
-    url: "https://github.com/GianfrancoBazzani/evm-storage.codes/pull/76"
-    state: open
-    date: 2026-04-14
-    category: blockchain
-  - repo: "GianfrancoBazzani/evm-storage.codes"
-    pr: 75
-    title: "🔨 fix: link to Sourcify's new APIv2 verifier UI"
-    url: "https://github.com/GianfrancoBazzani/evm-storage.codes/pull/75"
-    state: open
-    date: 2026-04-14
-    category: blockchain
   - repo: "GianfrancoBazzani/croisette.cc"
     pr: 45
     title: "feat: portfolio visualization dashboard"
