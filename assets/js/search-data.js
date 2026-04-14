@@ -44,12 +44,12 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "nav-activity",
-          title: "activity",
-          description: "GitHub commit activity and a full, filterable record of open-source pull requests.",
+        },{id: "nav-github",
+          title: "github",
+          description: "GitHub activity and a full, filterable, record of open-source contributions (PRs).",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/activity/";
+            window.location.href = "/github/";
           },
         },{id: "nav-cv",
           title: "cv",
