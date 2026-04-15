@@ -12,7 +12,7 @@ category: project
 
 **Yet Another Fractal Explorer (YAFE)** is the final project for the Double BSc in Mathematics and Computer Science at the **Universitat de Barcelona**. It is an interactive application for visualising and exploring 2D and 3D fractals, running entirely in the browser via WebGL.
 
-The academic memory is published at the [UB repository](http://diposit.ub.edu/dspace/handle/2445/178855). A live demo is available [here](https://www.0xadriatorralba.me/YetAnotherFractalExplorer/).
+The academic memory is published at the [UB repository](https://diposit.ub.edu/handle/2445/178855). A live demo is available [here](https://www.0xadriatorralba.me/YetAnotherFractalExplorer/).
 
 ## Fractals
 
