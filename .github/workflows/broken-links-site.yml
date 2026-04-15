@@ -1,23 +1,30 @@
 name: Check for broken links on site
 
+# Demoted from workflow_run on Deploy to a weekly scheduled backstop.
+# html-proofer now runs in-line on every PR inside deploy.yml's build-strict
+# job, which catches internal link breakage before merge. Lychee's external
+# check remains useful as a weekly sanity sweep.
+
 on:
-  workflow_run:
-    workflows: [Deploy site]
-    types: [completed]
+  schedule:
+    - cron: "30 6 * * 1" # Mondays 06:30 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
 
 jobs:
   check-links-on-site:
-    # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#running-a-workflow-based-on-the-conclusion-of-another-workflow
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    # available images: https://github.com/actions/runner-images#available-images
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.2.2"
+          ruby-version: "3.3.5"
           bundler-cache: true
       - name: Update _config.yml ⚙️
         uses: fjogeleit/yaml-update-action@main

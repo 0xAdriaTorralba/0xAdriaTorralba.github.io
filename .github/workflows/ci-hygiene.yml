@@ -1,0 +1,85 @@
+name: CI hygiene
+
+on:
+  push:
+    branches: [master, main]
+    paths: [".github/workflows/**"]
+  pull_request:
+    branches: [master, main]
+    paths: [".github/workflows/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-hygiene-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint-actions:
+    name: actionlint + zizmor + branch-list guard
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Install actionlint
+        run: |
+          set -euo pipefail
+          VERSION=1.7.7
+          SHA256=023070a287cd8cccd71515fedc843f1985bf96c436b7effaecce67290e7e0757
+          curl -sSL -o actionlint.tar.gz \
+            "https://github.com/rhysd/actionlint/releases/download/v${VERSION}/actionlint_${VERSION}_linux_amd64.tar.gz"
+          echo "${SHA256}  actionlint.tar.gz" | sha256sum -c -
+          tar xzf actionlint.tar.gz actionlint
+          chmod +x actionlint
+
+      - name: Run actionlint
+        run: ./actionlint -color
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install zizmor
+        run: pip install 'zizmor==1.23.1'
+
+      - name: Run zizmor
+        run: zizmor --persona=auditor .github/workflows/
+        continue-on-error: true
+
+      - name: Workflow branch-list guard
+        run: |
+          set -euo pipefail
+          # Until default branch flips from master to main, every workflow
+          # that validates PRs must reference both branches.
+          # See memory/project_open_work.md for the master/main gotcha.
+          failed=0
+          for wf in .github/workflows/*.yml; do
+            if grep -qE '^on:|^"on":' "$wf" && grep -qE 'pull_request:|push:' "$wf"; then
+              if ! grep -qE '(^|\s+)- master(\s|$)' "$wf"; then
+                if grep -qE 'branches:' "$wf"; then
+                  echo "::warning file=$wf::missing 'master' in branches list (ok if main-only intentionally)"
+                fi
+              fi
+            fi
+          done
+          # Hard guard: deploy.yml MUST trigger on both master and main,
+          # since that's the key cross-branch workflow during the migration.
+          for wf in .github/workflows/deploy.yml .github/workflows/schema.yml; do
+            [ -f "$wf" ] || continue
+            if ! grep -qE '^\s+- master\s*$' "$wf"; then
+              echo "::error file=$wf::must trigger on 'master' branch (default until migration completes)"
+              failed=1
+            fi
+            if ! grep -qE '^\s+- main\s*$' "$wf"; then
+              echo "::error file=$wf::must trigger on 'main' branch (active dev branch)"
+              failed=1
+            fi
+          done
+          exit $failed

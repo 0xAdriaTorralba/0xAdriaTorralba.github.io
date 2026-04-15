@@ -65,22 +65,32 @@ permissions:
   contents: write
 
 jobs:
-  deploy:
+  build-strict:
+    name: Build (strict) + html-proofer
     # available images: https://github.com/actions/runner-images#available-images
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
+
       - name: Setup Ruby 💎
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3.5"
           bundler-cache: true
+
+      - name: Install test gems
+        run: |
+          bundle config set --local with 'test'
+          bundle install
+
       - name: Setup Python 🐍
         uses: actions/setup-python@v5
         with:
           python-version: "3.13"
-          cache: "pip" # caching pip dependencies
+          cache: "pip"
+
       - name: Update _config.yml ⚙️
         uses: fjogeleit/yaml-update-action@main
         with:
@@ -88,18 +98,63 @@ jobs:
           valueFile: "_config.yml"
           propertyPath: "giscus.repo"
           value: ${{ github.repository }}
-      - name: Install and Build 🔧
+
+      - name: Build strict 🔧
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick
           pip3 install --upgrade nbconvert
           export JEKYLL_ENV=production
-          bundle exec jekyll build
+          bundle exec jekyll build --strict_front_matter --trace --destination _site 2>&1 | tee build.log
+          if grep -E 'Liquid (Warning|Error)|Could not find document|Tag was never closed' build.log; then
+            echo "::error::Jekyll build surfaced Liquid warnings/errors — see log above."
+            exit 1
+          fi
+
       - name: Purge unused CSS 🧹
         run: |
           npm install -g purgecss
           purgecss -c purgecss.config.js
-      - name: Deploy 🚀
+
+      - name: html-proofer (internal)
+        run: |
+          bundle exec htmlproofer _site \
+            --disable-external \
+            --check-html \
+            --check-img-http \
+            --check-opengraph \
+            --check-internal-hash \
+            --allow-hash-href \
+            --enforce-https \
+            --ignore-missing-alt false \
+            --ignore-empty-alt false \
+            --ignore-urls '/^https?:\/\/localhost/' \
+            --hydra-config '{"max_concurrency":5}'
+
+      - name: Upload built site
         if: github.event_name != 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: _site
+          path: _site
+          retention-days: 3
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build-strict
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Download built site
+        uses: actions/download-artifact@v4
+        with:
+          name: _site
+          path: _site
+
+      - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: _site
