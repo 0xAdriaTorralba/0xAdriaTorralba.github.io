@@ -119,16 +119,9 @@ jobs:
         run: |
           bundle exec htmlproofer _site \
             --disable-external \
-            --check-html \
-            --check-img-http \
-            --check-opengraph \
-            --check-internal-hash \
-            --allow-hash-href \
-            --enforce-https \
-            --ignore-missing-alt false \
-            --ignore-empty-alt false \
-            --ignore-urls '/^https?:\/\/localhost/' \
-            --hydra-config '{"max_concurrency":5}'
+            --checks Links,Images,Scripts,OpenGraph \
+            --no-ignore-empty-alt \
+            --hydra '{"max_concurrency":5}'
 
       - name: Upload built site
         if: github.event_name != 'pull_request'
