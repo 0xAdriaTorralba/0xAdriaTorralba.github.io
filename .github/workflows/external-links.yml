@@ -53,12 +53,11 @@ jobs:
         id: htmlproofer
         run: |
           bundle exec htmlproofer _site \
-            --check-html --check-img-http --check-opengraph \
-            --check-internal-hash --allow-hash-href --enforce-https \
-            --ignore-missing-alt false --ignore-empty-alt false \
+            --checks Links,Images,Scripts,OpenGraph \
+            --no-ignore-empty-alt \
             --ignore-urls '/ghchart\.rshah\.org/,/cms\.cyfrin\.io/' \
-            --typhoeus-config '{"connecttimeout":10,"timeout":30,"followlocation":true}' \
-            --hydra-config '{"max_concurrency":5}' \
+            --typhoeus '{"connecttimeout":10,"timeout":30,"followlocation":true}' \
+            --hydra '{"max_concurrency":5}' \
             2>&1 | tee htmlproofer.log
 
       - name: Open issue on failure

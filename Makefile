@@ -37,9 +37,9 @@ test-build:
 
 test-html:
 	bundle exec htmlproofer _site_test \
-	  --disable-external --check-html --check-img-http --check-opengraph \
-	  --check-internal-hash --allow-hash-href --enforce-https \
-	  --ignore-missing-alt false --ignore-empty-alt false
+	  --disable-external \
+	  --checks Links,Images,Scripts,OpenGraph \
+	  --no-ignore-empty-alt
 
 test-workflows:
 	@command -v actionlint >/dev/null 2>&1 && actionlint -color || echo "skip: actionlint not installed"

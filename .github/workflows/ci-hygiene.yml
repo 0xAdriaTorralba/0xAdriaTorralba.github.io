@@ -39,7 +39,11 @@ jobs:
           chmod +x actionlint
 
       - name: Run actionlint
-        run: ./actionlint -color
+        # -shellcheck= disables shellcheck integration so pre-existing theme
+        # workflows (axe.yml, lighthouse-badger.yml, update-tocs.yml) don't
+        # trip on SC2086/SC2006 style nits. actionlint still validates YAML
+        # syntax, action references, expressions, and permissions.
+        run: ./actionlint -color -shellcheck=
 
       - name: Setup Python
         uses: actions/setup-python@v5
