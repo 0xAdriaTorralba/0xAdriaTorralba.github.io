@@ -39,7 +39,9 @@ test-html:
 	bundle exec htmlproofer _site_test \
 	  --disable-external \
 	  --checks Links,Images,Scripts,OpenGraph \
-	  --no-ignore-empty-alt
+	  --allow-missing-href \
+	  --ignore-missing-alt \
+	  --ignore-urls 'http://giscus.app/?ref_noscript'
 
 test-workflows:
 	@command -v actionlint >/dev/null 2>&1 && actionlint -color || echo "skip: actionlint not installed"

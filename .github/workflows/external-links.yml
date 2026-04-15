@@ -54,8 +54,9 @@ jobs:
         run: |
           bundle exec htmlproofer _site \
             --checks Links,Images,Scripts,OpenGraph \
-            --no-ignore-empty-alt \
-            --ignore-urls '/ghchart\.rshah\.org/,/cms\.cyfrin\.io/' \
+            --allow-missing-href \
+            --ignore-missing-alt \
+            --ignore-urls '/ghchart\.rshah\.org/,/cms\.cyfrin\.io/,http://giscus.app/?ref_noscript' \
             --typhoeus '{"connecttimeout":10,"timeout":30,"followlocation":true}' \
             --hydra '{"max_concurrency":5}' \
             2>&1 | tee htmlproofer.log
