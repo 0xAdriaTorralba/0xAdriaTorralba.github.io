@@ -1,0 +1,70 @@
+name: External link check (weekly)
+
+on:
+  schedule:
+    # Monday 06:00 UTC — after the Monday morning contributions refresh.
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: external-links-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  check-external:
+    name: html-proofer w/ external URLs
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3.5"
+          bundler-cache: true
+
+      - name: Install test gems
+        run: |
+          bundle config set --local with 'test'
+          bundle install
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Build site
+        run: |
+          sudo apt-get update && sudo apt-get install -y imagemagick
+          pip3 install --upgrade nbconvert
+          export JEKYLL_ENV=production
+          bundle exec jekyll build --destination _site
+
+      - name: html-proofer (internal + external)
+        id: htmlproofer
+        run: |
+          bundle exec htmlproofer _site \
+            --check-html --check-img-http --check-opengraph \
+            --check-internal-hash --allow-hash-href --enforce-https \
+            --ignore-missing-alt false --ignore-empty-alt false \
+            --ignore-urls '/ghchart\.rshah\.org/,/cms\.cyfrin\.io/' \
+            --typhoeus-config '{"connecttimeout":10,"timeout":30,"followlocation":true}' \
+            --hydra-config '{"max_concurrency":5}' \
+            2>&1 | tee htmlproofer.log
+
+      - name: Open issue on failure
+        if: failure()
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "External link check failed (${{ github.run_number }})"
+          content-filepath: htmlproofer.log
+          labels: ci-failure, external-links

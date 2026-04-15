@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/audit.json",
+  "title": "Audit entry front matter",
+  "description": "Validates front matter of _audits/*.md (except TEMPLATE.md).",
+  "type": "object",
+  "required": ["layout", "published", "title", "date", "client", "firm", "scope", "description", "report_url"],
+  "additionalProperties": true,
+  "properties": {
+    "layout": { "const": "page" },
+    "published": { "type": "boolean" },
+    "title": { "type": "string", "minLength": 1 },
+    "date": {
+      "oneOf": [
+        { "type": "string", "format": "date" },
+        { "type": "string", "format": "date-time" }
+      ]
+    },
+    "client": { "type": "string", "minLength": 1 },
+    "firm": { "type": "string", "minLength": 1 },
+    "contest": { "type": "boolean" },
+    "role": { "type": "string" },
+    "scope": { "type": "string", "minLength": 1 },
+    "description": { "type": "string", "minLength": 1 },
+    "severity_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "critical": { "type": "integer", "minimum": 0 },
+        "high": { "type": "integer", "minimum": 0 },
+        "medium": { "type": "integer", "minimum": 0 },
+        "low": { "type": "integer", "minimum": 0 },
+        "info": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "report_url": { "type": "string", "format": "uri" },
+    "repo_url": { "type": ["string", "null"], "format": "uri" },
+    "selected": { "type": "boolean" },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "featured_findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "severity", "summary"],
+        "additionalProperties": false,
+        "properties": {
+          "title": { "type": "string", "minLength": 1 },
+          "severity": { "enum": ["Critical", "High", "Medium", "Low", "Info"] },
+          "summary": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}
