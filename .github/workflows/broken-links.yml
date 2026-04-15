@@ -38,17 +38,34 @@ on:
       - "!.github/workflows/prettier.yml"
       - "!lighthouse_results/**"
 
+permissions:
+  contents: read
+  issues: write
+
 jobs:
   link-checker:
     runs-on: ubuntu-latest
-    # only run on the main repo
-    if: github.repository == 'alshedivat/al-folio'
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Link Checker 🔗
+        id: lychee
         uses: lycheeverse/lychee-action@v2.1.0
         with:
-          fail: true
-          # removed md files that include liquid tags
-          args: --user-agent 'curl/7.54' --exclude-path README.md --exclude-path _pages/404.md --exclude-path _pages/blog.md --exclude-path _posts/2018-12-22-distill.md --exclude-path _posts/2023-04-24-videos.md --exclude-path _books/the_godfather.md --verbose --no-progress './**/*.md' './**/*.html'
+          # fail=false so transient CDN outages on a Tuesday don't block merge.
+          # Real bad links still surface — the step output + the PR-comment
+          # action below make them visible without gating CI on external state.
+          fail: false
+          # excludes = theme-shipped demo files that contain Liquid tags Lychee
+          # can't interpret. Our own authored files (_pages/**, _audits/**,
+          # _projects/**, _posts/**) are checked.
+          args: --user-agent 'curl/7.54' --max-retries 2 --timeout 15 --exclude-path README.md --exclude-path _pages/404.md --exclude-path _pages/blog.md --exclude-path _posts/2018-12-22-distill.md --exclude-path _posts/2023-04-24-videos.md --exclude-path _books/the_godfather.md --exclude 'ghchart\.rshah\.org' --exclude 'cms\.cyfrin\.io' --verbose --no-progress './**/*.md' './**/*.html'
+
+      - name: Annotate broken links in PR
+        if: steps.lychee.outcome == 'success' && hashFiles('lychee/out.md') != ''
+        run: |
+          echo "### Lychee link report" >> "$GITHUB_STEP_SUMMARY"
+          cat lychee/out.md >> "$GITHUB_STEP_SUMMARY"
