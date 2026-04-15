@@ -50,8 +50,8 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Install zizmor
-        run: pip install 'zizmor==1.23.1'
+      - name: Install zizmor + pyyaml
+        run: pip install 'zizmor==1.23.1' 'pyyaml==6.0.2'
 
       - name: Run zizmor
         run: zizmor --persona=auditor .github/workflows/
@@ -59,31 +59,45 @@ jobs:
 
       - name: Workflow branch-list guard
         run: |
-          set -euo pipefail
-          # Until default branch flips from master to main, every workflow
-          # that validates PRs must reference both branches.
-          # See memory/project_open_work.md for the master/main gotcha.
-          failed=0
-          for wf in .github/workflows/*.yml; do
-            if grep -qE '^on:|^"on":' "$wf" && grep -qE 'pull_request:|push:' "$wf"; then
-              if ! grep -qE '(^|\s+)- master(\s|$)' "$wf"; then
-                if grep -qE 'branches:' "$wf"; then
-                  echo "::warning file=$wf::missing 'master' in branches list (ok if main-only intentionally)"
-                fi
-              fi
-            fi
-          done
-          # Hard guard: deploy.yml MUST trigger on both master and main,
-          # since that's the key cross-branch workflow during the migration.
-          for wf in .github/workflows/deploy.yml .github/workflows/schema.yml; do
-            [ -f "$wf" ] || continue
-            if ! grep -qE '^\s+- master\s*$' "$wf"; then
-              echo "::error file=$wf::must trigger on 'master' branch (default until migration completes)"
-              failed=1
-            fi
-            if ! grep -qE '^\s+- main\s*$' "$wf"; then
-              echo "::error file=$wf::must trigger on 'main' branch (active dev branch)"
-              failed=1
-            fi
-          done
-          exit $failed
+          # Uses PyYAML (installed alongside zizmor above) so both block and
+          # flow list syntax parse correctly.
+          # Until default branch flips from master to main, deploy.yml and
+          # schema.yml must trigger on both; other workflows get a soft warning.
+          python3 - <<'PY'
+          import glob, sys, yaml
+
+          REQUIRED = {"deploy.yml", "schema.yml"}
+          failed = False
+
+          for wf in sorted(glob.glob(".github/workflows/*.yml")):
+              with open(wf) as f:
+                  doc = yaml.safe_load(f)
+              if not isinstance(doc, dict):
+                  continue
+              # YAML 1.1 parses bare `on:` as boolean True.
+              on = doc.get(True, doc.get("on"))
+              if not isinstance(on, dict):
+                  continue
+              name = wf.rsplit("/", 1)[-1]
+
+              for trigger in ("push", "pull_request"):
+                  t = on.get(trigger)
+                  if not isinstance(t, dict):
+                      continue
+                  branches = t.get("branches")
+                  if not isinstance(branches, list):
+                      continue
+
+                  if name in REQUIRED:
+                      if "master" not in branches:
+                          print(f"::error file={wf}::must trigger on 'master' branch (default until migration completes)")
+                          failed = True
+                      if "main" not in branches:
+                          print(f"::error file={wf}::must trigger on 'main' branch (active dev branch)")
+                          failed = True
+                  else:
+                      if "master" not in branches and "main" in branches:
+                          print(f"::warning file={wf}::missing 'master' in {trigger}.branches (ok if main-only intentionally)")
+
+          sys.exit(1 if failed else 0)
+          PY
