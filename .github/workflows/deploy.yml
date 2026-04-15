@@ -115,6 +115,11 @@ jobs:
           npm install -g purgecss
           purgecss -c purgecss.config.js
 
+      - name: Content + regression + a11y specs (rspec)
+        env:
+          SITE_DIR: _site
+        run: bundle exec rspec spec/
+
       - name: html-proofer (internal)
         # Theme-wide relaxations (pre-existing patterns inherited from al-folio):
         #   --allow-missing-href     → social-icon <a> tags in the footer render

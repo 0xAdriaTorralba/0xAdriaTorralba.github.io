@@ -50,13 +50,11 @@ test-workflows:
 # --- PR B + PR C targets (land in later PRs) ---------------------------------
 
 test-content:
-	@command -v bundle >/dev/null 2>&1 && [ -d spec ] \
-	  && bundle exec rspec spec/ \
-	  || echo "skip: spec/ not yet present (lands in PR B)"
+	SITE_DIR=_site_test bundle exec rspec spec/
 
-test-a11y:
-	@[ -f .pa11yci.json ] && npx pa11y-ci --config .pa11yci.json \
-	  || echo "skip: .pa11yci.json not yet present (lands in PR B)"
+test-a11y: test-content
+	@echo "a11y invariants covered by spec/a11y/ in rspec."
+	@echo "PR C will add browser-rendered axe-core via Playwright."
 
 test-perf:
 	@[ -f .lighthouserc.json ] && npx lhci autorun \
