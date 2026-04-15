@@ -164,7 +164,7 @@
       {%- assign group_closed = group | where: 'state', 'closed' | size -%}
       <section class="pr-group" data-pr-group>
         <div class="pr-group__header">
-          <h4 class="pr-group__title">{{ label }}</h4>
+          <h3 class="pr-group__title">{{ label }}</h3>
           <span
             class="pr-group__meta"
             data-pr-group-meta
@@ -219,7 +219,7 @@
   {%- if uncategorised.size > 0 -%}
     <section class="pr-group" data-pr-group>
       <div class="pr-group__header">
-        <h4 class="pr-group__title">Other</h4>
+        <h3 class="pr-group__title">Other</h3>
         <span class="pr-group__meta">
           {{- uncategorised.size }} PR{% if uncategorised.size != 1 %}s{% endif -%}
         </span>
