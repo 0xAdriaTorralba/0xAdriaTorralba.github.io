@@ -1,0 +1,51 @@
+name: Refresh Ethernaut progress
+
+on:
+  schedule:
+    # Daily at 07:37 UTC. Offset from the contributions refresh (06:26 UTC)
+    # so both jobs don't pile up. Europe/Madrid: 08:37 CET / 09:37 CEST.
+    - cron: "37 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-ethernaut
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    env:
+      SEPOLIA_RPC_URL: ${{ secrets.SEPOLIA_RPC_URL || 'https://sepolia.gateway.tenderly.co' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python dependencies
+        run: python3 -m pip install --upgrade ruamel.yaml
+
+      - name: Regenerate Ethernaut section of ctf_progress.yml
+        run: |
+          python3 scripts/refresh_ethernaut.py \
+            --player 0x295F3Fe50eFB4b05C966C7399DC3d7d1438353Ad \
+            --output _data/ctf_progress.yml
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- _data/ctf_progress.yml; then
+            echo "ctf_progress.yml unchanged — nothing to commit."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _data/ctf_progress.yml
+          git commit -m "chore(data): refresh ethernaut progress"
+          git push
