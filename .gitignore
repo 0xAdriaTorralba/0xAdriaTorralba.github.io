@@ -18,3 +18,5 @@ test-results/
 playwright-report/
 .lighthouseci/
 lighthouse-reports/
+.pytest_cache/
+__pycache__/
