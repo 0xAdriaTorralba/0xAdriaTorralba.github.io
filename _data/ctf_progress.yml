@@ -6,9 +6,12 @@
 #
 # status values: solved | in-progress | not-started
 #
-# Ethernaut progress is derived from on-chain LevelCompletedLog events for
-# the player address on Sepolia (0xa3e7317E591D5A0F1c605be1b3aC4D2ae56104d6).
-# Re-query on demand; keep in sync as new levels are solved.
+# Ethernaut progress is derived from on-chain LevelCompletedLog events emitted
+# by the Ethernaut contract on Sepolia (0xa3e7317E591D5A0F1c605be1b3aC4D2ae56104d6)
+# filtered by the player wallet (0x295F3Fe50eFB4b05C966C7399DC3d7d1438353Ad) in
+# topic1. Refreshed daily by .github/workflows/refresh-ethernaut.yml via
+# scripts/refresh_ethernaut.py — manual edits to `status` / `solved_on` get
+# overwritten on the next run. Writeups stay hand-edited.
 #
 # Ethernaut level names and difficulty (0–8) are pulled from the official
 # OpenZeppelin gamedata. To refresh when OZ adds levels, run:
@@ -144,8 +147,8 @@ ethernaut:
     - num: 16
       name: "Preservation"
       difficulty: 8
-      status: not-started
-      solved_on: null
+      status: solved
+      solved_on: 2026-04-16
       writeup: null
     - num: 17
       name: "Recovery"
