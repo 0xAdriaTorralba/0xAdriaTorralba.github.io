@@ -36,3 +36,11 @@ group :other_plugins do
     # gem 'unicode_utils' -- should be already installed by jekyll
     # gem 'webrick' -- should be already installed by jekyll
 end
+
+# Test-only dependencies. Opt-in so the deploy runner can skip them with
+# `bundle install --without test`. The `build-strict` CI job adds `--with test`.
+group :test, optional: true do
+    gem 'html-proofer', '~> 5.0', '>= 5.0.9'
+    gem 'rspec',        '~> 3.13'
+    gem 'nokogiri',     '~> 1.16'
+end
