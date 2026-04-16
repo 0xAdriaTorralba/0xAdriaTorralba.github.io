@@ -1,0 +1,103 @@
+name: CI hygiene
+
+on:
+  push:
+    branches: [master, main]
+    paths: [".github/workflows/**"]
+  pull_request:
+    branches: [master, main]
+    paths: [".github/workflows/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-hygiene-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint-actions:
+    name: actionlint + zizmor + branch-list guard
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Install actionlint
+        run: |
+          set -euo pipefail
+          VERSION=1.7.7
+          SHA256=023070a287cd8cccd71515fedc843f1985bf96c436b7effaecce67290e7e0757
+          curl -sSL -o actionlint.tar.gz \
+            "https://github.com/rhysd/actionlint/releases/download/v${VERSION}/actionlint_${VERSION}_linux_amd64.tar.gz"
+          echo "${SHA256}  actionlint.tar.gz" | sha256sum -c -
+          tar xzf actionlint.tar.gz actionlint
+          chmod +x actionlint
+
+      - name: Run actionlint
+        # -shellcheck= disables shellcheck integration so pre-existing theme
+        # workflows (axe.yml, lighthouse-badger.yml, update-tocs.yml) don't
+        # trip on SC2086/SC2006 style nits. actionlint still validates YAML
+        # syntax, action references, expressions, and permissions.
+        run: ./actionlint -color -shellcheck=
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install zizmor + pyyaml
+        run: pip install 'zizmor==1.23.1' 'pyyaml==6.0.2'
+
+      - name: Run zizmor
+        run: zizmor --persona=auditor .github/workflows/
+        continue-on-error: true
+
+      - name: Workflow branch-list guard
+        run: |
+          # Uses PyYAML (installed alongside zizmor above) so both block and
+          # flow list syntax parse correctly.
+          # Until default branch flips from master to main, deploy.yml and
+          # schema.yml must trigger on both; other workflows get a soft warning.
+          python3 - <<'PY'
+          import glob, sys, yaml
+
+          REQUIRED = {"deploy.yml", "schema.yml"}
+          failed = False
+
+          for wf in sorted(glob.glob(".github/workflows/*.yml")):
+              with open(wf) as f:
+                  doc = yaml.safe_load(f)
+              if not isinstance(doc, dict):
+                  continue
+              # YAML 1.1 parses bare `on:` as boolean True.
+              on = doc.get(True, doc.get("on"))
+              if not isinstance(on, dict):
+                  continue
+              name = wf.rsplit("/", 1)[-1]
+
+              for trigger in ("push", "pull_request"):
+                  t = on.get(trigger)
+                  if not isinstance(t, dict):
+                      continue
+                  branches = t.get("branches")
+                  if not isinstance(branches, list):
+                      continue
+
+                  if name in REQUIRED:
+                      if "master" not in branches:
+                          print(f"::error file={wf}::must trigger on 'master' branch (default until migration completes)")
+                          failed = True
+                      if "main" not in branches:
+                          print(f"::error file={wf}::must trigger on 'main' branch (active dev branch)")
+                          failed = True
+                  else:
+                      if "master" not in branches and "main" in branches:
+                          print(f"::warning file={wf}::missing 'master' in {trigger}.branches (ok if main-only intentionally)")
+
+          sys.exit(1 if failed else 0)
+          PY

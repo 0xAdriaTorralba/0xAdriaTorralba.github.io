@@ -1,0 +1,73 @@
+name: Lighthouse CI
+
+on:
+  push:
+    branches: [master, main]
+    paths:
+      - "_pages/**"
+      - "_includes/**"
+      - "_layouts/**"
+      - "_sass/**"
+      - "assets/**"
+      - ".lighthouserc.json"
+      - ".github/workflows/lighthouse-ci.yml"
+  pull_request:
+    branches: [master, main]
+    paths:
+      - "_pages/**"
+      - "_includes/**"
+      - "_layouts/**"
+      - "_sass/**"
+      - "assets/**"
+      - ".lighthouserc.json"
+      - ".github/workflows/lighthouse-ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: lighthouse-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lhci:
+    name: Lighthouse CI — perf + a11y + SEO budgets
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3.5"
+          bundler-cache: true
+
+      - name: Install Jekyll build deps
+        run: |
+          sudo apt-get update && sudo apt-get install -y imagemagick
+          pip3 install --upgrade nbconvert
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install npm deps (no postinstall scripts)
+        # LHCI bundles Chrome via puppeteer; we block postinstall and let
+        # `lhci autorun` download Chrome itself on first use (cached by lhci).
+        run: npm ci --ignore-scripts
+
+      - name: Build site
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build --destination _site
+
+      - name: Run Lighthouse CI
+        run: npx lhci autorun

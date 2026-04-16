@@ -58,7 +58,7 @@ layout: default
   <article>
     {% if page.profile %}
       <div class="about-top">
-        <div class="about-top__profile">
+        <div class="about-top__profile" id="profile-container">
           {% if page.profile.image %}
             {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
             {% if page.profile.image_circular %}
