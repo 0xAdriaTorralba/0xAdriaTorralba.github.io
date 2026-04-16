@@ -1,6 +1,14 @@
 {
   "devDependencies": {
     "@shopify/prettier-plugin-liquid": "1.4.0",
+    "ajv": "8.18.0",
+    "ajv-formats": "3.0.1",
+    "glob": "13.0.6",
+    "gray-matter": "4.0.3",
+    "js-yaml": "4.1.1",
     "prettier": "3.1.1"
+  },
+  "scripts": {
+    "test:schema": "node scripts/validate-data.mjs"
   }
 }

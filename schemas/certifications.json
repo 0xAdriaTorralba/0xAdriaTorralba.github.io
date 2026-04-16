@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/certifications.json",
+  "title": "Certifications & coursework",
+  "type": "object",
+  "required": ["certifications"],
+  "additionalProperties": false,
+  "properties": {
+    "certifications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["provider", "title", "date", "track", "category", "url"],
+        "additionalProperties": false,
+        "properties": {
+          "provider": { "type": "string", "minLength": 1 },
+          "title": { "type": "string", "minLength": 1 },
+          "date": { "type": "string", "format": "date" },
+          "track": { "enum": ["completion", "professional"] },
+          "category": {
+            "enum": ["security", "zk", "solidity", "defi", "formal-verification", "rust", "other"]
+          },
+          "url": { "type": "string", "format": "uri" },
+          "badge_url": { "type": ["string", "null"], "format": "uri" },
+          "verification_url": { "type": ["string", "null"], "format": "uri" },
+          "notes": { "type": ["string", "null"] }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": { "provider": { "const": "Cyfrin Updraft" } }
+            },
+            "then": {
+              "properties": {
+                "verification_url": {
+                  "type": "string",
+                  "pattern": "^https://profiles\\.cyfrin\\.io/"
+                }
+              },
+              "required": ["verification_url"]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

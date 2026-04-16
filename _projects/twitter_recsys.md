@@ -9,7 +9,7 @@ sort_date: 2021-06
 category: project
 ---
 
-Final project for the **MSc in Fundamental Principles of Data Science** at the Universitat de Barcelona — a participation in the [RecSys Challenge 2021](http://www.recsyschallenge.com/2021/), organised by Politecnico di Bari, ETH Zurich, and Jönköping University, with data provided by Twitter.
+Final project for the **MSc in Fundamental Principles of Data Science** at the Universitat de Barcelona — a participation in the [RecSys Challenge 2021](https://www.recsyschallenge.com/2021/), organised by Politecnico di Bari, ETH Zurich, and Jönköping University, with data provided by Twitter.
 
 ## The Challenge
 

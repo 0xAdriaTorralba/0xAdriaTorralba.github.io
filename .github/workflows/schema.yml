@@ -1,0 +1,51 @@
+name: Schema validation
+
+on:
+  push:
+    branches: [master, main]
+    paths:
+      - "_data/**"
+      - "_audits/**"
+      - "schemas/**"
+      - "scripts/validate-data.mjs"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/schema.yml"
+  pull_request:
+    branches: [master, main]
+    paths:
+      - "_data/**"
+      - "_audits/**"
+      - "schemas/**"
+      - "scripts/validate-data.mjs"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/schema.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: schema-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate YAML + audit front matter
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install (no scripts)
+        run: npm ci --ignore-scripts
+      - name: Validate data + audit schemas
+        run: node scripts/validate-data.mjs
