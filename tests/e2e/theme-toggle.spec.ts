@@ -1,6 +1,14 @@
 import { expect, test } from "@playwright/test";
 
+// Theme toggle lives inside the navbar; on mobile it's tucked into the
+// collapsed hamburger menu, which the mobile-nav.spec.ts tests cover. The
+// theme-cycle behaviour itself is independent of viewport, so running it
+// on the three desktop projects is enough.
 test.describe("theme toggle (light / dark / system)", () => {
+  test.beforeEach(() => {
+    test.skip(test.info().project.name.startsWith("mobile-"), "theme toggle is hidden inside the hamburger menu on mobile viewports");
+  });
+
   test("clicking the toggle cycles theme attribute + persists to localStorage", async ({ page }) => {
     await page.goto("/");
 
