@@ -16,3 +16,5 @@ playwright-report/
 .lighthouseci/
 Makefile
 Gemfile
+requirements-dev.txt
+.pytest_cache/
