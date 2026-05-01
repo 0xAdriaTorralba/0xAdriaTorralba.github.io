@@ -9,10 +9,205 @@
 # scripts/refresh_contributions.py and re-run the workflow
 # (Actions → "Refresh contributions data" → "Run workflow").
 #
+# To mark a repo as owned by the site owner (so it shows up under the
+# "my projects" scope filter), add it to OWNED_REPOS in the same script.
+#
 # Fields per entry:
-#   repo, pr, title, url, state, date, category
+#   repo, pr, title, url, state, date, category, ownership
 
 contributions:
+  - repo: "0xAdriaTorralba/wiki-xines"
+    pr: 71
+    title: "feat(theme): rebrand Wiki.js chrome to about-page palette"
+    url: "https://github.com/0xAdriaTorralba/wiki-xines/pull/71"
+    state: closed
+    date: 2026-04-20
+    category: projects
+    ownership: external
+  - repo: "0xAdriaTorralba/wiki-xines"
+    pr: 76
+    title: "feat(layout): restore TOC left + add right-side gauge panel"
+    url: "https://github.com/0xAdriaTorralba/wiki-xines/pull/76"
+    state: merged
+    date: 2026-04-20
+    category: projects
+    ownership: external
+  - repo: "0xAdriaTorralba/wiki-xines"
+    pr: 75
+    title: "feat(about): rework palette to project blue + fill real team data"
+    url: "https://github.com/0xAdriaTorralba/wiki-xines/pull/75"
+    state: merged
+    date: 2026-04-20
+    category: projects
+    ownership: external
+  - repo: "0xAdriaTorralba/wiki-xines"
+    pr: 74
+    title: "feat(theme): hide page title + align TOC with content top"
+    url: "https://github.com/0xAdriaTorralba/wiki-xines/pull/74"
+    state: merged
+    date: 2026-04-20
+    category: projects
+    ownership: external
+  - repo: "0xAdriaTorralba/wiki-xines"
+    pr: 73
+    title: "feat(theme): center content column (Wikipedia-ish reading layout)"
+    url: "https://github.com/0xAdriaTorralba/wiki-xines/pull/73"
+    state: merged
+    date: 2026-04-20
+    category: projects
+    ownership: external
+  - repo: "0xAdriaTorralba/wiki-xines"
+    pr: 72
+    title: "feat(theme): move TOC + last-edit column to the right of content"
+    url: "https://github.com/0xAdriaTorralba/wiki-xines/pull/72"
+    state: merged
+    date: 2026-04-20
+    category: projects
+    ownership: external
+  - repo: "0xAdriaTorralba/wiki-xines"
+    pr: 70
+    title: "feat(about): Sobre Nosotros page + scoped styles"
+    url: "https://github.com/0xAdriaTorralba/wiki-xines/pull/70"
+    state: merged
+    date: 2026-04-20
+    category: projects
+    ownership: external
+  - repo: "0xAdriaTorralba/wiki-xines"
+    pr: 69
+    title: "fix(styles): unify text width at 75ch, let tables stay wider"
+    url: "https://github.com/0xAdriaTorralba/wiki-xines/pull/69"
+    state: merged
+    date: 2026-04-20
+    category: projects
+    ownership: external
+  - repo: "0xAdriaTorralba/wiki-xines"
+    pr: 67
+    title: "fix(tts): auto-detect Chinese content blocks"
+    url: "https://github.com/0xAdriaTorralba/wiki-xines/pull/67"
+    state: merged
+    date: 2026-04-20
+    category: projects
+    ownership: external
+  - repo: "0xAdriaTorralba/wiki-xines"
+    pr: 65
+    title: "fix(view): render level badges at end of paragraph"
+    url: "https://github.com/0xAdriaTorralba/wiki-xines/pull/65"
+    state: merged
+    date: 2026-04-20
+    category: projects
+    ownership: external
+  - repo: "0xAdriaTorralba/wiki-xines"
+    pr: 66
+    title: "fix(editor): cap level badge placement at text edge"
+    url: "https://github.com/0xAdriaTorralba/wiki-xines/pull/66"
+    state: closed
+    date: 2026-04-20
+    category: projects
+    ownership: external
+  - repo: "0xAdriaTorralba/wiki-xines"
+    pr: 59
+    title: "chore: add PR template with Closes keyword"
+    url: "https://github.com/0xAdriaTorralba/wiki-xines/pull/59"
+    state: closed
+    date: 2026-04-20
+    category: projects
+    ownership: external
+  - repo: "0xAdriaTorralba/wiki-xines"
+    pr: 64
+    title: "feat(styles): apply typography spec + add demo page"
+    url: "https://github.com/0xAdriaTorralba/wiki-xines/pull/64"
+    state: merged
+    date: 2026-04-20
+    category: projects
+    ownership: external
+  - repo: "0xAdriaTorralba/wiki-xines"
+    pr: 63
+    title: "fix(view): float level badges so they don't overlap text"
+    url: "https://github.com/0xAdriaTorralba/wiki-xines/pull/63"
+    state: merged
+    date: 2026-04-18
+    category: projects
+    ownership: external
+  - repo: "0xAdriaTorralba/wiki-xines"
+    pr: 62
+    title: "feat: open external links in a new tab on view pages"
+    url: "https://github.com/0xAdriaTorralba/wiki-xines/pull/62"
+    state: merged
+    date: 2026-04-18
+    category: projects
+    ownership: external
+  - repo: "0xAdriaTorralba/wiki-xines"
+    pr: 61
+    title: "feat(editor): arbitrary start number for numbered lists"
+    url: "https://github.com/0xAdriaTorralba/wiki-xines/pull/61"
+    state: merged
+    date: 2026-04-18
+    category: projects
+    ownership: external
+  - repo: "0xAdriaTorralba/wiki-xines"
+    pr: 60
+    title: "style: hide Wiki.js page footer site-wide"
+    url: "https://github.com/0xAdriaTorralba/wiki-xines/pull/60"
+    state: merged
+    date: 2026-04-18
+    category: projects
+    ownership: external
+  - repo: "0xAdriaTorralba/wiki-xines"
+    pr: 47
+    title: "feat: two-line Chinese converter labels and outline level pills"
+    url: "https://github.com/0xAdriaTorralba/wiki-xines/pull/47"
+    state: merged
+    date: 2026-04-18
+    category: projects
+    ownership: external
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 20
+    title: "Auto-refresh Ethernaut progress from on-chain events"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/20"
+    state: merged
+    date: 2026-04-16
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 18
+    title: "Update CV PDF"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/18"
+    state: merged
+    date: 2026-04-16
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 15
+    title: "fix(/github/): restore heatmap rendering after Prettier reflow"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/15"
+    state: merged
+    date: 2026-04-14
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 14
+    title: "fix(ci): unblock Prettier workflow"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/14"
+    state: merged
+    date: 2026-04-14
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 13
+    title: "ux: site-wide polish (about / security / cv + typography + tooltips)"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/13"
+    state: merged
+    date: 2026-04-14
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 12
+    title: "ci: daily auto-refresh of _data/contributions.yml"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/12"
+    state: merged
+    date: 2026-04-14
+    category: portfolio
+    ownership: own
   - repo: "GianfrancoBazzani/evm-storage.codes"
     pr: 76
     title: "💅 style: confirm copy in share button tooltip"
@@ -20,6 +215,7 @@ contributions:
     state: merged
     date: 2026-04-14
     category: blockchain
+    ownership: external
   - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
     pr: 11
     title: "rename: activity → github (label + URL)"
@@ -27,6 +223,7 @@ contributions:
     state: merged
     date: 2026-04-14
     category: portfolio
+    ownership: own
   - repo: "GianfrancoBazzani/evm-storage.codes"
     pr: 75
     title: "🔨 fix: link to Sourcify's new APIv2 verifier UI"
@@ -34,6 +231,7 @@ contributions:
     state: merged
     date: 2026-04-14
     category: blockchain
+    ownership: external
   - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
     pr: 10
     title: "feat: populate Cyfrin certifications + expand /security/ contributions"
@@ -41,6 +239,7 @@ contributions:
     state: merged
     date: 2026-04-14
     category: portfolio
+    ownership: own
   - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
     pr: 9
     title: "feat: refine /security/ with certifications section + compact CTF tiles"
@@ -48,6 +247,7 @@ contributions:
     state: merged
     date: 2026-04-14
     category: portfolio
+    ownership: own
   - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
     pr: 8
     title: "feat: add /security/ page with audits + CTF tracker"
@@ -55,6 +255,7 @@ contributions:
     state: merged
     date: 2026-04-14
     category: portfolio
+    ownership: own
   - repo: "0xAdriaTorralba/wiki-xines"
     pr: 38
     title: "feat: multi-block level toggle and union active state in editor toolbar"
@@ -62,6 +263,7 @@ contributions:
     state: merged
     date: 2026-04-07
     category: projects
+    ownership: external
   - repo: "0xAdriaTorralba/wiki-xines"
     pr: 44
     title: "feat: expand Chinese converter button labels with two-line layout"
@@ -69,6 +271,7 @@ contributions:
     state: merged
     date: 2026-04-07
     category: projects
+    ownership: external
   - repo: "GianfrancoBazzani/croisette.cc"
     pr: 38
     title: "feat: markdown table rendering in chat"
@@ -76,6 +279,7 @@ contributions:
     state: merged
     date: 2026-04-05
     category: ai
+    ownership: external
   - repo: "GianfrancoBazzani/croisette.cc"
     pr: 34
     title: "feat: make logo link to landing page"
@@ -83,6 +287,7 @@ contributions:
     state: merged
     date: 2026-04-05
     category: ai
+    ownership: external
   - repo: "GianfrancoBazzani/croisette.cc"
     pr: 31
     title: "Add unique identifier to the user as the 8 bytes of the hash of the email"
@@ -90,6 +295,7 @@ contributions:
     state: merged
     date: 2026-04-04
     category: ai
+    ownership: external
   - repo: "GianfrancoBazzani/croisette.cc"
     pr: 29
     title: "style: onboarding styling consistency and chat legibility"
@@ -97,6 +303,7 @@ contributions:
     state: merged
     date: 2026-04-04
     category: ai
+    ownership: external
   - repo: "GianfrancoBazzani/croisette.cc"
     pr: 28
     title: "feat: advisor sidebar with animated reveal in onboarding chat"
@@ -104,6 +311,7 @@ contributions:
     state: merged
     date: 2026-04-04
     category: ai
+    ownership: external
   - repo: "GianfrancoBazzani/croisette.cc"
     pr: 24
     title: "feat: portfolio chat redesign with split layout and summary panel"
@@ -111,6 +319,7 @@ contributions:
     state: closed
     date: 2026-04-04
     category: ai
+    ownership: external
   - repo: "GianfrancoBazzani/croisette.cc"
     pr: 17
     title: "Rework understanding-costs skill"
@@ -118,6 +327,7 @@ contributions:
     state: merged
     date: 2026-04-04
     category: ai
+    ownership: external
   - repo: "GianfrancoBazzani/croisette.cc"
     pr: 15
     title: "Rework risk-mindset skill"
@@ -125,6 +335,7 @@ contributions:
     state: merged
     date: 2026-04-04
     category: ai
+    ownership: external
   - repo: "GianfrancoBazzani/croisette.cc"
     pr: 14
     title: "Rework portfolio-allocation skill"
@@ -132,6 +343,7 @@ contributions:
     state: merged
     date: 2026-04-04
     category: ai
+    ownership: external
   - repo: "GianfrancoBazzani/croisette.cc"
     pr: 13
     title: "Rework investment-strategy skill"
@@ -139,6 +351,7 @@ contributions:
     state: merged
     date: 2026-04-04
     category: ai
+    ownership: external
   - repo: "GianfrancoBazzani/croisette.cc"
     pr: 12
     title: "Rework investing-fundamentals skill"
@@ -146,6 +359,7 @@ contributions:
     state: merged
     date: 2026-04-04
     category: ai
+    ownership: external
   - repo: "GianfrancoBazzani/croisette.cc"
     pr: 10
     title: "Rework fire-calculator skill"
@@ -153,6 +367,7 @@ contributions:
     state: merged
     date: 2026-04-04
     category: ai
+    ownership: external
   - repo: "GianfrancoBazzani/croisette.cc"
     pr: 9
     title: "Rework cash-emergency-fund skill for clarity and consistency"
@@ -160,6 +375,7 @@ contributions:
     state: merged
     date: 2026-04-04
     category: ai
+    ownership: external
   - repo: "GianfrancoBazzani/croisette.cc"
     pr: 3
     title: "Integrate financial advisor aigent"
@@ -167,6 +383,7 @@ contributions:
     state: merged
     date: 2026-04-04
     category: ai
+    ownership: external
   - repo: "GianfrancoBazzani/croisette.cc"
     pr: 18
     title: "Update footer copyright to 2026 and rebrand to Croisette"
@@ -174,6 +391,7 @@ contributions:
     state: merged
     date: 2026-04-04
     category: ai
+    ownership: external
   - repo: "GianfrancoBazzani/croisette.cc"
     pr: 5
     title: "Fix agent options format and remove incorrect frontend defaults"
@@ -181,6 +399,7 @@ contributions:
     state: closed
     date: 2026-04-04
     category: ai
+    ownership: external
   - repo: "GianfrancoBazzani/croisette.cc"
     pr: 8
     title: "Rework cash-emergency-fund skill"
@@ -188,6 +407,7 @@ contributions:
     state: closed
     date: 2026-04-04
     category: ai
+    ownership: external
   - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
     pr: 7
     title: "Implement talks page with detailed entries and thumbnails"
@@ -195,6 +415,7 @@ contributions:
     state: merged
     date: 2026-04-02
     category: portfolio
+    ownership: own
   - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
     pr: 6
     title: "Add slides URLs, year grouping, and new thumbnails for talks"
@@ -202,6 +423,7 @@ contributions:
     state: merged
     date: 2026-03-29
     category: portfolio
+    ownership: own
   - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
     pr: 5
     title: "Add 4 new talks and update thumbnails"
@@ -209,6 +431,7 @@ contributions:
     state: merged
     date: 2026-03-29
     category: portfolio
+    ownership: own
   - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
     pr: 4
     title: "Implement talks page with 7 detailed entries"
@@ -216,6 +439,7 @@ contributions:
     state: merged
     date: 2026-03-29
     category: portfolio
+    ownership: own
   - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
     pr: 3
     title: "Add projects page, new publications, and site updates"
@@ -223,6 +447,7 @@ contributions:
     state: merged
     date: 2026-03-29
     category: portfolio
+    ownership: own
   - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
     pr: 2
     title: "Add zkEVM public dataset paper to publications"
@@ -230,6 +455,7 @@ contributions:
     state: merged
     date: 2026-03-18
     category: portfolio
+    ownership: own
   - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
     pr: 1
     title: "Redesign navbar, simplify CV, update about & publications"
@@ -237,6 +463,7 @@ contributions:
     state: merged
     date: 2026-03-18
     category: portfolio
+    ownership: own
   - repo: "0xAdriaTorralba/pedal-ios"
     pr: 2
     title: "feat: accordion-style favorites view with expand/collapse per group"
@@ -244,6 +471,7 @@ contributions:
     state: merged
     date: 2026-03-11
     category: projects
+    ownership: own
   - repo: "0xAdriaTorralba/pedal-ios"
     pr: 3
     title: "Feat/map refactor providers zlayer dropdown"
@@ -251,6 +479,7 @@ contributions:
     state: merged
     date: 2026-03-11
     category: projects
+    ownership: own
   - repo: "0xAdriaTorralba/pedal-ios"
     pr: 1
     title: "Feat/multi city network support"
@@ -258,6 +487,7 @@ contributions:
     state: merged
     date: 2026-03-10
     category: projects
+    ownership: own
   - repo: "0xAdriaTorralba/wiki-xines"
     pr: 37
     title: "fix: PDF print — strip ¶ from citation, hide overlays, restore badges…"
@@ -265,6 +495,7 @@ contributions:
     state: merged
     date: 2026-03-08
     category: projects
+    ownership: external
   - repo: "0xAdriaTorralba/wiki-xines"
     pr: 35
     title: "feat: add Playwright E2E test suite with GitHub Actions CI"
@@ -272,6 +503,7 @@ contributions:
     state: merged
     date: 2026-03-08
     category: projects
+    ownership: external
   - repo: "0xAdriaTorralba/wiki-xines"
     pr: 33
     title: "Add scripts into visual editor, fix level assigning and filtering, and first contact form"
@@ -279,6 +511,7 @@ contributions:
     state: merged
     date: 2026-03-07
     category: projects
+    ownership: external
   - repo: "0xAdriaTorralba/wiki-xines"
     pr: 15
     title: "Fix not working local deployment"
@@ -286,6 +519,7 @@ contributions:
     state: merged
     date: 2026-01-07
     category: projects
+    ownership: external
   - repo: "ethproofs/ethproofs"
     pr: 554
     title: "feat: add enhanced visualization with pie charts and filters"
@@ -293,6 +527,7 @@ contributions:
     state: closed
     date: 2025-11-23
     category: blockchain
+    ownership: external
   - repo: "thom1606/Astrix"
     pr: 5
     title: "Add WezTerm support"
@@ -300,6 +535,7 @@ contributions:
     state: merged
     date: 2025-05-06
     category: tooling
+    ownership: external
   - repo: "lambdaclass/lambdaworks"
     pr: 913
     title: "Add explicit drop of `toxic_waste` once SRS is generated"
@@ -307,6 +543,7 @@ contributions:
     state: closed
     date: 2025-04-24
     category: blockchain
+    ownership: external
   - repo: "alshedivat/al-folio"
     pr: 2705
     title: "Additional instructions for Apple Silicon Users"
@@ -314,6 +551,7 @@ contributions:
     state: closed
     date: 2024-11-28
     category: tooling
+    ownership: external
   - repo: "delegative/ui"
     pr: 2
     title: "Eas scripts"
@@ -321,6 +559,7 @@ contributions:
     state: closed
     date: 2024-09-18
     category: blockchain
+    ownership: external
   - repo: "0xAdriaTorralba/DataVisualizationInLinguistics"
     pr: 31
     title: "Revert 'TD: restructure code in Hierarchical Layout'"
@@ -328,6 +567,7 @@ contributions:
     state: closed
     date: 2024-09-18
     category: academic
+    ownership: own
   - repo: "0xPolygon/zkevm-prover"
     pr: 830
     title: "Update parameters to fork 9"
@@ -335,6 +575,7 @@ contributions:
     state: merged
     date: 2024-04-03
     category: blockchain
+    ownership: external
   - repo: "zkbarcelona/web"
     pr: 5
     title: ":sparkles: Add registration section, add footer, replaced Google Maps…"
@@ -342,6 +583,7 @@ contributions:
     state: merged
     date: 2024-03-07
     category: blockchain
+    ownership: external
   - repo: "zkbarcelona/web"
     pr: 1
     title: ":memo: Add content to website"
@@ -349,6 +591,7 @@ contributions:
     state: merged
     date: 2024-02-28
     category: blockchain
+    ownership: external
   - repo: "mailgun/mailgun-ruby"
     pr: 220
     title: "Add success method in Response.rb"
@@ -356,6 +599,7 @@ contributions:
     state: merged
     date: 2023-09-24
     category: tooling
+    ownership: external
   - repo: "delegative/ui"
     pr: 1
     title: "Add EAS Scripts for get attestation, make on chain and off chain atte…"
@@ -363,6 +607,7 @@ contributions:
     state: merged
     date: 2023-07-22
     category: blockchain
+    ownership: external
   - repo: "hasselalcala/proofID"
     pr: 1
     title: "Update README.md"
@@ -370,6 +615,7 @@ contributions:
     state: merged
     date: 2022-09-18
     category: blockchain
+    ownership: external
   - repo: "0xAdriaTorralba/DataVisualizationInLinguistics"
     pr: 36
     title: "Force edge width and curves"
@@ -377,6 +623,7 @@ contributions:
     state: merged
     date: 2021-10-20
     category: academic
+    ownership: own
   - repo: "0xAdriaTorralba/DataVisualizationInLinguistics"
     pr: 6
     title: "Refactoring load data engine"
@@ -384,6 +631,7 @@ contributions:
     state: merged
     date: 2021-03-02
     category: academic
+    ownership: own
   - repo: "ADS2020UB/ADS-4"
     pr: 86
     title: "US-6; Some fixes"
@@ -391,6 +639,7 @@ contributions:
     state: merged
     date: 2020-12-16
     category: academic
+    ownership: external
   - repo: "ADS2020UB/ADS-4"
     pr: 83
     title: "Features/us 6 trip planner part 2"
@@ -398,6 +647,7 @@ contributions:
     state: closed
     date: 2020-12-15
     category: academic
+    ownership: external
   - repo: "ADS2020UB/ADS-4"
     pr: 77
     title: "US-6; Trip planner page part 2 WIP, missing center the columns in htm…"
@@ -405,6 +655,7 @@ contributions:
     state: merged
     date: 2020-12-15
     category: academic
+    ownership: external
   - repo: "ADS2020UB/ADS-4"
     pr: 74
     title: "Features/us 6 trip planner part 1"
@@ -412,6 +663,7 @@ contributions:
     state: merged
     date: 2020-12-13
     category: academic
+    ownership: external
   - repo: "ADS2020UB/ADS-4"
     pr: 72
     title: "US-11; map on profile page WIP"
@@ -419,6 +671,7 @@ contributions:
     state: merged
     date: 2020-12-11
     category: academic
+    ownership: external
   - repo: "ADS2020UB/ADS-4"
     pr: 43
     title: "US-2; first version of profile page, missing editable latitude and lo…"
@@ -426,6 +679,7 @@ contributions:
     state: merged
     date: 2020-12-01
     category: academic
+    ownership: external
   - repo: "ADS2020UB/ADS-4"
     pr: 41
     title: "US-2: first version of Profile class in models"
@@ -433,6 +687,7 @@ contributions:
     state: merged
     date: 2020-11-29
     category: academic
+    ownership: external
   - repo: "ADS2020UB/ADS-4"
     pr: 17
     title: "US-3: implemented connection and basic visualization of data retrieve…"
@@ -440,6 +695,7 @@ contributions:
     state: merged
     date: 2020-11-12
     category: academic
+    ownership: external
   - repo: "ADS2020UB/ADS-4"
     pr: 16
     title: "US-1: Set up Django project and its file structure"
@@ -447,6 +703,39 @@ contributions:
     state: merged
     date: 2020-11-11
     category: academic
+    ownership: external
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 21
+    title: "Balatro-style 3D card showcase at /showcase/"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/21"
+    state: open
+    date: 2026-04-17
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 19
+    title: "test(e2e+perf+python): Playwright + Lighthouse CI + pytest"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/19"
+    state: open
+    date: 2026-04-16
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 17
+    title: "test(content): rspec content + a11y + regression specs against built site"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/17"
+    state: open
+    date: 2026-04-15
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 16
+    title: "test(ci): fast-lane validation — schemas + strict build + html-proofer + hygiene"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/16"
+    state: open
+    date: 2026-04-15
+    category: portfolio
+    ownership: own
   - repo: "GianfrancoBazzani/croisette.cc"
     pr: 45
     title: "feat: portfolio visualization dashboard"
@@ -454,6 +743,7 @@ contributions:
     state: open
     date: 2026-04-05
     category: ai
+    ownership: external
   - repo: "GianfrancoBazzani/croisette.cc"
     pr: 42
     title: "feat: per-user agent provisioning with portfolio bridge"
@@ -461,6 +751,7 @@ contributions:
     state: open
     date: 2026-04-05
     category: ai
+    ownership: external
   - repo: "GianfrancoBazzani/croisette.cc"
     pr: 32
     title: "feat: portfolio dashboard page with mock data"
@@ -468,6 +759,7 @@ contributions:
     state: open
     date: 2026-04-04
     category: ai
+    ownership: external
   - repo: "RavuAlHemio/poxymeter"
     pr: 2
     title: "Fix wrong checksum check, add printlns for verbose errors"
@@ -475,3 +767,4 @@ contributions:
     state: open
     date: 2024-09-09
     category: tooling
+    ownership: external
