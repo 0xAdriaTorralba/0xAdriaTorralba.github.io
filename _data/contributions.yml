@@ -16,6 +16,22 @@
 #   repo, pr, title, url, state, date, category, ownership
 
 contributions:
+  - repo: "0xAdriaTorralba/pedal-ios"
+    pr: 5
+    title: "feat(map): tap destination card to recenter map"
+    url: "https://github.com/0xAdriaTorralba/pedal-ios/pull/5"
+    state: merged
+    date: 2026-05-02
+    category: projects
+    ownership: own
+  - repo: "0xAdriaTorralba/pedal-ios"
+    pr: 4
+    title: "fix(map): search + exact-location dot + destination pin persistence"
+    url: "https://github.com/0xAdriaTorralba/pedal-ios/pull/4"
+    state: merged
+    date: 2026-05-02
+    category: projects
+    ownership: own
   - repo: "0xAdriaTorralba/wiki-xines"
     pr: 71
     title: "feat(theme): rebrand Wiki.js chrome to about-page palette"
@@ -567,7 +583,7 @@ contributions:
     state: closed
     date: 2024-09-18
     category: academic
-    ownership: own
+    ownership: external
   - repo: "0xPolygon/zkevm-prover"
     pr: 830
     title: "Update parameters to fork 9"
@@ -623,7 +639,7 @@ contributions:
     state: merged
     date: 2021-10-20
     category: academic
-    ownership: own
+    ownership: external
   - repo: "0xAdriaTorralba/DataVisualizationInLinguistics"
     pr: 6
     title: "Refactoring load data engine"
@@ -631,7 +647,7 @@ contributions:
     state: merged
     date: 2021-03-02
     category: academic
-    ownership: own
+    ownership: external
   - repo: "ADS2020UB/ADS-4"
     pr: 86
     title: "US-6; Some fixes"
@@ -704,6 +720,14 @@ contributions:
     date: 2020-11-11
     category: academic
     ownership: external
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 22
+    title: "feat(/github/): scope filter (own vs external) + swap PR-state colors"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/22"
+    state: open
+    date: 2026-05-01
+    category: portfolio
+    ownership: own
   - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
     pr: 21
     title: "Balatro-style 3D card showcase at /showcase/"
