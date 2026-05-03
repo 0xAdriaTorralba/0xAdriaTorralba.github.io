@@ -60,7 +60,6 @@ DEFAULT_CATEGORY = "tooling"
 OWNED_REPOS: set[str] = {
     "0xAdriaTorralba/pedal-ios",
     "0xAdriaTorralba/0xAdriaTorralba.github.io",
-    "0xAdriaTorralba/DataVisualizationInLinguistics",
 }
 
 HEADER = """\
