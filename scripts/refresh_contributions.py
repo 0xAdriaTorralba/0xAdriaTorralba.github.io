@@ -54,6 +54,15 @@ CATEGORY_BY_REPO: dict[str, str] = {
 
 DEFAULT_CATEGORY = "tooling"
 
+# Repos owned/maintained by the site owner. Anything not listed here is
+# treated as an upstream ("external") contribution. Edit this set if you
+# co-own a new repo or take over an existing one.
+OWNED_REPOS: set[str] = {
+    "0xAdriaTorralba/pedal-ios",
+    "0xAdriaTorralba/0xAdriaTorralba.github.io",
+    "0xAdriaTorralba/DataVisualizationInLinguistics",
+}
+
 HEADER = """\
 # Open-source PRs authored by the site owner.
 #
@@ -66,8 +75,11 @@ HEADER = """\
 # scripts/refresh_contributions.py and re-run the workflow
 # (Actions \u2192 "Refresh contributions data" \u2192 "Run workflow").
 #
+# To mark a repo as owned by the site owner (so it shows up under the
+# "my projects" scope filter), add it to OWNED_REPOS in the same script.
+#
 # Fields per entry:
-#   repo, pr, title, url, state, date, category
+#   repo, pr, title, url, state, date, category, ownership
 
 contributions:
 """
@@ -134,6 +146,8 @@ def render_entry(entry: dict) -> str:
     # date as the effective sort key — matches how the renderer surfaces dates.
     date = closed if state in ("merged", "closed") and closed else created
 
+    ownership = "own" if repo in OWNED_REPOS else "external"
+
     title = yaml_escape(entry["title"])
     url = entry["url"]
     number = entry["number"]
@@ -146,6 +160,7 @@ def render_entry(entry: dict) -> str:
         f"    state: {state}",
         f"    date: {date or 'null'}",
         f"    category: {category}",
+        f"    ownership: {ownership}",
     ]
     return "\n".join(lines)
 
