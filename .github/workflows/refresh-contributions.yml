@@ -1,4 +1,4 @@
-name: Refresh contributions data
+name: refresh-contributions-data
 
 on:
   schedule:
@@ -7,8 +7,9 @@ on:
     - cron: "26 6 * * *"
   workflow_dispatch:
 
-permissions:
-  contents: write
+# Default-deny. The job-scoped App installation token (below) is what
+# actually has write access; nothing should fall back to GITHUB_TOKEN.
+permissions: {}
 
 concurrency:
   group: refresh-contributions
@@ -17,32 +18,42 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
+      - name: Mint App installation token
+        id: app-token
+        uses: actions/create-github-app-token@df432ceedc7162793a195dd1713ff69aefc7379e # v2.0.6
+        with:
+          app-id: ${{ secrets.BOT_APP_ID }}
+          private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+          repositories: 0xAdriaTorralba.github.io
+
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          token: ${{ steps.app-token.outputs.token }}
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
           python-version: "3.11"
 
       - name: Regenerate contributions.yml
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           python3 scripts/refresh_contributions.py \
             --username 0xAdriaTorralba \
             --output _data/contributions.yml
 
-      - name: Commit if changed
+      - name: Commit and push if changed
         run: |
           if git diff --quiet -- _data/contributions.yml; then
             echo "contributions.yml unchanged — nothing to commit."
             exit 0
           fi
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name  "personal-website-bot[bot]"
+          git config user.email "personal-website-bot[bot]@users.noreply.github.com"
           git add _data/contributions.yml
           git commit -m "chore(data): refresh contributions.yml"
-          git push
+          git push origin HEAD:main
