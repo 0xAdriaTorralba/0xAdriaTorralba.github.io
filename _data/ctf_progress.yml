@@ -153,8 +153,8 @@ ethernaut:
     - num: 17
       name: "Recovery"
       difficulty: 6
-      status: not-started
-      solved_on: null
+      status: solved
+      solved_on: 2026-05-03
       writeup: null
     - num: 18
       name: "MagicNumber"
