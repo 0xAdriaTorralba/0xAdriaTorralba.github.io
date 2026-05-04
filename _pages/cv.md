@@ -13,3 +13,7 @@ description: You can download my CV on this page.
 <h2 style="margin-top: 2.5rem;">certifications &amp; coursework</h2>
 
 {% include certifications.liquid %}
+
+<h2 style="margin-top: 2.5rem;">academic service</h2>
+
+{% include cv/service.liquid %}

@@ -1,1 +1,95 @@
-<p class="text-muted mb-0" style="font-style: italic;">Work in progress, soon you will see the information here.</p>
+{%- comment -%}
+  Renders _data/service.yml as a chronological (newest-first) list of
+  peer-review committee roles. Used on /research/#academic-service and /cv/.
+
+  Each entry expects: type, venue, abbr, year, role, url; notes optional.
+{%- endcomment -%}
+
+{%- comment -%}
+  Iterate in YAML authoring order — keep _data/service.yml ordered
+  newest-first, then prestige-first within a year. Liquid's `sort` is
+  single-key + stable, so a compound year-desc + prestige sort is easier
+  to express by curating the YAML than by chaining filters.
+{%- endcomment -%}
+{% assign entries = site.data.service %}
+{% if entries and entries.size > 0 %}
+  <style>
+    .service-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+    .service-list__item {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--global-divider-color);
+    }
+    .service-list__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .service-list__main {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    .service-list__meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      flex-shrink: 0;
+    }
+    .service-list__type {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 1px 8px;
+      border-radius: 999px;
+      letter-spacing: 0.03em;
+      line-height: 1.25;
+      background-color: var(--global-text-color-light);
+      color: var(--global-bg-color);
+      text-transform: lowercase;
+    }
+    .service-list__role {
+      font-size: 0.85rem;
+      color: var(--global-text-color-light);
+    }
+    .service-list__venue {
+      font-size: 0.85rem;
+      color: var(--global-text-color-light);
+    }
+    .service-list__notes {
+      font-size: 0.85rem;
+      color: var(--global-text-color-light);
+      margin-top: 0.2rem;
+    }
+  </style>
+
+  <ul class="service-list">
+    {%- for s in entries -%}
+      <li class="service-list__item">
+        <div class="service-list__row">
+          <div class="service-list__main">
+            <a href="{{ s.url }}" target="_blank" rel="noopener noreferrer">
+              <strong>
+                {{- s.abbr }}
+                {{ s.year -}}
+              </strong>
+            </a>
+            <span class="service-list__venue"> — {{ s.venue }}</span>
+          </div>
+          <span class="service-list__meta">
+            <span class="service-list__type">{{ s.type }}</span>
+            <span class="service-list__role">{{ s.role }}</span>
+          </span>
+        </div>
+        {% if s.notes %}
+          <div class="service-list__notes">{{ s.notes }}</div>
+        {% endif %}
+      </li>
+    {%- endfor -%}
+  </ul>
+{% else %}
+  <p class="text-muted mb-0" style="font-style: italic;">No service entries yet.</p>
+{% endif %}

@@ -1,7 +1,32 @@
-# Example entry (remove the comment and fill in your data):
-# - type: "journal" # journal | conference | workshop | other
-#   venue: "Journal or Conference Name"
-#   role: "Reviewer / PC Member / Meta-Reviewer"
-#   years: "2023–2026"
-#   notes: "" # optional
-[]
+# Academic service. Rendered on /research/#academic-service AND /cv/.
+# Add a new entry per role; sort newest-first when rendered.
+#
+# Fields:
+#   type    — conference | journal | workshop | other  (drives the badge label)
+#   venue   — full conference / journal name
+#   abbr    — short form ("ACM CCS", "SECRYPT", "IEEE S&P")
+#   year    — integer (use a single year per entry; multi-year roles get one entry per year)
+#   role    — "Reviewer", "Poster Jury", "Posters and Demos Committee", etc.
+#   url     — link to the role's official page (call for posters / committee page)
+#   notes   — optional extra context
+
+- type: conference
+  venue: "ACM Conference on Computer and Communications Security"
+  abbr: "ACM CCS"
+  year: 2025
+  role: "Posters and Demos Committee"
+  url: "https://www.sigsac.org/ccs/CCS2025/posters-and-demos-committee"
+
+- type: conference
+  venue: "IEEE Symposium on Security and Privacy"
+  abbr: "IEEE S&P"
+  year: 2025
+  role: "Poster Jury"
+  url: "https://sp2025.ieee-security.org/posters.html"
+
+- type: conference
+  venue: "International Conference on Security and Cryptography"
+  abbr: "SECRYPT"
+  year: 2025
+  role: "Reviewer"
+  url: "https://secrypt.scitevents.org/Home.aspx?y=2025"
