@@ -4,6 +4,7 @@ test.describe("/github/ PR filter", () => {
   test("all/merged/open/closed buttons toggle visibility of PR items", async ({ page }) => {
     await page.goto("/github/");
 
+    const stateBar = page.locator("[data-pr-filter]");
     const total = await page.locator("li[data-pr-state]").count();
     expect(total).toBeGreaterThanOrEqual(60);
 
@@ -11,15 +12,15 @@ test.describe("/github/ PR filter", () => {
     const initialVisible = await page.locator("li[data-pr-state]:visible").count();
     expect(initialVisible).toBe(total);
 
-    // Click "merged" — only merged items visible.
-    await page.getByRole("button", { name: /^merged/i }).click();
+    // Click state-filter "merged" — only merged items visible.
+    await stateBar.getByRole("button", { name: /^merged/i }).click();
     const mergedVisible = await page.locator('li[data-pr-state="merged"]:visible').count();
     const nonMergedVisible = await page.locator('li[data-pr-state]:not([data-pr-state="merged"]):visible').count();
     expect(mergedVisible).toBeGreaterThan(0);
     expect(nonMergedVisible).toBe(0);
 
-    // Click "all" again — full set restored.
-    await page.getByRole("button", { name: /^all/i }).click();
+    // Click state-filter "all" again — full set restored.
+    await stateBar.getByRole("button", { name: /^all/i }).click();
     const restoredVisible = await page.locator("li[data-pr-state]:visible").count();
     expect(restoredVisible).toBe(total);
   });
@@ -27,8 +28,9 @@ test.describe("/github/ PR filter", () => {
   test("active-state button carries .is-active class", async ({ page }) => {
     await page.goto("/github/");
 
-    const allBtn = page.getByRole("button", { name: /^all/i });
-    const mergedBtn = page.getByRole("button", { name: /^merged/i });
+    const stateBar = page.locator("[data-pr-filter]");
+    const allBtn = stateBar.getByRole("button", { name: /^all/i });
+    const mergedBtn = stateBar.getByRole("button", { name: /^merged/i });
 
     await expect(allBtn).toHaveClass(/is-active/);
     await expect(mergedBtn).not.toHaveClass(/is-active/);
@@ -45,10 +47,12 @@ test.describe("/github/ PR filter", () => {
     const initialText = await firstMeta.textContent();
     expect(initialText).toMatch(/\d+\s+PRs?/);
 
-    await page.getByRole("button", { name: /^merged/i }).click();
-    // The meta of any VISIBLE group should change — empty groups get hidden via group.hidden.
+    const stateBar = page.locator("[data-pr-filter]");
+    await stateBar.getByRole("button", { name: /^merged/i }).click();
+    // After PR #22 added the scope filter, the JS collapses the per-state
+    // breakdown to "<N> shown" whenever any non-default filter is active.
     const visibleMeta = page.locator("[data-pr-group]:visible [data-pr-group-meta]").first();
     const filteredText = await visibleMeta.textContent();
-    expect(filteredText).toMatch(/\d+\s+merged/);
+    expect(filteredText).toMatch(/\d+\s+shown/);
   });
 });
