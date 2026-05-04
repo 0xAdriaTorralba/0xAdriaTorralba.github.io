@@ -24,6 +24,9 @@
           },
           "category": {
             "enum": ["blockchain", "ai", "tooling", "projects", "portfolio", "academic"]
+          },
+          "ownership": {
+            "enum": ["own", "external"]
           }
         }
       }
