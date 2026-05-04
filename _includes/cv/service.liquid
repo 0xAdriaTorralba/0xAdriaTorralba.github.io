@@ -72,7 +72,10 @@
         <div class="service-list__row">
           <div class="service-list__main">
             <a href="{{ s.url }}" target="_blank" rel="noopener noreferrer">
-              <strong>{{ s.abbr }} {{ s.year }}</strong>
+              <strong>
+                {{- s.abbr }}
+                {{ s.year -}}
+              </strong>
             </a>
             <span class="service-list__venue"> — {{ s.venue }}</span>
           </div>
