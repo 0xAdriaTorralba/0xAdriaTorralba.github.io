@@ -65,14 +65,6 @@
       items:
         - Max Planck Medal
 
-- title: Scientific Committee Participation
-  type: time_table
-  contents:
-    - title: External reviewer
-      description:
-        - "[Poster Jury for IEEE S&P 2025](https://www.ieee-security.org/TC/SP2025/cfposters.html) (2025)"
-        - "Reviewer for SECRYPT 2025 (2025)"
-
 - title: Supervision
   type: list
   contents:

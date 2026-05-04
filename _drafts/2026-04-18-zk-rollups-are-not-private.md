@@ -54,4 +54,4 @@ hashed on-chain, and by what salt?", etc.).
 ## Reference
 
 - [Unmasking the Illusion: The Shortcomings of 'Zero-Knowledge' Rollups in
-  Achieving Privacy](../../publications/) — full academic treatment.
+  Achieving Privacy](../../research/) — full academic treatment.
