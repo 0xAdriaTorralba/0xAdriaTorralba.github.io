@@ -23,12 +23,12 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/github/";
           },
-        },{id: "nav-publications",
-          title: "publications",
-          description: "Publications in reversed chronological order.",
+        },{id: "nav-research",
+          title: "research",
+          description: "Publications and academic-service work — peer review committees and poster juries.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/publications/";
+            window.location.href = "/research/";
           },
         },{id: "nav-talks",
           title: "talks",

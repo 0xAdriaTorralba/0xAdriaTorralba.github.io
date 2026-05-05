@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"schemas/generic.json","title":"Generic parseable-YAML sanity check","description":"Loose schema: only asserts the file parses and is a non-null value. Used for theme data files where the content is managed by al-folio.","oneOf":[{"type":"object"},{"type":"array"}]}

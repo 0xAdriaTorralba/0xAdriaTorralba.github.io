@@ -1,0 +1,5 @@
+# Dev-only Python dependencies for scripts/tests/.
+# Never shipped to production.
+pytest==8.3.4
+pytest-mock==3.14.0
+pyyaml==6.0.2
