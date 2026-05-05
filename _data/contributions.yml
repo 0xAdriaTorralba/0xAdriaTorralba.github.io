@@ -17,6 +17,70 @@
 
 contributions:
   - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 31
+    title: "feat(/research/): rename publications page + add Academic Service section"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/31"
+    state: merged
+    date: 2026-05-04
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 32
+    title: "style(cv): prettier wrap on service include"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/32"
+    state: merged
+    date: 2026-05-04
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 29
+    title: "test(e2e+perf+python): Playwright + Lighthouse CI + pytest"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/29"
+    state: merged
+    date: 2026-05-04
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 30
+    title: "fix(test): contributions schema + pr-filter spec for post-PR-#22 reality"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/30"
+    state: merged
+    date: 2026-05-04
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 19
+    title: "test(e2e+perf+python): Playwright + Lighthouse CI + pytest"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/19"
+    state: closed
+    date: 2026-05-04
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 28
+    title: "test(content): rspec content + a11y + regression specs against built site"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/28"
+    state: merged
+    date: 2026-05-04
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 17
+    title: "test(content): rspec content + a11y + regression specs against built site"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/17"
+    state: closed
+    date: 2026-05-04
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 16
+    title: "test(ci): fast-lane validation — schemas + strict build + html-proofer + hygiene"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/16"
+    state: merged
+    date: 2026-05-04
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
     pr: 25
     title: "chore(ci): migrate refresh-ethernaut to App-token + SHA-pinned actions"
     url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/25"
@@ -470,30 +534,6 @@ contributions:
     url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/21"
     state: open
     date: 2026-04-17
-    category: portfolio
-    ownership: own
-  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
-    pr: 19
-    title: "test(e2e+perf+python): Playwright + Lighthouse CI + pytest"
-    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/19"
-    state: open
-    date: 2026-04-16
-    category: portfolio
-    ownership: own
-  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
-    pr: 17
-    title: "test(content): rspec content + a11y + regression specs against built site"
-    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/17"
-    state: open
-    date: 2026-04-15
-    category: portfolio
-    ownership: own
-  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
-    pr: 16
-    title: "test(ci): fast-lane validation — schemas + strict build + html-proofer + hygiene"
-    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/16"
-    state: open
-    date: 2026-04-15
     category: portfolio
     ownership: own
   - repo: "GianfrancoBazzani/croisette.cc"
