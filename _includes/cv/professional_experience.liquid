@@ -1,0 +1,362 @@
+{%- comment -%}
+  Professional experience list — roles from _data/professional_experience.yml
+  rendered newest-first with a single-axis tag filter.
+
+  Usage:
+    {% include cv/professional_experience.liquid %}
+
+  Surrounding page supplies the section heading. This include emits the
+  stats line, filter chip bar, role list, and inline filter JS.
+{%- endcomment -%}
+
+{% assign experience = site.data.professional_experience.experience %}
+{% if experience and experience.size > 0 %}
+  {% assign security_count = experience | where_exp: 'e', 'e.tags contains "security"' | size %}
+  {% assign crypto_count = experience | where_exp: 'e', 'e.tags contains "crypto"' | size %}
+  {% assign blockchain_count = experience | where_exp: 'e', 'e.tags contains "blockchain"' | size %}
+  {% assign research_count = experience | where_exp: 'e', 'e.tags contains "research"' | size %}
+  {% assign engineering_count = experience | where_exp: 'e', 'e.tags contains "engineering"' | size %}
+  {% assign teaching_count = experience | where_exp: 'e', 'e.tags contains "teaching"' | size %}
+  {% assign companies_count = experience | map: 'company' | uniq | size %}
+
+  <p class="text-muted" style="font-size: 0.85rem; margin-bottom: 1rem;">
+    {{ experience.size }} role{% if experience.size != 1 %}s{% endif %} across {{ companies_count }} organization
+    {%- if companies_count != 1 %}s{% endif %}
+  </p>
+
+  <style>
+    .exp-filter {
+      display: flex;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.1rem;
+      font-size: 0.8rem;
+    }
+    .exp-filter__label {
+      align-self: center;
+      font-size: 0.78rem;
+      color: var(--global-text-color-light);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      padding-right: 0.15rem;
+    }
+    .exp-filter__btn {
+      appearance: none;
+      cursor: pointer;
+      border: 1px solid var(--global-divider-color);
+      background-color: var(--global-card-bg-color);
+      color: var(--global-text-color);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: inherit;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+    .exp-filter__btn:hover {
+      border-color: var(--global-theme-color);
+      color: var(--global-theme-color);
+    }
+    .exp-filter__btn.is-active {
+      background-color: var(--global-theme-color);
+      color: var(--global-hover-text-color);
+      border-color: var(--global-theme-color);
+    }
+    .exp-filter__btn[data-filter='security'].is-active {
+      background-color: #7a1f1f;
+      border-color: #7a1f1f;
+    }
+    .exp-filter__btn[data-filter='crypto'].is-active {
+      background-color: #5a329d;
+      border-color: #5a329d;
+    }
+    .exp-filter__btn[data-filter='blockchain'].is-active {
+      background-color: #1a5f36;
+      border-color: #1a5f36;
+    }
+    .exp-filter__btn[data-filter='research'].is-active {
+      background-color: #1f5a7a;
+      border-color: #1f5a7a;
+    }
+    .exp-filter__btn[data-filter='engineering'].is-active {
+      background-color: #7a5a1f;
+      border-color: #7a5a1f;
+    }
+    .exp-filter__btn[data-filter='teaching'].is-active {
+      background-color: #7a1f6a;
+      border-color: #7a1f6a;
+    }
+    .exp-filter__btn[data-count]::after {
+      content: ' · ' attr(data-count);
+      opacity: 0.75;
+      font-weight: 400;
+    }
+    .exp-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+    .exp-item {
+      display: flex;
+      gap: 0.9rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--global-divider-color);
+    }
+    .exp-item[hidden] {
+      display: none !important;
+    }
+    .exp-item__logo {
+      flex: 0 0 40px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background-color: var(--global-card-bg-color);
+      color: var(--global-text-color-light);
+      font-size: 1.15rem;
+      overflow: hidden;
+    }
+    .exp-item__logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .exp-item__body {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    .exp-item__header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .exp-item__role {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+    .exp-item__company {
+      font-size: 0.88rem;
+      color: var(--global-text-color);
+      margin-top: 0.1rem;
+    }
+    .exp-item__company a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px dotted var(--global-divider-color);
+    }
+    .exp-item__company a:hover {
+      color: var(--global-theme-color);
+      border-bottom-color: var(--global-theme-color);
+    }
+    .exp-item__sep {
+      color: var(--global-text-color-light);
+      margin: 0 0.3rem;
+    }
+    .exp-item__remote {
+      text-transform: capitalize;
+    }
+    .exp-item__location {
+      font-size: 0.82rem;
+      color: var(--global-text-color-light);
+      margin-top: 0.1rem;
+    }
+    .exp-item__dates {
+      font-size: 0.82rem;
+      color: var(--global-text-color-light);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .exp-item__description {
+      margin: 0.4rem 0 0.45rem;
+      font-size: 0.88rem;
+      color: var(--global-text-color);
+    }
+    .exp-item__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.3rem;
+    }
+    .exp-tag {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 1px 8px;
+      border-radius: 999px;
+      letter-spacing: 0.03em;
+      line-height: 1.25;
+    }
+    .exp-tag--security {
+      background-color: #f1d6d6;
+      color: #7a1f1f;
+    }
+    .exp-tag--crypto {
+      background-color: #e9ddff;
+      color: #5a329d;
+    }
+    .exp-tag--blockchain {
+      background-color: #d8f3dc;
+      color: #1a5f36;
+    }
+    .exp-tag--research {
+      background-color: #d6e9f1;
+      color: #1f5a7a;
+    }
+    .exp-tag--engineering {
+      background-color: #f1e7d6;
+      color: #7a5a1f;
+    }
+    .exp-tag--teaching {
+      background-color: #f5d6f1;
+      color: #7a1f6a;
+    }
+    .exp-empty {
+      display: none;
+      padding: 1rem 0;
+      font-size: 0.88rem;
+      color: var(--global-text-color-light);
+      font-style: italic;
+    }
+    .exp-empty.is-visible {
+      display: block;
+    }
+  </style>
+
+  <div class="exp-filter" data-exp-filter>
+    <span class="exp-filter__label">filter:</span>
+    <button type="button" class="exp-filter__btn is-active" data-filter="all" data-count="{{ experience.size }}">all</button>
+    {% if security_count > 0 %}
+      <button type="button" class="exp-filter__btn" data-filter="security" data-count="{{ security_count }}">security</button>
+    {% endif %}
+    {% if crypto_count > 0 %}
+      <button type="button" class="exp-filter__btn" data-filter="crypto" data-count="{{ crypto_count }}">ZK &amp; cryptography</button>
+    {% endif %}
+    {% if blockchain_count > 0 %}
+      <button type="button" class="exp-filter__btn" data-filter="blockchain" data-count="{{ blockchain_count }}">blockchain</button>
+    {% endif %}
+    {% if research_count > 0 %}
+      <button type="button" class="exp-filter__btn" data-filter="research" data-count="{{ research_count }}">research</button>
+    {% endif %}
+    {% if engineering_count > 0 %}
+      <button type="button" class="exp-filter__btn" data-filter="engineering" data-count="{{ engineering_count }}">software engineering</button>
+    {% endif %}
+    {% if teaching_count > 0 %}
+      <button type="button" class="exp-filter__btn" data-filter="teaching" data-count="{{ teaching_count }}">teaching</button>
+    {% endif %}
+  </div>
+
+  <ul class="exp-list">
+    {% for entry in experience %}
+      {% assign tag_string = entry.tags | join: ' ' %}
+      <li class="exp-item" data-exp-tags="{{ tag_string }}" data-exp-employment="{{ entry.employment }}">
+        <div class="exp-item__logo">
+          {% if entry.logo %}
+            <img src="{{ entry.logo | relative_url }}" alt="{{ entry.company }} logo">
+          {% else %}
+            <i class="fa-solid fa-building"></i>
+          {% endif %}
+        </div>
+        <div class="exp-item__body">
+          <div class="exp-item__header">
+            <div style="flex: 1 1 auto; min-width: 0;">
+              <h3 class="exp-item__role">{{ entry.role }}</h3>
+              <div class="exp-item__company">
+                {% if entry.company_url %}
+                  <a href="{{ entry.company_url }}" target="_blank" rel="noopener noreferrer">{{ entry.company }}</a>
+                {% else %}
+                  {{ entry.company }}
+                {% endif %}
+                <span class="exp-item__sep">·</span>
+                <span>{{ entry.employment }}</span>
+                {% if entry.remote %}
+                  <span class="exp-item__sep">·</span>
+                  <span class="exp-item__remote">{{ entry.remote }}</span>
+                {% endif %}
+              </div>
+              <div class="exp-item__location">{{ entry.location }}</div>
+            </div>
+            <div class="exp-item__dates">
+              {{ entry.start_date | append: '-01' | date: '%b %Y' }}
+              &ndash;
+              {% if entry.end_date %}
+                {{ entry.end_date | append: '-01' | date: '%b %Y' }}
+              {% else %}
+                Present
+              {% endif %}
+            </div>
+          </div>
+          {% if entry.description %}
+            <p class="exp-item__description">{{ entry.description }}</p>
+          {% endif %}
+          <div class="exp-item__tags">
+            {% for tag in entry.tags %}
+              {% case tag %}
+                {% when 'security' -%}
+                  {%- assign tag_label = 'security' %}
+                {% when 'crypto' -%}
+                  {%- assign tag_label = 'ZK & cryptography' %}
+                {% when 'blockchain' -%}
+                  {%- assign tag_label = 'blockchain' %}
+                {% when 'research' -%}
+                  {%- assign tag_label = 'research' %}
+                {% when 'engineering' -%}
+                  {%- assign tag_label = 'engineering' %}
+                {% when 'teaching' -%}
+                  {%- assign tag_label = 'teaching' %}
+                {% else -%}
+                  {%- assign tag_label = tag %}
+              {% endcase %}
+              <span class="exp-tag exp-tag--{{ tag }}">{{ tag_label }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="exp-empty" data-exp-empty>no roles match this filter.</p>
+
+  <script>
+    (function () {
+      var filterBar = document.querySelector('[data-exp-filter]');
+      if (!filterBar) return;
+      var buttons = filterBar.querySelectorAll('.exp-filter__btn');
+      var items = document.querySelectorAll('.exp-item[data-exp-tags]');
+      var emptyState = document.querySelector('[data-exp-empty]');
+      var currentTag = 'all';
+
+      function setActive(activeBtn) {
+        buttons.forEach(function (b) {
+          b.classList.toggle('is-active', b === activeBtn);
+        });
+      }
+
+      function apply() {
+        var visibleCount = 0;
+        items.forEach(function (li) {
+          var tags = (li.dataset.expTags || '').split(' ');
+          var match = currentTag === 'all' || tags.indexOf(currentTag) !== -1;
+          li.hidden = !match;
+          if (match) visibleCount += 1;
+        });
+        if (emptyState) {
+          emptyState.classList.toggle('is-visible', visibleCount === 0);
+        }
+      }
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          currentTag = btn.dataset.filter;
+          setActive(btn);
+          apply();
+        });
+      });
+    })();
+  </script>
+{% endif %}
