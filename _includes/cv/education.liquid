@@ -1,0 +1,335 @@
+{%- comment -%}
+  Education list — degrees from _data/education.yml rendered newest-first
+  with a single-axis subject-domain filter.
+
+  Usage:
+    {% include cv/education.liquid %}
+
+  Surrounding page supplies the section heading. This include emits the
+  stats line, filter chip bar, degree list, and inline filter JS.
+{%- endcomment -%}
+
+{% assign education = site.data.education.education %}
+{% if education and education.size > 0 %}
+  {% assign cryptography_count = education | where_exp: 'e', 'e.tags contains "cryptography"' | size %}
+  {% assign blockchain_count = education | where_exp: 'e', 'e.tags contains "blockchain"' | size %}
+  {% assign data_science_count = education | where_exp: 'e', 'e.tags contains "data-science"' | size %}
+  {% assign mathematics_count = education | where_exp: 'e', 'e.tags contains "mathematics"' | size %}
+  {% assign computer_science_count = education | where_exp: 'e', 'e.tags contains "computer-science"' | size %}
+  {% assign institutions_count = education | map: 'institution' | uniq | size %}
+
+  <p class="text-muted" style="font-size: 0.85rem; margin-bottom: 1rem;">
+    {{ education.size }} degree{% if education.size != 1 %}s{% endif %} across {{ institutions_count }} institution
+    {%- if institutions_count != 1 %}s{% endif %}
+  </p>
+
+  <style>
+    .edu-filter {
+      display: flex;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.1rem;
+      font-size: 0.8rem;
+    }
+    .edu-filter__label {
+      align-self: center;
+      font-size: 0.78rem;
+      color: var(--global-text-color-light);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      padding-right: 0.15rem;
+    }
+    .edu-filter__btn {
+      appearance: none;
+      cursor: pointer;
+      border: 1px solid var(--global-divider-color);
+      background-color: var(--global-card-bg-color);
+      color: var(--global-text-color);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: inherit;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+    .edu-filter__btn:hover {
+      border-color: var(--global-theme-color);
+      color: var(--global-theme-color);
+    }
+    .edu-filter__btn.is-active {
+      background-color: var(--global-theme-color);
+      color: var(--global-hover-text-color);
+      border-color: var(--global-theme-color);
+    }
+    .edu-filter__btn[data-filter='cryptography'].is-active {
+      background-color: #5a329d;
+      border-color: #5a329d;
+    }
+    .edu-filter__btn[data-filter='blockchain'].is-active {
+      background-color: #1a5f36;
+      border-color: #1a5f36;
+    }
+    .edu-filter__btn[data-filter='data-science'].is-active {
+      background-color: #1f5a7a;
+      border-color: #1f5a7a;
+    }
+    .edu-filter__btn[data-filter='mathematics'].is-active {
+      background-color: #7a5a1f;
+      border-color: #7a5a1f;
+    }
+    .edu-filter__btn[data-filter='computer-science'].is-active {
+      background-color: #7a1f6a;
+      border-color: #7a1f6a;
+    }
+    .edu-filter__btn[data-count]::after {
+      content: ' · ' attr(data-count);
+      opacity: 0.75;
+      font-weight: 400;
+    }
+    .edu-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+    .edu-item {
+      display: flex;
+      gap: 0.9rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--global-divider-color);
+    }
+    .edu-item[hidden] {
+      display: none !important;
+    }
+    .edu-item__logo {
+      flex: 0 0 40px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background-color: var(--global-card-bg-color);
+      color: var(--global-text-color-light);
+      font-size: 1.15rem;
+      overflow: hidden;
+    }
+    .edu-item__logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .edu-item__body {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    .edu-item__header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .edu-item__degree {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+    .edu-item__institution {
+      font-size: 0.88rem;
+      color: var(--global-text-color);
+      margin-top: 0.1rem;
+    }
+    .edu-item__institution a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px dotted var(--global-divider-color);
+    }
+    .edu-item__institution a:hover {
+      color: var(--global-theme-color);
+      border-bottom-color: var(--global-theme-color);
+    }
+    .edu-item__location {
+      font-size: 0.82rem;
+      color: var(--global-text-color-light);
+      margin-top: 0.1rem;
+    }
+    .edu-item__dates {
+      font-size: 0.82rem;
+      color: var(--global-text-color-light);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .edu-item__description {
+      margin: 0.4rem 0 0.45rem;
+      font-size: 0.88rem;
+      color: var(--global-text-color);
+    }
+    .edu-item__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.3rem;
+    }
+    .edu-tag {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 1px 8px;
+      border-radius: 999px;
+      letter-spacing: 0.03em;
+      line-height: 1.25;
+    }
+    .edu-tag--cryptography {
+      background-color: #e9ddff;
+      color: #5a329d;
+    }
+    .edu-tag--blockchain {
+      background-color: #d8f3dc;
+      color: #1a5f36;
+    }
+    .edu-tag--data-science {
+      background-color: #d6e9f1;
+      color: #1f5a7a;
+    }
+    .edu-tag--mathematics {
+      background-color: #f1e7d6;
+      color: #7a5a1f;
+    }
+    .edu-tag--computer-science {
+      background-color: #f5d6f1;
+      color: #7a1f6a;
+    }
+    .edu-empty {
+      display: none;
+      padding: 1rem 0;
+      font-size: 0.88rem;
+      color: var(--global-text-color-light);
+      font-style: italic;
+    }
+    .edu-empty.is-visible {
+      display: block;
+    }
+  </style>
+
+  <div class="edu-filter" data-edu-filter>
+    <span class="edu-filter__label">filter:</span>
+    <button type="button" class="edu-filter__btn is-active" data-filter="all" data-count="{{ education.size }}">all</button>
+    {% if cryptography_count > 0 %}
+      <button type="button" class="edu-filter__btn" data-filter="cryptography" data-count="{{ cryptography_count }}">cryptography</button>
+    {% endif %}
+    {% if blockchain_count > 0 %}
+      <button type="button" class="edu-filter__btn" data-filter="blockchain" data-count="{{ blockchain_count }}">blockchain</button>
+    {% endif %}
+    {% if data_science_count > 0 %}
+      <button type="button" class="edu-filter__btn" data-filter="data-science" data-count="{{ data_science_count }}">data science</button>
+    {% endif %}
+    {% if mathematics_count > 0 %}
+      <button type="button" class="edu-filter__btn" data-filter="mathematics" data-count="{{ mathematics_count }}">mathematics</button>
+    {% endif %}
+    {% if computer_science_count > 0 %}
+      <button type="button" class="edu-filter__btn" data-filter="computer-science" data-count="{{ computer_science_count }}">computer science</button>
+    {% endif %}
+  </div>
+
+  <ul class="edu-list">
+    {% for entry in education %}
+      {% assign tag_string = entry.tags | join: ' ' %}
+      <li class="edu-item" data-edu-tags="{{ tag_string }}">
+        <div class="edu-item__logo">
+          {% if entry.logo %}
+            <img src="{{ entry.logo | relative_url }}" alt="{{ entry.institution }} logo">
+          {% else %}
+            <i class="fa-solid fa-graduation-cap"></i>
+          {% endif %}
+        </div>
+        <div class="edu-item__body">
+          <div class="edu-item__header">
+            <div style="flex: 1 1 auto; min-width: 0;">
+              <h3 class="edu-item__degree">{{ entry.degree }}</h3>
+              <div class="edu-item__institution">
+                {% if entry.institution_url %}
+                  <a href="{{ entry.institution_url }}" target="_blank" rel="noopener noreferrer">{{ entry.institution }}</a>
+                {% else %}
+                  {{ entry.institution }}
+                {% endif %}
+              </div>
+              <div class="edu-item__location">{{ entry.location }}</div>
+            </div>
+            <div class="edu-item__dates">
+              {{ entry.start_year }}
+              &ndash;
+              {% if entry.end_year %}
+                {{ entry.end_year }}
+              {% else %}
+                Present
+              {% endif %}
+            </div>
+          </div>
+          {% if entry.description %}
+            <p class="edu-item__description">{{ entry.description }}</p>
+          {% endif %}
+          <div class="edu-item__tags">
+            {% for tag in entry.tags %}
+              {% case tag %}
+                {% when 'cryptography' -%}
+                  {%- assign tag_label = 'cryptography' %}
+                {% when 'blockchain' -%}
+                  {%- assign tag_label = 'blockchain' %}
+                {% when 'data-science' -%}
+                  {%- assign tag_label = 'data science' %}
+                {% when 'mathematics' -%}
+                  {%- assign tag_label = 'mathematics' %}
+                {% when 'computer-science' -%}
+                  {%- assign tag_label = 'computer science' %}
+                {% else -%}
+                  {%- assign tag_label = tag %}
+              {% endcase %}
+              <span class="edu-tag edu-tag--{{ tag }}">{{ tag_label }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="edu-empty" data-edu-empty>no degrees match this filter.</p>
+
+  <script>
+    (function () {
+      var filterBar = document.querySelector('[data-edu-filter]');
+      if (!filterBar) return;
+      var buttons = filterBar.querySelectorAll('.edu-filter__btn');
+      var items = document.querySelectorAll('.edu-item[data-edu-tags]');
+      var emptyState = document.querySelector('[data-edu-empty]');
+      var currentTag = 'all';
+
+      function setActive(activeBtn) {
+        buttons.forEach(function (b) {
+          b.classList.toggle('is-active', b === activeBtn);
+        });
+      }
+
+      function apply() {
+        var visibleCount = 0;
+        items.forEach(function (li) {
+          var tags = (li.dataset.eduTags || '').split(' ');
+          var match = currentTag === 'all' || tags.indexOf(currentTag) !== -1;
+          li.hidden = !match;
+          if (match) visibleCount += 1;
+        });
+        if (emptyState) {
+          emptyState.classList.toggle('is-visible', visibleCount === 0);
+        }
+      }
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          currentTag = btn.dataset.filter;
+          setActive(btn);
+          apply();
+        });
+      });
+    })();
+  </script>
+{% endif %}
