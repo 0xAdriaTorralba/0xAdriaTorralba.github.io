@@ -60,5 +60,6 @@ The system is built around two cooperating agents orchestrated by a Next.js back
 
 - [Adrià Torralba-Agell](https://0xadriatorralba.me)
 - [Gianfranco Bazzani](https://github.com/GianfrancoBazzani)
-
-<!-- TODO: list other teammates once their handles are confirmed. -->
+- [Pol Ureña Heras](https://x.com/Draiakoo)
+- [mentasuave01](https://x.com/mentasuave01)
+- [Fernando Rabasco](https://x.com/ferrabled)
