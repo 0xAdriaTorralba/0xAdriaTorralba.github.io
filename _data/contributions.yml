@@ -17,6 +17,14 @@
 
 contributions:
   - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 33
+    title: "chore(docker): pin Ruby to 3.3-slim"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/33"
+    state: merged
+    date: 2026-05-06
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
     pr: 31
     title: "feat(/research/): rename publications page + add Academic Service section"
     url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/31"
@@ -528,6 +536,22 @@ contributions:
     date: 2021-03-02
     category: academic
     ownership: external
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 35
+    title: "feat(cv): add education section with subject-domain tag filter"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/35"
+    state: open
+    date: 2026-05-06
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 34
+    title: "feat(cv): add professional experience section with tag filter"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/34"
+    state: open
+    date: 2026-05-06
+    category: portfolio
+    ownership: own
   - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
     pr: 21
     title: "Balatro-style 3D card showcase at /showcase/"
