@@ -87,30 +87,6 @@
       font-size: 0.88rem;
       color: var(--global-text-color);
     }
-    .grant-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3em;
-      font-size: 0.7rem;
-      font-weight: 600;
-      padding: 1px 8px;
-      border-radius: 999px;
-      letter-spacing: 0.03em;
-      line-height: 1.25;
-      text-transform: lowercase;
-    }
-    .grant-status--active {
-      background-color: #d8f3dc;
-      color: #1a5f36;
-    }
-    .grant-status--completed {
-      background-color: var(--global-card-bg-color);
-      color: var(--global-text-color-light);
-    }
-    .grant-status--pending {
-      background-color: #f1e7d6;
-      color: #7a5a1f;
-    }
   </style>
 
   <ul class="grant-list">
@@ -122,10 +98,7 @@
         <div class="grant-item__body">
           <div class="grant-item__header">
             <div style="flex: 1 1 auto; min-width: 0;">
-              <h3 class="grant-item__title">
-                {{ entry.title }}
-                <span class="grant-status grant-status--{{ entry.status }}">{{ entry.status }}</span>
-              </h3>
+              <h3 class="grant-item__title">{{ entry.title }}</h3>
               <div class="grant-item__agency">
                 {% if entry.funding_agency_url %}
                   <a href="{{ entry.funding_agency_url }}" target="_blank" rel="noopener noreferrer">
