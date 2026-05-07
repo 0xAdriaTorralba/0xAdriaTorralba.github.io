@@ -108,6 +108,11 @@
 - title: Projects
   type: time_table
   contents:
+    - title: Croisette.cc
+      institution: ETHGlobal Cannes 2026
+      year: Apr. 2026
+      location: Cannes, France
+      maindescription: Hackathon project. Effortless, 24/7 investing managed by AI agents on 0G's compute network. Won 1st place from 0G — Best OpenClaw Agent on 0G.
     - title: Délégative
       institution: EthGlobal Paris 2023
       year: Jul. 2023
