@@ -5,7 +5,7 @@ grants:
     funding_agency_short: AGAUR
     funding_agency_url: https://agaur.gencat.cat/
     region: Generalitat de Catalunya
-    period: "2023"
+    period: Jun 2023 – Nov 2025
     role: Awardee
     status: active
     description: Catalan-government predoctoral fellowship co-funded by the European Social Fund supporting PhD research on applied cryptography and blockchain security.
@@ -14,7 +14,7 @@ grants:
     funding_agency: Universitat Oberta de Catalunya
     funding_agency_short: UOC
     funding_agency_url: https://www.uoc.edu
-    period: 2021–2022
+    period: Dec 2021 – May 2023
     role: Awardee
     status: completed
     description: First-year doctoral grant from UOC supporting research on cryptography and blockchain.
