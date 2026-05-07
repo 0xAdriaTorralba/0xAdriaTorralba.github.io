@@ -135,6 +135,11 @@ ninja.data = [{
           description: "Native iOS app for checking real-time bike and e-bike availability at bike-sharing stations worldwide, with Apple Watch app, widgets, and map integration. Coming soon to the App Store.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/bicing_ios/";
+            },},{id: "projects-croisette-cc",
+          title: 'Croisette.cc',
+          description: "Hackathon project at ETHGlobal Cannes 2026. Effortless, 24/7 investing managed by AI agents on 0G&#39;s compute network. Won 1st place — Best OpenClaw Agent on 0G.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/croisette_cc/";
             },},{id: "projects-data-visualisation-in-linguistics",
           title: 'Data Visualisation in Linguistics',
           description: "Visualisation of toxicity in Social Networks made with Django, Highcharts and D3.js.",
