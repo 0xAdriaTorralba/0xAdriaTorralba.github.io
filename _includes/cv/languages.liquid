@@ -1,0 +1,96 @@
+{%- comment -%}
+  Languages list — entries from _data/languages.yml. Compact static list,
+  no filter, no JS.
+
+  Usage:
+    {% include cv/languages.liquid %}
+{%- endcomment -%}
+
+{% assign languages = site.data.languages.languages %}
+{% if languages and languages.size > 0 %}
+  <style>
+    .lang-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--global-divider-color);
+      flex-wrap: wrap;
+    }
+    .lang-item__name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+    }
+    .lang-item__meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      color: var(--global-text-color-light);
+    }
+    .lang-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 9px;
+      border-radius: 999px;
+      letter-spacing: 0.03em;
+      line-height: 1.25;
+    }
+    .lang-pill--native {
+      background-color: #d8f3dc;
+      color: #1a5f36;
+    }
+    .lang-pill--advanced {
+      background-color: #e9ddff;
+      color: #5a329d;
+    }
+    .lang-pill--upper-intermediate {
+      background-color: #d6e9f1;
+      color: #1f5a7a;
+    }
+    .lang-pill--intermediate {
+      background-color: #f1e7d6;
+      color: #7a5a1f;
+    }
+    .lang-pill--basic {
+      background-color: var(--global-card-bg-color);
+      color: var(--global-text-color-light);
+    }
+    .lang-cefr {
+      font-size: 0.78rem;
+      color: var(--global-text-color-light);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+  </style>
+
+  <ul class="lang-list">
+    {% for entry in languages %}
+      {% assign level_slug = entry.level | downcase | replace: ' ', '-' %}
+      <li class="lang-item">
+        <span class="lang-item__name">{{ entry.language }}</span>
+        <span class="lang-item__meta">
+          <span class="lang-pill lang-pill--{{ level_slug }}">{{ entry.level }}</span>
+          <span class="lang-cefr">
+            {{ entry.cefr -}}
+            {%- if entry.certificate %}
+              ({{ entry.certificate }})
+            {%- endif %}
+          </span>
+        </span>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

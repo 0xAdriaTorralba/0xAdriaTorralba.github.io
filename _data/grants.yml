@@ -1,11 +1,20 @@
-# Example entry (remove the comment and fill in your data):
-# - title: "Grant title"
-#   role: "PI / Co-PI / Contributor"
-#   funding_agency: "Funding body"
-#   amount: "" # optional
-#   period: "2025–2027"
-#   status: "active" # active | completed | pending
-#   collaborators: ["Name A", "Name B"] # optional
-#   link: "" # optional
-#   summary: "One-line summary of the grant."
-[]
+grants:
+  - title: FI-1 Predoctoral Research Fellowship
+    grant_id: 2023 FI-1 00241
+    funding_agency: Agència de Gestió d'Ajuts Universitaris i de Recerca (AGAUR)
+    funding_agency_short: AGAUR
+    funding_agency_url: https://agaur.gencat.cat/
+    region: Generalitat de Catalunya
+    period: "2023"
+    role: Awardee
+    status: active
+    description: Catalan-government predoctoral fellowship co-funded by the European Social Fund supporting PhD research on applied cryptography and blockchain security.
+
+  - title: UOC Doctoral Grant
+    funding_agency: Universitat Oberta de Catalunya
+    funding_agency_short: UOC
+    funding_agency_url: https://www.uoc.edu
+    period: 2021–2022
+    role: Awardee
+    status: completed
+    description: First-year doctoral grant from UOC supporting research on cryptography and blockchain.

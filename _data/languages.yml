@@ -1,0 +1,11 @@
+languages:
+  - language: English
+    level: Advanced
+    cefr: B2
+    certificate: FCE
+  - language: Spanish
+    level: Native
+    cefr: C1
+  - language: Catalan
+    level: Native
+    cefr: C1
