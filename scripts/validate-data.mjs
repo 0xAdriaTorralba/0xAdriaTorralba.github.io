@@ -94,6 +94,8 @@ const dataPairs = [
   ["_data/ctf_progress.yml", "schemas/ctf_progress.json"],
   ["_data/certifications.yml", "schemas/certifications.json"],
   ["_data/contributions.yml", "schemas/contributions.json"],
+  ["_data/professional_experience.yml", "schemas/professional_experience.json"],
+  ["_data/education.yml", "schemas/education.json"],
   ["_data/socials.yml", "schemas/socials.json"],
   ["_data/cv.yml", "schemas/generic.json"],
   ["_data/.cv.yml", "schemas/generic.json"],

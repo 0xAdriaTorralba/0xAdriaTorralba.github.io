@@ -1,0 +1,113 @@
+experience:
+  - role: Zero-Knowledge Cryptographer and Auditor
+    company: OpenZeppelin
+    company_url: https://www.openzeppelin.com
+    start_date: 2025-08
+    end_date: 2026-02
+    employment: full-time
+    location: Distributed Organization
+    remote: remote
+    description: Zero-knowledge cryptography research and smart-contract security audits.
+    tags:
+      - security
+      - crypto
+      - blockchain
+      - research
+
+  - role: PhD Student
+    company: Universitat Oberta de Catalunya
+    company_url: https://www.uoc.edu
+    start_date: 2021-12
+    end_date: 2025-12
+    employment: full-time
+    location: Barcelona, Spain
+    remote: on-site
+    description: Doctoral research at the intersection of cryptography and blockchain.
+    tags:
+      - crypto
+      - blockchain
+      - research
+
+  - role: Blockchain ZK-Rollups Researcher
+    company: MigaLabs
+    company_url: https://migalabs.io
+    start_date: 2023-10
+    end_date: 2024-05
+    employment: part-time
+    location: Barcelona, Spain
+    remote: hybrid
+    description: Research on ZK-rollup architectures and Layer-2 scaling.
+    tags:
+      - crypto
+      - blockchain
+      - research
+
+  - role: Scientific Researcher
+    company: Universitat de Barcelona
+    company_url: https://www.ub.edu
+    start_date: 2021-09
+    end_date: 2021-12
+    employment: part-time
+    location: Barcelona, Spain
+    remote: on-site
+    tags:
+      - research
+
+  - role: Scientific Researcher Assistant
+    company: Universitat de Barcelona
+    company_url: https://www.ub.edu
+    start_date: 2021-01
+    end_date: 2021-06
+    employment: part-time
+    location: Barcelona, Spain
+    remote: on-site
+    description: Creation of a website that visualizes toxicity on social media.
+    tags:
+      - research
+
+  - role: Web Developer Internship
+    company: Happets
+    start_date: 2020-10
+    end_date: 2021-05
+    employment: part-time
+    location: Barcelona, Spain
+    remote: on-site
+    description: Built a website with Ruby on Rails (backend) and React.js (frontend).
+    tags:
+      - engineering
+
+  - role: Teaching Assistant Professor
+    company: Universitat de Barcelona
+    company_url: https://www.ub.edu
+    start_date: 2020-03
+    end_date: 2020-06
+    employment: part-time
+    location: Barcelona, Spain
+    remote: on-site
+    description: Teaching Object-Oriented Programming (OOP) in Java.
+    tags:
+      - teaching
+
+  - role: Teaching Assistant Professor
+    company: Universitat de Barcelona
+    company_url: https://www.ub.edu
+    start_date: 2019-10
+    end_date: 2019-12
+    employment: part-time
+    location: Barcelona, Spain
+    remote: on-site
+    description: Teaching the Java programming language.
+    tags:
+      - teaching
+
+  - role: Big Data and Artificial Intelligence Intern
+    company: everis (NTT Data)
+    company_url: https://www.nttdata.com
+    start_date: 2018-10
+    end_date: 2019-08
+    employment: part-time
+    location: Barcelona, Spain
+    remote: on-site
+    description: Documented Big Data technologies, contributed to a Data Churn project, and built visualization dashboards with Matplotlib and Plotly.
+    tags:
+      - engineering

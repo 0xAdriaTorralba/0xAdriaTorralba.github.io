@@ -1,0 +1,32 @@
+education:
+  - degree: PhD in Applied Cryptography on Blockchain
+    institution: Universitat Oberta de Catalunya
+    institution_url: https://www.uoc.edu
+    start_year: "2021"
+    end_year: null
+    location: Barcelona, Spain
+    description: Doctoral research at the intersection of zero-knowledge cryptography, elliptic-curve primitives, and blockchain Layer-2 security.
+    tags:
+      - cryptography
+      - blockchain
+
+  - degree: MSc in Fundamental Principles of Data Science
+    institution: Universitat de Barcelona
+    institution_url: https://www.ub.edu
+    start_year: "2020"
+    end_year: "2021"
+    location: Barcelona, Spain
+    description: Graduate program covering statistical learning, optimization, and the theoretical foundations of modern data science.
+    tags:
+      - data-science
+
+  - degree: Double BSc in Mathematics and Computer Science
+    institution: Universitat de Barcelona
+    institution_url: https://www.ub.edu
+    start_year: "2013"
+    end_year: "2020"
+    location: Barcelona, Spain
+    description: Concurrent dual-degree spanning pure mathematics (algebra, number theory, analysis) and computer science.
+    tags:
+      - mathematics
+      - computer-science

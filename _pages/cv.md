@@ -10,6 +10,14 @@ description: You can download my CV on this page.
 #   sidebar: left
 ---
 
+<h2 style="margin-top: 2.5rem;">professional experience</h2>
+
+{% include cv/professional_experience.liquid %}
+
+<h2 style="margin-top: 2.5rem;">education</h2>
+
+{% include cv/education.liquid %}
+
 <h2 style="margin-top: 2.5rem;">certifications &amp; coursework</h2>
 
 {% include certifications.liquid %}
