@@ -5,6 +5,7 @@ description: "Hackathon project at ETHGlobal Cannes 2026. Effortless, 24/7 inves
 project_date: "Apr. 2026 — Cannes, France"
 github: "https://github.com/GianfrancoBazzani/croisette.cc"
 twitter_url: "https://x.com/0xAdriaTorralba/status/2041897272053485794"
+linkedin_url: "https://www.linkedin.com/feed/update/urn:li:activity:7447652372786626562/"
 demo_url: "https://croisette.cc"
 importance: 1
 sort_date: 2026-04
@@ -60,5 +61,6 @@ The system is built around two cooperating agents orchestrated by a Next.js back
 
 - [Adrià Torralba-Agell](https://0xadriatorralba.me)
 - [Gianfranco Bazzani](https://github.com/GianfrancoBazzani)
-
-<!-- TODO: list other teammates once their handles are confirmed. -->
+- [Pol Ureña Heras](https://x.com/Draiakoo)
+- [mentasuave01](https://x.com/mentasuave01)
+- [Fernando Rabasco](https://x.com/ferrabled)

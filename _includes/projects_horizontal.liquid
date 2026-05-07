@@ -34,6 +34,11 @@
                 <a href="{{ project.twitter_url }}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
               </div>
             {% endif %}
+            {% if project.linkedin_url %}
+              <div class="icon" data-toggle="tooltip" title="LinkedIn Post" style="margin-left: 0.5rem;">
+                <a href="{{ project.linkedin_url }}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+              </div>
+            {% endif %}
             {% if project.demo_url %}
               <div class="icon" data-toggle="tooltip" title="Live Demo" style="margin-left: 0.5rem;">
                 <a href="{{ project.demo_url }}" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-play"></i></a>
