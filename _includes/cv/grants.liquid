@@ -1,1 +1,133 @@
-<p class="text-muted mb-0" style="font-style: italic;">Work in progress, soon you will see the information here.</p>
+{%- comment -%}
+  Grants & awards list — entries from _data/grants.yml. Compact static list,
+  no filter, no JS.
+
+  Usage:
+    {% include cv/grants.liquid %}
+{%- endcomment -%}
+
+{% assign grants = site.data.grants.grants %}
+{% if grants and grants.size > 0 %}
+  <style>
+    .grant-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+    .grant-item {
+      display: flex;
+      gap: 0.9rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--global-divider-color);
+    }
+    .grant-item__icon {
+      flex: 0 0 40px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background-color: var(--global-card-bg-color);
+      color: var(--global-text-color-light);
+      font-size: 1.15rem;
+    }
+    .grant-item__body {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    .grant-item__header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .grant-item__title {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+    .grant-item__period {
+      font-size: 0.82rem;
+      color: var(--global-text-color-light);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .grant-item__agency {
+      font-size: 0.88rem;
+      color: var(--global-text-color);
+      margin-top: 0.1rem;
+    }
+    .grant-item__agency a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px dotted var(--global-divider-color);
+    }
+    .grant-item__agency a:hover {
+      color: var(--global-theme-color);
+      border-bottom-color: var(--global-theme-color);
+    }
+    .grant-item__refline {
+      font-size: 0.78rem;
+      color: var(--global-text-color-light);
+      margin-top: 0.15rem;
+      letter-spacing: 0.01em;
+    }
+    .grant-item__refline code {
+      font-size: 0.75rem;
+      padding: 1px 6px;
+      border-radius: 4px;
+      background-color: var(--global-card-bg-color);
+      color: var(--global-text-color);
+    }
+    .grant-item__description {
+      margin: 0.4rem 0 0;
+      font-size: 0.88rem;
+      color: var(--global-text-color);
+    }
+  </style>
+
+  <ul class="grant-list">
+    {% for entry in grants %}
+      <li class="grant-item">
+        <div class="grant-item__icon">
+          <i class="fa-solid fa-trophy"></i>
+        </div>
+        <div class="grant-item__body">
+          <div class="grant-item__header">
+            <div style="flex: 1 1 auto; min-width: 0;">
+              <h3 class="grant-item__title">{{ entry.title }}</h3>
+              <div class="grant-item__agency">
+                {% if entry.funding_agency_url %}
+                  <a href="{{ entry.funding_agency_url }}" target="_blank" rel="noopener noreferrer">
+                    {{- entry.funding_agency -}}
+                  </a>
+                {% else %}
+                  {{ entry.funding_agency }}
+                {% endif %}
+                {% if entry.region %}
+                  <span style="color: var(--global-text-color-light);"> · {{ entry.region }}</span>
+                {% endif %}
+              </div>
+              {% if entry.grant_id or entry.role %}
+                <div class="grant-item__refline">
+                  {% if entry.grant_id -%}
+                    <code>{{ entry.grant_id }}</code>
+                  {%- endif %}
+                  {% if entry.grant_id and entry.role %} · {% endif %}
+                  {% if entry.role %}{{ entry.role }}{% endif %}
+                </div>
+              {% endif %}
+            </div>
+            <div class="grant-item__period">{{ entry.period }}</div>
+          </div>
+          {% if entry.description %}
+            <p class="grant-item__description">{{ entry.description }}</p>
+          {% endif %}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

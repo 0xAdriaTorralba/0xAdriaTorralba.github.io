@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/languages.json",
+  "title": "Spoken languages",
+  "description": "Schema for _data/languages.yml — languages rendered on /cv/ between the certifications and academic service sections.",
+  "type": "object",
+  "required": ["languages"],
+  "additionalProperties": false,
+  "properties": {
+    "languages": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["language", "level", "cefr"],
+        "additionalProperties": false,
+        "properties": {
+          "language": { "type": "string", "minLength": 1 },
+          "level": {
+            "enum": ["Native", "Advanced", "Upper-Intermediate", "Intermediate", "Basic"]
+          },
+          "cefr": { "type": "string", "pattern": "^(A1|A2|B1|B2|C1|C2)$" },
+          "certificate": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

@@ -22,6 +22,14 @@ description: You can download my CV on this page.
 
 {% include certifications.liquid %}
 
+<h2 style="margin-top: 2.5rem;">languages</h2>
+
+{% include cv/languages.liquid %}
+
 <h2 style="margin-top: 2.5rem;">academic service</h2>
 
 {% include cv/service.liquid %}
+
+<h2 style="margin-top: 2.5rem;">grants &amp; awards</h2>
+
+{% include cv/grants.liquid %}
