@@ -17,6 +17,70 @@
 
 contributions:
   - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 41
+    title: "feat(projects): Croisette.cc team roster + LinkedIn icon (recover stacked merges)"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/41"
+    state: merged
+    date: 2026-05-07
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 40
+    title: "feat(projects): support linkedin_url + add Croisette announcement"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/40"
+    state: merged
+    date: 2026-05-07
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 39
+    title: "fix(projects): fill in remaining Croisette.cc teammates"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/39"
+    state: merged
+    date: 2026-05-07
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 38
+    title: "feat(projects): add Croisette.cc — ETHGlobal Cannes 2026 winner"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/38"
+    state: merged
+    date: 2026-05-07
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 36
+    title: "feat(cv): add languages and grants & awards sections"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/36"
+    state: merged
+    date: 2026-05-07
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 37
+    title: "fix(cv): drop status pills + correct grant date ranges"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/37"
+    state: merged
+    date: 2026-05-07
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 34
+    title: "feat(cv): add professional experience section with tag filter"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/34"
+    state: merged
+    date: 2026-05-07
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 35
+    title: "feat(cv): add education section with subject-domain tag filter"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/35"
+    state: merged
+    date: 2026-05-07
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
     pr: 33
     title: "chore(docker): pin Ruby to 3.3-slim"
     url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/33"
@@ -536,22 +600,6 @@ contributions:
     date: 2021-03-02
     category: academic
     ownership: external
-  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
-    pr: 35
-    title: "feat(cv): add education section with subject-domain tag filter"
-    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/35"
-    state: open
-    date: 2026-05-06
-    category: portfolio
-    ownership: own
-  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
-    pr: 34
-    title: "feat(cv): add professional experience section with tag filter"
-    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/34"
-    state: open
-    date: 2026-05-06
-    category: portfolio
-    ownership: own
   - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
     pr: 21
     title: "Balatro-style 3D card showcase at /showcase/"
