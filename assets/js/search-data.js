@@ -220,6 +220,11 @@ ninja.data = [{
           description: "A hands-on workshop on KZG polynomial commitments with a focus on their role in EIP-4844 (Proto-Danksharding), given on the same day the Dencun upgrade went live.",
           section: "Talks",handler: () => {
               window.location.href = "/talks/yacademy_kzg_workshop/";
+            },},{id: "talks-findings-from-the-zisk-open-source-review",
+          title: 'Findings from the ZisK Open Source Review',
+          description: "Walkthrough of OpenZeppelin&#39;s security review of the ZisK zkVM — security properties, encapsulation, vulnerabilities, observations, and tooling from the audit.",
+          section: "Talks",handler: () => {
+              window.location.href = "/talks/zisk_open_source_review/";
             },},{id: "talks-zero-knowledge-for-privacy-succinct-for-scalability",
           title: 'Zero-Knowledge for Privacy, Succinct for Scalability',
           description: "Exploring the dual role of zero-knowledge proofs in blockchain: ZK for privacy and succinct proofs for scalability.",

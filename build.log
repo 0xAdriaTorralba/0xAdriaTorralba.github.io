@@ -212,6 +212,12 @@ Terser: Minifying /home/runner/work/0xAdriaTorralba.github.io/0xAdriaTorralba.gi
        Imagemagick: Adding static file /home/runner/work/0xAdriaTorralba.github.io/0xAdriaTorralba.github.io/_site/assets/img/talks/yacademy_kzg-800.webp
        Imagemagick: Generating image "/home/runner/work/0xAdriaTorralba.github.io/0xAdriaTorralba.github.io/_site/assets/img/talks/yacademy_kzg-1400.webp"
        Imagemagick: Adding static file /home/runner/work/0xAdriaTorralba.github.io/0xAdriaTorralba.github.io/_site/assets/img/talks/yacademy_kzg-1400.webp
+       Imagemagick: Generating image "/home/runner/work/0xAdriaTorralba.github.io/0xAdriaTorralba.github.io/_site/assets/img/talks/zisk_buenos_aires-480.webp"
+       Imagemagick: Adding static file /home/runner/work/0xAdriaTorralba.github.io/0xAdriaTorralba.github.io/_site/assets/img/talks/zisk_buenos_aires-480.webp
+       Imagemagick: Generating image "/home/runner/work/0xAdriaTorralba.github.io/0xAdriaTorralba.github.io/_site/assets/img/talks/zisk_buenos_aires-800.webp"
+       Imagemagick: Adding static file /home/runner/work/0xAdriaTorralba.github.io/0xAdriaTorralba.github.io/_site/assets/img/talks/zisk_buenos_aires-800.webp
+       Imagemagick: Generating image "/home/runner/work/0xAdriaTorralba.github.io/0xAdriaTorralba.github.io/_site/assets/img/talks/zisk_buenos_aires-1400.webp"
+       Imagemagick: Adding static file /home/runner/work/0xAdriaTorralba.github.io/0xAdriaTorralba.github.io/_site/assets/img/talks/zisk_buenos_aires-1400.webp
        Imagemagick: Generating image "/home/runner/work/0xAdriaTorralba.github.io/0xAdriaTorralba.github.io/_site/assets/img/talks/zk_privacy_scalability-480.webp"
        Imagemagick: Adding static file /home/runner/work/0xAdriaTorralba.github.io/0xAdriaTorralba.github.io/_site/assets/img/talks/zk_privacy_scalability-480.webp
        Imagemagick: Generating image "/home/runner/work/0xAdriaTorralba.github.io/0xAdriaTorralba.github.io/_site/assets/img/talks/zk_privacy_scalability-800.webp"
@@ -224,7 +230,7 @@ Terser: Minifying /home/runner/work/0xAdriaTorralba.github.io/0xAdriaTorralba.gi
        Imagemagick: Adding static file /home/runner/work/0xAdriaTorralba.github.io/0xAdriaTorralba.github.io/_site/assets/img/template_error-800.webp
        Imagemagick: Generating image "/home/runner/work/0xAdriaTorralba.github.io/0xAdriaTorralba.github.io/_site/assets/img/template_error-1400.webp"
        Imagemagick: Adding static file /home/runner/work/0xAdriaTorralba.github.io/0xAdriaTorralba.github.io/_site/assets/img/template_error-1400.webp
-       Imagemagick: Generated 93 file(s)
+       Imagemagick: Generated 96 file(s)
          AutoPages: Disabled/Not configured in site.config.
 [33m        Pagination: Is enabled, but I couldn't find any pagination page. Skipping pagination. Pages must have 'pagination: enabled: true' in their front-matter for pagination to work.[0m
         Pagination: Complete, processed pagination page(s)
@@ -334,7 +340,7 @@ More info and automated migrator: https://sass-lang.com/d/import
     /home/runner/work/0xAdriaTorralba.github.io/0xAdriaTorralba.github.io/assets/css/main.scss 19:3  root stylesheet
 WARNING: 39 repetitive deprecation warnings omitted.
 Run in verbose mode to see all warnings.
-[NbConvertApp] Converting notebook /tmp/jekyll-jupyter-notebook20260508-3627-8fq7un.ipynb to html
+[NbConvertApp] Converting notebook /tmp/jekyll-jupyter-notebook20260508-3609-wc8nxi.ipynb to html
 /opt/hostedtoolcache/Python/3.13.13/x64/lib/python3.13/site-packages/nbconvert/filters/highlight.py:71: UserWarning: IPython3 lexer unavailable, falling back on Python 3
   return _pygments_highlight(
 [33m          Conflict: The following destination is shared by multiple files.[0m
