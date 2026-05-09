@@ -17,6 +17,14 @@
 
 contributions:
   - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 42
+    title: "feat(talks): add ZisK open source review talk — DevConnect Buenos Aires '25"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/42"
+    state: merged
+    date: 2026-05-08
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
     pr: 41
     title: "feat(projects): Croisette.cc team roster + LinkedIn icon (recover stacked merges)"
     url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/41"
