@@ -17,6 +17,14 @@
 
 contributions:
   - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 43
+    title: "feat(research): attach PDF to RECSI 2026 rollup-architectures paper"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/43"
+    state: merged
+    date: 2026-05-09
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
     pr: 42
     title: "feat(talks): add ZisK open source review talk — DevConnect Buenos Aires '25"
     url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/42"
