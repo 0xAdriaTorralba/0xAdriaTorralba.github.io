@@ -5,7 +5,7 @@ description: "Presenting a systematic taxonomy of Ethereum rollup architectures 
 talk_date: "Mar. 2026 — RECSI 2026, Universidad de La Laguna, Tenerife (Spain)"
 sort_date: 2026-03-19
 img: assets/img/talks/recsi2026_tenerife.jpg
-slides_url: "https://github.com/0xAdriaTorralba/slides/tree/2d0951643f290feff13eacc03de5e5f8c47e81eb/2026_RECSI26_TaxonomySecurityRollups_Tenerife"
+slides_url: "https://github.com/0xAdriaTorralba/slides/blob/5a24bfc591fb92989e68457ea541d3f0ff13b0ba/2026_RECSI26_TaxonomySecurityRollups_Tenerife/A_Taxonomy_and_Security_Analysis_Rollup_Architectures_RECSI_2026.pdf"
 category: talk
 ---
 
@@ -27,7 +27,7 @@ The analysis reveals inherent trade-offs between **throughput**, **decentralisat
 
 ## Links
 
-- [View the slides](https://github.com/0xAdriaTorralba/slides/tree/2d0951643f290feff13eacc03de5e5f8c47e81eb/2026_RECSI26_TaxonomySecurityRollups_Tenerife)
+- [View the slides](https://github.com/0xAdriaTorralba/slides/blob/5a24bfc591fb92989e68457ea541d3f0ff13b0ba/2026_RECSI26_TaxonomySecurityRollups_Tenerife/A_Taxonomy_and_Security_Analysis_Rollup_Architectures_RECSI_2026.pdf)
 
 ## Authors
 
