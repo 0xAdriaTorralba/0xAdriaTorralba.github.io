@@ -185,6 +185,11 @@ ninja.data = [{
           description: "Reviews and compares Layer 2 off-chain scaling techniques, analysing usability, security, and cost properties.",
           section: "Talks",handler: () => {
               window.location.href = "/talks/comparison_l2_recsi/";
+            },},{id: "talks-breaking-rollups-how-sequencer-design-shapes-your-l2-39-s-attack-surface",
+          title: 'Breaking Rollups: How Sequencer Design Shapes Your L2&amp;#39;s Attack Surface',
+          description: "Classifying L2 rollup sequencer architectures (stand-alone, pipeline, distributed) and mapping attack surfaces across transaction-processing stages.",
+          section: "Talks",handler: () => {
+              window.location.href = "/talks/ethprague_breaking_rollups/";
             },},{id: "talks-hands-on-zero-knowledge-basics-kzg-commitments",
           title: 'Hands-on Zero-Knowledge Basics - KZG Commitments',
           description: "A hands-on workshop on the fundamentals of zero-knowledge proofs, focused on KZG polynomial commitments.",
