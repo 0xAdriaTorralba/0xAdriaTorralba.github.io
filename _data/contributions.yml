@@ -17,6 +17,22 @@
 
 contributions:
   - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 45
+    title: "chore(talks): swap ETHPrague 2026 thumbnail"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/45"
+    state: merged
+    date: 2026-05-11
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 44
+    title: "feat(talks): add ETHPrague 2026 talk; fix RECSI 2026 slides link"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/44"
+    state: merged
+    date: 2026-05-11
+    category: portfolio
+    ownership: own
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
     pr: 43
     title: "feat(research): attach PDF to RECSI 2026 rollup-architectures paper"
     url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/43"
