@@ -632,6 +632,14 @@ contributions:
     date: 2021-03-02
     category: academic
     ownership: external
+  - repo: "0xAdriaTorralba/openzeppelin-contracts"
+    pr: 1
+    title: "Add ERC-7535 Native Asset Tokenized Vault"
+    url: "https://github.com/0xAdriaTorralba/openzeppelin-contracts/pull/1"
+    state: open
+    date: 2026-05-27
+    category: tooling
+    ownership: external
   - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
     pr: 21
     title: "Balatro-style 3D card showcase at /showcase/"
