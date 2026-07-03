@@ -632,6 +632,14 @@ contributions:
     date: 2021-03-02
     category: academic
     ownership: external
+  - repo: "ericnordelo/pq-verifiers"
+    pr: 2
+    title: "Implement Falcon-512 verifier: hint + direct variants, on-chain BLAKE2s hash-to-point"
+    url: "https://github.com/ericnordelo/pq-verifiers/pull/2"
+    state: open
+    date: 2026-07-03
+    category: tooling
+    ownership: external
   - repo: "0xAdriaTorralba/openzeppelin-contracts"
     pr: 2
     title: "Add ERC-7535 Native Asset Vault as an ERC-4626 extension"
