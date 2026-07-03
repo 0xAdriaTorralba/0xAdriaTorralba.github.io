@@ -346,8 +346,8 @@ More info and automated migrator: https://sass-lang.com/d/import
     /home/runner/work/0xAdriaTorralba.github.io/0xAdriaTorralba.github.io/assets/css/main.scss 19:3  root stylesheet
 WARNING: 39 repetitive deprecation warnings omitted.
 Run in verbose mode to see all warnings.
-[NbConvertApp] Converting notebook /tmp/jekyll-jupyter-notebook20260618-3679-ef73dp.ipynb to html
-/opt/hostedtoolcache/Python/3.13.13/x64/lib/python3.13/site-packages/nbconvert/filters/highlight.py:71: UserWarning: IPython3 lexer unavailable, falling back on Python 3
+[NbConvertApp] Converting notebook /tmp/jekyll-jupyter-notebook20260703-3623-v69gqh.ipynb to html
+/opt/hostedtoolcache/Python/3.13.14/x64/lib/python3.13/site-packages/nbconvert/filters/highlight.py:71: UserWarning: IPython3 lexer unavailable, falling back on Python 3
   return _pygments_highlight(
 [33m          Conflict: The following destination is shared by multiple files.[0m
 [33m                    The written file may end up with unexpected contents.[0m
