@@ -16,6 +16,14 @@
 #   repo, pr, title, url, state, date, category, ownership
 
 contributions:
+  - repo: "ericnordelo/pq-verifiers"
+    pr: 2
+    title: "Implement Falcon-512 verifier: hint + direct variants, on-chain BLAKE2s hash-to-point"
+    url: "https://github.com/ericnordelo/pq-verifiers/pull/2"
+    state: merged
+    date: 2026-07-03
+    category: tooling
+    ownership: external
   - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
     pr: 45
     title: "chore(talks): swap ETHPrague 2026 thumbnail"
@@ -633,9 +641,9 @@ contributions:
     category: academic
     ownership: external
   - repo: "ericnordelo/pq-verifiers"
-    pr: 2
-    title: "Implement Falcon-512 verifier: hint + direct variants, on-chain BLAKE2s hash-to-point"
-    url: "https://github.com/ericnordelo/pq-verifiers/pull/2"
+    pr: 3
+    title: "Add Poseidon hash-to-point Falcon-512 variants (cheapest configuration)"
+    url: "https://github.com/ericnordelo/pq-verifiers/pull/3"
     state: open
     date: 2026-07-03
     category: tooling
