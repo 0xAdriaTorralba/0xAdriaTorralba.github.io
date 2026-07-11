@@ -656,6 +656,14 @@ contributions:
     date: 2026-06-17
     category: tooling
     ownership: external
+  - repo: "GianfrancoBazzani/cripto-nuvis-collection"
+    pr: 9
+    title: "feat(nft): personalize wedding-attendee NFT metadata"
+    url: "https://github.com/GianfrancoBazzani/cripto-nuvis-collection/pull/9"
+    state: open
+    date: 2026-06-16
+    category: tooling
+    ownership: external
   - repo: "OpenZeppelin/openzeppelin-community-contracts"
     pr: 245
     title: "Add ERC-7535 Native Asset Tokenized Vault"
