@@ -17,6 +17,14 @@
 
 contributions:
   - repo: "OpenZeppelin/cairo-pq-verifiers"
+    pr: 3
+    title: "Add Poseidon hash-to-point Falcon-512 variants (cheapest configuration)"
+    url: "https://github.com/OpenZeppelin/cairo-pq-verifiers/pull/3"
+    state: closed
+    date: 2026-07-14
+    category: tooling
+    ownership: external
+  - repo: "OpenZeppelin/cairo-pq-verifiers"
     pr: 2
     title: "Implement Falcon-512 verifier: hint + direct variants, on-chain BLAKE2s hash-to-point"
     url: "https://github.com/OpenZeppelin/cairo-pq-verifiers/pull/2"
@@ -639,14 +647,6 @@ contributions:
     state: merged
     date: 2021-03-02
     category: academic
-    ownership: external
-  - repo: "OpenZeppelin/cairo-pq-verifiers"
-    pr: 3
-    title: "Add Poseidon hash-to-point Falcon-512 variants (cheapest configuration)"
-    url: "https://github.com/OpenZeppelin/cairo-pq-verifiers/pull/3"
-    state: open
-    date: 2026-07-03
-    category: tooling
     ownership: external
   - repo: "0xAdriaTorralba/openzeppelin-contracts"
     pr: 2
