@@ -648,6 +648,14 @@ contributions:
     date: 2021-03-02
     category: academic
     ownership: external
+  - repo: "OpenZeppelin/openzeppelin-contracts"
+    pr: 6624
+    title: "Add ERC-7535 Native Asset Vault as an ERC-4626 extension"
+    url: "https://github.com/OpenZeppelin/openzeppelin-contracts/pull/6624"
+    state: open
+    date: 2026-07-22
+    category: tooling
+    ownership: external
   - repo: "0xAdriaTorralba/openzeppelin-contracts"
     pr: 2
     title: "Add ERC-7535 Native Asset Vault as an ERC-4626 extension"
