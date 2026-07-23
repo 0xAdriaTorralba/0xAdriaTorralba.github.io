@@ -648,6 +648,14 @@ contributions:
     date: 2021-03-02
     category: academic
     ownership: external
+  - repo: "nobu-g/DebounceMac"
+    pr: 19
+    title: "Stop writing key codes and characters to the log file"
+    url: "https://github.com/nobu-g/DebounceMac/pull/19"
+    state: open
+    date: 2026-07-22
+    category: tooling
+    ownership: external
   - repo: "OpenZeppelin/openzeppelin-contracts"
     pr: 6624
     title: "Add ERC-7535 Native Asset Vault as an ERC-4626 extension"
