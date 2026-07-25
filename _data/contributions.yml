@@ -16,6 +16,14 @@
 #   repo, pr, title, url, state, date, category, ownership
 
 contributions:
+  - repo: "nobu-g/DebounceMac"
+    pr: 19
+    title: "Stop writing key codes and characters to the log file"
+    url: "https://github.com/nobu-g/DebounceMac/pull/19"
+    state: merged
+    date: 2026-07-25
+    category: tooling
+    ownership: external
   - repo: "OpenZeppelin/cairo-pq-verifiers"
     pr: 3
     title: "Add Poseidon hash-to-point Falcon-512 variants (cheapest configuration)"
@@ -647,14 +655,6 @@ contributions:
     state: merged
     date: 2021-03-02
     category: academic
-    ownership: external
-  - repo: "nobu-g/DebounceMac"
-    pr: 19
-    title: "Stop writing key codes and characters to the log file"
-    url: "https://github.com/nobu-g/DebounceMac/pull/19"
-    state: open
-    date: 2026-07-22
-    category: tooling
     ownership: external
   - repo: "OpenZeppelin/openzeppelin-contracts"
     pr: 6624
