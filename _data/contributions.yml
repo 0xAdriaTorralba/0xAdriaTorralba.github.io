@@ -656,6 +656,14 @@ contributions:
     date: 2021-03-02
     category: academic
     ownership: external
+  - repo: "raycast/extensions"
+    pr: 30058
+    title: "Add BarShift extension"
+    url: "https://github.com/raycast/extensions/pull/30058"
+    state: open
+    date: 2026-08-07
+    category: tooling
+    ownership: external
   - repo: "OpenZeppelin/openzeppelin-contracts"
     pr: 6624
     title: "Add ERC-7535 Native Asset Vault as an ERC-4626 extension"
