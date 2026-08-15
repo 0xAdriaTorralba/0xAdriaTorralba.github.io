@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+  <head>
+    {% include head.liquid %}
+    <style>
+      .showcase-wrapper {
+        position: relative;
+        width: 100%;
+        height: calc(100vh - 56px);
+        overflow: hidden;
+      }
+      .showcase-wrapper canvas {
+        display: block;
+        width: 100% !important;
+        height: 100% !important;
+      }
+      .showcase-loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: var(--global-text-color);
+        font-family: inherit;
+        font-size: 1rem;
+        opacity: 1;
+        transition: opacity 0.4s ease;
+      }
+      .showcase-loading.hidden { opacity: 0; pointer-events: none; }
+
+      .showcase-detail {
+        position: absolute;
+        right: 2rem;
+        top: 50%;
+        transform: translateY(-50%) translateX(20px);
+        max-width: 320px;
+        padding: 1.5rem;
+        background: var(--global-card-bg-color);
+        border: 1px solid var(--global-divider-color);
+        border-radius: 8px;
+        color: var(--global-text-color);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.35s ease, transform 0.35s ease;
+        z-index: 10;
+      }
+      .showcase-detail.visible {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(-50%) translateX(0);
+      }
+      .showcase-detail__title {
+        margin: 0 0 0.25rem;
+        font-size: 1.25rem;
+        color: var(--global-theme-color);
+      }
+      .showcase-detail__date {
+        margin: 0 0 0.75rem;
+        font-size: 0.8rem;
+        color: var(--global-text-color-light);
+      }
+      .showcase-detail__desc {
+        margin: 0 0 1rem;
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+      .showcase-detail__links a {
+        margin-right: 0.75rem;
+        color: var(--global-theme-color);
+        font-size: 1.1rem;
+      }
+      .showcase-detail__close {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.75rem;
+        background: none;
+        border: none;
+        color: var(--global-text-color-light);
+        font-size: 1.2rem;
+        cursor: pointer;
+        line-height: 1;
+      }
+
+      @media (max-width: 768px) {
+        .showcase-detail {
+          right: 1rem;
+          left: 1rem;
+          max-width: none;
+          top: auto;
+          bottom: 1rem;
+          transform: translateY(20px);
+        }
+        .showcase-detail.visible {
+          transform: translateY(0);
+        }
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  </head>
+
+  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+    {% include header.liquid %}
+
+    <div class="showcase-wrapper" id="showcase-wrapper">
+      <div class="showcase-loading" id="showcase-loading">Loading…</div>
+
+      <div id="showcase-detail" class="showcase-detail">
+        <button class="showcase-detail__close" id="showcase-detail-close">&times;</button>
+        <h2 class="showcase-detail__title" id="showcase-detail-title"></h2>
+        <p class="showcase-detail__date" id="showcase-detail-date"></p>
+        <p class="showcase-detail__desc" id="showcase-detail-desc"></p>
+        <div class="showcase-detail__links" id="showcase-detail-links"></div>
+      </div>
+    </div>
+
+    <script>
+      window.__SHOWCASE_PROJECTS__ = [
+        {%- assign sorted = site.projects | where: "category", "project" | sort: "sort_date" | reverse -%}
+        {%- for p in sorted -%}
+          {
+            "title": {{ p.title | jsonify }},
+            "description": {{ p.description | jsonify }},
+            "date": {{ p.project_date | jsonify }},
+            "url": "{{ p.url | relative_url }}",
+            "image": {% if p.img %}"{{ p.img | relative_url }}"{% else %}null{% endif %},
+            "github": {{ p.github | jsonify }},
+            "twitter": {{ p.twitter_url | jsonify }},
+            "demo": {{ p.demo_url | jsonify }}
+          }{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      ];
+    </script>
+
+    {% include footer.liquid %}
+    {% include scripts.liquid %}
+
+    <script type="module" src="{{ '/assets/js/showcase/main.js' | relative_url }}"></script>
+  </body>
+</html>
