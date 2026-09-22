@@ -16,6 +16,22 @@
 #   repo, pr, title, url, state, date, category, ownership
 
 contributions:
+  - repo: "raycast/extensions"
+    pr: 30058
+    title: "Add BarShift extension"
+    url: "https://github.com/raycast/extensions/pull/30058"
+    state: closed
+    date: 2026-09-22
+    category: tooling
+    ownership: external
+  - repo: "0xAdriaTorralba/raycast-extensions"
+    pr: 1
+    title: "Enhance Toggle Menu Bar with native switching and mode selection"
+    url: "https://github.com/0xAdriaTorralba/raycast-extensions/pull/1"
+    state: closed
+    date: 2026-09-22
+    category: tooling
+    ownership: external
   - repo: "nobu-g/DebounceMac"
     pr: 19
     title: "Stop writing key codes and characters to the log file"
@@ -657,11 +673,11 @@ contributions:
     category: academic
     ownership: external
   - repo: "raycast/extensions"
-    pr: 30058
-    title: "Add BarShift extension"
-    url: "https://github.com/raycast/extensions/pull/30058"
+    pr: 31391
+    title: "Enhance Toggle Menu Bar with native switching and mode selection"
+    url: "https://github.com/raycast/extensions/pull/31391"
     state: open
-    date: 2026-08-07
+    date: 2026-09-22
     category: tooling
     ownership: external
   - repo: "OpenZeppelin/openzeppelin-contracts"
