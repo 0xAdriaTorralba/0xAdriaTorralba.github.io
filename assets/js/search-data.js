@@ -51,13 +51,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "nav-blog",
-          title: "blog",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/blog/";
-          },
         },{id: "nav-news",
           title: "news",
           description: "",
@@ -85,54 +78,36 @@ ninja.data = [{
           section: "News",},{id: "news-i-will-be-giving-a-talk-based-on-the-work-from-a-taxonomy-of-security-analysis-of-blockchain-layer-2-scalability-solutions-and-future-directions-at-chalmers-university-of-technology-on-june-17th-2025-speaking-head",
           title: 'I will be giving a talk based on the work from “A Taxonomy...',
           description: "",
-          section: "News",},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project/";
-            },},{id: "projects-project-3-with-very-long-name",
-          title: 'project 3 with very long name',
-          description: "a project that redirects to another website",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/3_project/";
-            },},{id: "projects-project-4",
-          title: 'project 4',
-          description: "another without an image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/4_project/";
-            },},{id: "projects-project-5",
-          title: 'project 5',
-          description: "a project with a background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/5_project/";
-            },},{id: "projects-project-6",
-          title: 'project 6',
-          description: "a project with no image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/6_project/";
-            },},{id: "projects-project-7",
-          title: 'project 7',
-          description: "with background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/7_project/";
-            },},{id: "projects-project-8",
-          title: 'project 8',
-          description: "an other project with a background image and giscus comments",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/8_project/";
-            },},{id: "projects-project-9",
-          title: 'project 9',
-          description: "another project with an image 🎉",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/9_project/";
-            },},{id: "projects-pedal-for-ios",
-          title: 'Pedal for iOS',
-          description: "Native iOS app for checking real-time bike and e-bike availability at bike-sharing stations worldwide, with Apple Watch app, widgets, and map integration. Coming soon to the App Store.",
+          section: "News",},{id: "news-i-joined-openzeppelin-as-an-intern-to-audit-zkvms-and-smart-contracts-and-to-research-zero-knowledge-cryptography-and-fully-homomorphic-encryption-tada",
+          title: 'I joined OpenZeppelin as an intern to audit zkVMs and smart contracts, and...',
+          description: "",
+          section: "News",},{id: "news-our-openzeppelin-security-review-of-the-zisk-zkvm-binary-amp-amp-main-circuits-is-public-1-critical-2-high-1-medium-and-3-low-severity-issues-read-the-report-or-the-engagement-summary-mag",
+          title: 'Our OpenZeppelin security review of the ZisK zkVM — Binary &amp;amp;amp; Main circuits...',
+          description: "",
+          section: "News",},{id: "news-i-presented-the-findings-from-the-zisk-open-source-review-at-aleph-hub-buenos-aires-as-part-of-the-real-time-proofs-in-motion-day-during-devconnect-buenos-aires-25-speaking-head",
+          title: 'I presented the findings from the ZisK Open Source Review at Aleph Hub...',
+          description: "",
+          section: "News",},{id: "news-i-presented-our-paper-a-taxonomy-and-security-analysis-of-rollup-architectures-in-ethereum-blockchain-at-recsi-2026-universidad-de-la-laguna-tenerife-page-facing-up",
+          title: 'I presented our paper “A Taxonomy and Security Analysis of Rollup Architectures in...',
+          description: "",
+          section: "News",},{id: "news-our-team-stack-too-deep-finished-9th-of-34-peaking-at-3rd-at-the-wonderland-ctf-during-ethcc-cannes-more-on-the-security-page-joystick",
+          title: 'Our team “Stack Too Deep” finished 9th of 34 (peaking at 3rd) at...',
+          description: "",
+          section: "News",},{id: "news-croisette-cc-built-at-ethglobal-cannes-2026-won-1st-place-best-openclaw-agent-on-0g-trophy",
+          title: 'Croisette.cc, built at ETHGlobal Cannes 2026, won 1st place — Best OpenClaw Agent...',
+          description: "",
+          section: "News",},{id: "news-i-gave-the-talk-breaking-rollups-how-sequencer-design-shapes-your-l2-s-attack-surface-at-ethprague-2026-recording-and-slides-on-the-talk-page-speaking-head",
+          title: 'I gave the talk “Breaking Rollups: How Sequencer Design Shapes Your L2’s Attack...',
+          description: "",
+          section: "News",},{id: "news-i-started-as-a-blockchain-security-researcher-at-openzeppelin-auditing-smart-contracts-and-working-on-erc-standards-tada",
+          title: 'I started as a Blockchain Security Researcher at OpenZeppelin, auditing smart contracts and...',
+          description: "",
+          section: "News",},{id: "news-i-proposed-an-erc-7535-native-asset-vault-extension-to-openzeppelin-contracts-pr-6624-currently-under-review-hammer-and-wrench",
+          title: 'I proposed an ERC-7535 Native Asset Vault extension to OpenZeppelin Contracts — PR...',
+          description: "",
+          section: "News",},{id: "projects-pedal",
+          title: 'Pedal',
+          description: "Native iOS, watchOS and WidgetKit app for real-time bike and dock availability at bike-share stations worldwide, powered by the CityBikes API. In development.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/bicing_ios/";
             },},{id: "projects-croisette-cc",
@@ -157,19 +132,34 @@ ninja.data = [{
               window.location.href = "/projects/fractal_explorer/";
             },},{id: "projects-pedal-for-raycast",
           title: 'Pedal for Raycast',
-          description: "Raycast extension to check real-time availability of bikes and e-bikes at bike-sharing stations across hundreds of cities worldwide. Coming soon to the Raycast Store.",
+          description: "Raycast extension to check real-time availability of bikes and e-bikes at bike-sharing stations across hundreds of cities worldwide. In development.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/raycast_bicing/";
+            },},{id: "projects-raycast-extensions",
+          title: 'Raycast extensions',
+          description: "A collection of Raycast extensions for my own macOS workflow: menu-bar visibility modes, popular-times forecasts, natural-language timezone conversion, bike-share availability and more. In development.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/raycast_extensions/";
             },},{id: "projects-the-sand-walker",
           title: 'The Sand Walker',
           description: "Hackathon project at EthPrague 2023. Took inspiration from the Etherenauts project to learn Solidity, then adapted it to learn Cairo 1.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/sand_walker/";
+            },},{id: "projects-sis",
+          title: 'Sis',
+          description: "Local-first scratchpad for macOS, iPhone and iPad: six fixed spaces, zero clutter. Written in Swift 6 with CloudKit sync, widgets and a watchOS companion. In development.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/sis/";
             },},{id: "projects-twitter-2021-recsys-challenge",
           title: 'Twitter 2021 RecSys Challenge',
           description: "Implementation of a Recommender System that predicts interactions for Twitter users. Reached 14th place overall and 8th position in the Like leaderboard.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/twitter_recsys/";
+            },},{id: "projects-gramática-pedagógica-del-chino",
+          title: 'Gramática Pedagógica del Chino',
+          description: "Chinese-learning wiki built on Wiki.js 2, extended through an nginx injection layer with level tagging, text-to-speech and a reviewed DOCX chapter importer. In development.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/wiki_xines/";
             },},{id: "talks-scaling-at-a-security-cost-unveiling-the-security-assumptions-behind-today-39-s-blockchain-layer-2-scaling-solutions",
           title: 'Scaling at a (Security) Cost: Unveiling the Security Assumptions Behind Today&amp;#39;s Blockchain Layer...',
           description: "Reviewing baseline L1 security assumptions and analysing the trade-offs introduced by Layer 2 solutions.",
