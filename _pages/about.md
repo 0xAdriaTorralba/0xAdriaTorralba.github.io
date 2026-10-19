@@ -23,7 +23,7 @@ recent_security:
   limit: 3
 
 github_activity:
-  enabled: true # renders the GitHub contribution heatmap at the bottom
+  enabled: false # hidden for now; set true to render the GitHub contribution heatmap at the bottom
 
 # "latest news" block on /about. Rendered by _layouts/about.liquid
 # only when `page.announcements.enabled` is true. To hide it again:
