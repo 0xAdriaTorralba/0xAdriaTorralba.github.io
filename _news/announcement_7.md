@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I joined [OpenZeppelin](https://www.openzeppelin.com/) to audit zkVMs and smart contracts, and to research zero-knowledge cryptography and Fully-Homomorphic Encryption! :tada:
+I joined [OpenZeppelin](https://www.openzeppelin.com/) as an intern to audit zkVMs and smart contracts, and to research zero-knowledge cryptography and Fully-Homomorphic Encryption! :tada:

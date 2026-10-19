@@ -148,9 +148,14 @@
   contents:
     - title: Blockchain Security Researcher
       institution: OpenZeppelin
-      year: Aug. 2025 – Present
+      year: Jun. 2026 – Present
       location: Remote (Barcelona, Spain)
-      maindescription: zkVM and smart-contract security audits, zero-knowledge and fully-homomorphic encryption research, and ERC standards work.
+      maindescription: Smart-contract security audits and ERC standards work.
+    - title: Intern
+      institution: OpenZeppelin
+      year: Aug. 2025 – Feb. 2026
+      location: Remote (Barcelona, Spain)
+      maindescription: zkVM and smart-contract security audits, and zero-knowledge and fully-homomorphic encryption research.
     - title: Blockchain ZK-Rollups Researcher
       institution: MigaLabs
       year: Oct. 2023 – May 2024

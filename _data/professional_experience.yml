@@ -2,11 +2,24 @@ experience:
   - role: Blockchain Security Researcher
     company: OpenZeppelin
     company_url: https://www.openzeppelin.com
-    start_date: 2025-08
+    start_date: 2026-06
     employment: full-time
     location: Distributed Organization
     remote: remote
-    description: zkVM and smart-contract security audits, zero-knowledge and fully-homomorphic encryption research, and ERC standards work.
+    description: Smart-contract security audits and ERC standards work.
+    tags:
+      - security
+      - blockchain
+
+  - role: Intern
+    company: OpenZeppelin
+    company_url: https://www.openzeppelin.com
+    start_date: 2025-08
+    end_date: 2026-02
+    employment: full-time
+    location: Distributed Organization
+    remote: remote
+    description: zkVM and smart-contract security audits, and zero-knowledge and fully-homomorphic encryption research.
     tags:
       - security
       - crypto
