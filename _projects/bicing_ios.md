@@ -1,56 +1,46 @@
 ---
 layout: page
-title: Pedal for iOS
-description: "Native iOS app for checking real-time bike and e-bike availability at bike-sharing stations worldwide, with Apple Watch app, widgets, and map integration. Coming soon to the App Store."
-project_date: "2026 — Barcelona, Spain"
+title: Pedal
+description: "Native iOS, watchOS and WidgetKit app for real-time bike and dock availability at bike-share stations worldwide, powered by the CityBikes API. In development."
+project_date: "2025 – 2026 — Barcelona, Spain"
 importance: 7
-sort_date: 2026-01
+sort_date: 2025-11
 category: project
+tags: [swift, ios, watchos, widgetkit]
 ---
 
-> Coming soon to the App Store.
+> In development — no public release yet.
 > {: .block-warning }
 
-**Pedal for iOS** is a native iOS app for checking real-time availability of bikes and e-bikes at bike-sharing stations worldwide. Built entirely in SwiftUI, it supports Apple Watch, home screen widgets, and iCloud sync. The mobile companion to [Pedal for Raycast](/projects/raycast_bicing/).
+**Pedal** is a native iOS + watchOS + WidgetKit app for checking real-time bike availability at bike-share stations around the world. Powered by the public [CityBikes API](https://api.citybik.es/v2/networks), it supports every network CityBikes exposes — Barcelona's Bicing, Citi Bike, Vélib' and hundreds more — with per-network favorites, custom station names and location-aware sorting. It started as a port of my Raycast bike-share extension, [Pedal for Raycast](/projects/raycast_bicing/), one of my [Raycast extensions](/projects/raycast_extensions/).
 
 ## Features
 
-- **Real-time station data** with color-coded availability indicators (green/orange/red)
-- **Favorites management** — save stations into groups for quick access
-- **Integrated map** with station annotations and clustering
-- **Location-based sorting** — find nearest stations via GPS
-- **Custom station names** — rename any station for easy identification
-- **Apple Watch app** — check availability from your wrist
-- **Home screen widgets** — favorite groups, nearby stations, network overview, commute, and quick glance widgets
-- **iCloud sync** — favorites and custom names synced across devices
-- **Multi-network support** — works with bike-sharing systems worldwide via CityBikes API
-- **Appearance settings** — customisable icons, colours, thresholds, and font scale
+- **Real-time station data** — live bike and dock availability for every CityBikes network
+- **Multi-city support** — pick any network and switch between them at any time
+- **Favorite groups** — organize stations into color-coded groups with custom names
+- **Location-based sorting** — find the nearest stations with on-device GPS
+- **Custom station names** and network-wide search
+- **Map integration** — native MapKit view with color-coded annotations; open in Maps
+- **Apple Watch companion** — favorites, nearest stations, map and settings synced over WatchConnectivity
+- **Widgets** — 6 WidgetKit configurations across Home Screen and Lock Screen families (Favorite Stations, Nearby Stations, Nearby Map, Single Station, Commute, City Overview), three of them configurable with App Intents
+- **Appearance customization** — availability thresholds and colors, bike icon, imperial or metric units, high-contrast map annotations
+- **Optional iCloud sync** of favorite groups and custom names
 
-## Architecture
+## Privacy
 
-The app follows a modern SwiftUI architecture with Combine for reactive state management:
+Pedal sends CityBikes only the selected public network identifier. It does not add your location, favorites, custom names or an advertising identifier. Everything else stays on the device, moves between iPhone and Apple Watch over WatchConnectivity, and reaches your private iCloud key-value store only when iCloud sync is on.
 
-```
-CityBikes/
-├── Models/          # Station, Network, FavoriteGroup, Appearance
-├── Services/        # API client, LocationManager, WatchConnectivity
-├── Views/           # 13+ SwiftUI view components
-Widgets/             # 5 widget types with timeline providers
-Watch App/           # watchOS companion
-Tests/               # 131+ unit tests
-```
+## Tech stack
 
-## Tech Stack
-
-| Layer    | Technology                                 |
-| -------- | ------------------------------------------ |
-| Language | Swift 5.9                                  |
-| UI       | SwiftUI                                    |
-| State    | Combine, ObservableObject                  |
-| Maps     | MapKit (custom MKMapView wrapper)          |
-| Location | CoreLocation                               |
-| Widgets  | WidgetKit                                  |
-| Watch    | WatchConnectivity                          |
-| Storage  | UserDefaults, iCloud KVS                   |
-| API      | [CityBikes API](https://api.citybik.es/v2) |
-| Target   | iOS 17.0+                                  |
+| Layer    | Technology                                          |
+| -------- | --------------------------------------------------- |
+| Language | Swift 5.9                                           |
+| UI       | SwiftUI                                             |
+| Maps     | MapKit                                              |
+| Location | CoreLocation                                        |
+| Widgets  | WidgetKit + App Intents                             |
+| Watch    | watchOS companion, WatchConnectivity                |
+| Storage  | UserDefaults, App Group, iCloud key-value store     |
+| API      | [CityBikes API](https://api.citybik.es/v2/networks) |
+| Targets  | iOS 17.0+, watchOS 10.0+                            |

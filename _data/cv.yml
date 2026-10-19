@@ -5,7 +5,7 @@
     - name: Name
       value: Adrià Torralba-Agell
     - name: Position
-      value: PhD Candidate — Applied Cryptography on Blockchain
+      value: Blockchain Security Researcher at OpenZeppelin · PhD Candidate — Applied Cryptography on Blockchain
     - name: Website
       value: 0xAdriaTorralba.github.io
     - name: Email
@@ -22,16 +22,20 @@
 - title: Interests
   type: list
   contents:
-    - Abstract Algebra
     - Zero-Knowledge Cryptography
-    - Blockchain Scalability
-    - Interactive Proof Systems
+    - Elliptic Curve Cryptography
+    - Homomorphic Encryption
+    - Abstract Algebra
     - Blockchain Security
-    - Data Visualisation
+    - Pairing-based Cryptography
 
 - title: Education
   type: time_table
   contents:
+    - title: PhD in Applied Cryptography on Blockchain
+      institution: Universitat Oberta de Catalunya
+      year: 2021 – Present
+      location: Barcelona, Spain
     - title: MSc in Fundamental Principles of Data Science
       institution: Universitat de Barcelona
       year: 2020 – 2021
@@ -44,7 +48,11 @@
 - title: Publications
   type: time_table
   contents:
-    - title: "Unmasking the Illusion: The Shortcomings of “Zero-Knowledge” Rollups in Achieving Scalability"
+    - title: A Taxonomy and Security Analysis of Rollup Architectures in Ethereum Blockchain
+      institution: Reunión Española sobre Criptología y Seguridad de la Información
+      year: 2026
+      maindescription: Adrià Torralba-Agell, Muoi Tran, and Cristina Pérez-Solà.
+    - title: "Unmasking the Illusion: The Shortcomings of “Zero-Knowledge” Rollups in Achieving Privacy"
       institution: Reunión Española sobre Criptología y Seguridad de la Información
       year: 2024
       maindescription: Adrià Torralba-Agell, Ghazaleh Keshavarzkalhori, Cristina Pérez-Solà, David Megías, and Jordi Herrera-Joancomartí.
@@ -52,9 +60,9 @@
       institution: Advances in Financial Technologies
       year: 2024
       maindescription: Stefanos Chaliasos, Itamar Reif, Adrià Torralba-Agell, Jens Ernstberger, Assimakis Kattis, and Benjamin Livshits.
-    - title: A Taxonomy of Security Analysis of Blockchain Layer 2 Scalability Solutions and Future Directions (submitted, under review)
+    - title: A Taxonomy of Security Analysis of Blockchain Layer 2 Scalability Solutions and Future Directions
       institution: "Blockchain: Research and Applications"
-      year: 2024
+      year: 2026
       maindescription: Adrià Torralba-Agell and Cristina Pérez-Solà.
     - title: "A Comparison of Layer 2 Techniques for Scaling Blockchains"
       institution: Reunión Española sobre Criptología y Seguridad de la Información
@@ -80,9 +88,11 @@
     - Java
     - C++
     - C#
+    - PIL2
+    - Circom
     - Python
     - JavaScript
-    - HTML5
+    - Go
     - WebGL
     - Bash
     - R
@@ -91,11 +101,8 @@
     - PostgreSQL
     - Rust
     - MATLAB
-    - C
     - Assembler
     - Cairo
-    - React.js
-    - Ruby on Rails
     - Docker
 
 - title: Languages
@@ -103,7 +110,7 @@
   contents:
     - "Catalan — Native / C1"
     - "Spanish — Native / C1"
-    - "English — Intermediate / B2 (FCE)"
+    - "English — Advanced (FCE)"
 
 - title: Projects
   type: time_table
@@ -139,6 +146,21 @@
 - title: Experience
   type: time_table
   contents:
+    - title: Blockchain Security Researcher
+      institution: OpenZeppelin
+      year: Jun. 2026 – Present
+      location: Remote (Barcelona, Spain)
+      maindescription: Smart-contract security audits and ERC standards work.
+    - title: Intern
+      institution: OpenZeppelin
+      year: Aug. 2025 – Feb. 2026
+      location: Remote (Barcelona, Spain)
+      maindescription: zkVM and smart-contract security audits, and zero-knowledge and fully-homomorphic encryption research.
+    - title: Blockchain ZK-Rollups Researcher
+      institution: MigaLabs
+      year: Oct. 2023 – May 2024
+      location: Remote (Barcelona, Spain)
+      maindescription: Hands-on deployment of real-world production Layer 2 infrastructure.
     - title: PhD Candidate
       institution: Universitat Oberta de Catalunya
       year: Dec. 2021 – Present
@@ -174,5 +196,6 @@
 - title: References
   type: list
   contents:
-    - "Dra. Cristina Pérez-Solà — cristina.perez@uab.cat"
-    - "Dr. David Megías — dmegias@uoc.edu"
+    - "Samuel Wong — Senior Blockchain Security Researcher — samwwong@alumni.stanford.edu"
+    - "Felix Wegener — Security Research Manager — felix-wegener@gmx.net"
+    - "Josep Chetrit — Lead Security Tooling Developer — josep.chetrit@openzeppelin.com"

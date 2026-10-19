@@ -1,17 +1,17 @@
 ---
 layout: page
 title: Pedal for Raycast
-description: "Raycast extension to check real-time availability of bikes and e-bikes at bike-sharing stations across hundreds of cities worldwide. Coming soon to the Raycast Store."
-project_date: "2026 — Barcelona, Spain"
+description: "Raycast extension to check real-time availability of bikes and e-bikes at bike-sharing stations across hundreds of cities worldwide. In development."
+project_date: "2025 – 2026 — Barcelona, Spain"
 importance: 6
-sort_date: 2026-01
+sort_date: 2025-10
 category: project
 ---
 
-> Coming soon to the [Raycast Store](https://www.raycast.com/store).
+> In development — not yet published.
 > {: .block-warning }
 
-**Pedal for Raycast** is a [Raycast](https://www.raycast.com/) extension that provides instant access to real-time bike-sharing data from hundreds of networks worldwide. Query station availability, manage favorites, and navigate to stations — all from the Raycast launcher. Supports hundreds of bike-sharing systems across the globe.
+**Pedal for Raycast** is a [Raycast](https://www.raycast.com/) extension that provides instant access to real-time bike-sharing data from hundreds of networks worldwide. Query station availability, manage favorites, and navigate to stations — all from the Raycast launcher. It is the starting point of the native [Pedal](/projects/bicing_ios/) app for iPhone and Apple Watch, and part of my [Raycast extensions](/projects/raycast_extensions/) collection.
 
 ## Features
 

@@ -2,7 +2,9 @@
 # - Bug: three sections on /security/ are intentionally hidden until they have
 #   real content: "audit contest findings" (inside {% comment %}),
 #   "writeups & research posts" (inside {% comment %}),
-#   "tools & contributions" (inside {% if false %}).
+#   "tools & contributions" (inside {% if false %}),
+#   Ethernaut + Damn Vulnerable DeFi trackers (show_solo_wargames = false
+#   in _includes/ctf_progress.liquid).
 #   If anyone accidentally deletes a wrapping tag or flips the if-false to
 #   if-true, empty/placeholder sections would publish silently.
 # - Why this test exists: assert the hidden content does NOT appear on the
@@ -25,5 +27,12 @@ RSpec.describe "/security/ hidden sections" do
   it "does not render the 'tools & contributions' H2 (if-false block)" do
     expect(raw).not_to include("tools &amp; contributions")
     expect(raw).not_to match(%r{<h2\s+id=["']tools["']}i)
+  end
+
+  it "does not render the Ethernaut or Damn Vulnerable DeFi trackers" do
+    doc = Nokogiri::HTML(raw_for("/security/"))
+    titles = doc.css(".ctf-tracker__title").map(&:text).join(" ").downcase
+    expect(titles).not_to include("ethernaut")
+    expect(titles).not_to include("damn vulnerable")
   end
 end

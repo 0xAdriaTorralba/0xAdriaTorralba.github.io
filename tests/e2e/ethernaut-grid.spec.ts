@@ -1,6 +1,8 @@
 import { expect, test } from "@playwright/test";
 
-test.describe("/security/ Ethernaut grid", () => {
+// Solo wargame trackers are hidden (show_solo_wargames in
+// _includes/ctf_progress.liquid). Switch back to test.describe when restoring.
+test.describe.skip("/security/ Ethernaut grid", () => {
   test("renders 41 tiles (levels 0–40)", async ({ page }) => {
     await page.goto("/security/");
 

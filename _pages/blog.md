@@ -2,7 +2,7 @@
 layout: default
 permalink: /blog/
 title: blog
-nav: true
+nav: false
 nav_order: 8
 # pagination block removed while the blog is stubbed; see the banner in the
 # page body for how to restore it when real posts land.

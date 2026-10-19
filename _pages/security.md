@@ -59,8 +59,8 @@ nav_order: 2 # directly after about
 
 <p>
   This page collects the security-relevant work I do: the professional audits I've contributed to,
-  the certifications and coursework I've completed to keep my toolkit sharp, and the CTFs and
-  wargames I practise on. Hover the&nbsp;<i class="fa-solid fa-circle-info" aria-hidden="true" style="color: var(--global-text-color-light);"></i>&nbsp;next to a section title for what it means.
+  the certifications and coursework I've completed to keep my toolkit sharp, the CTFs I compete
+  in, and the ERC standards work I propose upstream. Hover the&nbsp;<i class="fa-solid fa-circle-info" aria-hidden="true" style="color: var(--global-text-color-light);"></i>&nbsp;next to a section title for what it means.
 </p>
 
 <h2 id="audits">
@@ -149,20 +149,31 @@ this section is hidden.
 {% include certifications.liquid %}
 
 <h2 id="progress">
-  CTF &amp; wargames
-  <span class="tip" tabindex="0" role="button" aria-label="CTFs (Capture The Flag) are competitive security challenge events — teams attack deliberately vulnerable code under a time limit, scoring points per flag captured. Wargames are the self-paced equivalent: public challenge sets with structured levels. Team CTFs and solo wargame progress are tracked separately below.">
+  CTFs
+  <span class="tip" tabindex="0" role="button" aria-label="CTFs (Capture The Flag) are competitive security challenge events — teams attack deliberately vulnerable code under a time limit, scoring points per flag captured.">
     <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
     <span class="tip__panel" role="tooltip">
       <strong>CTFs</strong> (Capture The Flag) are competitive security challenge events — teams
       attack deliberately vulnerable code under a time limit, scoring points per flag captured.
-      <strong>Wargames</strong> are the self-paced equivalent: public challenge sets with structured
-      levels. Team CTFs and solo wargame progress are tracked separately below because they carry
-      different signal.
     </span>
   </span>
 </h2>
 
 {% include ctf_progress.liquid %}
+
+<h2 id="standards">
+  standards work
+  <span class="tip" tabindex="0" role="button" aria-label="Implementations of Ethereum ERC standards that I propose upstream to open-source smart-contract libraries, together with the security analysis behind their design. Each entry links to the public pull request and states its review status.">
+    <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+    <span class="tip__panel" role="tooltip">
+      Implementations of Ethereum <strong>ERC standards</strong> that I propose upstream to open-source
+      smart-contract libraries, together with the security analysis behind their design. Each entry
+      links to the public pull request and states its review status.
+    </span>
+  </span>
+</h2>
+
+- [**ERC-7535 Native Asset Vault for OpenZeppelin Contracts**](https://github.com/OpenZeppelin/openzeppelin-contracts/pull/6624) — PR #6624, open and under review. It implements [ERC-7535](https://eips.ethereum.org/EIPS/eip-7535), the native-ETH variant of the ERC-4626 tokenized vault, as a thin extension of OpenZeppelin's `ERC4626`. The design notes cover the `msg.value` policy, refunding excess value only after shares are minted (an earlier refund would let a reentrant caller redeem existing shares at an inflated price), and the `_decimalsOffset` overflow bound. The tests include reentrant receivers that observe the share price during the `mint` refund and the `redeem` payout.
 
 {%- comment -%}
 The security-tagged projects grid (Sand Walker, etc.) used to live

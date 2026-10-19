@@ -52,7 +52,9 @@ RSpec.describe "/security/" do
   end
 
   describe "CTF / wargames section" do
-    it "renders 41 Ethernaut tiles (levels 0-40)" do
+    # Solo wargame trackers are hidden (show_solo_wargames in
+    # _includes/ctf_progress.liquid). Drop the skips when restoring them.
+    it "renders 41 Ethernaut tiles (levels 0-40)", skip: "solo wargame trackers hidden" do
       ethernaut_tiles = doc.css(".ctf-tracker").find do |trk|
         title = trk.css(".ctf-tracker__title").text
         title.include?("Ethernaut")
@@ -62,7 +64,7 @@ RSpec.describe "/security/" do
       expect(tiles.length).to eq(41)
     end
 
-    it "summary line shows N / 41 solved format for Ethernaut" do
+    it "summary line shows N / 41 solved format for Ethernaut", skip: "solo wargame trackers hidden" do
       ethernaut = doc.css(".ctf-tracker").find { |t| t.text.include?("Ethernaut") }
       summary = ethernaut.css(".ctf-tracker__summary").first&.text.to_s
       expect(summary).to match(%r{\d+\s*/\s*41\s*solved}i)
