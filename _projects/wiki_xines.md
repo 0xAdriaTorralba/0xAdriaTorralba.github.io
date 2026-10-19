@@ -1,6 +1,6 @@
 ---
 layout: page
-title: WikiChino
+title: Gramática Pedagógica del Chino
 description: "Chinese-learning wiki built on Wiki.js 2, extended through an nginx injection layer with level tagging, text-to-speech and a reviewed DOCX chapter importer. In development."
 project_date: "2025 – 2026 — Barcelona, Spain"
 importance: 4
@@ -12,7 +12,7 @@ tags: [wiki, docker, nginx]
 > In development — not publicly deployed yet.
 > {: .block-warning }
 
-**WikiChino** is a Chinese-learning wiki built on Wiki.js 2. A custom nginx reverse-proxy layer injects additional CSS and JavaScript on every page **without touching the Wiki.js source code**, so upgrades of the underlying wiki stay simple while the reading and editing experience is fully customised.
+**Gramática Pedagógica del Chino** is a Chinese-learning wiki built on Wiki.js 2. A custom nginx reverse-proxy layer injects additional CSS and JavaScript on every page **without touching the Wiki.js source code**, so upgrades of the underlying wiki stay simple while the reading and editing experience is fully customised.
 
 ## Features
 
