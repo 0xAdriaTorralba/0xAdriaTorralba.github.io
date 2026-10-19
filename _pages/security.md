@@ -59,8 +59,8 @@ nav_order: 2 # directly after about
 
 <p>
   This page collects the security-relevant work I do: the professional audits I've contributed to,
-  the certifications and coursework I've completed to keep my toolkit sharp, the CTFs and wargames
-  I practise on, and the ERC standards work I propose upstream. Hover the&nbsp;<i class="fa-solid fa-circle-info" aria-hidden="true" style="color: var(--global-text-color-light);"></i>&nbsp;next to a section title for what it means.
+  the certifications and coursework I've completed to keep my toolkit sharp, the CTFs I compete
+  in, and the ERC standards work I propose upstream. Hover the&nbsp;<i class="fa-solid fa-circle-info" aria-hidden="true" style="color: var(--global-text-color-light);"></i>&nbsp;next to a section title for what it means.
 </p>
 
 <h2 id="audits">
@@ -149,15 +149,12 @@ this section is hidden.
 {% include certifications.liquid %}
 
 <h2 id="progress">
-  CTF &amp; wargames
-  <span class="tip" tabindex="0" role="button" aria-label="CTFs (Capture The Flag) are competitive security challenge events — teams attack deliberately vulnerable code under a time limit, scoring points per flag captured. Wargames are the self-paced equivalent: public challenge sets with structured levels. Team CTFs and solo wargame progress are tracked separately below.">
+  CTFs
+  <span class="tip" tabindex="0" role="button" aria-label="CTFs (Capture The Flag) are competitive security challenge events — teams attack deliberately vulnerable code under a time limit, scoring points per flag captured.">
     <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
     <span class="tip__panel" role="tooltip">
       <strong>CTFs</strong> (Capture The Flag) are competitive security challenge events — teams
       attack deliberately vulnerable code under a time limit, scoring points per flag captured.
-      <strong>Wargames</strong> are the self-paced equivalent: public challenge sets with structured
-      levels. Team CTFs and solo wargame progress are tracked separately below because they carry
-      different signal.
     </span>
   </span>
 </h2>
