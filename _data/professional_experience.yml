@@ -6,7 +6,7 @@ experience:
     employment: full-time
     location: Distributed Organization
     remote: remote
-    description: Smart-contract security audits and ERC standards work.
+    description: Smart-contract security audits and ERC standards work (ERC-7535 merged into OpenZeppelin Contracts).
     tags:
       - security
       - blockchain
