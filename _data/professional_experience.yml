@@ -6,7 +6,7 @@ experience:
     employment: full-time
     location: Distributed Organization
     remote: remote
-    description: Smart-contract security audits and ERC standards work.
+    description: Smart-contract security audits and ERC standards work (ERC-7535 merged into OpenZeppelin Contracts).
     tags:
       - security
       - blockchain
@@ -30,6 +30,7 @@ experience:
     company: Universitat Oberta de Catalunya
     company_url: https://www.uoc.edu
     start_date: 2021-12
+    end_date: 2025-12
     employment: full-time
     location: Barcelona, Spain
     remote: on-site

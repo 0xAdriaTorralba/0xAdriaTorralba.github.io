@@ -173,7 +173,7 @@ this section is hidden.
   </span>
 </h2>
 
-- [**ERC-7535 Native Asset Vault for OpenZeppelin Contracts**](https://github.com/OpenZeppelin/openzeppelin-contracts/pull/6624) — PR #6624, open and under review. It implements [ERC-7535](https://eips.ethereum.org/EIPS/eip-7535), the native-ETH variant of the ERC-4626 tokenized vault, as a thin extension of OpenZeppelin's `ERC4626`. The design notes cover the `msg.value` policy, refunding excess value only after shares are minted (an earlier refund would let a reentrant caller redeem existing shares at an inflated price), and the `_decimalsOffset` overflow bound. The tests include reentrant receivers that observe the share price during the `mint` refund and the `redeem` payout.
+- [**ERC-7535 Native Asset Vault for OpenZeppelin Contracts**](https://github.com/OpenZeppelin/openzeppelin-contracts/pull/6624) — PR #6624, merged on 21 Oct 2026 (milestone 5.8). It implements [ERC-7535](https://eips.ethereum.org/EIPS/eip-7535), the native-ETH variant of the ERC-4626 tokenized vault, as a thin extension of OpenZeppelin's `ERC4626`. To make that possible, `deposit` and `mint` became `payable` in `ERC4626` behind an `_enablePayableDeposit` hook that is off by default, so ERC-20 vaults keep rejecting native value, and `totalAssets` prices shares against the pre-deposit balance. The design notes cover the `msg.value` policy, refunding excess value only after shares are minted (an earlier refund would let a reentrant caller redeem existing shares at an inflated price), and the `_decimalsOffset` overflow bound. The tests include reentrant receivers that observe the share price during the `mint` refund and the `redeem` payout.
 
 {%- comment -%}
 The security-tagged projects grid (Sand Walker, etc.) used to live
