@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://0xAdriaTorralba.github.io/sitemap.xml
+Sitemap: https://www.0xadriatorralba.me/sitemap.xml

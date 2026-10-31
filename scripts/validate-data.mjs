@@ -99,7 +99,6 @@ const dataPairs = [
   ["_data/languages.yml", "schemas/languages.json"],
   ["_data/grants.yml", "schemas/grants.json"],
   ["_data/socials.yml", "schemas/socials.json"],
-  ["_data/cv.yml", "schemas/generic.json"],
   ["_data/.cv.yml", "schemas/generic.json"],
   ["_data/service.yml", "schemas/generic.json"],
   ["_data/talks.yml", "schemas/generic.json"],

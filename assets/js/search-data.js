@@ -102,8 +102,11 @@ ninja.data = [{
           section: "News",},{id: "news-i-started-as-a-blockchain-security-researcher-at-openzeppelin-auditing-smart-contracts-and-working-on-erc-standards-tada",
           title: 'I started as a Blockchain Security Researcher at OpenZeppelin, auditing smart contracts and...',
           description: "",
-          section: "News",},{id: "news-i-proposed-an-erc-7535-native-asset-vault-extension-to-openzeppelin-contracts-pr-6624-currently-under-review-hammer-and-wrench",
+          section: "News",},{id: "news-i-proposed-an-erc-7535-native-asset-vault-extension-to-openzeppelin-contracts-pr-6624-hammer-and-wrench",
           title: 'I proposed an ERC-7535 Native Asset Vault extension to OpenZeppelin Contracts — PR...',
+          description: "",
+          section: "News",},{id: "news-my-erc-7535-native-asset-vault-extension-was-merged-into-openzeppelin-contracts-pr-6624-tagged-for-the-5-8-milestone-rocket",
+          title: 'My ERC-7535 Native Asset Vault extension was merged into OpenZeppelin Contracts — PR...',
           description: "",
           section: "News",},{id: "projects-pedal",
           title: 'Pedal',
@@ -238,6 +241,13 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("https://github.com/0xAdriaTorralba", "_blank");
+        },
+      },{
+        id: 'social-linkedin',
+        title: 'LinkedIn',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.linkedin.com/in/adriatorralba-agell", "_blank");
         },
       },{
         id: 'social-scholar',
