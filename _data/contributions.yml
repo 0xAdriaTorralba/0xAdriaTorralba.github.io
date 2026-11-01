@@ -16,6 +16,14 @@
 #   repo, pr, title, url, state, date, category, ownership
 
 contributions:
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 47
+    title: "Content: ERC-7535 merged, canonical domain + Open Graph, CV data consistency"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/47"
+    state: merged
+    date: 2026-10-31
+    category: portfolio
+    ownership: own
   - repo: "OpenZeppelin/openzeppelin-contracts"
     pr: 6624
     title: "Add ERC-7535 Native Asset Vault as an ERC-4626 extension"
