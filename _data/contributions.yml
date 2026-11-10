@@ -16,6 +16,22 @@
 #   repo, pr, title, url, state, date, category, ownership
 
 contributions:
+  - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
+    pr: 48
+    title: "Content: recent open-source contributions (Raycast, Bike, Falcon-512)"
+    url: "https://github.com/0xAdriaTorralba/0xAdriaTorralba.github.io/pull/48"
+    state: merged
+    date: 2026-11-10
+    category: portfolio
+    ownership: own
+  - repo: "raycast/extensions"
+    pr: 31391
+    title: "Enhance Toggle Menu Bar with native switching and mode selection"
+    url: "https://github.com/raycast/extensions/pull/31391"
+    state: merged
+    date: 2026-11-10
+    category: tooling
+    ownership: external
   - repo: "OpenZeppelin/openzeppelin-community-contracts"
     pr: 245
     title: "Add ERC-7535 Native Asset Tokenized Vault"
@@ -712,12 +728,12 @@ contributions:
     date: 2021-03-02
     category: academic
     ownership: external
-  - repo: "raycast/extensions"
-    pr: 31391
-    title: "Enhance Toggle Menu Bar with native switching and mode selection"
-    url: "https://github.com/raycast/extensions/pull/31391"
+  - repo: "bike-outliner/extensions-registry"
+    pr: 4
+    title: "Add vim-keybindings v0.1.0"
+    url: "https://github.com/bike-outliner/extensions-registry/pull/4"
     state: open
-    date: 2026-09-22
+    date: 2026-11-10
     category: tooling
     ownership: external
   - repo: "0xAdriaTorralba/openzeppelin-contracts"
