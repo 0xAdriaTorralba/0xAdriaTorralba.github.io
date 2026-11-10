@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Raycast extensions
-description: "A collection of Raycast extensions for my own macOS workflow: menu-bar visibility modes, popular-times forecasts, natural-language timezone conversion, bike-share availability and more. In development."
+description: "A collection of Raycast extensions for my own macOS workflow: menu-bar visibility modes, popular-times forecasts, natural-language timezone conversion, bike-share availability and more, plus merged contributions to the Toggle Menu Bar and Fan Control extensions in the Raycast Store. In development."
 project_date: "2025 – 2026 — Barcelona, Spain"
 importance: 5
 sort_date: 2026-08
@@ -16,11 +16,18 @@ A growing collection of [Raycast](https://www.raycast.com/) extensions I build f
 
 ## Extensions
 
-- **BarShift** — switches the macOS "Automatically hide and show the menu bar" setting between two configurable modes, or picks any of the four modes from a searchable list. It writes the underlying preferences directly instead of driving System Settings, so it needs no Accessibility or Automation permission, and it shows the current mode in Raycast root search. Related upstream work: [Enhance Toggle Menu Bar with native switching and mode selection](https://github.com/raycast/extensions/pull/31391), an open PR to the official Raycast extensions repository.
+- **BarShift** — switches the macOS "Automatically hide and show the menu bar" setting between two configurable modes, or picks any of the four modes from a searchable list. It writes the underlying preferences directly instead of driving System Settings, so it needs no Accessibility or Automation permission, and it shows the current mode in Raycast root search. Its native switching and mode picker are now part of the existing Toggle Menu Bar extension in the official Raycast extensions repository (see [upstream contributions](#upstream-contributions)).
 - **Peak Peek** — popular-times ("rush hour") forecasts for saved places, powered by a third-party foot-traffic service: a live busyness overlay, a weekly heatmap and next-hour trend arrows.
 - **Pedal for Raycast** — real-time bike and e-bike availability at bike-share stations worldwide. It has [its own project page](/projects/raycast_bicing/) and grew into the native [Pedal](/projects/bicing_ios/) app.
 - **Timezone Converter** — converts times between timezones using natural language; supports city names, timezone abbreviations and UTC offsets.
 - **Say No** — serves a creative excuse to say no.
+
+## Upstream contributions
+
+Merged pull requests to the official [Raycast extensions](https://github.com/raycast/extensions) repository, for extensions published in the Raycast Store by other authors:
+
+- **Toggle Menu Bar** — [Enhance Toggle Menu Bar with native switching and mode selection](https://github.com/raycast/extensions/pull/31391), merged on 10 Nov 2026. It replaces the extension's System Events AppleScript with native controls, adds a **Set Menu Bar Mode** command, and shows the current mode as the command subtitle through a read-only background refresh. Following Raycast's review, it consolidates BarShift into the existing extension and keeps its original author, icon and preference identifiers.
+- **Fan Control** — [Toggle Fan Speed command with current state and % of max](https://github.com/raycast/extensions/pull/33193), merged on 6 Nov 2026. A new no-view command switches all fans between macOS control and a full-speed or quiet profile in one keystroke. The command subtitle shows the current state, the target speed and the next state, for example `Auto · 31% → Max`. The fan list also shows each fan's speed as a percentage of its maximum.
 
 ## Tech stack
 
