@@ -102,17 +102,34 @@ ninja.data = [{
           section: "News",},{id: "news-i-started-as-a-blockchain-security-researcher-at-openzeppelin-auditing-smart-contracts-and-working-on-erc-standards-tada",
           title: 'I started as a Blockchain Security Researcher at OpenZeppelin, auditing smart contracts and...',
           description: "",
+          section: "News",},{id: "news-my-falcon-512-post-quantum-signature-verifier-for-starknet-accounts-was-merged-into-openzeppelin-cairo-pq-verifiers-pr-2-it-fits-starknet-s-validation-limits-details-on-the-security-page-lock",
+          title: 'My Falcon-512 post-quantum signature verifier for Starknet accounts was merged into OpenZeppelin/cairo-pq-verifiers —...',
+          description: "",
           section: "News",},{id: "news-i-proposed-an-erc-7535-native-asset-vault-extension-to-openzeppelin-contracts-pr-6624-hammer-and-wrench",
           title: 'I proposed an ERC-7535 Native Asset Vault extension to OpenZeppelin Contracts — PR...',
           description: "",
           section: "News",},{id: "news-my-erc-7535-native-asset-vault-extension-was-merged-into-openzeppelin-contracts-pr-6624-tagged-for-the-5-8-milestone-rocket",
           title: 'My ERC-7535 Native Asset Vault extension was merged into OpenZeppelin Contracts — PR...',
           description: "",
+          section: "News",},{id: "news-my-toggle-fan-speed-command-for-the-fan-control-raycast-extension-was-merged-one-keystroke-switches-the-mac-s-fans-between-macos-control-and-full-speed-dash",
+          title: 'My Toggle Fan Speed command for the Fan Control Raycast extension was merged...',
+          description: "",
+          section: "News",},{id: "news-my-native-switching-and-mode-selection-for-the-toggle-menu-bar-raycast-extension-was-merged-it-replaces-the-applescript-with-native-controls-and-adds-a-set-menu-bar-mode-command-more-on-my-raycast-extensions-page-white-check-mark",
+          title: 'My native switching and mode selection for the Toggle Menu Bar Raycast extension...',
+          description: "",
+          section: "News",},{id: "news-i-released-vim-keybindings-for-bike-v0-1-0-an-open-source-extension-that-brings-vim-style-modal-editing-to-the-bike-outliner-on-macos-keyboard",
+          title: 'I released Vim Keybindings for Bike v0.1.0, an open-source extension that brings Vim-style...',
+          description: "",
           section: "News",},{id: "projects-pedal",
           title: 'Pedal',
           description: "Native iOS, watchOS and WidgetKit app for real-time bike and dock availability at bike-share stations worldwide, powered by the CityBikes API. In development.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/bicing_ios/";
+            },},{id: "projects-vim-keybindings-for-bike",
+          title: 'Vim Keybindings for Bike',
+          description: "Vim-style modal editing for the Bike 2 outliner on macOS: hjkl over rows, counts, dd/yy/p with an outline-aware register, folding and a row-wise visual mode. Open source (MIT).",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/bike_vim_keybindings/";
             },},{id: "projects-croisette-cc",
           title: 'Croisette.cc',
           description: "Hackathon project at ETHGlobal Cannes 2026. Effortless, 24/7 investing managed by AI agents on 0G&#39;s compute network. Won 1st place — Best OpenClaw Agent on 0G.",
@@ -140,7 +157,7 @@ ninja.data = [{
               window.location.href = "/projects/raycast_bicing/";
             },},{id: "projects-raycast-extensions",
           title: 'Raycast extensions',
-          description: "A collection of Raycast extensions for my own macOS workflow: menu-bar visibility modes, popular-times forecasts, natural-language timezone conversion, bike-share availability and more. In development.",
+          description: "A collection of Raycast extensions for my own macOS workflow: menu-bar visibility modes, popular-times forecasts, natural-language timezone conversion, bike-share availability and more, plus merged contributions to the Toggle Menu Bar and Fan Control extensions in the Raycast Store. In development.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/raycast_extensions/";
             },},{id: "projects-the-sand-walker",
