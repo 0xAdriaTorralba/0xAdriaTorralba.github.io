@@ -60,7 +60,7 @@ nav_order: 2 # directly after about
 <p>
   This page collects the security-relevant work I do: the professional audits I've contributed to,
   the certifications and coursework I've completed to keep my toolkit sharp, the CTFs I compete
-  in, and the ERC standards work I propose upstream. Hover the&nbsp;<i class="fa-solid fa-circle-info" aria-hidden="true" style="color: var(--global-text-color-light);"></i>&nbsp;next to a section title for what it means.
+  in, the ERC standards work I propose upstream, and my post-quantum signature research. Hover the&nbsp;<i class="fa-solid fa-circle-info" aria-hidden="true" style="color: var(--global-text-color-light);"></i>&nbsp;next to a section title for what it means.
 </p>
 
 <h2 id="audits">
@@ -174,6 +174,21 @@ this section is hidden.
 </h2>
 
 - [**ERC-7535 Native Asset Vault for OpenZeppelin Contracts**](https://github.com/OpenZeppelin/openzeppelin-contracts/pull/6624) — PR #6624, merged on 21 Oct 2026 (milestone 5.8). It implements [ERC-7535](https://eips.ethereum.org/EIPS/eip-7535), the native-ETH variant of the ERC-4626 tokenized vault, as a thin extension of OpenZeppelin's `ERC4626`. To make that possible, `deposit` and `mint` became `payable` in `ERC4626` behind an `_enablePayableDeposit` hook that is off by default, so ERC-20 vaults keep rejecting native value, and `totalAssets` prices shares against the pre-deposit balance. The design notes cover the `msg.value` policy, refunding excess value only after shares are minted (an earlier refund would let a reentrant caller redeem existing shares at an inflated price), and the `_decimalsOffset` overflow bound. The tests include reentrant receivers that observe the share price during the `mint` refund and the `redeem` payout.
+
+<h2 id="post-quantum">
+  post-quantum signatures
+  <span class="tip" tabindex="0" role="button" aria-label="Research code that checks whether post-quantum signature schemes can replace ECDSA in smart-contract accounts. Shor's algorithm could forge today's elliptic-curve signatures on a large quantum computer; account abstraction lets an account swap its signature check without a protocol change. Each entry links to the public pull request.">
+    <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+    <span class="tip__panel" role="tooltip">
+      Research code that checks whether <strong>post-quantum signature schemes</strong> can replace
+      ECDSA in smart-contract accounts. Shor's algorithm could forge today's elliptic-curve signatures
+      on a large quantum computer; account abstraction lets an account swap its signature check
+      without a protocol change. Each entry links to the public pull request.
+    </span>
+  </span>
+</h2>
+
+- [**Falcon-512 verifier for Starknet accounts**](https://github.com/OpenZeppelin/cairo-pq-verifiers/pull/2) — PR #2 to [OpenZeppelin/cairo-pq-verifiers](https://github.com/OpenZeppelin/cairo-pq-verifiers), merged on 3 Jul 2026. The repository compares candidate post-quantum verifiers for a Starknet account by their verification cost; it is experimental and unaudited. The PR replaces the Falcon-512 (FN-DSA) stub with a working Cairo verifier in two variants. Storing the public key in the NTT domain removes one transform, so each variant needs exactly two 512-point NTTs and stays within Starknet's validation limits (about 76 M L2 gas and 668 k steps, against caps of 100 M and 1 M). The direct variant needs half the signature calldata of the hint variant and no signer-supplied hint. The message is hashed to a point on-chain with BLAKE2s, so `verify` binds the signature to the message hash; an off-chain point carried in the signature would admit forgeries for arbitrary messages. This hash construction is non-standard and is labelled as such, because it breaks FIPS 206 interoperability. A genuine signature fixture is checked independently in Python, and tests reject tampered signatures, hints, salts, keys and messages.
 
 {%- comment -%}
 The security-tagged projects grid (Sand Walker, etc.) used to live
