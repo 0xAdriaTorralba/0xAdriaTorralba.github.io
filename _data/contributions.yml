@@ -16,6 +16,14 @@
 #   repo, pr, title, url, state, date, category, ownership
 
 contributions:
+  - repo: "raycast/extensions"
+    pr: 33384
+    title: "Update no-as-a-service extension"
+    url: "https://github.com/raycast/extensions/pull/33384"
+    state: merged
+    date: 2026-11-10
+    category: tooling
+    ownership: external
   - repo: "0xAdriaTorralba/0xAdriaTorralba.github.io"
     pr: 48
     title: "Content: recent open-source contributions (Raycast, Bike, Falcon-512)"
@@ -727,6 +735,14 @@ contributions:
     state: merged
     date: 2021-03-02
     category: academic
+    ownership: external
+  - repo: "raycast/extensions"
+    pr: 33394
+    title: "Add hyperduck-history extension"
+    url: "https://github.com/raycast/extensions/pull/33394"
+    state: open
+    date: 2026-11-10
+    category: tooling
     ownership: external
   - repo: "bike-outliner/extensions-registry"
     pr: 4
